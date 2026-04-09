@@ -1,0 +1,42 @@
+📘 Flowchart
+
+A flowchart is a diagrammatic representation of an algorithm, process, or workflow using standard symbols.
+It shows the sequence of steps and the flow of control in a program or system.
+
+In simple words: A flowchart is a visual map of logic.
+
+Why Flowcharts are Used
+
+- Clarity → Makes complex logic easy to understand.
+- Debugging → Helps identify logical errors before coding.
+- Communication → Explains program flow to non-technical people (managers, interviewers).
+- Planning → Used as a blueprint before writing actual code.
+- Documentation → Serves as a reference for future maintenance.
+
+Real-Life Example
+
+Example 1: ATM Cash Withdrawal
+
+- Start
+- Insert card → Input
+- Enter PIN → Input
+- Decision: Is PIN correct?
+- Yes → Proceed
+- No → Show error → End
+- Enter amount → Input
+- Decision: Is balance sufficient?
+- Yes → Dispense cash → Print receipt → End
+- No → Show “Insufficient Balance” → End
+
+This ensures the ATM follows a logical sequence.
+
+Example 2: Largest of Two Numbers
+
+Steps:
+- Start
+- Input two numbers (A, B)
+- Decision: Is A > B?
+- Yes → Print A is largest
+- No → Print B is largest
+- End
+
