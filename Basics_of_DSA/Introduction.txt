@@ -1,0 +1,12 @@
+#	Data Structure
+A Data Structure is a way of organizing, storing, and managing data so that it can be accessed and modified efficiently.
+It defines the relationship among data elements and provides operations to manipulate them.
+
+Examples: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs.
+
+#	Algorithm
+An Algorithm is a finite set of step-by-step instructions designed to solve a specific problem or perform a computation.
+It focuses on logic and efficiency (time and space).
+ 
+Examples: Sorting algorithms (Quick Sort, Merge Sort), Searching algorithms (Binary Search), Graph algorithms (Dijkstra’s shortest path).
+
