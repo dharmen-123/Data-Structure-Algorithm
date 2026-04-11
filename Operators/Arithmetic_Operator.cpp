@@ -20,3 +20,16 @@
 
 // // // Unary Operator // // //
 // In unary operator we only required single operand and with operator
+
+// ++ increment              Ex -> a=5
+// 1. Post increment   
+// Example  a++  , 
+//  cout<<a++;  output -> 5
+//  cout<<a;  output -> 6
+
+// 2. Pre increment    
+// Example  ++a
+//  cout<<++a;  output -> 6
+//  cout<<a;  output -> 6
+
+ 
