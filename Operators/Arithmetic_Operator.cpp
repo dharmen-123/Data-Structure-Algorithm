@@ -21,7 +21,7 @@
 // // // Unary Operator // // //
 // In unary operator we only required single operand and with operator
 
-// ++ increment              Ex -> a=5
+    // ++ Increment              Ex -> a=5
 // 1. Post increment   
 // Example  a++  , 
 //  cout<<a++;  output -> 5
@@ -32,4 +32,14 @@
 //  cout<<++a;  output -> 6
 //  cout<<a;  output -> 6
 
- 
+    // -- Decrement              Ex -> b=7
+// 1. Post decrement   
+// Example  b--  , 
+//  cout<<b--;  output -> 7
+//  cout<<b;  output -> 6
+
+// 2. Pre decrement    
+// Example  --b
+//  cout<<--b;  output -> 6
+//  cout<<b;  output -> 6
+
