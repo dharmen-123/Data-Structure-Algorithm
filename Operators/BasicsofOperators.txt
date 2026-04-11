@@ -1,0 +1,10 @@
+ // // ** BODMAS Rule ** // //
+ B - Bracket 
+ O - Open 
+ D - Divisible
+ M - Multiply 
+ A - Addition 
+ S - Subtraction
+
+ Example - 
+ 2-8/4*10+6 = -12
