@@ -85,7 +85,6 @@
 //      cout<<result<<endl;
 // }
 
-
 // // //  Swap two number without third variable // // //
 #include<iostream>
 using namespace std;
