@@ -1,3 +1,9 @@
+    // //  ***** OPERATOR *****  // //
+
+    An operator is a symbol that tells the compiler to perform a specific operation.
+    int sum = a + b;
+    Here + is an operator, a and b are operands.
+ 
  // // ** BODMAS Rule ** // //
  B - Bracket 
  O - Open 
@@ -8,3 +14,55 @@
 
  Example - 
  2-8/4*10+6 = -12
+
+    ******* Types of Operator *******
+
+1. Arithmetic Operators
+Used for mathematical calculations
+ Two types of Arithmetic operator
+ 
+(a) Unary
+    Increment & Decrement Operators
+    Used to increase or decrease value by 1
+    🔹 Operators:
+    ++ , --
+
+    🔹 Types:
+    Pre-increment: ++a
+    Post-increment: a++
+  
+(b) Binary
+   🔹 Operators:
+    + , - , * , / , %
+
+2. Relational (Comparison) Operators
+Used to compare two values → returns true or false
+
+🔹 Operators:
+== , != , > , < , >= , <=
+
+3. Logical Operators
+Used to combine conditions
+
+🔹 Operators:
+&& (AND), || (OR), ! (NOT)
+
+4. Assignment Operators
+Used to assign values to variables
+
+🔹 Operators:
+= , += , -= , *= , /= , %=
+
+5. Bitwise Operators
+
+Operate on binary representation (bits)
+
+🔹 Operators:
+
+& , | , ^ , ~ , << , >>
+
+* Conditional (Ternary) Operator
+Shortcut for if-else
+
+🔹 Syntax:
+condition ? expression1 : expression2;
