@@ -7,18 +7,18 @@
 //  || (OR)   The OR operator returns true if at least one condition is true.
 //   ! (NOT)  The NOT operator reverses the result:
 
-    // // **** AND Operator **** // //
+    // // **** AND(&&) Operator **** // //
 
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int age = 25;
-//     if (age > 18 && age < 60) {
-//          cout<<"Eligible for job";
-//         }
-// }
+#include<iostream>
+using namespace std;
+int main(){
+    int age = 25;
+    if (age > 18 && age < 60) {
+         cout<<"Eligible for job";
+        }
+}
 
-    // // **** OR Operator **** // //
+    // // **** OR(||) Operator **** // //
 
 #include<iostream>
 using namespace std;
@@ -27,4 +27,16 @@ int main(){
     if (marks >= 40 || marks >= 30) {
         cout << "Passed";
     }
+}
+
+    // // **** NOT(!) Operator **** // //
+
+#include<iostream>
+using namespace std;
+int main(){
+       bool isLoggedIn = false;     
+       if (!isLoggedIn) {
+           cout << "Please login";
+       }
+
 }
