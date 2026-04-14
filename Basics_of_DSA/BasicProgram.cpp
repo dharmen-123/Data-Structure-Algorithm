@@ -119,12 +119,3 @@
 //      }
 // }
 
-// Power of @ Question
-
-#include<iostream>
-using namespace std;
-
-int main(){
-      
-
-}

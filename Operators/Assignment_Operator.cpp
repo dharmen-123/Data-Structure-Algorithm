@@ -15,3 +15,43 @@
 //  <<=	Left shift assign	a <<= 1
 //  >>=	Right shift assign	a >>= 1
 
+// // **** (+=) Add & Assign **** // //
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//      int a=10;
+//      a+=5;
+//      cout<<a;
+// }
+
+// // **** (-=) Subtract & Assign **** // //
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//      int a=10;
+//      a-=5;
+//      cout<<a;
+// }
+
+// // **** (*=) Multiply & Assign **** // //
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//      int a=10;
+//      a*=5;
+//      cout<<a;
+// }
+
+// // **** (/=) Divide & Assign **** // //
+
+// #include<iostream>
+// using namespace std;
+// int main(){
+//      int a=10;
+//      a+=5;
+//      cout<<a;
+// }
+
