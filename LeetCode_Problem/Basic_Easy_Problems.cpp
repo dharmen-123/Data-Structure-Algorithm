@@ -23,19 +23,42 @@
 
     // //  Convert the character from small to capital or vice versa // //
 
+// #include<iostream>
+// using namespace std;
+
+// char charconvert(char name){
+//     char ans = name-'a'+'A';
+//     return ans;
+// }
+
+// int main(){
+//     char letter;
+//     cout<<"Enter any charater for conversion : ";
+//     cin>>letter;
+//     cout<<charconvert(letter);
+
+// return 0 ;
+// }
+
+    // // Armstrong Number  // //
+
 #include<iostream>
 using namespace std;
+bool Armstrong(int n){
+        int m=n , count=0;
 
-char charconvert(char name){
-    char ans = name-'a'+'A';
-    return ans;
+        while(0){
+            n/=10;
+            count++;
+        }
+        cout<<count;
+        return 1;
 }
 
 int main(){
-    char letter;
-    cout<<"Enter any charater for conversion : ";
-    cin>>letter;
-    cout<<charconvert(letter);
-
-return 0 ;
+     int n;
+     cout<<"Enter the number : ";
+     cin>>n;
+     cout<<Armstrong(n);
+    return 0 ;
 }
