@@ -47,7 +47,7 @@ using namespace std;
 bool Armstrong(int n){
         int m=n , count=0;
 
-        while(0){
+        while(n){
             n/=10;
             count++;
         }
