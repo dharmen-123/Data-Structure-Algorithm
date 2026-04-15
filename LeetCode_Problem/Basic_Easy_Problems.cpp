@@ -21,3 +21,21 @@
 //       cout<<isPowerOfFour(1)<<endl;
 // }
 
+    // //  Convert the character from small to capital or vice versa // //
+
+#include<iostream>
+using namespace std;
+
+char charconvert(char name){
+    char ans = name-'a'+'A';
+    return ans;
+}
+
+int main(){
+    char letter;
+    cout<<"Enter any charater for conversion : ";
+    cin>>letter;
+    cout<<charconvert(letter);
+
+return 0 ;
+}
