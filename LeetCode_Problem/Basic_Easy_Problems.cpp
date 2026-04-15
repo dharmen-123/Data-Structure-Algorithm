@@ -45,11 +45,13 @@
 #include<iostream>
 using namespace std;
 bool Armstrong(int n){
-        int m=n , count=0;
+        int m=n , count=0, ans;
+        int rem;
 
         while(n){
+            rem = rem%=10;
             n/=10;
-            count++;
+            ans = ans+(rem , count);
         }
         cout<<count;
         return 1;
