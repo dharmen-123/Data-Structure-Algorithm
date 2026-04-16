@@ -42,33 +42,34 @@
 
     // // Armstrong Number  // //
 
-#include<iostream>
-using namespace std;
-bool Armstrong(int n){
-    int m=n,num=n ,rem , count=0, ans=0;
-    while(n>0){
-        n/=10;
-        count++;
-    }
-    while(m>0){
-        rem=m%10;
-        int val=rem;
-        for(int i=1;i<count;i++){
-                val=rem*val;
-        }
-        ans=ans+val;
-        m/=10;
-    }
-    if(ans!=num){
-        return 0;
-    }
-    return 1;
-}
+// #include<iostream>
+// using namespace std;
+// bool Armstrong(int n){
+//     int m=n,num=n ,rem , count=0, ans=0;
+//     while(n>0){
+//         n/=10;
+//         count++;
+//     }
+//     while(m>0){
+//         rem=m%10;
+//         int val=rem;
+//         for(int i=1;i<count;i++){
+//                 val=rem*val;
+//         }
+//         ans=ans+val;
+//         m/=10;
+//     }
+//     if(ans!=num){
+//         return 0;
+//     }
+//     return 1;
+// }
 
-int main(){
-     int n;
-     cout<<"Enter the number : ";
-     cin>>n;
-     cout<<Armstrong(n);
-    return 0 ;
-}
+// int main(){
+//      int n;
+//      cout<<"Enter the number : ";
+//      cin>>n;
+//      cout<<Armstrong(n);
+//     return 0 ;
+// }
+
