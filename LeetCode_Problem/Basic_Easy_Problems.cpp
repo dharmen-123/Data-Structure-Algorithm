@@ -45,16 +45,24 @@
 #include<iostream>
 using namespace std;
 bool Armstrong(int n){
-        int m=n , count=0, ans;
-        int rem;
-
-        while(n){
-            rem = rem%=10;
-            n/=10;
-            ans = ans+(rem , count);
+    int m=n,num=n ,rem , count=0, ans=0;
+    while(n>0){
+        n/=10;
+        count++;
+    }
+    while(m>0){
+        rem=m%10;
+        int val=rem;
+        for(int i=1;i<count;i++){
+                val=rem*val;
         }
-        cout<<count;
-        return 1;
+        ans=ans+val;
+        m/=10;
+    }
+    if(ans!=num){
+        return 0;
+    }
+    return 1;
 }
 
 int main(){
