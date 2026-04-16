@@ -25,3 +25,21 @@ int arr[5] = {10, 20, 30, 40, 50};
 🔹 Accessing Elements
 cout << arr[0];  // 10
 cout << arr[2];  // 30
+
+🔹 Memory Representation
+Example:
+int arr[5] = {10, 20, 30, 40, 50};
+
+Memory layout:
+
+Index  Value Address
+ 0	   10	 1000
+ 1	   20	 1004
+ 2	   30	 1008
+ 3	   40	 1012
+ 4	   50	 1016
+
+Address formula:
+    Address = Base Address+(Index * Size of element)
+
+    
