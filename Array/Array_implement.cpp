@@ -10,7 +10,7 @@
 
 // int main(){
 //     int arr[5]={3,6,2,7,4};
-//     int n=sizeof(arr)/sizeof(arr[0]);
+//     int n=sizeof(arr)/sizeof(arr[0]);        // size of array
 //     for(int i=0;i<n;i++){
 //         cout<<arr[i];
 //     }
@@ -34,21 +34,22 @@
  
     // //  Taking Array value Input from user  // //
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int main(){
-    int n;
-    cout<<"Enter the size of array: ";
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cout<<"arr["<<i<<"]=";
-        cin>>arr[i];
-    }
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+// int main(){
+//     int n;
+//     cout<<"Enter the size of array: ";
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cout<<"arr["<<i<<"]=";
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
 
-return 0 ;
-}
+// return 0 ;
+// }
+
