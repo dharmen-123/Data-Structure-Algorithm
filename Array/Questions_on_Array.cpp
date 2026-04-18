@@ -56,3 +56,24 @@
 
 // return 0 ;
 // }
+
+    // // // Reverse an Array // // //
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//         int arr2[5]={1,2,3,4,5};
+//         int n=sizeof(arr2)/sizeof(arr2[0]);
+//         int s=0 ,e=n-1;
+//         while(s<e){
+//             swap(arr2[s],arr2[e]);
+//             s++;
+//             e--;
+//         }
+//         for(int i=0;i<n;i++){
+//             cout<<arr2[i]<<" ";
+//         }
+
+// return 0 ;
+// }
