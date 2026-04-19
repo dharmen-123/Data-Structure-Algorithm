@@ -1136,3 +1136,24 @@ Input data
 Auxiliary variables
 Function calls and recursion stack
 Temporary storage
+
+// ** Components of Space Complexity
+
+**Fixed Part (constant space)
+
+Independent of input size.
+Includes instructions, constants, fixed variables.
+Example: Memory for loop counters.
+
+** Variable Part (depends on input size)
+
+Memory grows with input size.
+Includes dynamic memory allocation, recursion stack, arrays, linked lists.
+Example: Memory for storing n elements in an array.
+
+
+Complexity	Meaning	                Example
+O(1)	        Constant space	        Swapping two numbers
+O(n)	        Linear space	        Storing an array of size n
+O(log n)	Logarithmic space	Recursive Binary Search
+O(n²)	        Quadratic space	        2D matrix storage
