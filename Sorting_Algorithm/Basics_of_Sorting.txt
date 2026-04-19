@@ -20,6 +20,55 @@ Telephone directory sorted by names.
 Dictionary sorted alphabetically.
 Exam results sorted by marks.
 
+// ***** Basis of Sorting Algorithms ***** //
+
+🔹 1. Based on Complexity
+
+# Time Complexity: How fast the algorithm runs.
+Example: Merge Sort → O(n log n), Bubble Sort → O(n²).
+
+# Space Complexity: How much extra memory is used.
+Example: Merge Sort → O(n) extra space, Heap Sort → O(1) extra space.
+
+🔹 2. Based on Method of Sorting
+
+# Comparison-Based Sorting: Elements are compared to decide order.
+Example: Quick Sort, Merge Sort, Bubble Sort.
+
+# Non-Comparison Sorting: Uses counting or digit-based techniques.
+Example: Counting Sort, Radix Sort, Bucket Sort.
+
+🔹 3. Based on Stability
+
+# Stable Sorting: Preserves the relative order of equal elements.
+Example: Merge Sort, Bubble Sort, Insertion Sort.
+
+# Unstable Sorting: May change the relative order of equal elements.
+Example: Quick Sort, Heap Sort, Selection Sort.
+
+🔹 4. Based on Recursion
+
+# Recursive Sorting: Uses recursion to divide and conquer.
+Example: Merge Sort, Quick Sort.
+
+# Non-Recursive Sorting: Works iteratively.
+Example: Bubble Sort, Selection Sort.
+
+🔹 5. Based on Internal vs External Sorting
+
+# Internal Sorting: Entire data fits in memory.
+Example: Quick Sort, Merge Sort, Heap Sort.
+
+# External Sorting: Data is too large, uses disk storage.
+Example: External Merge Sort (used in databases).
+
+🔹 6. Based on Adaptability
+# Adaptive Sorting: Performs better if data is partially sorted.
+Example: Insertion Sort, Bubble Sort.
+
+# Non-Adaptive Sorting: Performance does not improve with partially sorted data.
+Example: Selection Sort, Heap Sort.
+
 **** Types of Sorting Algorithm ****
 
 Algorithm	    Best Case	Worst Case	Average Case	Stable	Notes
