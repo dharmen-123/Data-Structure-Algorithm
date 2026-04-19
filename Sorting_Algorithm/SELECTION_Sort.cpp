@@ -8,6 +8,15 @@
 // Divide the array into two parts: sorted and unsorted.
 // Repeatedly pick the minimum element from the unsorted part and move it to the sorted part.
 
+// Working Steps
+
+// ** Start with the first element.
+// ** Find the smallest element in the unsorted array.
+// ** Swap it with the first element.
+// ** Move the boundary of the sorted part one step forward.
+// ** Repeat until the entire array is sorted.
+
+
 #include<iostream>
 using namespace std;
 void Selection(int arr[], int n){
@@ -34,6 +43,5 @@ int main(){
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
-
 return 0 ;
 }
