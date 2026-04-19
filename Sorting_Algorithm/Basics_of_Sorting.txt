@@ -1,0 +1,34 @@
+
+    // // Sorting and Sorting Algorithms // //
+
+Sorting means rearranging elements of a list or array according to a comparison operator (like < or >).
+
+Ascending order: Smallest to largest (e.g., 1, 2, 3, 4).
+Descending order: Largest to smallest (e.g., 4, 3, 2, 1).
+
+Sorting is widely used in databases, searching, and data visualization.
+
+**** Why Sorting is Important
+
+Efficient Searching: Binary search requires sorted data.
+Data Organization: Easier to read and process.
+Optimization: Many algorithms (like divide-and-conquer) depend on sorted input.
+
+**** Real-Life Examples:
+
+Telephone directory sorted by names.
+Dictionary sorted alphabetically.
+Exam results sorted by marks.
+
+**** Types of Sorting Algorithm ****
+
+Algorithm	    Best Case	Worst Case	Average Case	Stable	Notes
+Bubble Sort	    O(n)	    O(n²)	    O(n²)	        Yes	    Simple, inefficient
+Selection Sort	O(n²)	    O(n²)	    O(n²)	        No	    Few swaps
+Insertion Sort	O(n)	    O(n²)	    O(n²)	        Yes	    Good for small arrays
+Merge Sort	    O(n log n)	O(n log n)	O(n log n)	    Yes	    Stable, efficient
+Quick Sort	    O(n log n)	O(n²)	    O(n log n)  	No	    Fast in practice
+Heap Sort	    O(n log n)	O(n log n)	O(n log n)  	No	    Uses heap
+Counting Sort	O(n+k)	    O(n+k)	    O(n+k)	        Yes	    Limited range
+Radix Sort	    O(nk)	    O(nk)	    O(nk)       	Yes	    Works for digits
+Bucket Sort	    O(n+k)	    O(n²)	    O(n+k)      	Yes	    Uniform distribution

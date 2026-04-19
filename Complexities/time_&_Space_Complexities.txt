@@ -1152,8 +1152,12 @@ Includes dynamic memory allocation, recursion stack, arrays, linked lists.
 Example: Memory for storing n elements in an array.
 
 
-Complexity	Meaning	                Example
-O(1)	        Constant space	        Swapping two numbers
-O(n)	        Linear space	        Storing an array of size n
-O(log n)	Logarithmic space	Recursive Binary Search
-O(n²)	        Quadratic space	        2D matrix storage
+Complexity	    Meaning	            Example
+O(1)	        Constant space	    Swapping two numbers
+O(n)	        Linear space	    Storing an array of size n
+O(log n)	    Logarithmic space	Recursive Binary Search
+O(n²)	        Quadratic space	    2D matrix storage
+
+Order of Complexity
+
+    O(1)< O(logn)< O(\|n)< O(n)< O(nlogn)< O(n^2)< O(n^3)< O(2^n)< O(N!)
