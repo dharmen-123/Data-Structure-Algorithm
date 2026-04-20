@@ -18,13 +18,14 @@
 // After one full pass, the largest element is at the end.
 // Repeat for the remaining unsorted portion until all elements are sorted.
 
+    // Optimise Bubble Sort // 
+
 #include<iostream>
 using namespace std;
 void BubbleSort(int arr[], int n){
-     
     for(int i=0;i<n-1;i++){
         bool check=true;
-        for(int j=0;j<=n-i-1;j++){
+        for(int j=0;j<n-i-1;j++){
             if(arr[j]>arr[j+1]){
                 swap(arr[j],arr[j+1]);
                 check=false;
