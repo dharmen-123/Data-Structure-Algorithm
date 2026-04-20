@@ -119,3 +119,25 @@
 //      }
 // }
 
+
+// #include<iostream>
+// using namespace std;
+//  int reverseBits(int n) {
+//        int binary[32],i=0;
+//        while(n>0){
+//         binary[i]=n%2;
+//         n=n/2;
+//         i++;
+//        } 
+//       for(int j=i-1;j>=0;j--){
+//         cout<<binary[j];
+//       } 
+//       return 1;
+//     }
+// int main(){
+//      int n=43261596;
+//      cout<<endl<<reverseBits(n);
+
+// return 0 ;
+// }
+

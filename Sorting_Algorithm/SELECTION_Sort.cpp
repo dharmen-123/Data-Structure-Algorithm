@@ -45,3 +45,11 @@ int main(){
     }
 return 0 ;
 }
+
+// Complexity Analysis
+
+// Best Case: O(n²) (still compares all pairs)
+// Worst Case: O(n²)
+// Average Case: O(n²)
+// Space Complexity: O(1) (in-place sorting)
+// Stability: Not stable (equal elements may change order)

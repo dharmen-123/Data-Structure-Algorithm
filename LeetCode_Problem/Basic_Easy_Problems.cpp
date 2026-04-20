@@ -73,3 +73,27 @@
 //     return 0 ;
 // }
 
+         // //  Reverse bits //  //
+
+// #include <iostream>
+// using namespace std;
+// int Reversebits(int n) {
+//     int binary[32];
+//     int m=sizeof(binary)/sizeof(binary[0]);
+//     for (int i = 31; i >= 0; i--) {
+//         binary[i]=((n >> i) & 1);
+//     }
+//    long long ans=0,mul=1;
+//     while(m>0){
+//       ans=binary[m-1]*mul+ans;
+//       mul*=2;
+//       m--;
+//     }
+//     return ans;
+// }
+
+// int main() {
+//     int n = 43261596;
+//     Reversebits(n);
+//     return 0;
+// }
