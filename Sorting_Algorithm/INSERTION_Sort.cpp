@@ -33,7 +33,6 @@ void Insertion(int arr[], int n){
                     j--;
             }
         }
-
 }
 int main(){
     int arr[1000];
@@ -51,3 +50,12 @@ int main(){
 
 return 0 ;
 }
+
+// ** Complexity Analysis ** /
+
+// Best Case: O(n) (already sorted, only one comparison per element).
+// Worst Case: O(n²) (reverse order, maximum shifts).
+// Average Case: O(n²).
+// Space Complexity: O(1) (in-place sorting).
+// Stability: Yes (equal elements retain order).
+// Adaptability: Performs better if data is partially sorted.
