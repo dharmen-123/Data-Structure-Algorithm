@@ -46,3 +46,12 @@ int main() {
         cout << "Element not found";
     return 0;
 }
+
+
+    // **** Complexity Analysis
+
+// Best Case: O(1) (target is middle element).
+// Worst Case: O(log n) (keep halving until found/not found).
+// Average Case: O(log n).
+// Space Complexity: O(1) (iterative), O(log n) (recursive stack).
+// Requirement: Array must be sorted.
