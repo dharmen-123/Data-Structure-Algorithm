@@ -97,3 +97,22 @@
 //     Reversebits(n);
 //     return 0;
 // }
+
+    // // Q.35  Search Insert Position //
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int searchInsert(vector<int>& arr, int target){
+   
+}
+int main(){
+        vector<int>arr={1,3,5,6};
+        int target=2;
+        searchInsert(arr,target);
+        for(auto x:arr){
+            cout<<x<<" ";
+        }
+
+return 0 ;
+}
