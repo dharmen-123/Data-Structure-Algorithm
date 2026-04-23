@@ -104,7 +104,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 int searchInsert(vector<int>& arr, int target){
-   
+        int start=0 ,end=arr.size()-1,ans=arr.size(), mid;
+        while(start<=end){
+            if(arr[mid]==target){
+                ans=mid;   
+                break;
+            }
+            else if(arr[mid]<target){
+                    start=mid+1;
+
+            }
+            else{
+                    ans=mid;
+                    end = mid-1;
+            }
+        }
+
+        
+
 }
 int main(){
         vector<int>arr={1,3,5,6};
