@@ -108,7 +108,7 @@ int searchInsert(vector<int>& arr, int target){
         while(start<=end){
             if(arr[mid]==target){
                 ans=mid;   
-                break;
+                return mid;
             }
             else if(arr[mid]<target){
                     start=mid+1;
@@ -120,7 +120,7 @@ int searchInsert(vector<int>& arr, int target){
             }
         }
 
-        
+
 
 }
 int main(){
