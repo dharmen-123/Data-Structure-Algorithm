@@ -59,3 +59,5 @@ return 0 ;
 // Space Complexity: O(1) (in-place sorting).
 // Stability: Yes (equal elements retain order).
 // Adaptability: Performs better if data is partially sorted.
+
+// hello python
