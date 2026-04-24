@@ -69,3 +69,4 @@ Idea: Useful for unbounded or infinite lists.
 Steps: Find range by repeated doubling, then apply binary search.
     Complexity: O(log n).
     Use: Searching in infinite or very large datasets.
+    

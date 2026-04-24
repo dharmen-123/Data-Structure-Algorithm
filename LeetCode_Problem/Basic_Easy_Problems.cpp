@@ -120,8 +120,6 @@ int searchInsert(vector<int>& arr, int target){
             }
         }
 
-
-
 }
 int main(){
         vector<int>arr={1,3,5,6};
