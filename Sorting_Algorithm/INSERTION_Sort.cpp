@@ -66,3 +66,4 @@ return 0 ;
 // oos.close();
 // fos.close();
 // GAME OVER = False
+// PLAYER HEALTH = 5
