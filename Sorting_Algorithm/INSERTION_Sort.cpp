@@ -68,3 +68,4 @@ return 0 ;
 // GAME OVER = False
 // PLAYER HEALTH = 5
 // MONTHS 31 DAYS = [3, 5, 7, 8, 10, 12]
+// # updates the day
