@@ -27,31 +27,28 @@
 // return 0 ;
 // }
 
-        // // Q. Rotated Array   //
+        // // Q.153 Find Minimum in Rotated Sorted Array   //
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int RotatedArray(vector<int>& arr , int x){
-        int start=0, end=arr.size()-1, mid, ans;
-        while(start<=end){
-            mid=start+(end-start)/2;
-            if(arr[0]<arr[mid]){
-                start=mid+1;
-            }
-            else if(arr[0]>arr[mid]){
-                end=mid-1;
-            }
-            else{
-                ans=mid;
-            }
-        }
-        return ans;
-}
-int main(){
-    vector<int>arr={4,6,8,10,1,2};
-    int x=10;
-    cout<<RotatedArray(arr,x);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int findMin(vector<int>& nums){
+//         int start=0, end=nums.size()-1, mid, ans=nums[0];
+//         while(start<=end){
+//             mid=start+(end-start)/2;
+//             if(nums[0]<=nums[mid]){
+//                 start=mid+1;
+//             }
+//             else{
+//                 ans=nums[mid];
+//                 end=mid-1;
+//             }
+//         }
+//         return ans;
+// }
+// int main(){
+//     vector<int>nums={4,6,8,10,1,2};
+//     cout<<findMin(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
