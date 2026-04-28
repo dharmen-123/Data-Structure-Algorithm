@@ -60,12 +60,3 @@ return 0 ;
 // Stability: Yes (equal elements retain order).
 // Adaptability: Performs better if data is partially sorted.
 
-// hello python
-// coding
-// oos.flush();
-// oos.close();
-// fos.close();
-// GAME OVER = False
-// PLAYER HEALTH = 5
-// MONTHS 31 DAYS = [3, 5, 7, 8, 10, 12]
-// # updates the day

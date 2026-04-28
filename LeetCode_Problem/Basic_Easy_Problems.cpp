@@ -100,34 +100,63 @@
 
     // // Q.35  Search Insert Position //
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int searchInsert(vector<int>& arr, int target){
+//         int start=0 ,end=arr.size()-1,ans=arr.size(), mid;
+//         while(start<=end){
+//             if(arr[mid]==target){
+//                 ans=mid;   
+//                 return mid;
+//             }
+//             else if(arr[mid]<target){
+//                     start=mid+1;
+
+//             }
+//             else{
+//                     ans=mid;
+//                     end = mid-1;
+//             }
+//         }
+
+// }
+// int main(){
+//         vector<int>arr={1,3,5,6};
+//         int target=2;
+//         searchInsert(arr,target);
+//         for(auto x:arr){
+//             cout<<x<<" ";
+//         }
+// return 0 ;
+// }
+
+        // // Q.69 SQRT(x) //
+
 #include<iostream>
-#include<bits/stdc++.h>
 using namespace std;
-int searchInsert(vector<int>& arr, int target){
-        int start=0 ,end=arr.size()-1,ans=arr.size(), mid;
-        while(start<=end){
-            if(arr[mid]==target){
-                ans=mid;   
-                return mid;
-            }
-            else if(arr[mid]<target){
-                    start=mid+1;
-
-            }
-            else{
-                    ans=mid;
-                    end = mid-1;
-            }
+int mySqrt(int x) {
+    int ans,start=1,end=x;
+    while(start<=end){
+        int mid=start+(end-start)/2;
+        if(mid*mid==x){
+            ans=mid;
+            break;
         }
-
-}
+        else if(mid*mid>x){
+            end=mid-1;
+        }
+        else{
+            start=mid+1;
+        }
+    }    
+    return ans;
+    }
 int main(){
-        vector<int>arr={1,3,5,6};
-        int target=2;
-        searchInsert(arr,target);
-        for(auto x:arr){
-            cout<<x<<" ";
-        }
+        int x;
+        cout<<"Enter the Number to check the square root: ";
+        cin>>x;
+        cout<<mySqrt(x);
 
 return 0 ;
 }
