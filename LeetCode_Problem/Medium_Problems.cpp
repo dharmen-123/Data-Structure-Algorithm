@@ -90,17 +90,3 @@
 
 // return 0 ;
 // }
-
-           // // Q.1539  Kth Missing Positive Number   //
-
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int findKthPositive(vector<int>& arr, int k) {
-        
-    }
-int main(){
-
-
-return 0 ;
-}
