@@ -1,0 +1,50 @@
+
+    // Standard Templete Library //
+
+STL is a set of generic classes and functions in C++ that implement common data structures and algorithms.
+It is built using templates, so it works with any data type.
+
+    // Components of STL   //
+
+1. Containers
+Containers are data structures used to store collections of objects.
+    Types of containers:
+
+* Sequence Containers (store elements in linear order):
+        vector, deque, list, forward_list, array
+* Associative Containers (store elements in sorted order, usually as key-value pairs):
+        set, multiset, map, multimap
+* Unordered Associative Containers (store elements using hash tables):
+        unordered_set, unordered_multiset, unordered_map, unordered_multimap
+* Container Adaptors (specialized interfaces):
+        stack, queue, priority_queue
+
+2. Algorithms
+
+STL provides efficient algorithms defined in <algorithm> and <numeric>.
+    Examples:
+* sort() → Sorts elements in ascending order.
+* find() → Finds the first occurrence of a value.
+* count() → Counts occurrences of a value.
+* binary_search() → Checks if an element exists in a sorted range.
+* reverse() → Reverses elements.
+* accumulate() → Computes sum of elements.
+* unique()
+
+3. Iterators
+
+Iterators act like pointers to elements in containers. They connect containers with algorithms.
+    Types:
+Input Iterator
+Output Iterator
+Forward Iterator
+Bidirectional Iterator
+Random Access Iterator
+
+    // Advantages of STL //
+
+** Efficiency: Optimized and tested implementations.
+** Reusability: Works with any data type via templates.
+** Productivity: Saves time by avoiding manual implementation.
+** Flexibility: Wide range of containers and algorithms.
+** Type Safety: Ensures correctness at compile time.
