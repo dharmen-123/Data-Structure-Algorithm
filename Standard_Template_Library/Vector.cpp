@@ -69,28 +69,67 @@
 
         // SIZE and CAPACITY //
 
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//         vector<int>v={13,4,35};
+//         for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//         }
+//         cout<<"\nSize of vector : "<<v.size();
+//         cout<<"\nCapacity of vector : "<<v.capacity();
+
+//         v.push_back(98);
+//         cout<<"\nAfter insert the value from back";
+//         cout<<"\nSize of vector : "<<v.size();
+//         cout<<"\nCapacity of vector : "<<v.capacity();
+
+//         v.pop_back();
+//         v.pop_back();
+//         cout<<"\nAfter remove the value from back";
+//         cout<<"\nSize of vector : "<<v.size();
+//         cout<<"\nCapacity of vector : "<<v.capacity();
+
+// return 0 ;
+// }
+
+        // // Accessing values using FRONT , BACK , AT , EMPTY //
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//       vector<int>v={13,4,35,78,10};
+//       for(int i=0;i<v.size();i++){
+//         cout<<v.at(i)<<" ";
+//         }
+//       cout<<endl<<"Access front element using front() :\n";
+//       cout<<v.front()<<endl;
+//       cout<<"Access back element using back() :\n";
+//       cout<<v.back()<<endl;
+//       cout<<"Check vector is empty or not using empty() :\n";
+//       if(v.empty())
+//         cout<<"Vector is empty";
+//       else 
+//         cout<<"Vector is not empty";
+// return 0 ;
+// }
+
+        // ITERATOR in Vector //
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
 int main(){
-        vector<int>v={13,4,35};
+        vector<int>v={13,4,35,78,10};
         for(int i=0;i<v.size();i++){
-        cout<<v[i]<<" ";
-        }
-        cout<<"\nSize of vector : "<<v.size();
-        cout<<"\nCapacity of vector : "<<v.capacity();
-
-        v.push_back(98);
-        cout<<"\nAfter insert the value from back";
-        cout<<"\nSize of vector : "<<v.size();
-        cout<<"\nCapacity of vector : "<<v.capacity();
-
-        v.pop_back();
-        v.pop_back();
-        cout<<"\nAfter remove the value from back";
-        cout<<"\nSize of vector : "<<v.size();
-        cout<<"\nCapacity of vector : "<<v.capacity();
+          cout<<v.at(i)<<" ";
+          } 
+          
 
 return 0 ;
 }
