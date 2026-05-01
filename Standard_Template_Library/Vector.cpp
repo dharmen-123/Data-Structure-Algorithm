@@ -1,33 +1,96 @@
 
+        // VECTOR Implementation //
+
+        //  Vector Declaration   //
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int main(){
+//     vector<int>v={2,3,4,8,1};  // declare the vector 
+//     for(int j=0;j<v.size();j++){
+//         cout<<v[j]<<" ";
+//     }
+//     cout<<endl;
+//     vector<int>arr(4,0);   // Assign single value in vector 
+//     for(int i=0;i<4;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// return 0 ;
+// }
+
+
+        // Insertion and Deletion in Vector    //
+    
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//     vector<int>v={2,3,4,5};
+//     for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
+//      // // Insertion in Vector using push_back()    //
+    
+//     v.push_back(9);
+//     v.push_back(10);
+//     cout<<endl<<"after Insert the value from back :\n";
+//     for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
+
+//      // Deletion in Vector using pop_back()    //
+
+//      v.pop_back();
+//      v.pop_back();
+//      cout<<endl<<"after delete the value from back :\n";
+//      for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
+
+//     // Delete the value from vector using erase //
+
+//     v.erase(v.begin()+2);
+//     cout<<endl<<"After erase the value:\n";
+//      for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
+
+//     // Remove the values from Vector using clear()    //
+
+//     v.clear();
+//     cout<<endl<<"vector is empty :";
+//     for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
+// return 0 ;
+// }
+
+        // SIZE and CAPACITY //
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
 int main(){
-    vector<int>v={2,3,4};
-    for(auto k:v){
-    cout<<k<<" ";
-    }
-    cout<<"Insert data into vector :";
-    v.push_back(10);
-    v.push_back(6);
-    v.push_back(9);
-    cout<<endl;
-    // v.clear();
-    for(auto k:v){
-    cout<<k<<" ";
-    }
-    cout<<"remove last data from vector :";
-    v.pop_back();
-    cout<<endl;
-    for(auto k:v){
-    cout<<k<<" ";
-    }
-    cout<<endl<<"Size of vector :"<<v.size();
-    cout<<endl<<"capacity of vector :"<<v.capacity();
-    v.push_back(20);
-    v.push_back(16);
-    cout<<endl<<"Size of vector :"<<v.size();
-    cout<<endl<<"capacity of vector :"<<v.capacity();
+        vector<int>v={13,4,35};
+        for(int i=0;i<v.size();i++){
+        cout<<v[i]<<" ";
+        }
+        cout<<"\nSize of vector : "<<v.size();
+        cout<<"\nCapacity of vector : "<<v.capacity();
+
+        v.push_back(98);
+        cout<<"\nAfter insert the value from back";
+        cout<<"\nSize of vector : "<<v.size();
+        cout<<"\nCapacity of vector : "<<v.capacity();
+
+        v.pop_back();
+        v.pop_back();
+        cout<<"\nAfter remove the value from back";
+        cout<<"\nSize of vector : "<<v.size();
+        cout<<"\nCapacity of vector : "<<v.capacity();
+
 return 0 ;
 }
