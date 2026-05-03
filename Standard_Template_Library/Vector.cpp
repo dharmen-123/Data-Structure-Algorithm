@@ -140,3 +140,4 @@ return 0 ;
 // int arr[]= {1,2,7,12,9 };
 // int even=0;
 // int length = sizeof(arr)/sizeof(arr[0])
+// cout<<"Even numbers <<even<<endl;
