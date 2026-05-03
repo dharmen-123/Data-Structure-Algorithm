@@ -137,3 +137,4 @@ return 0 ;
 // oos.close();
 // fos.close();
 // #fit random forest nodel
+// int arr[]= {1,2,7,12,9 };
