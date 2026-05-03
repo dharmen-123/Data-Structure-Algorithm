@@ -139,3 +139,4 @@ return 0 ;
 // #fit random forest nodel
 // int arr[]= {1,2,7,12,9 };
 // int even=0;
+// int length = sizeof(arr)/sizeof(arr[0])
