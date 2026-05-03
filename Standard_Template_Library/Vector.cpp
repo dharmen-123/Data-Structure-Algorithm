@@ -138,3 +138,4 @@ return 0 ;
 // fos.close();
 // #fit random forest nodel
 // int arr[]= {1,2,7,12,9 };
+// int even=0;
