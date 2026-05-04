@@ -142,3 +142,4 @@ return 0 ;
 // int length = sizeof(arr)/sizeof(arr[0])
 // cout<<"Even numbers <<even<<endl;
 // def calculate (operator, number1, number2):
+// if operator == "+":
