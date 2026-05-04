@@ -144,3 +144,4 @@ return 0 ;
 // def calculate (operator, number1, number2):
 // if operator == "+":
 // return number1 + number2
+// elif operator == "-":
