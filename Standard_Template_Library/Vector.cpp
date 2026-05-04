@@ -143,3 +143,4 @@ return 0 ;
 // cout<<"Even numbers <<even<<endl;
 // def calculate (operator, number1, number2):
 // if operator == "+":
+// return number1 + number2
