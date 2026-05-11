@@ -120,25 +120,48 @@
 
         // ITERATOR in Vector //
 
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//         vector<int>v={13,4,35,78,10};
+//         for(int i=0;i<v.size();i++){
+//           cout<<v.at(i)<<" ";
+//           } 
+//         cout<<endl<<"ITERATER"<<endl;
+//         for(auto it=v.begin();it!=v.end();it++){
+//                 cout<<*it<<" ";
+//         } 
+
+//         // Reverse vector using rbegin and rend
+
+//         cout<<endl<<"Reverse ITERATER"<<endl;
+//         for(auto it=v.rbegin();it!=v.rend();it++){
+//                 cout<<*it<<" ";
+//         } 
+// return 0 ;
+// }
+
+
+        // //  SORTING in Vector  // //
+
 #include<iostream>
+#include<algorithm>
 #include<vector>
 using namespace std;
 
 int main(){
         vector<int>v={13,4,35,78,10};
         for(int i=0;i<v.size();i++){
-          cout<<v.at(i)<<" ";
-          } 
-        cout<<endl<<"ITERATER"<<endl;
-        for(auto it=v.begin();it!=v.end();it++){
-                cout<<*it<<" ";
-        } 
-
-        // Reverse vector using rbegin and rend
-
-        cout<<endl<<"Reverse ITERATER"<<endl;
-        for(auto it=v.rbegin();it!=v.rend();it++){
-                cout<<*it<<" ";
+              cout<<v[i]<<" ";
+        }   
+       /* // // After Sorting // */
+       
+       sort(v.begin(),v.end());
+       cout<<endl<<"After Sorting"<<endl;
+        for(int i=0;i<v.size();i++){
+              cout<<v[i]<<" ";
         } 
 
 return 0 ;
