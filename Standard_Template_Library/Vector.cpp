@@ -40,6 +40,13 @@
 //         cout<<v[i]<<" ";
 //     }
 
+//      // // Insertion in Vector using insert()    //
+
+//     v.insert(v.begin()+3,29);
+//     cout<<endl<<"after Insert the value using insert() :\n";
+//     for(int i=0;i<v.size();i++){
+//         cout<<v[i]<<" ";
+//     }
 //      // Deletion in Vector using pop_back()    //
 
 //      v.pop_back();
@@ -146,23 +153,50 @@
 
         // //  SORTING in Vector  // //
 
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//         vector<int>v={13,4,35,78,10};
+//         for(int i=0;i<v.size();i++){
+//               cout<<v[i]<<" ";
+//         }   
+//        /* // // After Sorting // */
+       
+//        sort(v.begin(),v.end());
+//        cout<<endl<<"After Sorting"<<endl;
+//         for(int i=0;i<v.size();i++){
+//               cout<<v[i]<<" ";
+//         } 
+
+//        /* // //  Sorting in desending Order // */
+
+//        sort(v.begin(),v.end(),greater<int>());
+//        cout<<endl<<"Sorting in desending Order"<<endl;
+//         for(int i=0;i<v.size();i++){
+//               cout<<v[i]<<" ";
+//         }
+// return 0 ;
+// }
+
+        /*  // // Searching in vector // //  */
+
 #include<iostream>
 #include<algorithm>
 #include<vector>
 using namespace std;
 
 int main(){
-        vector<int>v={13,4,35,78,10};
-        for(int i=0;i<v.size();i++){
-              cout<<v[i]<<" ";
-        }   
-       /* // // After Sorting // */
-       
-       sort(v.begin(),v.end());
-       cout<<endl<<"After Sorting"<<endl;
-        for(int i=0;i<v.size();i++){
-              cout<<v[i]<<" ";
-        } 
-
+        vector<int>vnew;
+        vnew.push_back(34);
+        vnew.push_back(64);
+        vnew.push_back(78);
+        vnew.push_back(3);
+        vnew.push_back(54);
+        cout<<binary_search(vnew.begin(),vnew.end(),78)<<endl;
+        cout<<find(vnew.begin(),vnew.end(),3)-vnew.begin()<<endl;
+        
 return 0 ;
 }
