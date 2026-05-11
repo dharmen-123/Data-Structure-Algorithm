@@ -129,19 +129,17 @@ int main(){
         for(int i=0;i<v.size();i++){
           cout<<v.at(i)<<" ";
           } 
-          
+        cout<<endl<<"ITERATER"<<endl;
+        for(auto it=v.begin();it!=v.end();it++){
+                cout<<*it<<" ";
+        } 
+
+        // Reverse vector using rbegin and rend
+
+        cout<<endl<<"Reverse ITERATER"<<endl;
+        for(auto it=v.rbegin();it!=v.rend();it++){
+                cout<<*it<<" ";
+        } 
 
 return 0 ;
 }
-// oos.flush();
-// oos.close();
-// fos.close();
-// #fit random forest nodel
-// int arr[]= {1,2,7,12,9 };
-// int even=0;
-// int length = sizeof(arr)/sizeof(arr[0])
-// cout<<"Even numbers <<even<<endl;
-// def calculate (operator, number1, number2):
-// if operator == "+":
-// return number1 + number2
-// elif operator == "-":
