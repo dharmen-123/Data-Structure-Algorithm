@@ -183,20 +183,20 @@
 
         /*  // // Searching in vector // //  */
 
-#include<iostream>
-#include<algorithm>
-#include<vector>
-using namespace std;
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// using namespace std;
 
-int main(){
-        vector<int>vnew;
-        vnew.push_back(34);
-        vnew.push_back(64);
-        vnew.push_back(78);
-        vnew.push_back(3);
-        vnew.push_back(54);
-        cout<<binary_search(vnew.begin(),vnew.end(),78)<<endl;
-        cout<<find(vnew.begin(),vnew.end(),3)-vnew.begin()<<endl;
-        
-return 0 ;
-}
+// int main(){
+//         vector<int>vnew;
+//         vnew.push_back(34);
+//         vnew.push_back(64);
+//         vnew.push_back(78);
+//         vnew.push_back(3);
+//         vnew.push_back(54);
+//         cout<<binary_search(vnew.begin(),vnew.end(),78)<<endl;
+//         cout<<find(vnew.begin(),vnew.end(),3)-vnew.begin()<<endl;
+
+// return 0 ;
+// }
