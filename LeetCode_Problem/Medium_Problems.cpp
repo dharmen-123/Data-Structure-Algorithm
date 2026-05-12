@@ -91,4 +91,18 @@
 // return 0 ;
 // }
 
-       
+       /* // // Q.875 Koko Eating Bananas  // //  */
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int minEatingSpeed(vector<int>& piles, int h) {
+        int start=0, end=0, mid , ans, n=piles.size();
+
+
+    }
+int main(){
+        vector<int>piles;
+
+return 0 ;
+}

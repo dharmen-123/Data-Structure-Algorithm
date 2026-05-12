@@ -1,2 +1,2 @@
 
-    /* KOKO Auto */
+    /* KOKO  */
