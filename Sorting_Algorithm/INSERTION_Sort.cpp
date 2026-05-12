@@ -23,14 +23,13 @@ It works like sorting playing cards in your hand: pick one card at a time and in
 #include<iostream>
 using namespace std;
 void Insertion(int arr[], int n){
-        
         for(int i=0;i<n-1;i++){
             int min=i+1;
             int j=i;
             while(j>=0 && arr[min]<arr[j]){
-                    swap(arr[min],arr[j]);
-                    min--;
-                    j--;
+                swap(arr[min],arr[j]);
+                min--;
+                j--;
             }
         }
 }
