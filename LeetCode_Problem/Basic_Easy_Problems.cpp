@@ -193,37 +193,37 @@
         /* // // Q.1 Two Sum // // */
         /* // //  O(nlogn) complexity */
 
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-// vector<int> twoSum(vector<int>& nums, int target) {
-//         int start=0,end=0,n=nums.size();
-//         vector<int>v;
-//         for(int i=0;i<n;i++){
-//             int x=target-nums[i];
-//             start=i+1;
-//             end=n-1;
-//             while(start <= end) {
-//               int mid = start + (end - start)/2;  
-//               if(nums[mid] == x){
-//                     v.push_back(i);
-//                     v.push_back(mid);
-//                     break;
-//               }
-//               else if(nums[mid] < x) 
-//                     start = mid + 1;
-//               else 
-//                     end = mid - 1;
-//             }
-//         }
-//         return v;
-// }
-// int main(){
-//     vector<int>nums={2,7,11,15};
-//     int target=9;
-//     vector<int>r=twoSum(nums,target);
-//     for(auto k:r){
-//         cout<<k<<" ";
-//     }
-// return 0 ;
-// }
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> twoSum(vector<int>& nums, int target) {
+        int start=0,end=0,n=nums.size();
+        vector<int>v;
+        for(int i=0;i<n;i++){
+            int x=target-nums[i];
+            start=i+1;
+            end=n-1;
+            while(start <= end) {
+              int mid = start + (end - start)/2;  
+              if(nums[mid] == x){
+                    v.push_back(i);
+                    v.push_back(mid);
+                    break;
+              }
+              else if(nums[mid] < x) 
+                    start = mid + 1;
+              else 
+                    end = mid - 1;
+            }
+        }
+        return v;
+}
+int main(){
+    vector<int>nums={0,4,3,0};
+    int target=0;
+    vector<int>r=twoSum(nums,target);
+    for(auto k:r){
+        cout<<k<<" ";
+    }
+return 0 ;
+}
