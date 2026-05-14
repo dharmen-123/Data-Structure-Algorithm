@@ -185,3 +185,26 @@
 
 // return 0 ;
 // }
+
+        /*  // Kadane's Algorithm  //  */
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int maxSubarraySum(vector<int> &arr) {
+        int Prefix=0, maxi=INT16_MIN, n=arr.size();
+        for(int i=0;i<n;i++){
+             Prefix+=arr[i];
+             maxi=max(maxi,Prefix);
+             if(Prefix<0){
+                 Prefix=0;
+             }
+        }
+        return maxi;
+    }
+int main(){
+        vector<int>arr={2, 3, -8, 7, -1, 2, 3};
+        cout<<maxSubarraySum(arr);
+
+return 0 ;
+}
