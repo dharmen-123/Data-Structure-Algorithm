@@ -133,3 +133,35 @@
 
 // return 0 ;
 // }
+
+        /*  // // Divide Array into 2 sub array with equal sum //   */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int SplitArray(vector<int> &arr){
+//         int start=0, end=arr.size()-1;
+//         int sum1=arr[start],sum2=arr[end];
+//         while(start<=end){
+//              if(sum1<sum2){
+//                 start++;
+//                 sum1+=arr[start];
+//                 cout<<"sum1 "<<sum1<<endl;
+//              }
+//              else if(sum1>sum2){
+//                 end--;
+//                 sum2+=arr[end];
+//                 cout<<"sum2 "<<sum2<<endl;
+//              }
+//              else{
+//                 return 1;
+//              }   
+//         }
+//         return 0;
+// }
+// int main(){
+//         vector<int>arr={3,4,-2,5,8,20,-10,8};
+//         cout<<SplitArray(arr);
+
+// return 0 ;
+// }
