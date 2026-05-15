@@ -211,32 +211,66 @@
 
         /*  // Triplet Sum in Array  //  */
 
-#include<iostream>
-#include<vector>
-using namespace std;
- bool hasTripletSum(vector<int> &arr, int target) {
-        int n=arr.size(),X=0,start , end;
-        for(int i=0;i<n-2;i++){
-            start=i+1 , end=n-1;
-            X=target-arr[0];
-            while(start<end){
-                if(arr[start]+arr[end]==X){
-                        return 1;
-                }
-                else if(arr[start]+arr[end]>X){
-                        end--;
-                }
-                else{
-                        start++;
-                }
-            } 
-        }
-        return 0;
-    }
-int main(){
-        vector<int>arr={1, 4, 45, 6, 10, 2};
-        int target=13;
-        cout<<hasTripletSum(arr,target);
+// #include<iostream>
+// #include<algorithm>
+// #include<vector>
+// using namespace std;
+//  bool hasTripletSum(vector<int> &arr, int target) {
+//         sort(arr.begin(),arr.end());
+//         int n=arr.size(),X=0,start , end;
+//         for(int i=0;i<n-2;i++){
+//             start=i+1 , end=n-1;
+//             X=target-arr[i];
+//             while(start<end){
+//                 if(arr[start]+arr[end]==X){
+//                         return 1;
+//                 }
+//                 else if(arr[start]+arr[end]>X){
+//                         end--;
+//                 }
+//                 else{
+//                         start++;
+//                 }
+//             } 
+//         }
+//         return 0;
+//     }
+// int main(){
+//         vector<int>arr={1, 4, 45, 6, 10, 2};
+//         int target=13;
+//         cout<<hasTripletSum(arr,target);
+// return 0 ;
+// }
 
-return 0 ;
-}
+        /* // // Four Elements // //  */
+
+// #include<iostream>
+// using namespace std;
+// bool find4Numbers(int A[], int n, int X) {
+        
+//         for(int i=0;i<n-3;i++){
+//              for(int j=i+1;j<n-2;j++){
+//                 int ans=X-A[i]-A[j];
+//                 int start=j+1,end=n-1;
+//                 while(start<end){
+//                     if(A[start]+A[end]==ans){
+//                             return 1;
+//                     }
+//                     else if(A[start]+A[end]>ans){
+//                             end--;
+//                     }
+//                     else{
+//                             start++;
+//                     }
+//             } 
+//              }
+//         }
+// }
+// int main(){
+//         int arr[]={1, 5, 1, 0, 6, 0};
+//         int target=7;
+//         int n=sizeof(arr)/sizeof(arr[0]);
+//         cout<<find4Numbers(arr,n,target);
+
+// return 0 ;
+// }
