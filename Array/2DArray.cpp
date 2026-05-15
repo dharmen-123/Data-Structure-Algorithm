@@ -39,22 +39,48 @@ int arr[3][3] = {
 *         𝐿𝑂𝐶(𝑎𝑟𝑟[𝑖][𝑗])=𝐵𝑎𝑠𝑒+(𝑗⋅row+𝑖)⋅size
 */
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    int arr[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+// int main() {
+//     int arr[3][3] = {
+//         {1, 2, 3},
+//         {4, 5, 6},
+//         {7, 8, 9}
+//     };
 
-    cout << "Matrix elements (row-major):\n";
-    for(int i=0; i<3; i++) {
-        for(int j=0; j<3; j++) {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     cout << "Matrix elements (row-major):\n";
+//     for(int i=0; i<3; i++) {
+//         for(int j=0; j<3; j++) {
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+        /* // Search Element in 2D Array // // */
+    
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int arr[4][4]={
+//         {1,3,5,7},
+//         {2,4,6,8},
+//         {3,5,7,9},
+//         {4,6,8,10}
+//         };
+//         int n=4, target=7;
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<n;j++){
+//                 if(arr[i][j]==target){
+//                     cout<<"Element found at index : ["<<i<<"]["<<j<<"]"<<endl;
+//                     return 1;
+//                 }
+//             }   
+//         }
+// return 0 ;
+// }
+
