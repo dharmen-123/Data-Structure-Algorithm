@@ -39,16 +39,15 @@ int arr[3][3] = {
 *         𝐿𝑂𝐶(𝑎𝑟𝑟[𝑖][𝑗])=𝐵𝑎𝑠𝑒+(𝑗⋅row+𝑖)⋅size
 */
 
+
 // #include <iostream>
 // using namespace std;
-
 // int main() {
 //     int arr[3][3] = {
 //         {1, 2, 3},
 //         {4, 5, 6},
 //         {7, 8, 9}
 //     };
-
 //     cout << "Matrix elements (row-major):\n";
 //     for(int i=0; i<3; i++) {
 //         for(int j=0; j<3; j++) {
@@ -84,3 +83,53 @@ int arr[3][3] = {
 // return 0 ;
 // }
 
+        /* // ADD two Matrix // */
+    
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//         int arr1[3][3]={
+//             {1,2,3},
+//             {4,5,6},
+//             {7,8,9}
+//         };
+//         int arr2[3][3]={
+//             {7,4,13},
+//             {45,7,76},
+//             {5,3,0}
+//         };
+//         int arrnew[3][3];
+//         for(int i=0;i<3;i++){
+//             for(int j=0;j<3;j++){
+//                 arrnew[i][j]=arr1[i][j]+arr2[i][j];
+//                 cout<<arrnew[i][j]<<" ";
+//             }
+//             cout<<endl;
+//         }
+// return 0 ;
+// }
+
+        /* // Print sum of diagonal element   // */
+    
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int arr[4][4]={
+//         {1,3,5,7},
+//         {2,4,6,8},
+//         {3,5,7,9},
+//         {4,6,8,10}
+//         };
+//         int sum=0;
+//         for(int i=0;i<4;i++){
+//              for(int j=0;j<4;j++){
+//                 if(i==j){
+//                     sum+=arr[i][j];
+//                 }
+//             }
+//         }
+//         cout<<sum;
+// return 0 ;
+// }
