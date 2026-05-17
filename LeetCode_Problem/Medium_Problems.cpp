@@ -168,47 +168,93 @@
 
         /*  // Q,54 Sprial Matrix    */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-vector<int>spiralOrder(vector<vector<int> >& matrix) {
-        int row=matrix.size(), col = matrix[0].size();
-        int top=0 ,right=col-1 ,bottom=row-1 ,left=0;
-        vector<int>v;
-        while(top<=bottom && left<=right){
-        for(int i=left;i<=right;i++){
-                v.push_back(matrix[top][i]);
-        }
-        top++;
-        for(int i=top;i<=bottom;i++){
-                v.push_back(matrix[i][right]);
-        }
-        right--;
-        if(top<=bottom){
-        for(int i=right;i>=left;i--){
-               v.push_back(matrix[bottom][i]);
-        }
-        bottom--;
-        }
-        if(left<=right){
-        for(int i=bottom;i>=top;i--){
-                v.push_back(matrix[i][left]);
-        }
-        left++;
-        }
-        }
-        return v;
-}
-int main(){
-        // vector<vector<int>>matrix={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
-        vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
-        // vector<vector<int>>matrix={{6,9,7}};
-        // vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
-        vector<int>ans=spiralOrder(matrix);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-        // 1,2,3,4,8,12,11,10,9,5,6,7
-return 0 ;
-}
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// vector<int>spiralOrder(vector<vector<int> >& matrix) {
+//         int row=matrix.size(), col = matrix[0].size();
+//         int top=0 ,right=col-1 ,bottom=row-1 ,left=0;
+//         vector<int>v;
+//         while(top<=bottom && left<=right){
+//         for(int i=left;i<=right;i++){
+//                 v.push_back(matrix[top][i]);
+//         }
+//         top++;
+//         for(int i=top;i<=bottom;i++){
+//                 v.push_back(matrix[i][right]);
+//         }
+//         right--;
+//         if(top<=bottom){
+//         for(int i=right;i>=left;i--){
+//                v.push_back(matrix[bottom][i]);
+//         }
+//         bottom--;
+//         }
+//         if(left<=right){
+//         for(int i=bottom;i>=top;i--){
+//                 v.push_back(matrix[i][left]);
+//         }
+//         left++;
+//         }
+//         }
+//         return v;
+// }
+// int main(){
+//         // vector<vector<int>>matrix={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+//         vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
+//         // vector<vector<int>>matrix={{6,9,7}};
+//         // vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+//         vector<int>ans=spiralOrder(matrix);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+//         // 1,2,3,4,8,12,11,10,9,5,6,7
+// return 0 ;
+// }
+
+        /*  // Q.59 Spiral Matrix II  //  */
+
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// vector<vector<int>> generateMatrix(int n) {
+//         vector<vector<int>>result(n,vector<int>(n,0));
+//         int a=1;
+//         int top=0 ,right=n-1 ,bottom=n-1 ,left=0;
+//         while(top<=bottom && left<=right){
+//         for(int i=left;i<=right;i++){
+//                 result[top][i]=a++;
+//         }
+//         top++;
+//         for(int i=top;i<=bottom;i++){
+//                 result[i][right]=a++;
+//         }
+//         right--;
+//         if(top<=bottom){
+//         for(int i=right;i>=left;i--){
+//                result[bottom][i]=a++;
+//         }
+//         bottom--;
+//         }
+//         if(left<=right){
+//         for(int i=bottom;i>=top;i--){
+//                 result[i][left]=a++;
+//         }
+//         left++;
+//         }
+//         }
+//         return result;
+//     }
+// int main(){
+//         int n=4;
+//         vector<vector<int>>ans=generateMatrix(n);
+//         for(auto k:ans){
+//            for(auto v:k){
+//                 cout<<v<<" ";
+//            }
+//            cout<<endl;
+//         }
+// return 0 ;
+// }
