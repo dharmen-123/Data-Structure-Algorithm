@@ -258,3 +258,38 @@
 //         }
 // return 0 ;
 // }
+
+        /* // Q.867 Transpose Matrix // */
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+        int row = matrix.size();
+        int col = matrix[0].size();
+        vector<vector<int>> ans(col, vector<int>(row));
+        for(int i=0; i<row; i++) {
+            for(int j=0; j<col; j++) {
+               ans[j][i] = matrix[i][j];
+           }
+        }
+    return ans;
+    }
+int main(){
+        vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
+        // vector<vector<int>>matrix={{10,6, 2, 10, 10},
+        //                            {7, 8, 8, 9, 3},
+        //                            {4, 1, 8, 3, 10},
+        //                            {2, 1, 1, 1, 10},
+        //                            {3, 4, 7, 3, 10}};
+        // vector<vector<int>>matrix={{1,2,3},{4,5,6}};
+        vector<vector<int>>ans=transpose(matrix);
+        for(auto k:ans){
+           for(auto v:k){
+                cout<<v<<" ";
+           }
+           cout<<endl;
+        }
+return 0 ;
+}
