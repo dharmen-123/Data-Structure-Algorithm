@@ -185,22 +185,30 @@ vector<int>spiralOrder(vector<vector<int> >& matrix) {
                 v.push_back(matrix[i][right]);
         }
         right--;
+        if(top<=bottom){
         for(int i=right;i>=left;i--){
-                v.push_back(matrix[bottom][i]);
+               v.push_back(matrix[bottom][i]);
         }
         bottom--;
+        }
+        if(left<=right){
         for(int i=bottom;i>=top;i--){
                 v.push_back(matrix[i][left]);
         }
         left++;
         }
+        }
         return v;
 }
 int main(){
+        // vector<vector<int>>matrix={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
         vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
+        // vector<vector<int>>matrix={{6,9,7}};
+        // vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
         vector<int>ans=spiralOrder(matrix);
         for(auto k:ans){
                 cout<<k<<" ";
         }
+        // 1,2,3,4,8,12,11,10,9,5,6,7
 return 0 ;
 }
