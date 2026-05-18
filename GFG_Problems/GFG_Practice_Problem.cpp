@@ -277,41 +277,41 @@
 
         /* // Rotate Matrix by 180deg Clockwise // */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-void rotateMatrix(vector<vector<int>>& mat) {
-        int row=mat.size(), col=mat[0].size();
-        int k=0;
-        while(k<col){
-          int n=col;
-          for(int i=0;i<row/2;i++){
-                swap(mat[i][k],mat[n-1][k]);
-                n--;
-          }
-          k++;
-        }
-        k=0;
-        while(k<col){
-          int n=col;
-          for(int i=0;i<row/2;i++){
-                swap(mat[k][i],mat[k][n-1]);
-                n--;
-          }
-          k++;
-        }
-    }
-int main(){
-        // vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
-        vector<vector<int>>matrix={{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
-        rotateMatrix(matrix);
-        for(auto k:matrix){
-           for(auto v:k){
-                cout<<v<<" ";
-           }
-           cout<<endl;
-        }
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// void rotateMatrix(vector<vector<int>>& mat) {
+//         int row=mat.size(), col=mat[0].size();
+//         int k=0;
+//         while(k<col){
+//           int n=col;
+//           for(int i=0;i<row/2;i++){
+//                 swap(mat[i][k],mat[n-1][k]);
+//                 n--;
+//           }
+//           k++;
+//         }
+//         k=0;
+//         while(k<col){
+//           int n=col;
+//           for(int i=0;i<row/2;i++){
+//                 swap(mat[k][i],mat[k][n-1]);
+//                 n--;
+//           }
+//           k++;
+//         }
+//     }
+// int main(){
+//         // vector<vector<int>>matrix={{1,2,3},{4,5,6},{7,8,9}};
+//         vector<vector<int>>matrix={{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
+//         rotateMatrix(matrix);
+//         for(auto k:matrix){
+//            for(auto v:k){
+//                 cout<<v<<" ";
+//            }
+//            cout<<endl;
+//         }
 
-return 0 ;
-}
+// return 0 ;
+// }
