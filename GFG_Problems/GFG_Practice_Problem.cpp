@@ -315,3 +315,36 @@
 
 // return 0 ;
 // }
+
+        /* // Search in row-column sorted Matrix  // */
+
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// bool searchMatrix(vector<vector<int>> &mat, int x) {
+//         int row=mat.size(), col=mat[0].size();
+//         int i=0, j=col-1;
+//         while(i<=row && j>=0){
+//              if(mat[i][j]==x){
+//                  return true;
+//              }
+//              else if(mat[i][j]>x){
+//                 j--;
+//              }
+//              else{
+//                 i++;
+//              }
+//         }
+//         return false;
+//     }
+// int main(){
+//         vector<vector<int>>matrix={{1, 5, 9},
+//                                    {14, 20, 21}, 
+//                                    {30, 34, 43}};
+//         int target = 14;
+//         cout<<searchMatrix(matrix,target);
+
+
+// return 0 ;
+// }
