@@ -359,16 +359,28 @@ vector<int> findTwoElement(vector<int>& arr) {
         int n=arr.size();
         sort(arr.begin(),arr.end());
         vector<int>count(n,0);
+        vector<int>result;
         for(int i=0;i<n;i++){
             count[arr[i]-1]++;
         }
-        for(auto k:count){
-                cout<<k<<" ";
+        int missing=0,repeat=arr[0];
+        for(int j=0;j<n;j++){
+                if(count[j]>repeat){
+                        repeat=j+1;
+                }
+                if(count[j]==0){
+                        missing=j+1;
+                }
         }
+        result.push_back(repeat);
+        result.push_back(missing);
+        return result;
 }
 int main(){
-        vector<int>arr={4,3,2,1,2,7,6};
+        vector<int>arr={7,5,8,5,2,6,3,4};
         vector<int>ans=findTwoElement(arr);
-        
+        for(auto k:ans){
+                cout<<k<<" ";
+        }        
 return 0 ;
 }
