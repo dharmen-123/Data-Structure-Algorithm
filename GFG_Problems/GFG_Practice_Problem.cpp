@@ -348,3 +348,27 @@
 
 // return 0 ;
 // }
+
+          /* // Missing And Repeating  // */
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+vector<int> findTwoElement(vector<int>& arr) {
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        vector<int>count(n,0);
+        for(int i=0;i<n;i++){
+            count[arr[i]-1]++;
+        }
+        for(auto k:count){
+                cout<<k<<" ";
+        }
+}
+int main(){
+        vector<int>arr={4,3,2,1,2,7,6};
+        vector<int>ans=findTwoElement(arr);
+        
+return 0 ;
+}
