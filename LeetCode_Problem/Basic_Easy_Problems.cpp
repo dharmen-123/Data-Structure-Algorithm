@@ -257,23 +257,23 @@
 
         /* //  Q.121 Best Time to Buy and Sell Stock  // */
 
-#include<iostream>
-#include<vector>
-using namespace std;
-int maxProfit(vector<int>& prices) {
-        int buy = INT16_MAX;
-        int profit = 0;
-        for(int i=0; i<prices.size(); i++) {
-            if(prices[i] < buy) {
-                buy = prices[i];
-            }
-            profit = max(profit, prices[i] - buy);
-        }
-        return profit;
-    }
-int main(){
-        vector<int>prices={2,4,1};
-        cout<<maxProfit(prices);
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int maxProfit(vector<int>& prices) {
+//         int buy = INT16_MAX;
+//         int profit = 0;
+//         for(int i=0; i<prices.size(); i++) {
+//             if(prices[i] < buy) {
+//                 buy = prices[i];
+//             }
+//             profit = max(profit, prices[i] - buy);
+//         }
+//         return profit;
+//     }
+// int main(){
+//         vector<int>prices={2,4,1};
+//         cout<<maxProfit(prices);
 
-return 0 ;
-}
+// return 0 ;
+// }
