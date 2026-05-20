@@ -77,17 +77,17 @@
 
     /* // Concatenation of String using + and append() // */
 
-#include<iostream>
-using namespace std;
-int main(){
-    string s1="Ram";
-    string s2="Shyam";
-    cout<<s1+s2<<endl;      // RamShyam
-    cout<<s1+" "+s2<<endl;  // Ram Shyam
-    s1.append(s2);
-    cout<<s1;   //output - RamShyam
-return 0 ;
-}
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     string s1="Ram";
+//     string s2="Shyam";
+//     cout<<s1+s2<<endl;      // RamShyam
+//     cout<<s1+" "+s2<<endl;  // Ram Shyam
+//     s1.append(s2);
+//     cout<<s1;   //output - RamShyam
+// return 0 ;
+// }
 
     /*  // ESCAPE Charater [ \ ] use to print the " " double qoutes //  */
 
@@ -98,5 +98,28 @@ return 0 ;
 //     cout<<s<<endl;
 //     cout<<"Escape Charater "<<"\\";
 
+// return 0 ;
+// }
+
+        /*  // Reverse String  //  */
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     string s="Structure";
+//     int start=0, end=s.size()-1;
+//     while(start<end){
+//         swap(s[start],s[end]);
+//         start++ , end--;
+//     }
+//     cout<<s<<endl;        //output- erutcurtS
+
+//     /* Calculate the size of string using Null charater */
+//     int size=0;
+//     while(s[size]!='\0'){
+//         size++;
+//     }
+//     cout<<"Size of String "<<size;
 // return 0 ;
 // }

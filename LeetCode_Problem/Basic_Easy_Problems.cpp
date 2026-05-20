@@ -277,3 +277,32 @@
 
 // return 0 ;
 // }
+
+////////////////////////////////////////////////////////////////////////////
+    /*   // STRINGS QUESTIONS //   */
+///////////////////////////////////////////////////////////////////////////
+
+    /* // Q.1108. Defanging an IP Address // */
+
+// #include<iostream>
+// using namespace std;
+// string defangIPaddr(string address) {
+//         int index=0;
+//         string ans="";
+//         while(index<address.size()){
+//             if(address[index]!='.'){
+//                 ans=ans+address[index];
+//             }
+//             else{
+//                 ans=ans+'['+address[index]+']';
+//             }
+//             index++;
+//         }
+//         return ans;
+//     }
+// int main(){
+//     string address="255.100.50.0";
+//     cout<<defangIPaddr(address);
+
+// return 0 ;
+// }
