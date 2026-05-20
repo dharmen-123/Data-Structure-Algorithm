@@ -34,6 +34,12 @@ cin >> str;                   // reads single word (stops at space)
 getline(cin, str);            // reads full line including spaces
 cout << str;                  // prints string
 
+    *** Null Character ('\0') ***
+
+* The null character ('\0') is a special character with ASCII value 0.
+* It is used to terminate C-style strings (character arrays).
+* It tells the compiler and runtime: “This is the end of the string.”
+* Without '\0', the program won’t know where the string ends and may read garbage values beyond the intended length.
 
     ***  Common Operations on Strings  ***
 __________________________________________________________________________________________
