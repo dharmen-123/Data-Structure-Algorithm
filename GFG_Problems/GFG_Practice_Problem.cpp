@@ -365,7 +365,7 @@ vector<int> findTwoElement(vector<int>& arr) {
         }
         int missing=0,repeat=arr[0];
         for(int j=0;j<n;j++){
-                if(count[j]>repeat){
+                if(count[j]==2){
                         repeat=j+1;
                 }
                 if(count[j]==0){
