@@ -1,0 +1,59 @@
+
+        // ******* STRING ******** //
+
+A string in C++ is a sequence of characters used to represent text.
+C++ provides two ways to handle strings:
+
+* C-style strings → character arrays (char str[] = "Hello";)
+* C++ STL string class → more powerful, flexible, and safer (string str = "Hello";)
+
+    ** Key Features **
+
+ * Dynamic size (can grow/shrink).
+ * Rich set of built-in functions.
+ * Easy concatenation, comparison, and manipulation.
+ * Defined in <string> header.
+
+🔹 Declaration
+A string is declared using the string class from <string> header.
+    #include <string>
+    string str;        // empty string
+    string name;       // declaration without initialization
+
+🔹 Initialization
+There are multiple ways to initialize a string:
+string s1 = "Hello";          // direct initialization
+string s2("World");           // constructor initialization
+string s3 = s1;               // copy initialization
+string s4(5, 'x');            // "xxxxx" (repeat character)
+string s5 = {'A','B','C'};    // "ABC"
+
+🔹 Input and Output
+string str;
+cin >> str;                   // reads single word (stops at space)
+getline(cin, str);            // reads full line including spaces
+cout << str;                  // prints string
+
+
+    ***  Common Operations on Strings  ***
+__________________________________________________________________________________________
+| Operation         | Syntax                  | Example                    | Output      |
+------------------------------------------------------------------------------------------
+| ---               | ---                     | ---                        | ---         |
+| Declare           | string s;               | string s = "Hello";        | Hello       |
+| Input             | cin >> s;               | Input: World               | World       |
+| Input(with spaces)| getline(cin, s);        | Input: Hello World         | Hello World |
+| Concatenation     | s1 + s2                 | "Hello" + "World"          | HelloWorld  |
+| Append            | s.append("!");          | "Hello".append("!")        | Hello!      |
+| Length            | s.length()              | "Hello".length()           | 5           |
+| Access            | s[i]                    | "Hello"[1]                 | e           |
+| Substring         | s.substr(pos, len)      | "Hello".substr(1,3)        | ell         |
+| Find              | s.find("lo")            | "Hello".find("lo")         | 3           |
+| Replace           | s.replace(pos,len,"new")| "Hello".replace(0,2,"Hi")  | Hilo        |
+| Insert            | s.insert(pos,"str")     | "Hello".insert(5,"!")      | Hello!      |
+| Erase             | s.erase(pos,len)        | "Hello!".erase(5,1)        | Hello       |
+| Compare           | s1.compare(s2)          | "abc".compare("abc")       | 0 (equal)   |
+| Clear             | s.clear()               | "Hello".clear()            | ""          |
+| Empty check       | s.empty()               | ""                         | true        |
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
