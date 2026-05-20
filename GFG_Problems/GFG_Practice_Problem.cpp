@@ -351,36 +351,69 @@
 
           /* // Missing And Repeating  // */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-vector<int> findTwoElement(vector<int>& arr) {
-        int n=arr.size();
-        sort(arr.begin(),arr.end());
-        vector<int>count(n,0);
-        vector<int>result;
-        for(int i=0;i<n;i++){
-            count[arr[i]-1]++;
-        }
-        int missing=0,repeat=arr[0];
-        for(int j=0;j<n;j++){
-                if(count[j]==2){
-                        repeat=j+1;
-                }
-                if(count[j]==0){
-                        missing=j+1;
-                }
-        }
-        result.push_back(repeat);
-        result.push_back(missing);
-        return result;
-}
-int main(){
-        vector<int>arr={7,5,8,5,2,6,3,4};
-        vector<int>ans=findTwoElement(arr);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }        
-return 0 ;
-}
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// vector<int> findTwoElement(vector<int>& arr) {
+//         int n=arr.size();
+//         sort(arr.begin(),arr.end());
+//         vector<int>count(n,0);
+//         vector<int>result;
+//         for(int i=0;i<n;i++){
+//             count[arr[i]-1]++;
+//         }
+//         int missing=0,repeat=arr[0];
+//         for(int j=0;j<n;j++){
+//                 if(count[j]==2){
+//                         repeat=j+1;
+//                 }
+//                 if(count[j]==0){
+//                         missing=j+1;
+//                 }
+//         }
+//         result.push_back(repeat);
+//         result.push_back(missing);
+//         return result;
+// }
+// int main(){
+//         vector<int>arr={7,5,8,5,2,6,3,4};
+//         vector<int>ans=findTwoElement(arr);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }        
+// return 0 ;
+// }
+
+          /* // Frequencies in a Limited Array  // */
+
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// vector<int> frequencyCount(vector<int>& arr) {
+//         int n=arr.size();
+//         for(int i=0;i<n;i++){
+//                 arr[i]=arr[i]-1;
+//         }
+//         int rem=0;
+//         for(int i=0;i<n;i++){
+//              rem=arr[i]%n;
+//              arr[rem]+=n;
+//         }
+//         int div=0;
+//         for(int i=0;i<n;i++){
+//             div=arr[i]/n;
+//             arr[i]=div;
+//         }
+//         return arr;        
+//     }
+// int main(){
+//         vector<int>arr={2, 3, 2, 3, 5};
+//         vector<int>ans=frequencyCount(arr);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+
+// return 0 ;
+// }
