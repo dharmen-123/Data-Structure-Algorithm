@@ -406,3 +406,32 @@
 
 // return 0 ;
 // }
+
+                /* // Q.229. Majority Element II  //*/
+
+// #include<iostream>
+// #include<vector>
+// #include<unordered_map>
+// #include<algorithm>
+// using namespace std;
+// vector<int> majorityElement(vector<int>& nums) {
+//         unordered_map<int,int> mp;
+//         for(int num : nums) {
+//             mp[num]++;
+//         }
+//         vector<int> ans;
+//         for(auto it : mp) {
+//             if(it.second > nums.size()/3) {
+//                 ans.push_back(it.first);
+//             }
+//         }
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums={1,2};
+//         vector<int>ans=majorityElement(nums);
+//         for(auto K:ans){
+//                 cout<<K<<" ";
+//         }
+// return 0 ;
+// }
