@@ -306,3 +306,34 @@
 
 // return 0 ;
 // }
+
+            /* // Q.1832. Check if the Sentence Is Pangram // */
+
+#include<iostream>
+#include<vector>
+using namespace std;
+bool checkIfPangram(string sentence) {
+        vector<bool>arr(26,0);
+        int n=sentence.size();
+        for(int i=0;i<n;i++){
+            if(sentence[i]<97){
+                return false;
+            }
+            else{
+                arr[sentence[i]-97]=1;
+            }
+        }
+        for(int i=0;i<26;i++){
+            if(arr[i]==0){
+                return false;
+            }
+        }     
+      return true;
+    }
+int main(){
+        string sentence="thequickbrownfoxjumpsoverthelazydog";
+        // string sentence="leetcode";
+        cout<<checkIfPangram(sentence);
+
+return 0 ;
+}
