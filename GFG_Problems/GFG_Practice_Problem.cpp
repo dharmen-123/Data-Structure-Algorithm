@@ -417,3 +417,50 @@
 
 // return 0 ;
 // }
+
+
+                /* // String Rotated by 2 Places  //  */
+
+#include<iostream>
+using namespace std;
+void rotateclockwise(string& s1){
+        int n=s1.size();
+        char c=s1[n-1];
+        int index=n-2;
+        while(index>=0){
+             s1[index+1]=s1[index];
+             index--;
+        }
+        s1[0]=c;
+}
+void rotateanticlockwise(string& s1){
+        int n=s1.size();
+        char c=s1[0];
+        int index=1;
+        while(index<n){
+             s1[index-1]=s1[index];
+             index++;
+        }
+        s1[n-1]=c;
+}
+bool isRotated(string& s1, string& s2) {
+        string clockwise=s1, anticlock=s2;
+        rotateclockwise(clockwise);
+        rotateclockwise(clockwise);
+        if(clockwise==s2){
+                return true;
+        }
+        rotateanticlockwise(s1);
+        rotateanticlockwise(s1);
+        if(s1==s2){
+                return true;
+        }
+    return false;
+    }
+int main(){
+        // string s1 = "amazon", s2 = "azonam";
+        string s1 = "geeksforgeeks", s2 = "geeksgeeksfor";
+        cout<<isRotated(s1,s2);
+
+return 0 ;
+}
