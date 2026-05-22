@@ -338,9 +338,26 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+int longestPalindrome(string s) {
+        int n=s.size() ,l=0;
+        int arr[52]={0};
+        for(int i=0;i<n;i++){
+            if(s[i]>96 && s[i]<123){
+               arr[s[i]-'a']++;
+            }
+            else{
+                arr[s[i]-39]++;
+            }
+        }
+        for(int i=0;i<52;i++){
+            if(arr[i]%2==0){
+                l+=arr[i];
+            }
+        }
+    return l+1;
+    }
 int main(){
-
-
+    string s="a";
+    cout<<longestPalindrome(s);
 return 0 ;
 }
