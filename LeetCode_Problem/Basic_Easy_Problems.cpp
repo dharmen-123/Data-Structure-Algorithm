@@ -339,25 +339,33 @@
 #include<vector>
 using namespace std;
 int longestPalindrome(string s) {
-        int n=s.size() ,l=0;
+        int n=s.size() ,count=0;
         int arr[52]={0};
         for(int i=0;i<n;i++){
-            if(s[i]>96 && s[i]<123){
+            if(s[i]>='a'){
                arr[s[i]-'a']++;
             }
             else{
                 arr[s[i]-39]++;
             }
         }
+        int odd=0;
         for(int i=0;i<52;i++){
             if(arr[i]%2==0){
-                l+=arr[i];
+                count+=arr[i];
+            }
+            else{
+                count+=(arr[i]-1);
+                odd=1;
             }
         }
-    return l+1;
+
+    return count+odd;
     }
 int main(){
-    string s="a";
+    // string s="abccccdd";
+    string s="aaaabbbacccc";
     cout<<longestPalindrome(s);
 return 0 ;
 }
+
