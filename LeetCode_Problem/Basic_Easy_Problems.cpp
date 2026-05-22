@@ -335,37 +335,80 @@
 
         /*  // Q.409. Longest Palindrome  // */
 
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int longestPalindrome(string s) {
+//         int n=s.size() ,count=0;
+//         vector<int>arr(52,0);
+//         for(int i=0;i<n;i++){
+//             if(s[i]>='a'){
+//                arr[s[i]-'a']++;
+//             }
+//             else{
+//                 arr[s[i]-39]++;
+//             }
+//         }
+//         int odd=0;
+//         for(int i=0;i<52;i++){
+//             if(arr[i]%2==0){
+//                 count+=arr[i];
+//             }
+//             else{
+//                 count+=(arr[i]-1);
+//                 odd=1;
+//             }
+//         }
+
+//     return count+odd;
+//     }
+// int main(){
+//     // string s="abccccdd";
+//     string s="aaaabbbacccc";
+//     cout<<longestPalindrome(s);
+// return 0 ;
+// }
+
+        /* //  Q.1859. Sorting the Sentence  //  */
+
 #include<iostream>
 #include<vector>
 using namespace std;
-int longestPalindrome(string s) {
-        int n=s.size() ,count=0;
-        int arr[52]={0};
+string sortSentence(string s) {
+        vector<string>sentence(10);
+        int n=s.size(),count=0;
+        string temp="";
         for(int i=0;i<n;i++){
-            if(s[i]>='a'){
-               arr[s[i]-'a']++;
-            }
-            else{
-                arr[s[i]-39]++;
-            }
-        }
-        int odd=0;
-        for(int i=0;i<52;i++){
-            if(arr[i]%2==0){
-                count+=arr[i];
-            }
-            else{
-                count+=(arr[i]-1);
-                odd=1;
-            }
-        }
+            if(s[i]!=' '){
+                temp+=s[i];
+                if(i==n-1){
+                   int pos=temp[temp.size()-1]-'0';
+                   temp.pop_back();
+                   sentence[pos]=temp;  
+                   temp.clear();
+                   count++;
 
-    return count+odd;
+                }
+            }
+            else{
+                int pos=temp[temp.size()-1]-'0';
+                temp.pop_back();
+                sentence[pos]=temp;
+                temp.clear();
+                count++;
+            }
+        } 
+        for(int i=1;i<=count;i++){
+            temp+=sentence[i];
+            temp+=' ';
+        }
+         temp.pop_back();
+     return temp;
     }
 int main(){
-    // string s="abccccdd";
-    string s="aaaabbbacccc";
-    cout<<longestPalindrome(s);
+        // string s="is2 sentence4 This1 a3";
+        string s = "Myself2 Me1 I4 and3";
+        cout<<sortSentence(s);
+
 return 0 ;
 }
-
