@@ -534,3 +534,4 @@
 // def main():
 // logger.
 // except
+// ""code for func3"""
