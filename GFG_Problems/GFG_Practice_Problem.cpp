@@ -535,3 +535,4 @@
 // logger.
 // except
 // ""code for func3"""
+// sum=a+b
