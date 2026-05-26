@@ -529,10 +529,4 @@
 
 // return 0 ;
 // }
-// right(2 )
-// down(2 )
-// def main():
-// logger.
-// except
-// ""code for func3"""
-// sum=a+b
+
