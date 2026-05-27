@@ -1,0 +1,67 @@
+
+                /* // ****** POINTER ******  // */
+
+A pointer is a variable that stores the memory address of another variable.
+Instead of holding a value directly, it points to the location where the value is stored.
+
+ Think of a pointer as a “reference” or “address holder.”
+
+ 🔹 Declaration & Initialization
+
+data_type *pointer_name;   // declaration
+
+Examples:
+    int a = 10;
+    int *p;        // declare pointer to int
+    p = &a;        // initialize with address of a
+
+🔹 Important Operators
+
+& (Address-of operator): Gives the memory address of a variable.
+* (Dereference operator): Accesses the value at the address stored in the pointer.
+
+🔹 Types of Pointers
+
+ * Null Pointer: Points to nothing (int *p = nullptr;).
+ * Dangling Pointer: Points to memory that has been freed.
+ * Void Pointer: Generic pointer (void *p;) can hold address of any type.
+ * Wild Pointer: Uninitialized pointer (dangerous).
+ * Constant Pointer: Pointer whose value (address) cannot change.
+ * Pointer to Pointer: Stores address of another pointer (int **pp;).
+
+ 🔹 Pointer Arithmetic
+Pointers can be incremented/decremented to move across memory locations.
+
+int arr[3] = {10, 20, 30};
+int *p = arr;
+cout << *p << endl;     // 10
+cout << *(p+1) << endl; // 20
+cout << *(p+2) << endl; // 30
+
+ 🔹 Pointers and Arrays
+Array name itself acts like a pointer to the first element.
+
+int arr[3] = {1,2,3};
+int *p = arr;
+cout << p[0] << " " << p[1] << " " << p[2];  // 1 2 3
+
+ 🔹 Pointers and Functions
+Pointers allow call by reference (modifying actual values).
+
+void update(int *x) {
+    *x = *x + 5;
+}
+int main() {
+    int a = 10;
+    update(&a);
+    cout << a;   // Output: 15
+}
+
+ 🔹 Dynamic Memory with Pointers
+Using new and delete:
+
+int *p = new int;   // allocate memory
+*p = 50;
+cout << *p;         // 50
+delete p;           // free memory
+
