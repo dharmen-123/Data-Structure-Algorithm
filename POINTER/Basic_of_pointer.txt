@@ -1,0 +1,16 @@
+
+                /* // ****** POINTER ******  // */
+
+A pointer is a variable that stores the memory address of another variable.
+Instead of holding a value directly, it points to the location where the value is stored.
+
+ Think of a pointer as a “reference” or “address holder.”
+
+ 🔹 Declaration & Initialization
+
+data_type *pointer_name;   // declaration
+
+Examples:
+    int a = 10;
+    int *p;        // declare pointer to int
+    p = &a;        // initialize with address of a
