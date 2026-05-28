@@ -18,16 +18,16 @@
 // }
 
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int main(){
-    char name='a';
-    cout<<name<<endl;
-    char *ptr1= &name;
-    cout<<ptr1<<endl;
-    cout<<(void*)ptr1<<endl;
-    cout<<(void*)name<<endl;
+// int main(){
+//     char name='a';
+//     cout<<name<<endl;           //- a
+//     char *ptr1= &name;
+//     cout<<*ptr1<<endl;          //- a
+//     cout<<(void*)ptr1<<endl;    //- 0x61ff0b
+//     cout<<(void*)&name<<endl;   //- 0x61ff0b
 
-return 0 ;
-}
+// return 0 ;
+// }
