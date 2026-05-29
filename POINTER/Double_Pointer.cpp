@@ -96,6 +96,7 @@ int Four(int x,int *py ,int **ppz){
     (*py)+=2;
     y = *py;
     x+=3;
+            
 }
 int main(){
         int c, *b , **a;

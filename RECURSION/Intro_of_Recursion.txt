@@ -1,0 +1,43 @@
+
+            /* // ****** RECURSION ****** // */
+
+Recursion is a programming technique where a function calls itself directly or indirectly to solve a problem.
+It breaks a problem into smaller subproblems until a base condition is met.
+
+🔹 Structure of a Recursive Function
+
+return_type function_name(parameters) {
+    if(base_condition) {
+        // stop recursion
+        return value;
+    }
+    else {
+        // recursive call
+        return function_name(smaller_problem);
+    }
+}
+
+🔹 Key Concepts
+
+* Base Case: Condition where recursion stops.
+* Recursive Case: Function calls itself with smaller input.
+* Stack Memory: Each recursive call is stored in the call stack until base case is reached.
+
+🔹 Example 1: Factorial
+
+Factorial of n = n * (n-1) * (n-2) * ... * 1
+
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if(n == 0 || n == 1)   // base case
+        return 1;
+    return n * factorial(n-1);  // recursive case
+}
+
+int main() {
+    int n = 5;
+    cout << "Factorial of " << n << " = " << factorial(n);
+    return 0;
+}
