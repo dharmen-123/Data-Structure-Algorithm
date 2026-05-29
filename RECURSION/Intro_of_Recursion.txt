@@ -23,6 +23,25 @@ return_type function_name(parameters) {
 * Recursive Case: Function calls itself with smaller input.
 * Stack Memory: Each recursive call is stored in the call stack until base case is reached.
 
+🔹 Types of Recursion
+
+Direct Recursion: Function calls itself directly.
+Indirect Recursion: Function A calls B, and B calls A.
+Tail Recursion: Recursive call is the last statement.
+Head Recursion: Recursive call happens before other operations.
+
+🔹 Advantages
+
+Elegant and clean code.
+Natural fit for problems like factorial, Fibonacci, tree traversal, divide-and-conquer algorithms (Merge Sort, Quick Sort).
+
+🔹 Disadvantages
+
+Uses more memory (stack frames).
+Slower due to function call overhead.
+Risk of stack overflow if base case is missing or incorrect.
+
+
 🔹 Example 1: Factorial
 
 Factorial of n = n * (n-1) * (n-2) * ... * 1
