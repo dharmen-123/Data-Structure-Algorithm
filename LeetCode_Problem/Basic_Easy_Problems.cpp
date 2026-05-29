@@ -464,29 +464,58 @@
 
         /*  // Q.2540. Minimum Common Value   // */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-int getCommon(vector<int>& nums1, vector<int>& nums2) {
-        int first=0 , second =0;
-        while(first<nums1.size() && second<nums2.size()){
-            if(nums1[first]==nums2[second]){
-                return nums1[first];
-            }
-            else if(nums1[first]<nums2[second]){
-                first++;
-            }
-            else{
-                second++;
-            }
-        }
-        return -1;
-    }
-int main(){
-    vector<int>nums1={1,2,3};
-    vector<int>nums2={2,4};
-    cout<<getCommon(nums1,nums2);
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int getCommon(vector<int>& nums1, vector<int>& nums2) {
+//         int first=0 , second =0;
+//         while(first<nums1.size() && second<nums2.size()){
+//             if(nums1[first]==nums2[second]){
+//                 return nums1[first];
+//             }
+//             else if(nums1[first]<nums2[second]){
+//                 first++;
+//             }
+//             else{
+//                 second++;
+//             }
+//         }
+//         return -1;
+//     }
+// int main(){
+//     vector<int>nums1={1,2,3};
+//     vector<int>nums2={2,4};
+//     cout<<getCommon(nums1,nums2);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.3300. Minimum Element After Replacement With Digit Sum  // */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int minElement(vector<int>& nums) {
+//     string s="";
+//     for(int i=0;i<nums.size();i++){
+//         s+=to_string(nums[i]);
+//         int sum=0;
+//         for(auto k:s){
+//             sum+=k-'0';
+//         }
+//         nums[i]=sum;
+//         s.clear();
+//     }
+//     int minval=nums[0];
+//     for(auto k:nums){
+//         minval=min(k,minval);
+//     }
+//     return minval;
+//     }
+// int main(){
+//     vector<int>nums={999,19,199};
+//     cout<<minElement(nums);
+
+// return 0 ;
+// }
