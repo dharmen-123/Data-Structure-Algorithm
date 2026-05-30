@@ -561,3 +561,41 @@
 
 // return 0 ;
 // }
+
+
+                /* // Q.1051. Height Checker  //  */
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int heightChecker(vector<int>& heights) {
+        
+    }
+int main(){
+        vector<int>heights={1,1,4,2,1,3};
+        cout<<heightChecker(heights);
+
+return 0 ;
+}
+
+
+                /* // Q.228. Summary Ranges  //  */
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// vector<string> summaryRanges(vector<int>& nums) {
+//         vector<string>ans;
+//         for(int i=0;i<nums.size();i++){
+
+//         }
+//     }
+// int main(){
+//         vector<int>nums={0,1,2,4,5,7};
+//         vector<string>ans=summaryRanges(nums);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
