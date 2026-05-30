@@ -522,42 +522,42 @@
 
         /*  // Q.14. Longest Common Prefix  //  */
 
-#include<iostream>
-#include<vector>
-using namespace std;
-string longestCommonPrefix(vector<string>& strs) {
-      string s=strs[0];
-      string s1="";
-      for(int i=0;i<strs.size();i++){
-          int n=strs[i].size();   
-          int j=0,k=0;          
-          while(j<n){
-                k++;
-              if(s[j]==strs[i][j]){
-                 if(k-j==1){
-                     s1+=s[j];
-                  }
-                  else{
-                      break;
-                  }
-              }   
-              else{
-                k--;
-              }
-              j++;
-            }
-            s.clear();
-            s=s1;
-            s1.clear();
-      }
-      return s;
-    }
-int main(){
-        // vector<string>strs={"flower","flow","flight"};
-        // vector<string>strs={"dog","racecar","car"};
-        vector<string>strs={"cir","car"};
-        cout<<longestCommonPrefix(strs);
-        cout<<endl<<"Common";
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// string longestCommonPrefix(vector<string>& strs) {
+//       string s=strs[0];
+//       string s1="";
+//       for(int i=0;i<strs.size();i++){
+//           int n=strs[i].size();   
+//           int j=0,k=0;          
+//           while(j<n && j<s.size()){
+//                 k++;
+//               if(s[j]==strs[i][j]){
+//                  if(k-j==1){
+//                      s1+=s[j];
+//                   }
+//                   else{
+//                       break;
+//                   }
+//               }   
+//               else{
+//                 k--;
+//               }
+//               j++;
+//             }
+//             s.clear();
+//             s=s1;
+//             s1.clear();
+//       }
+//       return s;
+//     }
+// int main(){
+//         // vector<string>strs={"flower","flow","flight"};
+//         // vector<string>strs={"dog","racecar","car"};
+//         vector<string>strs={"cir","car"};
+//         cout<<longestCommonPrefix(strs);
+//         cout<<endl<<"Common";
 
-return 0 ;
-}
+// return 0 ;
+// }
