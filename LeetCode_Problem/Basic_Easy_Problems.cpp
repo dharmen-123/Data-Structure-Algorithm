@@ -565,41 +565,39 @@
 
                 /* // Q.3945. Digit Frequency Score  //  */
 
-#include<iostream>
-#include<vector>
-using namespace std;
-int digitFrequencyScore(int n) {
-        int sum=0;
-        while(n>0){
-            int last=n%10;
-            sum+=last;
-            n=n/10;    
-        }
-        return sum;
-    }
-int main(){
-        int n=101;
-        cout<<digitFrequencyScore(n);
-return 0 ;
-}
-
-
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+// int digitFrequencyScore(int n) {
+//         int sum=0;
+//         while(n>0){
+//             int last=n%10;
+//             sum+=last;
+//             n=n/10;    
+//         }
+//         return sum;
+//     }
+// int main(){
+//         int n=101;
+//         cout<<digitFrequencyScore(n);
+// return 0 ;
+// }
 
                 /* // Q.1051. Height Checker  //  */
 
-// #include<iostream>
-// #include<vector>
-// #include<algorithm>
-// using namespace std;
-// int heightChecker(vector<int>& heights) {
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int heightChecker(vector<int>& heights) {
         
-//     }
-// int main(){
-//         vector<int>heights={1,1,4,2,1,3};
-//         cout<<heightChecker(heights);
+    }
+int main(){
+        vector<int>heights={1,1,4,2,1,3};
+        cout<<heightChecker(heights);
 
-// return 0 ;
-// }
+return 0 ;
+}
 
 
                 /* // Q.228. Summary Ranges  //  */
