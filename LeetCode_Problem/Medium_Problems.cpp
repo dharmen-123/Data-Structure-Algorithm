@@ -540,7 +540,16 @@ string reverseWords(string s) {
                     }
                 }
         }
-        return s;
+        if(word.size()!=0){
+            res.push(word);
+            word.clear();
+        }
+        while(!res.empty()){
+            word+=res.top();
+            word+=" ";
+            res.pop();
+        }
+        return word;
     }
 int main(){
         string s="the sky is blue";
