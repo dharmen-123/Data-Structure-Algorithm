@@ -585,28 +585,27 @@
 
                 /* // Q.1051. Height Checker  //  */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-int heightChecker(vector<int>& heights) {
-      vector<int>h=heights;
-      sort(heights.begin(),heights.end());
-      int index=0;
-      for(int i=0;i<heights.size();i++){
-                if(heights[i]!=h[i]){
-                        index++;
-                }
-      }   
-      return index;
-    }
-int main(){
-        // vector<int>heights={1,1,4,2,1,3};
-        vector<int>heights={1,2,3,4,5};
-        cout<<heightChecker(heights);
-
-return 0 ;
-}
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// int heightChecker(vector<int>& heights) {
+//       vector<int>h=heights;
+//       sort(heights.begin(),heights.end());
+//       int index=0;
+//       for(int i=0;i<heights.size();i++){
+//                 if(heights[i]!=h[i]){
+//                         index++;
+//                 }
+//       }   
+//       return index;
+//     }
+// int main(){
+//         // vector<int>heights={1,1,4,2,1,3};
+//         vector<int>heights={1,2,3,4,5};
+//         cout<<heightChecker(heights);
+// return 0 ;
+// }
 
 
                 /* // Q.228. Summary Ranges  //  */

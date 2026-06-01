@@ -520,6 +520,36 @@
 // return 0 ;
 // }
 
+        /* // Q.151. Reverse Words in a String  //  */
+
+#include<iostream>
+#include<stack>
+#include<vector>
+using namespace std;
+string reverseWords(string s) {
+        stack<string>res;
+        string word;
+        for(int i=0;i<s.size();i++){
+                if(s[i]!=' '){
+                   word+=s[i];
+                }
+                else{
+                    if(word.size()!=0){
+                        res.push(word);
+                        word.clear();
+                    }
+                }
+        }
+        return s;
+    }
+int main(){
+        string s="the sky is blue";
+        cout<<reverseWords(s);
+
+return 0 ;
+}
+    
+    
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>
