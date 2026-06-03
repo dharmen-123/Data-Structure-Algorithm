@@ -607,6 +607,39 @@
 // return 0 ;
 // }
 
+                /* // Q.3731. Find Missing Elements  //  */
+
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// vector<int> findMissingElements(vector<int>& nums) {
+//         int n=nums.size();
+//         vector<int>ans;
+//         sort(nums.begin(),nums.end());
+//         for(int i=0;i<n-1;i++){
+//            int j=nums[i+1]-nums[i];
+//            int k=1;
+//              while(j>1){
+//                 ans.push_back(nums[i]+k);
+//                 j--,k++;
+//              }
+//         }
+
+//         return ans;
+//     }
+// int main(){
+//         // vector<int>nums={1,4,2,5};
+//         vector<int>nums={7,8,6,9};
+//         vector<int>result=findMissingElements(nums);
+//         for(auto k:result){
+//                 cout<<k<<" ";
+//         }
+
+// return 0 ;
+// }
+
+
 
                 /* // Q.228. Summary Ranges  //  */
 
