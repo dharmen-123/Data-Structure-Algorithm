@@ -639,7 +639,32 @@
 // return 0 ;
 // }
 
+                /* // Q.2810. Faulty Keyboard  //  */
 
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+string finalString(string s) {
+        int n=s.size();
+        string str;
+        for(int i=0;i<n;i++){
+          if(s[i]!='i'){
+                str+=s[i];
+          }
+          else{
+            reverse(str.begin(),str.end());
+          }
+        }
+        return str;
+    }
+int main(){
+        string s="string";
+        // string s="poiinter";
+        cout<<finalString(s);   //rtsng
+
+return 0 ;
+}
 
                 /* // Q.228. Summary Ranges  //  */
 
