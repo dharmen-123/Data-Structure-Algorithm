@@ -42,4 +42,33 @@
 // return 0 ;
 // }
 
-            /*  // Q.  // */
+            /*  // Q.41. First Missing Positive  // */
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int firstMissingPositive(vector<int>& nums) {
+        int n=nums.size();
+        int j=0;
+        while(j<n){
+            while(nums[j] > 0 && nums[j] <= n &&
+                  nums[j] != nums[nums[j]-1]) 
+            {
+                swap(nums[j], nums[nums[j]-1]);
+            }
+         j++;
+        }
+        for(int i=0;i<n;i++){
+            if(nums[i]!= i+1){
+                return i+1;
+            }
+        }
+     return n+1;
+    }
+int main(){
+        // vector<int>nums={3,4,-1,1};
+        vector<int>nums={7,8,9,11,12};
+        cout<<firstMissingPositive(nums);
+
+return 0 ;
+}
