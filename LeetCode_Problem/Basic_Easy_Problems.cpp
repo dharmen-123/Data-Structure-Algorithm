@@ -641,27 +641,62 @@
 
                 /* // Q.2810. Faulty Keyboard  //  */
 
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// string finalString(string s) {
+//         int n=s.size();
+//         string str;
+//         for(int i=0;i<n;i++){
+//           if(s[i]!='i'){
+//                 str+=s[i];
+//           }
+//           else{
+//             reverse(str.begin(),str.end());
+//           }
+//         }
+//         return str;
+//     }
+// int main(){
+//         string s="string";
+//         // string s="poiinter";
+//         cout<<finalString(s);   //rtsng
+
+// return 0 ;
+// }
+
+                /* // Q.345. Reverse Vowels of a String  //  */
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
-string finalString(string s) {
+string reverseVowels(string s) {
         int n=s.size();
-        string str;
+        string vowel;
         for(int i=0;i<n;i++){
-          if(s[i]!='i'){
-                str+=s[i];
-          }
-          else{
-            reverse(str.begin(),str.end());
-          }
+              if(s[i]== 'A' || s[i]== 'E' || s[i]== 'I' || s[i]== 'O' || s[i]== 'U' ||
+                s[i]== 'a' || s[i]== 'e' || s[i]== 'i' || s[i]== 'o' || s[i]== 'u'){
+                        vowel+=s[i];
+                        s[i]='\0';
+                }
         }
-        return str;
+        reverse(vowel.begin(),vowel.end());
+        int first=0, second=0;
+        while(first<n){
+                if(s[first]=='\0'){
+                     s[first]=vowel[second];
+                     second++;   
+                }
+          first++;
+        }
+        return s;
     }
 int main(){
-        string s="string";
-        // string s="poiinter";
-        cout<<finalString(s);   //rtsng
+        // string s="IceCreAm";
+        string s="leetcode";
+        cout<<reverseVowels(s);
 
 return 0 ;
 }
