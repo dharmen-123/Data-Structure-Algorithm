@@ -668,35 +668,67 @@
 
                 /* // Q.345. Reverse Vowels of a String  //  */
 
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// string reverseVowels(string s) {
+//         int n=s.size();
+//         string vowel;
+//         for(int i=0;i<n;i++){
+//               if(s[i]== 'A' || s[i]== 'E' || s[i]== 'I' || s[i]== 'O' || s[i]== 'U' ||
+//                 s[i]== 'a' || s[i]== 'e' || s[i]== 'i' || s[i]== 'o' || s[i]== 'u'){
+//                         vowel+=s[i];
+//                         s[i]='\0';
+//                 }
+//         }
+//         reverse(vowel.begin(),vowel.end());
+//         int first=0, second=0;
+//         while(first<n){
+//                 if(s[first]=='\0'){
+//                      s[first]=vowel[second];
+//                      second++;   
+//                 }
+//           first++;
+//         }
+//         return s;
+//     }
+// int main(){
+//         // string s="IceCreAm";
+//         string s="leetcode";
+//         cout<<reverseVowels(s);
+
+// return 0 ;
+// }
+
+                /* // Q.389. Find the difference  //  */
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
-string reverseVowels(string s) {
-        int n=s.size();
-        string vowel;
+char findTheDifference(string s, string t) {
+        vector<int>alpha(26,0);
+        char a;
+        int n=t.size();
         for(int i=0;i<n;i++){
-              if(s[i]== 'A' || s[i]== 'E' || s[i]== 'I' || s[i]== 'O' || s[i]== 'U' ||
-                s[i]== 'a' || s[i]== 'e' || s[i]== 'i' || s[i]== 'o' || s[i]== 'u'){
-                        vowel+=s[i];
-                        s[i]='\0';
-                }
+           alpha[t[i]-'a']+=1;   
         }
-        reverse(vowel.begin(),vowel.end());
-        int first=0, second=0;
-        while(first<n){
-                if(s[first]=='\0'){
-                     s[first]=vowel[second];
-                     second++;   
-                }
-          first++;
+        for(int i=0;i<n-1;i++){
+           alpha[s[i]-'a']-=1;   
         }
-        return s;
+        for(int i=0;i<26;i++){
+           if(alpha[i]!=0){
+               a=char(i+'a');
+           };   
+        }
+    return a;
     }
+
 int main(){
-        // string s="IceCreAm";
-        string s="leetcode";
-        cout<<reverseVowels(s);
+   string s="abcd" , t="abcde";
+//    string s="" , t="y";
+   cout<<findTheDifference(s,t);
 
 return 0 ;
 }
