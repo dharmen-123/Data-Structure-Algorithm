@@ -703,36 +703,71 @@
 
                 /* // Q.389. Find the difference  //  */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
-char findTheDifference(string s, string t) {
-        vector<int>alpha(26,0);
-        char a;
-        int n=t.size();
-        for(int i=0;i<n;i++){
-           alpha[t[i]-'a']+=1;   
-        }
-        for(int i=0;i<n-1;i++){
-           alpha[s[i]-'a']-=1;   
-        }
-        for(int i=0;i<26;i++){
-           if(alpha[i]!=0){
-               a=char(i+'a');
-           };   
-        }
-    return a;
-    }
+// #include<iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+// char findTheDifference(string s, string t) {
+//         vector<int>alpha(26,0);
+//         char a;
+//         int n=t.size();
+//         for(int i=0;i<n;i++){
+//            alpha[t[i]-'a']+=1;   
+//         }
+//         for(int i=0;i<n-1;i++){
+//            alpha[s[i]-'a']-=1;   
+//         }
+//         for(int i=0;i<26;i++){
+//            if(alpha[i]!=0){
+//                a=char(i+'a');
+//            };   
+//         }
+//     return a;
+//     }
+// int main(){
+//    string s="abcd" , t="abcde";
+// //    string s="" , t="y";
+//    cout<<findTheDifference(s,t);
 
+// return 0 ;
+// }
+
+                /* // Q.2652. Sum Multiples  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int sumOfMultiples(int n) {
+//         int sum=0;
+//         for(int i=1;i<=n;i++){
+//             if(i%3==0 || i%5==0 || i%7==0){
+//                 sum+=i;
+//             }
+//         }
+//         return sum;
+//     }
+// int main(){
+//         int n=9;
+//         cout<<sumOfMultiples(n);
+
+// return 0 ;
+// }
+
+                /* // Q.541. Reverse String II  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string reverseStr(string s, int k) {
+        
+    }
 int main(){
-   string s="abcd" , t="abcde";
-//    string s="" , t="y";
-   cout<<findTheDifference(s,t);
+     string s="abcdefg";
+     int k=2;
+     cout<<reverseStr(s,0);
 
 return 0 ;
 }
-
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
