@@ -759,12 +759,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 string reverseStr(string s, int k) {
-        
+        int n=s.size();
+        int start =0 ,count=0;
+        for(int i=1;i<=n;i++){
+             count+=1;   
+           if(count==k){
+               reverse(s.begin()+start,s.begin()+i);
+               count=0;
+               i+=k;
+               start=i;
+           }
+        }
+     return s;
     }
 int main(){
-     string s="abcdefg";
+//      string s="abcdefg";
+     string s="abcd";
      int k=2;
-     cout<<reverseStr(s,0);
+     cout<<reverseStr(s,k);     //bacdfeg
 
 return 0 ;
 }
