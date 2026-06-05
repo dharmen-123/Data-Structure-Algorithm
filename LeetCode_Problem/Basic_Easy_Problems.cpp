@@ -783,6 +783,35 @@
 // return 0 ;
 // }
 
+                /* // Q.917. Reverse Only Letters  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string reverseOnlyLetters(string s) {
+        int start=0,end=s.size()-1;
+        while(start<end){
+                if(!isalpha(s[start])){
+                    start++;
+                    continue;
+                }
+                if(!isalpha(s[end])){
+                    end--;
+                    continue;
+                }
+                swap(s[start],s[end]);
+                start++ , end--;
+        }
+        return s;
+    }
+int main(){
+        // string s="ab-cd";
+        string s="a-bC-dEf-ghIj";
+        cout<<reverseOnlyLetters(s);    //j-Ih-gfE-dCba
+
+return 0 ;
+}
+
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
