@@ -785,29 +785,52 @@
 
                 /* // Q.917. Reverse Only Letters  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string reverseOnlyLetters(string s) {
+//         int start=0,end=s.size()-1;
+//         while(start<end){
+//                 if(!isalpha(s[start])){
+//                     start++;
+//                     continue;
+//                 }
+//                 if(!isalpha(s[end])){
+//                     end--;
+//                     continue;
+//                 }
+//                 swap(s[start],s[end]);
+//                 start++ , end--;
+//         }
+//         return s;
+//     }
+// int main(){
+//         // string s="ab-cd";
+//         string s="a-bC-dEf-ghIj";
+//         cout<<reverseOnlyLetters(s);    //j-Ih-gfE-dCba
+
+// return 0 ;
+// }
+
+                /* // Q.557. Reverse Words in a String III  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string reverseOnlyLetters(string s) {
-        int start=0,end=s.size()-1;
-        while(start<end){
-                if(!isalpha(s[start])){
-                    start++;
-                    continue;
-                }
-                if(!isalpha(s[end])){
-                    end--;
-                    continue;
-                }
-                swap(s[start],s[end]);
-                start++ , end--;
+string reverseWords(string s) {
+        int n=s.size();
+        int start=0;
+        for(int i=1;i<=n;i++){
+            if(s[i]==' ' || i==n){
+                reverse(s.begin()+start,s.begin()+i);
+                start=i+1;
+            } 
         }
-        return s;
+        return s; 
     }
 int main(){
-        // string s="ab-cd";
-        string s="a-bC-dEf-ghIj";
-        cout<<reverseOnlyLetters(s);    //j-Ih-gfE-dCba
+        string s = "Let's take LeetCode contest";
+        cout<<reverseWords(s);
 
 return 0 ;
 }
