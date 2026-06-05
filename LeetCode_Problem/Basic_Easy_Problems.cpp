@@ -755,31 +755,34 @@
 
                 /* // Q.541. Reverse String II  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string reverseStr(string s, int k) {
-        int n=s.size();
-        int start =0 ,count=0;
-        for(int i=1;i<=n;i++){
-             count+=1;   
-           if(count==k){
-               reverse(s.begin()+start,s.begin()+i);
-               count=0;
-               i+=k;
-               start=i;
-           }
-        }
-     return s;
-    }
-int main(){
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string reverseStr(string s, int k) {
+//         int n=s.size();
+//         int start =0 ,count=0;
+//         if(k>=n){
+//             reverse(s.begin(),s.end());
+//         }
+//         for(int i=1;i<=n;i++){
+//              count+=1;   
+//            if(count==k || i==n ){
+//                reverse(s.begin()+start,s.begin()+i);
+//                count=0;
+//                i+=k;
+//                start=i;
+//            }
+//         }
+//      return s;
+//     }
+// int main(){
 //      string s="abcdefg";
-     string s="abcd";
-     int k=2;
-     cout<<reverseStr(s,k);     //bacdfeg
+//      int k=39;
+//      cout<<reverseStr(s,k);     //bacdfeg
 
-return 0 ;
-}
+// return 0 ;
+// }
+
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
