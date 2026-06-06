@@ -814,31 +814,62 @@
 
                 /* // Q.557. Reverse Words in a String III  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string reverseWords(string s) {
-        int n=s.size();
-        int start=0, end=0;
-        for(int i=1;i<=n;i++){
-        
-           if(s[i]==' ' || i==n){
-                end=i-1;
-                while(start<=end){
-                    swap(s[start],s[end]);
-                    start++,end--;
-                }
-                start=i+1;
-           }
-        }
-        return s; 
-    }
-int main(){
-        string s = "Let's take LeetCode contest";
-        cout<<reverseWords(s);  //s'teL ekat edoCteeL tsetnoc
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string reverseWords(string s) {
+//         int n=s.size();
+//         int start=0, end=0;
+//         for(int i=1;i<=n;i++){
+//            if(s[i]==' ' || i==n){
+//                 end=i-1;
+//                 while(start<=end){
+//                     swap(s[start],s[end]);
+//                     start++,end--;
+//                 }
+//                 start=i+1;
+//            }
+//         }
+//         return s; 
+//     }
+// int main(){
+//         string s = "Let's take LeetCode contest";
+//         cout<<reverseWords(s);  //s'teL ekat edoCteeL tsetnoc
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+
+                /* // Q.2574. Left and Right Sum Differences  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> leftRightDifference(vector<int>& nums){
+//         int n=nums.size();
+//         vector<int>leftsum={0};
+//         vector<int>rightsum={0};
+//         for(int i=0;i<n-1;i++){
+//                 leftsum.push_back(leftsum[i]+nums[i]);
+//         }
+//         int j=0;
+//         for(int i=n-1;i>0;i--){
+//                 rightsum.push_back(rightsum[j++]+nums[i]);
+//         }
+//         reverse(rightsum.begin(),rightsum.end());
+//         for(int i=0;i<n;i++){
+//             nums[i]=abs(leftsum[i]-rightsum[i]);
+//         }
+//         return nums;
+//     }
+// int main(){
+//         vector<int>nums={10,4,8,3};
+//         vector<int>ans=leftRightDifference(nums);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
 
                 /* // Q.228. Summary Ranges  //  */
 
