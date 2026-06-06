@@ -871,6 +871,30 @@
 // return 0 ;
 // }
 
+                /* // Q.2000. Reverse Prefix of Word  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string reversePrefix(string word, char ch) {
+//         int n=word.size(),end=0;
+//         for(int i=0;i<n;i++){
+//             if(word[i]==ch){
+//                 end=i+1;
+//                 break;
+//             }
+//         }
+//         reverse(word.begin(),word.begin()+end);
+//         return word;
+//     }
+// int main(){
+//         string word="abcdefd";
+//         char ch='d';
+//         cout<<reversePrefix(word,ch);
+
+// return 0 ;
+// }
+    
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
