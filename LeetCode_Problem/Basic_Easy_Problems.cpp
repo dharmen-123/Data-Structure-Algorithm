@@ -819,18 +819,23 @@
 using namespace std;
 string reverseWords(string s) {
         int n=s.size();
-        int start=0;
+        int start=0, end=0;
         for(int i=1;i<=n;i++){
-            if(s[i]==' ' || i==n){
-                reverse(s.begin()+start,s.begin()+i);
+        
+           if(s[i]==' ' || i==n){
+                end=i-1;
+                while(start<=end){
+                    swap(s[start],s[end]);
+                    start++,end--;
+                }
                 start=i+1;
-            } 
+           }
         }
         return s; 
     }
 int main(){
         string s = "Let's take LeetCode contest";
-        cout<<reverseWords(s);
+        cout<<reverseWords(s);  //s'teL ekat edoCteeL tsetnoc
 
 return 0 ;
 }
