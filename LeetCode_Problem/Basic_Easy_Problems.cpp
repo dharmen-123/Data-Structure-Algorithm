@@ -914,7 +914,3 @@
 //         }
 // return 0 ;
 // }
-// fares@
-// reedem point
-// reward dashboard
-// midcap fund
