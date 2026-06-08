@@ -895,6 +895,20 @@
 // return 0 ;
 // }
     
+                /* // Q.1816. truncate Sentence  //  */
+              
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string truncateSentence(string s, int k) {
+        
+}
+int main(){
+
+
+return 0 ;
+}
+
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
