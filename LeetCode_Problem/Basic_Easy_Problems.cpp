@@ -897,32 +897,32 @@
     
                 /* // Q.1816. truncate Sentence  //  */
               
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string truncateSentence(string s, int k) {
-        int n=s.size();
-        int count=0;
-        for(int i=1;i<=n;i++){
-                if(s[i]==' ' || i==n){
-                   count++;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string truncateSentence(string s, int k) {
+//         int n=s.size();
+//         int count=0;
+//         for(int i=1;i<=n;i++){
+//                 if(s[i]==' ' || i==n){
+//                    count++;
                    
-                }
-                if(count==k){
-                    s.erase(i,n-i);
-                       return s; 
-                }
-        }
-       return s; 
-}
-int main(){
-        // string s="Hello how are you Contestant";
-        string s="What is the solution to this problem";
-        int k=4;
-        cout<<truncateSentence(s,k);
+//                 }
+//                 if(count==k){
+//                     s.erase(i,n-i);
+//                        return s; 
+//                 }
+//         }
+//        return s; 
+// }
+// int main(){
+//         // string s="Hello how are you Contestant";
+//         string s="What is the solution to this problem";
+//         int k=4;
+//         cout<<truncateSentence(s,k);
 
-return 0 ;
-}
+// return 0 ;
+// }
 
                 /* // Q.228. Summary Ranges  //  */
 
@@ -943,3 +943,4 @@ return 0 ;
 //         }
 // return 0 ;
 // }
+
