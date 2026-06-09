@@ -924,6 +924,26 @@
 // return 0 ;
 // }
 
+                /* // Q.709. To Lower Case  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string toLowerCase(string s) {
+        for(int i=0;i<s.size();i++){
+                if(s[i]>=65 && s[i]<=90){
+                       s[i]=s[i]+32; 
+                }
+        }
+        return s;
+    }
+int main(){
+        string s = "Hello";
+        cout<<toLowerCase(s);
+
+return 0 ;
+}
+
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
