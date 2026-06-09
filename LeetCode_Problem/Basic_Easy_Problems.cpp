@@ -926,23 +926,56 @@
 
                 /* // Q.709. To Lower Case  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string toLowerCase(string s) {
-        for(int i=0;i<s.size();i++){
-                if(s[i]>=65 && s[i]<=90){
-                       s[i]=s[i]+32; 
-                }
-        }
-        return s;
-    }
-int main(){
-        string s = "Hello";
-        cout<<toLowerCase(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string toLowerCase(string s) {
+//         for(int i=0;i<s.size();i++){
+//                 if(s[i]>=65 && s[i]<=90){
+//                        s[i]=s[i]+32; 
+//                 }
+//         }
+//         return s;
+//     }
+// int main(){
+//         string s = "Hello";
+//         string s = "LOVELY";
+//         cout<<toLowerCase(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+                /* // Q.728. Self Dividing Numbers  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> selfDividingNumbers(int left, int right) {
+//         vector<int>result;
+//         int ans;
+//         for(int i=left;i<=right;i++){
+//              ans=i;
+//              bool check=false;
+//                 while(i>0){
+//                    int rem=i%10;
+//                    if(ans%rem==0){
+//                         check=true;
+//                    }
+//                    else{
+//                         check=false;
+//                    }
+//                    i=i/10;
+//              }
+//              if(check){
+//                  result.push_back(ans);
+//              }
+//         }
+//     }
+// int main(){
+
+
+// return 0 ;
+// }
 
                 /* // Q.228. Summary Ranges  //  */
 
