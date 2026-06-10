@@ -979,19 +979,29 @@
 
                 /* // Q.1748. Sum of Unique Elements  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int sumOfUnique(vector<int>& nums) {
-        
-        return 0;
-    }
-int main(){
-        vector<int>nums={1,2,3,2};
-        cout<<sumOfUnique(nums);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int sumOfUnique(vector<int>& nums) {
+//         unordered_map<int , int>uniq;
+//         int sum=0;
+//         for(int i=0;i<nums.size();i++){
+//            uniq[nums[i]]++;
+//         }
+//         for(auto i=uniq.begin();i!=uniq.end();i++){
+//                 if(i->second==1){
+//                     sum+=i->first;    
+//                 }
+//         }
+//         return sum;
+//     }
+// int main(){
+//         vector<int>nums={1,2,3,2};
+//         // vector<int>nums={1,1,1,1,1};
+//         cout<<sumOfUnique(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
 
                 /* // Q.228. Summary Ranges  //  */
 
