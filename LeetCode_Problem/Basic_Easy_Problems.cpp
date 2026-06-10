@@ -977,6 +977,22 @@
 // return 0 ;
 // }
 
+                /* // Q.1748. Sum of Unique Elements  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int sumOfUnique(vector<int>& nums) {
+        
+        return 0;
+    }
+int main(){
+        vector<int>nums={1,2,3,2};
+        cout<<sumOfUnique(nums);
+
+return 0 ;
+}
+
                 /* // Q.228. Summary Ranges  //  */
 
 // #include<iostream>
