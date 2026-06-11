@@ -1031,3 +1031,16 @@
 // return 0 ;
 // }
 
+        /* // Q.1342. Number of Steps to Reduce a Number to Zero // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int numberOfSteps(int num) {
+         
+    }
+int main(){
+        
+
+return 0 ;
+}
