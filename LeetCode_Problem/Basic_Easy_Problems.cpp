@@ -1003,23 +1003,31 @@
 // return 0 ;
 // }
 
-                /* // Q.228. Summary Ranges  //  */
+                /* // Q.1351. Count Negative Numbers in a Sorted Matrix  // */
 
 // #include<iostream>
-// #include<vector>
+// #include<bits/stdc++.h>
 // using namespace std;
-// vector<string> summaryRanges(vector<int>& nums) {
-//         vector<string>ans;
-//         for(int i=0;i<nums.size();i++){
-
+// int countNegatives(vector<vector<int>>& grid) {
+//         int count=0, n=grid.size(),m=grid[0].size();
+//         int j=0;
+//         int i=0;
+//         while(i<n){
+//                if(grid[i][j]<0){
+//                 count++;
+//                } 
+//                j++;
+//                if(j==m){
+//                         j=0;
+//                         i++;
+//                 }
 //         }
+//         return count;
 //     }
 // int main(){
-//         vector<int>nums={0,1,2,4,5,7};
-//         vector<string>ans=summaryRanges(nums);
-//         for(auto k:ans){
-//                 cout<<k<<" ";
-//         }
+//         // vector<vector<int >>grid={{4,3,2,-1},{3,2,1,-1},{1,1,-1,-2},{-1,-1,-2,-3}};
+//         vector<vector<int >>grid={{3,2},{1,0}};
+//         cout<<countNegatives(grid);
 // return 0 ;
 // }
 
