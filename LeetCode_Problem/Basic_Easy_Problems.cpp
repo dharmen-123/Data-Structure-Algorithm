@@ -1033,14 +1033,39 @@
 
         /* // Q.1342. Number of Steps to Reduce a Number to Zero // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int numberOfSteps(int num) {
-         
-    }
-int main(){
-        
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int operation(int num , int count){
+//         if(num==0){
+//                 return count;
+//         }
+//         if(num%2==0){
+//                 return operation(num/2,count+1);
+//         }
+//         else{
+//                 return operation(num-1,count+1);
+//         }
+// }
+// int numberOfSteps(int num) {
+//         // int count=0;
+//         // while(num>0){
+//         //      if(num%2!=0){
+//         //         num-=1;
+//         //         count++;
+//         //      }
+//         //      else{
+//         //          num=num/2;
+//         //          count++;
+//         //      }
+//         //  }
+//         // return count;
+//         return operation(num,0);
+//     }
+// int main(){
+//         int n=123;
+//         cout<<numberOfSteps(n);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
