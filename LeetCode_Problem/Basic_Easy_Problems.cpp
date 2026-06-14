@@ -1094,3 +1094,19 @@
 
 // return 0 ;
 // }
+
+        /* // 1678. Goal Parser Interpretation  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string interpret(string command) {
+        int n=command.size();
+        
+    }
+int main(){
+        string command = "G()(al)";
+        cout<<interpret(command);
+
+return 0 ;
+}
