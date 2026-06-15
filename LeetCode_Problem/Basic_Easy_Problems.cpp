@@ -1111,3 +1111,31 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2032. Two Out of Three  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> twoOutOfThree(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3) {
+        unordered_map<int , int>freq;
+        auto it1 = unique(nums1.begin(),nums1.end());
+        nums1.erase(it1,nums1.end());
+        auto it2 = unique(nums2.begin(),nums2.end());
+        nums2.erase(it2,nums2.end());
+        auto it3 = unique(nums3.begin(),nums3.end());
+        nums3.erase(it3,nums3.end());
+        
+        return nums1;
+}
+int main(){
+        vector<int>nums1={1,1,3,2};
+        vector<int>nums2={2,3};
+        vector<int>nums3={3};
+        vector<int>result=twoOutOfThree(nums1,nums2,nums3);
+        for(auto a:result){
+                cout<<a<<" ";
+        }
+
+return 0 ;
+}
