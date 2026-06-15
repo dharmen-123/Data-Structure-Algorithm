@@ -1114,42 +1114,39 @@
 
         /* // Q.2032. Two Out of Three  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> twoOutOfThree(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3) {
-        unordered_map<int , int>freq;
-        auto it1 = unique(nums1.begin(),nums1.end());
-        nums1.erase(it1,nums1.end());
-        auto it2 = unique(nums2.begin(),nums2.end());
-        nums2.erase(it2,nums2.end());
-        auto it3 = unique(nums3.begin(),nums3.end());
-        nums3.erase(it3,nums3.end());
-        for(int i=0;i<nums1.size();i++){
-                freq[nums1[i]]++;
-        }
-        for(int i=0;i<nums2.size();i++){
-                freq[nums2[i]]++;
-        }
-        for(int i=0;i<nums3.size();i++){
-                freq[nums3[i]]++;
-        }
-        nums1.clear();
-        for(auto it=freq.begin();it!=freq.end();it++){
-             if(it->second>=2){
-                 nums1.push_back(it->first);
-                }
-        }
-        return nums1;
-}
-int main(){
-        vector<int>nums1={3,1};
-        vector<int>nums2={2,3};
-        vector<int>nums3={1,2};
-        vector<int>result=twoOutOfThree(nums1,nums2,nums3);
-        for(auto a:result){
-                cout<<a<<" ";
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> twoOutOfThree(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3) {
+//         unordered_map<int,int>freq;
+//         unordered_set<int>S1(nums1.begin(),nums1.end());
+//         unordered_set<int>S2(nums2.begin(),nums2.end());
+//         unordered_set<int>S3(nums3.begin(),nums3.end());
+//         for(auto k:S1){
+//                 freq[k]++;
+//         }
+//         for(auto k:S2){
+//                 freq[k]++;
+//         }
+//         for(auto k:S3){
+//                 freq[k]++;
+//         }
+//         nums1.clear();
+//         for(auto it=freq.begin();it!=freq.end();it++){
+//              if(it->second>=2){
+//                  nums1.push_back(it->first);
+//                 }
+//         }
+//         return nums1;
+// }
+// int main(){
+//         vector<int>nums1={3,1};
+//         vector<int>nums2={2,3};
+//         vector<int>nums3={1,2};
+//         vector<int>result=twoOutOfThree(nums1,nums2,nums3);
+//         for(auto a:result){
+//                 cout<<a<<" ";
+//         }
 
-return 0 ;
-}
+// return 0 ;
+// }
