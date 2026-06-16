@@ -561,7 +561,39 @@
 // return 0 ;
 // }
     
+        /* // Q.3612. Process String with Special Operations I  // */
     
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string processStr(string s) {
+        string result;
+        for(int i=0;i<s.size();i++){
+             if(s[i]>=97 && s[i]<=122){
+                result+=s[i];
+             }
+             else if(s[i]=='*'){
+                result.erase(result.size()-1,1);
+             }
+             else if(s[i]=='#'){
+                if(result.size()){
+                    result+=s[i-1];
+                }
+             }
+             else{
+                reverse(result.begin(),result.end());
+             }
+        }
+        return result;
+}
+int main(){
+        string s="a#b%*";
+        // string s="z*#";
+        cout<<processStr(s);
+
+return 0 ;
+}
+
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>
