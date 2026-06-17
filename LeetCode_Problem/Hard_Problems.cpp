@@ -98,16 +98,18 @@ char processStr(string s, long long k) {
                     reverse(result.begin(),result.end());
              }
         }
+        cout<<result<<endl;
         if(result.size()>k){
             return result[k];
         }
         return '.';
     }
 int main(){
-      string s="a#b%*";
-      int k=1;
-        // string s="#k#";
-        cout<<processStr(s,k);
+    //   string s="a#b%*";
+      string s="cd%#*#";
+      int k=3;
+    //   string s="#k#";
+      cout<<processStr(s,k);
 
 return 0 ;
 }

@@ -567,25 +567,24 @@
 // #include<bits/stdc++.h>
 // using namespace std;
 // string processStr(string s) {
-//          string result;
-//         for(int i=0;i<s.size();i++){
-//              if(s[i]>=97 && s[i]<=122){
-//                 result+=s[i];
-//              }
-//              else if(s[i]=='*'){
-//                 if(result.size())
-//                     result.erase(result.size()-1,1);
-//              }
-//              else if(s[i]=='#'){
-//                 if(result.size()){
-//                     result+=result[result.size()-1];
-//                 }
-//              }
-//              else{
-//                 if(result.size())
-//                     reverse(result.begin(),result.end());
-//              }
+//         string result;
+//         for(char ch : s) {
+//             if(ch >= 'a' && ch <= 'z') {
+//                 result += ch;
+//             }
+//             else if(ch == '*') {
+//                 if(!result.empty())
+//                     result.pop_back();
+//             }
+//             else if(ch == '#') {
+//                 if(!result.empty())
+//                     result +=result;
+//             }
+//             else {
+//                 reverse(result.begin(), result.end());
+//             }
 //         }
+
 //         return result;
 // }
 // int main(){
