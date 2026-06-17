@@ -81,34 +81,39 @@ using namespace std;
 char processStr(string s, long long k) {
         string result;
         for(int i=0;i<s.size();i++){
-             if(s[i]>=97 && s[i]<=122){
+             if(s[i]>='a' && s[i]<='z'){
                 result+=s[i];
              }
              else if(s[i]=='*'){
-                if(result.size())
-                    result.erase(result.size()-1,1);
+                if(!result.empty())
+                    result.pop_back();
              }
              else if(s[i]=='#'){
-                if(result.size()){
-                    result+=result[result.size()-1];
+                if(!result.empty()){
+                    result+=result;
                 }
              }
              else{
-                if(result.size())
-                    reverse(result.begin(),result.end());
+                int left = 0;
+                int right = result.size() - 1;
+                while (left < right) {
+                    swap(result[left], result[right]);
+                    left++;
+                    right--;
+                }
              }
         }
-        cout<<result<<endl;
         if(result.size()>k){
             return result[k];
         }
         return '.';
     }
 int main(){
-    //   string s="a#b%*";
-      string s="cd%#*#";
-      int k=3;
-    //   string s="#k#";
+      string s="a#b%*";
+      int k=1;
+    //   string s="z*#";
+    //   int k=0;
+
       cout<<processStr(s,k);
 
 return 0 ;
