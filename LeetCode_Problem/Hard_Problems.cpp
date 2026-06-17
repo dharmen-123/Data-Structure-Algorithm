@@ -72,3 +72,42 @@
 
 // return 0 ;
 // }
+
+            /* // Q.3614. Process String with Special Operations II // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+char processStr(string s, long long k) {
+        string result;
+        for(int i=0;i<s.size();i++){
+             if(s[i]>=97 && s[i]<=122){
+                result+=s[i];
+             }
+             else if(s[i]=='*'){
+                if(result.size())
+                    result.erase(result.size()-1,1);
+             }
+             else if(s[i]=='#'){
+                if(result.size()){
+                    result+=result[result.size()-1];
+                }
+             }
+             else{
+                if(result.size())
+                    reverse(result.begin(),result.end());
+             }
+        }
+        if(result.size()>k){
+            return result[k];
+        }
+        return '.';
+    }
+int main(){
+      string s="a#b%*";
+      int k=1;
+        // string s="#k#";
+        cout<<processStr(s,k);
+
+return 0 ;
+}
