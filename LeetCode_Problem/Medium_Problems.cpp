@@ -595,6 +595,26 @@
 // return 0 ;
 // }
 
+        /* // Q.1344. Angle Between Hands of a Clock  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+double angleClock(int hour, int minutes) {
+        double angle;
+        angle=abs((30*hour)-(5.5*minutes));
+        if(angle>180){
+                angle=360-angle;
+        }
+        return angle;
+    }
+int main(){
+        int hour=3,minutes=15;
+        cout<<angleClock(hour,minutes);
+
+return 0 ;
+}       
+
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>
