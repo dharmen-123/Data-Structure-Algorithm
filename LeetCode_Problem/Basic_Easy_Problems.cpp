@@ -1158,21 +1158,18 @@
 using namespace std;
 int largestAltitude(vector<int>& gain) {
         long long sum=0;
-        vector<int>result(gain.size()+1,0);
-        result[0]=0;
-        int altitude=result[0];
+        int altitude=0;
         for(int i=0;i<gain.size();i++){
-                sum=result[i]+gain[i];
-                result[i+1]=sum;
-        }
-        for(auto k:result){
-           altitude=max(altitude,k);
+                sum=sum+gain[i];
+                if(sum>altitude){
+                   altitude=sum;
+                }
         }
         return altitude;
     }
 int main(){
-        // vector<int>gain={-5,1,5,0,-7};
-        vector<int>gain={-4,-3,-2,-1,4,3,2};
+        vector<int>gain={-5,1,5,0,-7};
+        // vector<int>gain={-4,-3,-2,-1,4,3,2};
         cout<<largestAltitude(gain);
 
 return 0 ;
