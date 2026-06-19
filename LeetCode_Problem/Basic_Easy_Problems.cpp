@@ -1095,23 +1095,6 @@
 // return 0 ;
 // }
 
-//         /* // 1678. Goal Parser Interpretation  // */
-
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// string interpret(string command) {
-//         int n=command.size();
-
-
-//     }
-// int main(){
-//         string command = "G()(al)";
-//         cout<<interpret(command);
-
-// return 0 ;
-// }
-
         /* // Q.2032. Two Out of Three  // */
 
 // #include<iostream>
@@ -1153,24 +1136,42 @@
 
                 /* // Q.1732. Find the Highest Altitude  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int largestAltitude(vector<int>& gain) {
-        long long sum=0;
-        int altitude=0;
-        for(int i=0;i<gain.size();i++){
-                sum=sum+gain[i];
-                if(sum>altitude){
-                   altitude=sum;
-                }
-        }
-        return altitude;
-    }
-int main(){
-        vector<int>gain={-5,1,5,0,-7};
-        // vector<int>gain={-4,-3,-2,-1,4,3,2};
-        cout<<largestAltitude(gain);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int largestAltitude(vector<int>& gain) {
+//         long long sum=0;
+//         int altitude=0;
+//         for(int i=0;i<gain.size();i++){
+//                 sum=sum+gain[i];
+//                 if(sum>altitude){
+//                    altitude=sum;
+//                 }
+//         }
+//         return altitude;
+//     }
+// int main(){
+//         vector<int>gain={-5,1,5,0,-7};
+//         // vector<int>gain={-4,-3,-2,-1,4,3,2};
+//         cout<<largestAltitude(gain);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+
+              /* // 1678. Goal Parser Interpretation  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string interpret(string command) {
+//         int n=command.size();
+
+
+//     }
+// int main(){
+//         string command = "G()(al)";
+//         cout<<interpret(command);
+
+// return 0 ;
+// }
