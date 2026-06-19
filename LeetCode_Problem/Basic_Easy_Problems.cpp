@@ -1171,7 +1171,8 @@ int largestAltitude(vector<int>& gain) {
         return altitude;
     }
 int main(){
-        vector<int>gain={-5,1,5,0,-7};
+        // vector<int>gain={-5,1,5,0,-7};
+        vector<int>gain={-4,-3,-2,-1,4,3,2};
         cout<<largestAltitude(gain);
 
 return 0 ;
