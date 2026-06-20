@@ -1158,6 +1158,31 @@
 // return 0 ;
 // }
 
+                /* // Q.136. Single Number // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int singleNumber(vector<int>& nums) {
+        int s=0,e=nums.size()-1;
+        int result=0;
+        while(s<=e){
+             result=result^nums[s];
+             s++;
+          if((s-1)!=e){
+             result=result^nums[e];
+             e--;   
+            }
+        }
+        return result;
+}
+int main(){
+        // vector<int>nums={2,2,1};
+        vector<int>nums={4,1,2,1,2};
+        cout<<singleNumber(nums);
+
+return 0 ;
+}
 
               /* // 1678. Goal Parser Interpretation  // */
 
