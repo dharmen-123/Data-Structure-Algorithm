@@ -4,7 +4,7 @@
 // A bitwise operator performs operations on individual bits of integer data.
 
 //   &	AND	            Sets bit to 1 if both bits are 1
-//   |	OR
+//   |	OR                Sets bit to 1 if atleast 1 bits are 1
 //   ^	XOR	            Sets bit to 1 if bits are different
 //   ~	NOT(Complement)	Inverts all bits
 //   <<	Left Shift	    Shifts bits to left
