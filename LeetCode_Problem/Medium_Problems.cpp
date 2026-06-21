@@ -615,6 +615,32 @@
 // return 0 ;
 // }       
 
+        /* // Q.1833. Maximum Ice Cream Bars  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxIceCream(vector<int>& costs, int coins) {
+//          int n=costs.size();
+//          int sum=0 ,count=0;
+//          sort(costs.begin(),costs.end());
+//          for(int i=0;i<n;i++){
+//             if((sum+costs[i])<=coins){
+//                 sum+=costs[i];
+//                 count++;
+//             }
+//          } 
+//          return count;
+//     }
+// int main(){
+//         vector<int>costs ={1,3,2,4,1};
+//         // vector<int>costs ={1,6,3,1,2,5};
+//         int coins = 7;
+//         cout<<maxIceCream(costs,coins);
+
+// return 0 ;
+// }
+
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>

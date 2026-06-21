@@ -1186,24 +1186,24 @@
 
                 /* // Q.136. Single Number // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int singleNumber(vector<int>& nums) {
-        int result=0;
-        for(int i=0;i<nums.size();i++){
-                result^=nums[i];
-        }
-        return result;
-    }
-int main(){
-          vector<int>nums={2,2,3,2};
-        // vector<int>nums={0,1,0,1,0,1,99};
-        cout<<singleNumber(nums);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int singleNumber(vector<int>& nums) {
+//         int result=0;
+//         for(int i=0;i<nums.size();i++){
+//                 result^=nums[i];
+//         }
+//         return result;
+//     }
+// int main(){
+//           vector<int>nums={2,2,3,2};
+//         // vector<int>nums={0,1,0,1,0,1,99};
+//         cout<<singleNumber(nums);
 
 
-return 0 ;
-}
+// return 0 ;
+// }
 
               /* // 1678. Goal Parser Interpretation  // */
 
