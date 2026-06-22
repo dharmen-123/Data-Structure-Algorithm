@@ -1222,20 +1222,61 @@
 // return 0 ;
 // }
 
-         /*    // Q.509. Fibonacci Number // */
+                /* //  Q.1189. Maximum Number of Balloons   // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int fib(int n) {
-        if(n<=1){
-            return n;    
-        }
-        return fib(n-1)+fib(n-2);
-    }
-int main(){
-        int n=2;
-        cout<<fib(n);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxNumberOfBalloons(string text) {
+//         unordered_map<char,int>bal{{'b',0},
+//                                    {'a',0},
+//                                    {'l',0},
+//                                    {'o',0},
+//                                    {'n',0}};
+//         for(auto c:text){
+//            if(bal.find(c)!=bal.end()){
+//                 bal[c]++;
+//            }
+//         }
+//         int b=bal['b']/1;
+//         int a=bal['a']/1;
+//         int l=bal['l']/2;
+//         int o=bal['o']/2;
+//         int n=bal['n']/1;
 
-return 0 ;
-}
+//         return min({b,a,l,o,n});
+//     }
+// int main(){
+//         // string text = "nlaebolko";
+//         string text = "loonbalxballpoon";
+//         cout<<maxNumberOfBalloons(text);
+
+// return 0 ;
+// }
+
+                /*    // Q.509. Fibonacci Number // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int fib(int n) {
+//         // if(n<=1){
+//         //     return n;    
+//         // }
+//         // return fib(n-1)+fib(n-2);
+//         if(n==0) return 0;
+//         if(n==1) return 1;
+//         int first=0,second=1,num;
+//         for(int i=2;i<=n;i++){
+//             num=first+second;
+//             first=second;
+//             second=num;
+//         }
+//         return num;
+//     }
+// int main(){
+//         int n=3;
+//         cout<<fib(n);
+
+// return 0 ;
+// }

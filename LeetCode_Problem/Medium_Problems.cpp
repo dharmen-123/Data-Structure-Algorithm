@@ -641,6 +641,30 @@
 // return 0 ;
 // }
 
+        /* // Q.70. Climbing Stairs  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int climbStairs(int n) {
+//         if(n<=1){
+//             return 1;
+//         }
+//         int p1=1,p2=1,curr;
+//         for(int i=2;i<=n;i++){
+//                 curr=p1+p2;
+//                 p1=p2;
+//                 p2=curr;
+//         }
+//         return p2;
+//     }
+// int main(){
+//         int n=5;
+//         cout<<climbStairs(n);
+
+// return 0 ;
+// }
+
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>
