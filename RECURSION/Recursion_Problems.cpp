@@ -40,15 +40,40 @@
 
         /* // Factorial of any Number // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-void factorial(int n){
-    
-}
-int main(){
-    int n=5;
-    factorial(n);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int factorial(int n){
+//    if(n==1 || n==0){
+//     return 1;
+//    } 
+//    return n*factorial(n-1);
+// }
+// int main(){
+//     int n=5;
+//     if(n<0){
+//         cout<<"Factorial is not possible";
+//         return 0;
+//     }
+//     cout<<factorial(n);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+            /* // Sum of N natural Number // */
+        
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int Sum(int n){
+//     if(n==0){
+//         return 0;
+//     }
+//     return n+Sum(n-1);
+// }
+// int main(){
+//     int n=5;
+//     cout<<Sum(n);
+
+// return 0 ;
+// }
