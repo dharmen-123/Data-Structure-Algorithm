@@ -13,55 +13,57 @@ Key idea: Divide → Sort → Merge.
 * Merge the two sorted halves into one sorted array.
 */
 
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// void merge(vector<int>& arr, int low, int high , int mid){
-//     vector<int>temp(high+1);
-//     int i=low;
-//     int j=mid+1;
-//     int index=low;
-//     while(i<=mid && j<=high){
-//         if(arr[i]<=arr[j]){
-//             temp[index]=arr[i];
-//             i++;
-//         }
-//         else{
-//             temp[index]=arr[j];
-//             j++;
-//         }
-//         index++;
-//     }
-//     while(i<=mid){
-//         temp[index]=arr[i];
-//         i++,index++;
-//     }
-//     while(j<=high){
-//         temp[index]=arr[j];
-//         j++,index++;
-//     }
-//     while(low<=high){
-//         arr[low]=temp[low];
-//         low++;
-//     }
-// }
-// void mergesort(vector<int>&arr, int left , int right){
-//      if(left<right){
-//         int mid=left+(right-left)/2;
-//         mergesort(arr,left,mid);
-//         mergesort(arr,mid+1,right);
-//         merge(arr,left,right , mid);
-//      }
-// }
-// int main(){
-//     vector<int>arr={5,2,7,6,1,4,8,3,9};
-//     int n=arr.size();
-//     mergesort(arr,0,n-1);
-//     cout << "Sorted array: ";
-//     for(int x : arr) 
-//        cout << x << " ";
-// return 0 ;
-// }
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> merge(vector<int>& arr, int low, int high , int mid){
+    vector<int>temp(high+1);
+    int i=low;
+    int j=mid+1;
+    int index=low;
+    while(i<=mid && j<=high){
+        if(arr[i]<=arr[j]){
+            temp[index]=arr[i];
+            i++;
+        }
+        else{
+            temp[index]=arr[j];
+            j++;
+        }
+        index++;
+    }
+    while(i<=mid){
+        temp[index]=arr[i];
+        i++,index++;
+    }
+    while(j<=high){
+        temp[index]=arr[j];
+        j++,index++;
+    }
+    while(low<=high){
+        arr[low]=temp[low];
+        low++;
+    }
+    return arr;
+}
+vector<int> mergesort(vector<int>&arr, int left , int right){
+     if(left<right){
+        int mid=left+(right-left)/2;
+        mergesort(arr,left,mid);
+        mergesort(arr,mid+1,right);
+        merge(arr,left,right , mid);
+     }
+     return arr;
+}
+int main(){
+    vector<int>arr={5,2,7,6,1,4,8,3,9};
+    int n=arr.size();
+    vector<int>result=mergesort(arr,0,n-1);
+    cout << "Sorted array: ";
+    for(int x : result) 
+       cout << x << " ";
+return 0 ;
+}
 
 
 
