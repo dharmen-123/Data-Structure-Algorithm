@@ -712,32 +712,32 @@
 
         /* // Q.49. Group Anagrams  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<vector<string>> groupAnagrams(vector<string>& strs) {
-       unordered_map<string,vector<string>>mp;
-       vector<vector<string>>ans;
-        for(int i=0;i<strs.size();i++){
-           string key=strs[i];
-           sort(key.begin(),key.end());
-           mp[key].push_back(strs[i]);
-        } 
-        for(auto it=mp.begin();it!=mp.end();it++){
-                ans.push_back(it->second);
-        }
-        return ans;
-}
-int main(){
-        vector<string>strs={"eat","tea","tan","ate","nat","bat"};
-        vector<vector<string>>result=groupAnagrams(strs);
-        for(auto k:result){
-            for(auto a:k)
-                cout<<a<<" ";
-          cout<<",";
-        }
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<string>> groupAnagrams(vector<string>& strs) {
+//        unordered_map<string,vector<string>>mp;
+//        vector<vector<string>>ans;
+//         for(int i=0;i<strs.size();i++){
+//            string key=strs[i];
+//            sort(key.begin(),key.end());
+//            mp[key].push_back(strs[i]);
+//         } 
+//         for(auto it=mp.begin();it!=mp.end();it++){
+//                 ans.push_back(it->second);
+//         }
+//         return ans;
+// }
+// int main(){
+//         vector<string>strs={"eat","tea","tan","ate","nat","bat"};
+//         vector<vector<string>>result=groupAnagrams(strs);
+//         for(auto k:result){
+//             for(auto a:k)
+//                 cout<<a<<" ";
+//           cout<<",";
+//         }
+// return 0 ;
+// }
 
         /* // Q.686. Repeated String Match  //  */
 
