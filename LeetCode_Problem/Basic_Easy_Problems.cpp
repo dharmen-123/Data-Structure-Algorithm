@@ -1266,42 +1266,28 @@
 
               /* // 1678. Goal Parser Interpretation  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string interpret(string command) {
-        int n=command.size();
-        int index=0;
-        for(int i=0;i<n;i++){
-            if(isalpha(command[i])){
-                command[index++]=command[i];
-            }
-            else if(command[i]=='(' && command[i+1]==')'){
-                command[index++]='o';
-                i++;
-            }
-        }
-        command.erase(index);
-        return command;
-    }
-int main(){
-        // string command = "G()()()()(al)";
-        string command = "(al)G(al)()()G";
-        cout<<interpret(command);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string interpret(string command) {
+//         int n=command.size();
+//         int index=0;
+//         for(int i=0;i<n;i++){
+//             if(isalpha(command[i])){
+//                 command[index++]=command[i];
+//             }
+//             else if(command[i]=='(' && command[i+1]==')'){
+//                 command[index++]='o';
+//                 i++;
+//             }
+//         }
+//         command.erase(index);
+//         return command;
+//     }
+// int main(){
+//         // string command = "G()()()()(al)";
+//         string command = "(al)G(al)()()G";
+//         cout<<interpret(command);
 
-return 0 ;
-}
-/*
-Input: command = "G()(al)"
-Output: "Goal"
-Explanation: The Goal Parser interprets the command as follows:
-G -> G
-() -> o
-(al) -> al
-The final concatenated result is "Goal".
-Example 2:
-Input: command = "G()()()()(al)"
-Output: "Gooooal"
-Example 3:
-Input: command = "(al)G(al)()()G"
-Output: "alGalooG"*/
+// return 0 ;
+// }

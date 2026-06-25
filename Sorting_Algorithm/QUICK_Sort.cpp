@@ -30,10 +30,29 @@ Hoare Partition: Faster, uses two pointers moving inward.
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
+int partition(vector<int>& arr, int start, int end){
+    int pos=start;
+    for(int i=start;i<=end;i++){
+        if(arr[i]<=arr[end]){
+            swap(arr[i],arr[pos++]);
+        }
+    }
+    return pos-1;
+}
+vector<int> quicksort(vector<int>& arr , int start, int end){
+    if(start<end){
+        int pivot=partition(arr,start,end);
+        quicksort(arr,start,pivot-1);
+        quicksort(arr,pivot+1,end);
+    }
+    return arr;
+}
 int main(){
-
-
+    vector<int>arr={4,1,7,2,9,5,6,3};
+    vector<int>ans=quicksort(arr,0,arr.size()-1);
+    for(auto v:ans){
+        cout<<v<<" ";
+    }
 return 0 ;
 }
 
