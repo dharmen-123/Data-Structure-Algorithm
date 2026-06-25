@@ -739,6 +739,22 @@
 // return 0 ;
 // }
 
+        /* // Q.78. Subsets  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<vector<int>> subsets(vector<int>& nums) {
+        
+    }
+int main(){
+        vector<int>nums={1,2,3};
+        vector<vector<int>>ans=subsets(nums);
+
+
+return 0 ;
+}
+
         /* // Q.686. Repeated String Match  //  */
 
 // #include<iostream>
