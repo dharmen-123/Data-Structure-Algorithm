@@ -812,36 +812,64 @@
 
         /* // Q.90. Subsets II  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void Subsequence(vector<int>& nums,int index ,int n,vector<vector<int>>& ans,vector<int>& temp){
+//         ans.push_back(temp);
+//         for(int i=index;i<n;i++){
+//         if(i>index && nums[i]==nums[i-1])
+//              continue;
+//         temp.push_back(nums[i]);
+//         Subsequence(nums,i+1,n,ans,temp);
+//         temp.pop_back();
+//         }
+// }
+// vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+//         vector<vector<int>>ans;
+//         vector<int>temp;
+//         sort(nums.begin(),nums.end());
+//         Subsequence(nums,0,nums.size(),ans,temp);
+//       return ans;
+//     }
+// int main(){
+//         vector<int>nums={1,2,2};
+//         vector<vector<int>>ans=subsetsWithDup(nums);
+//         for(auto k:ans){
+//                 cout<<"{";
+//             for(auto a:k){
+//                 cout<<a<<" ";
+//              }
+//              cout<<"} , ";
+//         }
+// return 0 ;
+// }
+
+        /* // Q.494. Target Sum  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void Subsequence(vector<int>& nums,int index ,int n,vector<vector<int>>& ans,vector<int>& temp){
-        ans.push_back(temp);
-        for(int i=index;i<n;i++){
-        if(i>index && nums[i]==nums[i-1])
-             continue;
-        temp.push_back(nums[i]);
-        Subsequence(nums,i+1,n,ans,temp);
-        temp.pop_back();
+int Counter(vector<int>& nums, int target, int index,int n,int sum, int &count){
+        if(index==n){
+           if(target==sum) count++;
+          return count;  
         }
+        //Not Included
+        Counter(nums,target,index+1,n,sum+nums[index],count);
+        //Included
+        Counter(nums,target,index+1,n,sum-nums[index],count);
+   return count;
 }
-vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        vector<vector<int>>ans;
-        vector<int>temp;
-        sort(nums.begin(),nums.end());
-        Subsequence(nums,0,nums.size(),ans,temp);
-      return ans;
+int findTargetSumWays(vector<int>& nums, int target) {
+      int count=0;
+      return Counter(nums,target,0,nums.size(),0,count);
+
     }
 int main(){
-        vector<int>nums={1,2,2};
-        vector<vector<int>>ans=subsetsWithDup(nums);
-        for(auto k:ans){
-                cout<<"{";
-            for(auto a:k){
-                cout<<a<<" ";
-             }
-             cout<<"} , ";
-        }
+        vector<int>nums={1,1,1,1,1};
+        int target=3;
+        cout<<findTargetSumWays(nums,target);
 
 return 0 ;
 }
