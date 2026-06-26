@@ -776,37 +776,73 @@
 
         /* // Q.22. Generate Parentheses  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void parenthsis(int n,int left , int right , vector<string>& ans, string &temp){
+//        if(left==n && right ==n){
+//          ans.push_back(temp);
+//          return;
+//        }
+//        if(left<n){
+//         temp.push_back('(');
+//         parenthsis(n,left+1,right,ans,temp);
+//         temp.pop_back();
+//        }
+//        if(right<left){
+//         temp.push_back(')');
+//         parenthsis(n,left,right+1,ans,temp);
+//         temp.pop_back();
+//        }
+// }
+// vector<string> generateParenthesis(int n) {
+//         vector<string>ans;
+//         string temp;
+//         parenthsis(n,0,0,ans,temp);
+//    return ans;
+// }
+// int main(){
+//         int n=3;
+//         vector<string>ans=generateParenthesis(n);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+        /* // Q.90. Subsets II  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void parenthsis(int n,int left , int right , vector<string>& ans, string &temp){
-       if(left==n && right ==n){
-         ans.push_back(temp);
-         return;
-       }
-       if(left<n){
-        temp.push_back('(');
-        parenthsis(n,left+1,right,ans,temp);
+void Subsequence(vector<int>& nums,int index ,int n,vector<vector<int>>& ans,vector<int>& temp){
+        ans.push_back(temp);
+        for(int i=index;i<n;i++){
+        if(i>index && nums[i]==nums[i-1])
+             continue;
+        temp.push_back(nums[i]);
+        Subsequence(nums,i+1,n,ans,temp);
         temp.pop_back();
-       }
-       if(right<left){
-        temp.push_back(')');
-        parenthsis(n,left,right+1,ans,temp);
-        temp.pop_back();
-       }
-}
-vector<string> generateParenthesis(int n) {
-        vector<string>ans;
-        string temp;
-        parenthsis(n,0,0,ans,temp);
-   return ans;
-}
-int main(){
-        int n=3;
-        vector<string>ans=generateParenthesis(n);
-        for(auto k:ans){
-                cout<<k<<" ";
         }
+}
+vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>temp;
+        sort(nums.begin(),nums.end());
+        Subsequence(nums,0,nums.size(),ans,temp);
+      return ans;
+    }
+int main(){
+        vector<int>nums={1,2,2};
+        vector<vector<int>>ans=subsetsWithDup(nums);
+        for(auto k:ans){
+                cout<<"{";
+            for(auto a:k){
+                cout<<a<<" ";
+             }
+             cout<<"} , ";
+        }
+
 return 0 ;
 }
 
