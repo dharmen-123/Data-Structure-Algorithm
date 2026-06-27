@@ -949,40 +949,41 @@
 
                 /* // Q.47. Permutations II  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-void Combination(vector<int>& nums,vector<vector<int>>& ans,int index){
-        if(nums.size()==index){
-            ans.push_back(nums);
-            return ;
-        }
-        for(int i=index;i<nums.size();i++){
-             if(nums[i]!=nums[i+1]){
-                swap(nums[index],nums[i]);
-                Combination(nums,ans,index+1);
-                swap(nums[index],nums[i]);
-                }
-        }
-}
-vector<vector<int>> permuteUnique(vector<int>& nums) {
-        vector<vector<int>>ans;
-        Combination(nums,ans,0);
-        return ans;
-    }
-int main(){
-        vector<int>nums={1,1,2};
-        vector<vector<int>>result=permuteUnique(nums);
-        for(auto k:result){
-                cout<<"[";
-                for(auto a:k){
-                   cout<<a<<" ";
-                }
-                cout<<"],";
-        }
-  
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void Combination(vector<int>& nums,vector<vector<int>>& ans,int index){
+//         if(nums.size()==index){
+//             ans.push_back(nums);
+//             return ;
+//         }
+//         vector<bool>use(21,0);
+//         for(int i=index;i<nums.size();i++){
+//              if(use[nums[i]+10]==0){
+//                 swap(nums[i],nums[index]);
+//                 Combination(nums,ans,index+1);
+//                 swap(nums[i],nums[index]);
+//                 use[nums[i]+10]==1;
+//                 }
+//         }
+// }
+// vector<vector<int>> permuteUnique(vector<int>& nums) {
+//         vector<vector<int>>ans;
+//         Combination(nums,ans,0);
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums={1,1,2};
+//         vector<vector<int>>result=permuteUnique(nums);
+//         for(auto k:result){
+//                 cout<<"[";
+//                 for(auto a:k){
+//                    cout<<a<<" ";
+//                 }
+//                 cout<<"],";
+//         }
+// return 0 ;
+// }
 
                 /* // Q.31. Next Permutation  // */
 
