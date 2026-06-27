@@ -847,45 +847,70 @@
 
         /* // Q.494. Target Sum  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int Counter(vector<int>& nums, int target, int index,int n,int sum, int &count){
-        if(index==n){
-           if(target==sum) count++;
-          return count;  
-        }
-        //Not Included
-        Counter(nums,target,index+1,n,sum+nums[index],count);
-        //Included
-        Counter(nums,target,index+1,n,sum-nums[index],count);
-   return count;
-}
-int findTargetSumWays(vector<int>& nums, int target) {
-      int count=0;
-      return Counter(nums,target,0,nums.size(),0,count);
-
-    }
-int main(){
-        vector<int>nums={1,1,1,1,1};
-        int target=3;
-        cout<<findTargetSumWays(nums,target);
-
-return 0 ;
-}
-
-        /* // Q.686. Repeated String Match  //  */
-
 // #include<iostream>
-// #include<vector>
-// #include<algorithm>
+// #include<bits/stdc++.h>
 // using namespace std;
-// int repeatedStringMatch(string a, string b) {
-        
-    
+// int Counter(vector<int>& nums, int target, int index,int n,int sum, int &count){
+//         if(index==n){
+//            if(target==sum) count++;
+//           return count;  
+//         }
+//         //Not Included
+//         Counter(nums,target,index+1,n,sum+nums[index],count);
+//         //Included
+//         Counter(nums,target,index+1,n,sum-nums[index],count);
+//    return count;
 // }
-// int main(){
+// int findTargetSumWays(vector<int>& nums, int target) {
+//       int count=0;
+//       return Counter(nums,target,0,nums.size(),0,count);
 
+//     }
+// int main(){
+//         vector<int>nums={1,1,1,1,1};
+//         int target=3;
+//         cout<<findTargetSumWays(nums,target);
 
 // return 0 ;
 // }
+
+        /* // Q.46. Permutations  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void Combination(vector<int>nums,int n,vector<vector<int>>& ans,vector<int>&temp,vector<bool>&visited){
+        if(n==temp.size()){
+            ans.push_back(temp);
+            return ;
+        }
+        for(int i=0;i<n;i++){
+            if(visited[i]==0){
+                visited[i]=1;
+                temp.push_back(nums[i]);
+                Combination(nums,n,ans,temp,visited);
+                visited[i]=0;
+                temp.pop_back();
+            }
+        }
+}
+vector<vector<int>> permute(vector<int>& nums) {
+        int n=nums.size();
+        vector<vector<int>>ans;
+        vector<int>temp;
+        vector<bool>visited(n,0);
+        Combination(nums,n,ans,temp,visited);
+        return ans;
+    }
+int main(){
+        vector<int>nums={1,2,3};
+        vector<vector<int>>result=permute(nums);
+        for(auto k:result){
+                cout<<"[";
+                for(auto a:k){
+                        cout<<a<<" ";
+                }
+                cout<<"],";
+        }
+return 0 ;
+}
