@@ -1291,3 +1291,37 @@
 
 // return 0 ;
 // }
+
+                /* // Q.125. Valid Palindrome // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool isPalindrome(string s) {
+        if(s.size()<=1){
+           return true;
+        }
+        int index=0;
+        for(int i=0;i<s.size();i++){
+          if(isalpha(s[i])){
+                if(s[i]>='A' && s[i]<='Z'){
+                   s[index++]=(s[i]+32);
+                }
+                else
+                   s[index++]=s[i];
+           }
+        }
+        s.erase(index);
+        string a=s;
+        reverse(s.begin(),s.end());
+        if(s==a){
+            return true;
+        }
+     return false;
+    }
+int main(){
+        string s="A man, a plan, a canal: Panama";
+        cout<<isPalindrome(s);
+
+return 0 ;
+}

@@ -963,7 +963,7 @@
 //                 swap(nums[i],nums[index]);
 //                 Combination(nums,ans,index+1);
 //                 swap(nums[i],nums[index]);
-//                 use[nums[i]+10]==1;
+//                 use[nums[i]+10]=1;
 //                 }
 //         }
 // }
