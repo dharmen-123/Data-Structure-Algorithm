@@ -915,35 +915,63 @@
 // return 0 ;
 // }
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void Combination(vector<int>& nums,vector<vector<int>>& ans,int index){
+//         if(nums.size()==index){
+//             ans.push_back(nums);
+//             return ;
+//         }
+//         for(int i=index;i<nums.size();i++){
+//                 swap(nums[index],nums[i]);
+//                 Combination(nums,ans,index+1);
+//                 swap(nums[index],nums[i]);
+//         }
+// }
+// vector<vector<int>> permute(vector<int>& nums) {
+//         vector<vector<int>>ans;
+//         Combination(nums,ans,0);
+//         return ans;
+//     }
+// int main(){
+//          vector<int>nums={1,2,3};
+//         vector<vector<int>>result=permute(nums);
+//         for(auto k:result){
+//                 cout<<"[";
+//                 for(auto a:k){
+//                         cout<<a<<" ";
+//                 }
+//                 cout<<"],";
+//         }
+// return 0 ;
+// }
+
+                /* // Q.31. Next Permutation  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void Combination(vector<int>nums,vector<vector<int>>& ans,int index){
-        if(nums.size()==index){
-            ans.push_back(nums);
-            return ;
+void nextPermutation(vector<int>& nums) {
+        int n = nums.size();
+        int i = n - 2;        
+        while (i >= 0 && nums[i] >= nums[i+1]) {
+            i--;
+        }        
+        if (i >= 0) {
+            int j = n - 1;
+            while (nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums[i], nums[j]);
         }
-        for(int i=index;i<nums.size();i++){
-                swap(nums[index],nums[i]);
-                Combination(nums,ans,index+1);
-                swap(nums[index],nums[i]);
-        }
-}
-vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>>ans;
-        Combination(nums,ans,0);
-        return ans;
+        reverse(nums.begin() + i + 1, nums.end());
     }
 int main(){
         vector<int>nums={1,2,3};
-        vector<vector<int>>result=permute(nums);
-        for(auto k:result){
-                cout<<"[";
-                for(auto a:k){
-                        cout<<a<<" ";
-                }
-                cout<<"],";
+        nextPermutation(nums);
+        for(auto k:nums){
+                cout<<k<<" ";
         }
 return 0 ;
 }
-
