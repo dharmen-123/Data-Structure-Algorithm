@@ -1303,21 +1303,14 @@ bool isPalindrome(string s) {
         }
         int index=0;
         for(int i=0;i<s.size();i++){
-          if(isalpha(s[i])){
-                if(s[i]>='A' && s[i]<='Z'){
-                   s[index++]=(s[i]+32);
-                }
-                else
-                   s[index++]=s[i];
+          if(isalnum(s[i])){
+              s[index++]=tolower(s[i]);
            }
         }
         s.erase(index);
         string a=s;
         reverse(s.begin(),s.end());
-        if(s==a){
-            return true;
-        }
-     return false;
+        return a==s;
     }
 int main(){
         string s="A man, a plan, a canal: Panama";
