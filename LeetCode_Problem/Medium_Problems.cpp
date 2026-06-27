@@ -876,30 +876,62 @@
 
         /* // Q.46. Permutations  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void Combination(vector<int>nums,int n,vector<vector<int>>& ans,vector<int>&temp,vector<bool>&visited){
+//         if(n==temp.size()){
+//             ans.push_back(temp);
+//             return ;
+//         }
+//         for(int i=0;i<n;i++){
+//             if(visited[i]==0){
+//                 visited[i]=1;
+//                 temp.push_back(nums[i]);
+//                 Combination(nums,n,ans,temp,visited);
+//                 visited[i]=0;
+//                 temp.pop_back();
+//             }
+//         }
+// }
+// vector<vector<int>> permute(vector<int>& nums) {
+//         int n=nums.size();
+//         vector<vector<int>>ans;
+//         vector<int>temp;
+//         vector<bool>visited(n,0);
+//         Combination(nums,n,ans,temp,visited);
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums={1,2,3};
+//         vector<vector<int>>result=permute(nums);
+//         for(auto k:result){
+//                 cout<<"[";
+//                 for(auto a:k){
+//                         cout<<a<<" ";
+//                 }
+//                 cout<<"],";
+//         }
+// return 0 ;
+// }
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void Combination(vector<int>nums,int n,vector<vector<int>>& ans,vector<int>&temp,vector<bool>&visited){
-        if(n==temp.size()){
-            ans.push_back(temp);
+void Combination(vector<int>nums,vector<vector<int>>& ans,int index){
+        if(nums.size()==index){
+            ans.push_back(nums);
             return ;
         }
-        for(int i=0;i<n;i++){
-            if(visited[i]==0){
-                visited[i]=1;
-                temp.push_back(nums[i]);
-                Combination(nums,n,ans,temp,visited);
-                visited[i]=0;
-                temp.pop_back();
-            }
+        for(int i=index;i<nums.size();i++){
+                swap(nums[index],nums[i]);
+                Combination(nums,ans,index+1);
+                swap(nums[index],nums[i]);
         }
 }
 vector<vector<int>> permute(vector<int>& nums) {
-        int n=nums.size();
         vector<vector<int>>ans;
-        vector<int>temp;
-        vector<bool>visited(n,0);
-        Combination(nums,n,ans,temp,visited);
+        Combination(nums,ans,0);
         return ans;
     }
 int main(){
@@ -914,3 +946,4 @@ int main(){
         }
 return 0 ;
 }
+
