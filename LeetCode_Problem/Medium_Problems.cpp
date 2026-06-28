@@ -1014,3 +1014,86 @@
 // return 0 ;
 // }
 
+        /*  //  Q.1846. Maximum Element After Decreasing and Rearranging  //  */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
+//         sort(arr.begin(),arr.end());
+
+//     }   
+// int main(){
+//         vector<int>arr={2,2,2,1,1};
+//         cout<<maximumElementAfterDecrementingAndRearranging(arr);
+
+// return 0 ;
+// }
+
+        /* // Q.3974. Maximum Total Sum of K Selected Elements // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// long long maxSum(vector<int>& nums, int k, int mul) {
+//         sort(nums.begin(),nums.end());
+//         long long totalsum=0;
+//         for(int i=nums.size()-1;i>=0 && k>0;i--){
+//             totalsum=totalsum+max((long long)nums[i], (long long)nums[i] * mul);
+//             mul--; 
+//             k--;
+//         }
+//         return totalsum;
+// }
+// int main(){
+//         vector<int>nums={4,4};
+//         int k=1, mul=1;
+//         cout<<maxSum(nums,k,mul);
+
+// return 0 ;
+// }
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<vector<int>> filterOccupiedIntervals(vector<vector<int>>& occupiedIntervals,int freeStart, int freeEnd) {
+        sort(occupiedIntervals.begin(), occupiedIntervals.end());
+        vector<vector<int>> merged;
+        for (auto interval : occupiedIntervals) {
+            if (merged.empty() || interval[0] > merged.back()[1] + 1)             { 
+                merged.push_back(interval);
+            }
+            else {
+                merged.back()[1] = max(merged.back()[1], interval[1]);
+            }
+        }
+        vector<vector<int>> ans;
+        for (auto interval : merged) {
+            int l = interval[0];
+            int r = interval[1];
+            if (r < freeStart || l > freeEnd) {
+                ans.push_back({l, r});
+            }
+            else {
+                if (l < freeStart) {
+                    ans.push_back({l, freeStart - 1});
+                }
+                if (r > freeEnd) {
+                    ans.push_back({freeEnd + 1, r});
+                }
+            }
+        }
+        return ans;
+    }
+int main(){
+   vector<vector<int>>occupiedIntervals = {{2,6},{4,8},{10,10},{10,12},{14,16}};
+   int freeStart = 7, freeEnd = 11;
+   vector<vector<int>>result=filterOccupiedIntervals(occupiedIntervals,freeStart,freeEnd);
+  for(auto k:result){
+        for(auto a:k){
+                cout<<a<<" ";
+        }
+        cout<<endl;
+  }
+return 0 ;
+}

@@ -1294,27 +1294,28 @@
 
                 /* // Q.125. Valid Palindrome // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-bool isPalindrome(string s) {
-        if(s.size()<=1){
-           return true;
-        }
-        int index=0;
-        for(int i=0;i<s.size();i++){
-          if(isalnum(s[i])){
-              s[index++]=tolower(s[i]);
-           }
-        }
-        s.erase(index);
-        string a=s;
-        reverse(s.begin(),s.end());
-        return a==s;
-    }
-int main(){
-        string s="A man, a plan, a canal: Panama";
-        cout<<isPalindrome(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isPalindrome(string s) {
+//         if(s.size()<=1){
+//            return true;
+//         }
+//         int index=0;
+//         for(int i=0;i<s.size();i++){
+//           if(isalnum(s[i])){
+//               s[index++]=tolower(s[i]);
+//            }
+//         }
+//         s.erase(index);
+//         string a=s;
+//         reverse(s.begin(),s.end());
+//         return a==s;
+//     }
+// int main(){
+//         string s="A man, a plan, a canal: Panama";
+//         cout<<isPalindrome(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
