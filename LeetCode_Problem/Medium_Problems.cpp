@@ -1014,22 +1014,6 @@
 // return 0 ;
 // }
 
-        /*  //  Q.1846. Maximum Element After Decreasing and Rearranging  //  */
-
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
-//         sort(arr.begin(),arr.end());
-
-//     }   
-// int main(){
-//         vector<int>arr={2,2,2,1,1};
-//         cout<<maximumElementAfterDecrementingAndRearranging(arr);
-
-// return 0 ;
-// }
-
         /* // Q.3974. Maximum Total Sum of K Selected Elements // */
 
 // #include<iostream>
@@ -1099,3 +1083,18 @@
 //   }
 // return 0 ;
 // }
+
+        /* // Q.1846. Maximum Element After Decreasing and Rearranging // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
+        
+    }
+int main(){
+        vector<int>arr={};
+        cout<<maximumElementAfterDecrementingAndRearranging(arr);
+
+return 0 ;
+}
