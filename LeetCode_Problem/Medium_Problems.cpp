@@ -1090,10 +1090,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
-        
+        sort(arr.begin(), arr.end());
+        arr[0] = 1;
+        for(int i = 1; i < arr.size(); i++) {
+            arr[i] = min(arr[i], arr[i - 1] + 1);
+        }
+        return arr[arr.size()-1];
     }
 int main(){
-        vector<int>arr={};
+        vector<int>arr={2,2,1,2,1};
+        // vector<int>arr={100,1,1000};
         cout<<maximumElementAfterDecrementingAndRearranging(arr);
 
 return 0 ;
