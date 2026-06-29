@@ -1319,3 +1319,24 @@
 // return 0 ;
 // }
 
+        /* // Q.1967. Number of Strings That Appear as Substrings in Word // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int numOfStrings(vector<string>& patterns, string word) {
+        int count=0;
+        for(auto k:patterns){
+            if(word.find(k)<word.size()){
+                count++;
+            }
+        }
+        return count;
+    }
+int main(){
+        vector<string>patterns={"a","a","a"};
+        string word="ab";
+        cout<<numOfStrings(patterns,word);
+
+return 0 ;
+}
