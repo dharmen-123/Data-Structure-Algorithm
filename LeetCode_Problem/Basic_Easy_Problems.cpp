@@ -1321,22 +1321,42 @@
 
         /* // Q.1967. Number of Strings That Appear as Substrings in Word // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int numOfStrings(vector<string>& patterns, string word) {
-        int count=0;
-        for(auto k:patterns){
-            if(word.find(k)<word.size()){
-                count++;
-            }
-        }
-        return count;
-    }
-int main(){
-        vector<string>patterns={"a","a","a"};
-        string word="ab";
-        cout<<numOfStrings(patterns,word);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int numOfStrings(vector<string>& patterns, string word) {
+//         int count=0;
+//         for(auto k:patterns){
+//             if(word.find(k)<word.size()){
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
+// int main(){
+//         vector<string>patterns={"a","a","a"};
+//         string word="ab";
+//         cout<<numOfStrings(patterns,word);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.28. Find the Index of the First Occurrence in a String // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int strStr(string haystack, string needle) {
+//         int pos=haystack.find(needle);
+//         if(pos>haystack.size()){
+//              pos=-1;   
+//         }
+//         return pos;
+//     }
+// int main(){
+//         string haystack = "sadbutsad", needle = "sad";
+//         // string haystack = "leetcode", needle = "leeto";
+//         cout<<strStr(haystack,needle);
+
+// return 0 ;
+// }
