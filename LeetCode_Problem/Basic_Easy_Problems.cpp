@@ -1367,35 +1367,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> countBits(int n) {
-        vector<int>ans;
-        for(int i=n;i>=0;i--){
-          int num=i;
-          int rem=0,tens=1,res=0;
-          while(num>0){
-                rem=num%2;
-                num=num/2;
-                res=rem*tens+res;
-                tens*=10;
-          }
-          ans.push_back(res);
-        }
-        reverse(ans.begin(),ans.end());
-        int count;
-        for(int i=0;i<n+1;i++){
-              count=0;
-                while(ans[i]>0){
-                 if(ans[i]%10==1){
-                        count++;
-                 }
-                 ans[i]=ans[i]/10;
-              } 
-              ans[i]=count; 
-        }
+        vector<int>ans(n+1,0);
+       for(int i=1;i<=n;i++){
+           ans[i]=ans[i>>1]+(i&1);
+       }
         return ans;
 
     }
 int main(){
-        int n=2;
+        int n=5;
         vector<int>result=countBits(n);
         for(auto k:result){
                 cout<<k<<" ";
