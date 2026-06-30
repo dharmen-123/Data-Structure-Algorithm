@@ -1086,21 +1086,50 @@
 
         /* // Q.1846. Maximum Element After Decreasing and Rearranging // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
+//         sort(arr.begin(), arr.end());
+//         arr[0] = 1;
+//         for(int i = 1; i < arr.size(); i++) {
+//             arr[i] = min(arr[i], arr[i - 1] + 1);
+//         }
+//         return arr[arr.size()-1];
+//     }
+// int main(){
+//         vector<int>arr={2,2,1,2,1};
+//         // vector<int>arr={100,1,1000};
+//         cout<<maximumElementAfterDecrementingAndRearranging(arr);
+
+// return 0 ;
+// }
+
+        /* // Q.1358. Number of Substrings Containing All Three Characters // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
-        sort(arr.begin(), arr.end());
-        arr[0] = 1;
-        for(int i = 1; i < arr.size(); i++) {
-            arr[i] = min(arr[i], arr[i - 1] + 1);
+int numberOfSubstrings(string s) {
+    int n = s.size();
+    int count = 0;
+    vector<int> freq(3, 0); 
+    int left = 0;
+
+    for (int right = 0; right < n; right++) {
+        freq[s[right] - 'a']++;
+
+        while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
+            count += n - right; 
+            freq[s[left] - 'a']--;
+            left++;
         }
-        return arr[arr.size()-1];
+    }
+    return count;
     }
 int main(){
-        vector<int>arr={2,2,1,2,1};
-        // vector<int>arr={100,1,1000};
-        cout<<maximumElementAfterDecrementingAndRearranging(arr);
+     string s="abcabc";
+     cout<<numberOfSubstrings(s);
 
 return 0 ;
 }
