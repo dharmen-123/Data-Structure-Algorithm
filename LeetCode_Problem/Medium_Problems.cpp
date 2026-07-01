@@ -1107,29 +1107,29 @@
 
         /* // Q.1358. Number of Substrings Containing All Three Characters // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int numberOfSubstrings(string s) {
-    int n = s.size();
-    int count = 0;
-    vector<int> freq(3, 0); 
-    int left = 0;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int numberOfSubstrings(string s) {
+//     int n = s.size();
+//     int count = 0;
+//     vector<int> freq(3, 0); 
+//     int left = 0;
 
-    for (int right = 0; right < n; right++) {
-        freq[s[right] - 'a']++;
+//     for (int right = 0; right < n; right++) {
+//         freq[s[right] - 'a']++;
 
-        while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
-            count += n - right; 
-            freq[s[left] - 'a']--;
-            left++;
-        }
-    }
-    return count;
-    }
-int main(){
-     string s="abcabc";
-     cout<<numberOfSubstrings(s);
+//         while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
+//             count += n - right; 
+//             freq[s[left] - 'a']--;
+//             left++;
+//         }
+//     }
+//     return count;
+//     }
+// int main(){
+//      string s="abcabc";
+//      cout<<numberOfSubstrings(s);
 
-return 0 ;
-}
+// return 0 ;
+// }

@@ -1381,3 +1381,58 @@
 //         }
 // return 0 ;
 // }
+
+        /* // Q.1768. Merge Strings Alternately // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string mergeAlternately(string word1, string word2) {
+//         int n1=word1.size(),n2=word2.size();
+//         string ans;
+//         for(int i=0;i<n1 || i<n2;i++){
+//             if(i<n1)    
+//                 ans+=word1[i];
+//             if(i<n2)    
+//                 ans+=word2[i];
+//         }
+//         return ans;
+//     }
+// int main(){
+//         string word1="abc",word2="pqr";
+//         // string word1="ab",word2="pqrs";
+//         cout<<mergeAlternately(word1,word2);
+
+// return 0 ;
+// }
+
+        /* // Q.1431. Kids With the Greatest Number of Candies // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int n=candies.size();
+        int large=INT_MIN;
+        vector<bool>ans(n,false);
+        for(auto k:candies){
+            large=max(large,k);
+        }
+        for(int i=0;i<n;i++){
+                if((candies[i]+extraCandies)>=large){
+                        ans[i]=true;
+                }
+        }
+        cout<<large<<endl;
+    return ans;
+    }
+int main(){
+        // vector<int>candies = {2,3,5,1,3};
+        vector<int>candies = {12,1,12};
+        int extraCandies = 1;
+        vector<bool>result=kidsWithCandies(candies,extraCandies);
+        for(auto k:result){
+                cout<<k<<" ";
+        }
+return 0 ;
+}
