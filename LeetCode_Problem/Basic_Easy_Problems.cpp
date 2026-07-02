@@ -1408,31 +1408,77 @@
 
         /* // Q.1431. Kids With the Greatest Number of Candies // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+//         int n=candies.size();
+//         int large=INT_MIN;
+//         vector<bool>ans(n,false);
+//         for(auto k:candies){
+//             large=max(large,k);
+//         }
+//         for(int i=0;i<n;i++){
+//                 if((candies[i]+extraCandies)>=large){
+//                         ans[i]=true;
+//                 }
+//         }
+//         cout<<large<<endl;
+//     return ans;
+//     }
+// int main(){
+//         // vector<int>candies = {2,3,5,1,3};
+//         vector<int>candies = {12,1,12};
+//         int extraCandies = 1;
+//         vector<bool>result=kidsWithCandies(candies,extraCandies);
+//         for(auto k:result){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+        /* // Q.724. Find Pivot Index // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-        int n=candies.size();
-        int large=INT_MIN;
-        vector<bool>ans(n,false);
-        for(auto k:candies){
-            large=max(large,k);
+int pivotIndex(vector<int>& nums) {
+       vector<int>leftsum;
+       vector<int>rightsum;
+       int pivot;
+       leftsum.push_back(0); 
+       rightsum.push_back(0); 
+       for(int i=0;i<nums.size();i++){
+          leftsum.push_back(leftsum[i]+nums[i]);
         }
-        for(int i=0;i<n;i++){
-                if((candies[i]+extraCandies)>=large){
-                        ans[i]=true;
-                }
+        int index=0;
+       for(int i=nums.size()-1;i>=0;i--){
+          rightsum.push_back(rightsum[index++]+nums[i]);
         }
-        cout<<large<<endl;
-    return ans;
-    }
-int main(){
-        // vector<int>candies = {2,3,5,1,3};
-        vector<int>candies = {12,1,12};
-        int extraCandies = 1;
-        vector<bool>result=kidsWithCandies(candies,extraCandies);
-        for(auto k:result){
+        cout<<"left sum :";
+        for(auto k:leftsum){
                 cout<<k<<" ";
         }
+        cout<<"\nRight sum :";
+        for(auto k:rightsum){
+                cout<<k<<" ";
+        }
+        int j=1;
+        for(int i=1;i<leftsum.size();i++){
+               if(leftsum[i]==rightsum[j]){
+                    return i;
+               }
+               else if (leftsum[i]>rightsum[j]){
+                        j++;
+                }
+                
+        }
+    return -1;
+    }
+int main(){
+        // vector<int>nums = {1,7,3,6,5,6};
+        vector<int>nums = {1,2,3};
+        cout<<"\n"<<pivotIndex(nums);
+
 return 0 ;
 }
