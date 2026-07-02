@@ -1462,3 +1462,36 @@
 
 // return 0 ;
 // }
+
+                /* // Q.392. Is Subsequence // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isSubsequence(string s, string t) {
+//         int index=0;
+//         if(s.size()==0){
+//             return true;
+//         }
+//         bool check=false;
+//         for(int i=0;i<t.size();i++){
+//                if(t[i]==s[index]){
+//                    check=true;
+//                    index++;
+//                    if(index>s.size()-1){
+//                         return check;
+//                    }
+//                }
+//                else{
+//                 check=false;
+//                }
+//         }
+//         return index==s.size();
+// }
+// int main(){
+//         string s = "abc", t = "ahbgdc";
+//         // string s = "acb",t = "ahbgdc";
+//         cout<<isSubsequence(s,t);
+
+// return 0 ;
+// }
