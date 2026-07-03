@@ -553,3 +553,46 @@
 
 // return 0 ;
 // }
+
+        /* // Q.Longest Prefix Suffix // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int getLPSLength(string &s) {
+        vector<string>Prefix;
+        vector<string>Suffix;
+        string temp;
+        for(int i=0;i<s.size()-1;i++){
+               temp+=s[i];
+               Prefix.push_back(temp);
+        }
+        temp.clear();
+        for(int i=s.size()-1;i>0;i--){ 
+               temp+=s.substr(i,s.size()-i);
+               Suffix.push_back(temp);
+               temp.clear();
+        }
+        int count=0;
+        for(int i=0;i<Prefix.size();i++){
+                if(Prefix[i]==Suffix[i]){
+                     count=i+1;
+                }
+        }
+        for(auto k:Prefix){
+                cout<<k<<" ";
+        }
+        cout<<endl;
+        for(auto k:Suffix){
+                cout<<k<<" ";
+        }
+        cout<<endl;
+   return count;
+}
+int main(){
+        // string s = "aabcdaabc";
+        string s = "ABCDEABCD";
+        cout<<getLPSLength(s);
+
+return 0 ;
+}
