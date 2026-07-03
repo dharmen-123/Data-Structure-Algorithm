@@ -556,43 +556,34 @@
 
         /* // Q.Longest Prefix Suffix // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int getLPSLength(string &s) {
-        vector<string>Prefix;
-        vector<string>Suffix;
-        string temp;
-        for(int i=0;i<s.size()-1;i++){
-               temp+=s[i];
-               Prefix.push_back(temp);
-        }
-        temp.clear();
-        for(int i=s.size()-1;i>0;i--){ 
-               temp+=s.substr(i,s.size()-i);
-               Suffix.push_back(temp);
-               temp.clear();
-        }
-        int count=0;
-        for(int i=0;i<Prefix.size();i++){
-                if(Prefix[i]==Suffix[i]){
-                     count=i+1;
-                }
-        }
-        for(auto k:Prefix){
-                cout<<k<<" ";
-        }
-        cout<<endl;
-        for(auto k:Suffix){
-                cout<<k<<" ";
-        }
-        cout<<endl;
-   return count;
-}
-int main(){
-        // string s = "aabcdaabc";
-        string s = "ABCDEABCD";
-        cout<<getLPSLength(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int getLPSLength(string &s) {
+//        vector<int>lps(s.size(),0);
+//        int pre=0,suf=1;
+//        while(suf<s.size()){
+//           if(s[pre]==s[suf]){
+//                 lps[suf]=pre+1;
+//                 pre++,suf++;
+//           }
+//           else{
+//                 if(pre==0){
+//                     lps[suf]=0;
+//                     suf++;    
+//                 }
+//                 else{
+//                      pre=lps[pre-1];   
+//                 }
+//           }
+//        }
+//        return lps[lps.size()-1];
+// }
+// int main(){
+//         string s = "aabcdaabc";
+//         // string s = "aaaa";
+//         // string s = "ABCDEABCD";
+//         cout<<getLPSLength(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
