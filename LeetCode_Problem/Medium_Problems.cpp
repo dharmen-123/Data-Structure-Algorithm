@@ -1118,7 +1118,6 @@
 
 //     for (int right = 0; right < n; right++) {
 //         freq[s[right] - 'a']++;
-
 //         while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
 //             count += n - right; 
 //             freq[s[left] - 'a']--;
@@ -1133,3 +1132,34 @@
 
 // return 0 ;
 // }
+
+        /* // 238. Product of Array Except Self //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> productExceptSelf(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> result(n, 1);
+    int prefix = 1;
+    for(int i = 0; i < n; i++) {
+        result[i] = prefix;
+        prefix *= nums[i];
+    }
+    int suffix = 1;
+    for(int i = n-1; i >= 0; i--) {
+        result[i] *= suffix;
+        suffix *= nums[i];
+    }
+    return result;
+    }
+int main(){
+//     vector<int>nums = {1,2,3,4};
+    vector<int>nums = {-1,1,0,-3,3};
+//     vector<int>nums = {-1,1,0,-3,0};
+    vector<int>result=productExceptSelf(nums);
+    for(auto k:result){
+        cout<<k<<" ";
+    }
+return 0 ;
+}
