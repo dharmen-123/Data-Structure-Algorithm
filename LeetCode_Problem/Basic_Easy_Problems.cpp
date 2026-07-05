@@ -1498,41 +1498,66 @@
 
                 /* // Q.605. Can Place Flowers // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-bool canPlaceFlowers(vector<int>& flowerbed, int n) {
-        int size=flowerbed.size();
-        if(n==0) return true;           // if no plots
-        if(size == 1) {                 // for single plot
-            return (flowerbed[0] == 0 && n <= 1);
-        }
-        if(flowerbed[0]==0 && flowerbed[1]==0){         //for staring plots
-                flowerbed[0]=1;
-                n--;
-                if(n==0) return true;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool canPlaceFlowers(vector<int>& flowerbed, int n) {
+//         int size=flowerbed.size();
+//         if(n==0) return true;           // if no plots
+//         if(size == 1) {                 // for single plot
+//             return (flowerbed[0] == 0 && n <= 1);
+//         }
+//         if(flowerbed[0]==0 && flowerbed[1]==0){         //for staring plots
+//                 flowerbed[0]=1;
+//                 n--;
+//                 if(n==0) return true;
 
-        }
-        for(int i=1;i<size-1;i++){              //for middle plots
-                if(n>0 && flowerbed[i]==0 && flowerbed[i-1]==0 && flowerbed[i+1]==0){
-                        flowerbed[i]=1;
-                        n--;
-                }
-                if(n==0) return true;
-        }
-        if(flowerbed[size-1] == 0 && flowerbed[size-2] == 0) {          // for last plots
-             flowerbed[size-1] = 1;
-             n--;
-            if(n == 0) return true;
-       }
-       return n <= 0;
-    }
-int main(){
-        // vector<int>flowerbed = {1,0,0,0,1};
-        // vector<int>flowerbed = {0,0,1};
-        vector<int>flowerbed = {0,0};
-        int n = 2;
-        cout<<canPlaceFlowers(flowerbed,n);
+//         }
+//         for(int i=1;i<size-1;i++){              //for middle plots
+//                 if(n>0 && flowerbed[i]==0 && flowerbed[i-1]==0 && flowerbed[i+1]==0){
+//                         flowerbed[i]=1;
+//                         n--;
+//                 }
+//                 if(n==0) return true;
+//         }
+//         if(flowerbed[size-1] == 0 && flowerbed[size-2] == 0) {          // for last plots
+//              flowerbed[size-1] = 1;
+//              n--;
+//             if(n == 0) return true;
+//        }
+//        return n <= 0;
+//     }
+// int main(){
+//         // vector<int>flowerbed = {1,0,0,0,1};
+//         // vector<int>flowerbed = {0,0,1};
+//         vector<int>flowerbed = {0,0};
+//         int n = 2;
+//         cout<<canPlaceFlowers(flowerbed,n);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.Q1. Unique Middle Element // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isMiddleElementUnique(vector<int>& nums) {
+//         int n=nums.size();
+//         int mid=nums[n/2],count=0;
+//         for(int i=0;i<n;i++){
+//            if(nums[i]==mid){
+//                 count++;
+//            }
+//         }
+//         if(count>1){
+//                 return false;
+//         }
+//         return true;
+//     }
+// int main(){
+//         vector<int>nums={1,2,2};
+//         cout<<isMiddleElementUnique(nums);
+
+// return 0 ;
+// }
