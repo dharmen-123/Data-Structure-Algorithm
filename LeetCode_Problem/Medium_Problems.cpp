@@ -1193,13 +1193,24 @@
 // using namespace std;
 // bool increasingTriplet(vector<int>& nums) {
 //         int n=nums.size();
-//         int count=0;
+//         int f=INT_MAX,s=INT_MAX;
 //         for(int i=0;i<n;i++){
-                
+//                 if(nums[i]<=f){
+//                     f=nums[i];  
+//                 }
+//                 else if(nums[i]<=s){
+//                     s=nums[i];
+//                 }
+//                 else{
+//                         return true;
+//                 }         
 //         }
+//         return false;
 //     }
 // int main(){
-//         vector<int>nums={1,2,3,4,5};
+//         // vector<int>nums={1,2,3,4,5};
+//         // vector<int>nums={5,4,3,2,1};
+//         vector<int>nums={2,1,5,0,4,6};
 //         cout<<increasingTriplet(nums);
 
 // return 0 ;

@@ -1562,41 +1562,41 @@
 // return 0 ;
 // }
 
-                /* // Q.Q1. Sum of Integers with Maximum Digit Range  // */
+                /* // Q. Sum of Integers with Maximum Digit Range  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxDigitRange(vector<int>& nums) {
-        vector<int>digit;
-        for(int i=0;i<nums.size();i++){
-           int n=nums[i];
-           string s=to_string(n);
-           int maxv=s[0]-'0';
-           int minv=s[0]-'0';
-           int j=0;
-                while(j<s.size()){
-                   maxv=max(maxv,s[j]-'0'); 
-                   minv=min(minv,s[j]-'0'); 
-                   j++;
-                }
-              digit.push_back(maxv-minv);
-        }
-        int maxim=digit[0];
-        for(int i=0;i<digit.size();i++){
-                maxim=max(maxim,digit[i]);
-        }
-        int sum=0;
-        for(int i=0;i<digit.size();i++){
-                if(digit[i]==maxim){
-                        sum+=nums[i];
-                }
-        }
-        return sum;   
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxDigitRange(vector<int>& nums) {
+//         vector<int>digit;
+//         for(int i=0;i<nums.size();i++){
+//            int n=nums[i];
+//            string s=to_string(n);
+//            int maxv=s[0]-'0';
+//            int minv=s[0]-'0';
+//            int j=0;
+//                 while(j<s.size()){
+//                    maxv=max(maxv,s[j]-'0'); 
+//                    minv=min(minv,s[j]-'0'); 
+//                    j++;
+//                 }
+//               digit.push_back(maxv-minv);
+//         }
+//         int maxim=digit[0];
+//         for(int i=0;i<digit.size();i++){
+//                 maxim=max(maxim,digit[i]);
+//         }
+//         int sum=0;
+//         for(int i=0;i<digit.size();i++){
+//                 if(digit[i]==maxim){
+//                         sum+=nums[i];
+//                 }
+//         }
+//         return sum;   
+// }
 
-int main(){
-        vector<int>nums={5724,111,350};
-        cout<<maxDigitRange(nums);
-return 0 ;
-}
+// int main(){
+//         vector<int>nums={5724,111,350};
+//         cout<<maxDigitRange(nums);
+// return 0 ;
+// }
