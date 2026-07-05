@@ -1166,22 +1166,42 @@
 
         /* // Q.3979. Maximum Valid Pair Sum // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxValidPairSum(vector<int>& nums, int k) {
-        int first=nums[0];
-        int ans=0;
-        for(int i=k;i<nums.size();i++){
-                first=max(first,nums[i-k]);
-                ans=max(ans,first+nums[i]);
-        }
-        return ans;
-    }
-int main(){
-        vector<int>nums={1,3,5,2,8};
-        int k=2;
-        cout<<maxValidPairSum(nums,k);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxValidPairSum(vector<int>& nums, int k) {
+//         int first=nums[0];
+//         int ans=0;
+//         for(int i=k;i<nums.size();i++){
+//                 first=max(first,nums[i-k]);
+//                 ans=max(ans,first+nums[i]);
+//         }
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums={1,3,5,2,8};
+//         int k=2;
+//         cout<<maxValidPairSum(nums,k);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+                /* // Q. 334. Increasing Triplet Subsequence // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool increasingTriplet(vector<int>& nums) {
+//         int n=nums.size();
+//         int count=0;
+//         for(int i=0;i<n;i++){
+                
+//         }
+//     }
+// int main(){
+//         vector<int>nums={1,2,3,4,5};
+//         cout<<increasingTriplet(nums);
+
+// return 0 ;
+// }
+
