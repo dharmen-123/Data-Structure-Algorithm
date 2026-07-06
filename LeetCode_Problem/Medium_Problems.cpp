@@ -1216,3 +1216,34 @@
 // return 0 ;
 // }
 
+                /* // Q.443. String Compression // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int compress(vector<char>& chars) {
+        int n=chars.size();
+        int count=0;
+        string s;
+        for(int i=0;i<n;i++){
+            count++;
+              if(chars[i]!=chars[i+1] || i==n-1){
+                   s+=chars[i];
+                   if(count>1)
+                        s+=to_string(count);
+                   count=0;
+              }
+        }
+        chars.clear();
+        for (char ch : s)
+            chars.push_back(ch);
+        return chars.size();
+    }
+int main(){
+        // vector<char>chars = {'a','a','b','b','c','c','c'};
+        // vector<char>chars = {'a'};
+        vector<char>chars = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
+        cout<<compress(chars);
+
+return 0 ;
+}

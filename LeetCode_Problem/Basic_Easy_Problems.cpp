@@ -1562,7 +1562,7 @@
 // return 0 ;
 // }
 
-                /* // Q. Sum of Integers with Maximum Digit Range  // */
+                /* // Q.3982 Sum of Integers with Maximum Digit Range  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
