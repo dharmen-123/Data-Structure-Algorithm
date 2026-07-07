@@ -1218,32 +1218,63 @@
 
                 /* // Q.443. String Compression // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int compress(vector<char>& chars) {
+//         int n=chars.size();
+//         int count=0;
+//         string s;
+//         for(int i=0;i<n;i++){
+//             count++;
+//               if( i==n-1 || chars[i]!=chars[i+1]){
+//                    s+=chars[i];
+//                    if(count>1)
+//                         s+=to_string(count);
+//                    count=0;
+//               }
+//         }
+//         chars.clear();
+//         for (char ch : s)
+//             chars.push_back(ch);
+//         return chars.size();
+//     }
+// int main(){
+//         // vector<char>chars = {'a','a','b','b','c','c','c'};
+//         // vector<char>chars = {'a'};
+//         vector<char>chars = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
+//         cout<<compress(chars);
+
+// return 0 ;
+// }
+
+                /* // Q.2390. Removing Stars From a String // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int compress(vector<char>& chars) {
-        int n=chars.size();
-        int count=0;
-        string s;
-        for(int i=0;i<n;i++){
-            count++;
-              if(chars[i]!=chars[i+1] || i==n-1){
-                   s+=chars[i];
-                   if(count>1)
-                        s+=to_string(count);
-                   count=0;
-              }
+string removeStars(string s) {
+        stack<char>s1;
+        for(int i=0;i<s.size();i++){
+             if(s[i]=='*'){
+                if(!s1.empty())
+                    s1.pop();
+             }
+             else{
+                s1.push(s[i]);
+             }   
         }
-        chars.clear();
-        for (char ch : s)
-            chars.push_back(ch);
-        return chars.size();
+        s.clear();
+        while(!s1.empty()){
+                s+=s1.top();
+                s1.pop();
+        }
+        reverse(s.begin(),s.end());
+        return s;
     }
 int main(){
-        // vector<char>chars = {'a','a','b','b','c','c','c'};
-        // vector<char>chars = {'a'};
-        vector<char>chars = {'a','b','b','b','b','b','b','b','b','b','b','b','b'};
-        cout<<compress(chars);
-
+        // string s = "leet**cod*e";
+        string s = "erase*****";
+        cout<<removeStars(s);
 return 0 ;
 }
