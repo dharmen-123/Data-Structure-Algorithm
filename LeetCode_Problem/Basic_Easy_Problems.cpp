@@ -1600,3 +1600,34 @@
 //         cout<<maxDigitRange(nums);
 // return 0 ;
 // }
+
+        /* // Q.643. Maximum Average Subarray I  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+double findMaxAverage(vector<int>& nums, int k) {
+        int count=0, index=0;
+        double maxavg=INT_MIN, sum=0;
+        for(int i=0;i<nums.size();i++){
+                count++;
+                sum+=nums[i];
+                if(count==k){
+                   maxavg=max(maxavg,sum/k);
+                   sum-=nums[index++];
+                   count--;
+                }
+        }
+        return maxavg;
+}
+int main(){
+        vector<int>nums = {1,12,-5,-6,50,3};
+        int k = 4;
+        // vector<int>nums = {-3,-5,-2,-8};
+        // int k = 2;
+        // vector<int>nums = {5};
+        // int k = 1;
+        cout<<findMaxAverage(nums,k);
+
+return 0 ;
+}
