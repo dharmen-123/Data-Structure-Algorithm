@@ -1250,31 +1250,74 @@
 
                 /* // Q.2390. Removing Stars From a String // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string removeStars(string s) {
+//         stack<char>s1;
+//         for(int i=0;i<s.size();i++){
+//              if(s[i]=='*'){
+//                 if(!s1.empty())
+//                     s1.pop();
+//              }
+//              else{
+//                 s1.push(s[i]);
+//              }   
+//         }
+//         s.clear();
+//         while(!s1.empty()){
+//                 s+=s1.top();
+//                 s1.pop();
+//         }
+//         reverse(s.begin(),s.end());
+//         return s;
+//     }
+// int main(){
+//         // string s = "leet**cod*e";
+//         string s = "erase*****";
+//         cout<<removeStars(s);
+// return 0 ;
+// }
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string removeStars(string s) {
-        stack<char>s1;
-        for(int i=0;i<s.size();i++){
-             if(s[i]=='*'){
-                if(!s1.empty())
-                    s1.pop();
-             }
-             else{
-                s1.push(s[i]);
-             }   
+string decodeString(string s) {
+        stack<int> countStack;
+        stack<string> stringStack;
+        string currString = "";
+        int currNum = 0;
+        for(char ch : s) {
+            if(isdigit(ch)) {
+                currNum = currNum * 10 + (ch - '0');
+            }
+            else if(ch == '[') {
+                countStack.push(currNum);
+                stringStack.push(currString);
+
+                currNum = 0;
+                currString = "";
+            }
+            else if(ch == ']') {
+                int repeat = countStack.top();
+                countStack.pop();
+                string prev = stringStack.top();
+                stringStack.pop();
+                while(repeat--) {
+                    prev += currString;
+                }
+                currString = prev;
+            }
+            else {
+                currString += ch;
+            }
         }
-        s.clear();
-        while(!s1.empty()){
-                s+=s1.top();
-                s1.pop();
-        }
-        reverse(s.begin(),s.end());
-        return s;
-    }
+        return currString;
+}
 int main(){
-        // string s = "leet**cod*e";
-        string s = "erase*****";
-        cout<<removeStars(s);
+        // string s = "3[a]2[bc]";
+        string s = "3[a2[c]]";
+        cout<<decodeString(s);
+
 return 0 ;
 }
