@@ -1279,45 +1279,78 @@
 // return 0 ;
 // }
 
+                /* // Q.394 Decode-String // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string decodeString(string s) {
+//         stack<int> countStack;
+//         stack<string> stringStack;
+//         string currString = "";
+//         int currNum = 0;
+//         for(char ch : s) {
+//             if(isdigit(ch)) {
+//                 currNum = currNum * 10 + (ch - '0');
+//             }
+//             else if(ch == '[') {
+//                 countStack.push(currNum);
+//                 stringStack.push(currString);
+
+//                 currNum = 0;
+//                 currString = "";
+//             }
+//             else if(ch == ']') {
+//                 int repeat = countStack.top();
+//                 countStack.pop();
+//                 string prev = stringStack.top();
+//                 stringStack.pop();
+//                 while(repeat--) {
+//                     prev += currString;
+//                 }
+//                 currString = prev;
+//             }
+//             else {
+//                 currString += ch;
+//             }
+//         }
+//         return currString;
+// }
+// int main(){
+//         // string s = "3[a]2[bc]";
+//         string s = "3[a2[c]]";
+//         cout<<decodeString(s);
+
+// return 0 ;
+// }
+
+        /* // Q.1456. Maximum Number of Vowels in a Substring of Given Length // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string decodeString(string s) {
-        stack<int> countStack;
-        stack<string> stringStack;
-        string currString = "";
-        int currNum = 0;
-        for(char ch : s) {
-            if(isdigit(ch)) {
-                currNum = currNum * 10 + (ch - '0');
-            }
-            else if(ch == '[') {
-                countStack.push(currNum);
-                stringStack.push(currString);
-
-                currNum = 0;
-                currString = "";
-            }
-            else if(ch == ']') {
-                int repeat = countStack.top();
-                countStack.pop();
-                string prev = stringStack.top();
-                stringStack.pop();
-                while(repeat--) {
-                    prev += currString;
+int maxVowels(string s, int k) {
+        int count=0,maxvowel=0,currtvowel=0;
+        for(int i=0;i<s.size();i++){
+                count++;
+                if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u'){
+                    currtvowel+=1;
                 }
-                currString = prev;
-            }
-            else {
-                currString += ch;
-            }
+                if(count==k){
+                    maxvowel=max(maxvowel,currtvowel);
+                    if(s[i+1-k]=='a' || s[i+1-k]=='e' || s[i+1-k]=='i' || s[i+1-k]=='o' || s[i+1-k]=='u'){
+                        currtvowel-=1;
+                    }
+                    count--;
+                }
         }
-        return currString;
-}
+        return maxvowel;
+    }
 int main(){
-        // string s = "3[a]2[bc]";
-        string s = "3[a2[c]]";
-        cout<<decodeString(s);
+        string s = "abciiidef";
+        // string s = "leetcode";
+        int k = 3;
+        cout<<maxVowels(s,k);
 
 return 0 ;
 }
