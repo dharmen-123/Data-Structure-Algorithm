@@ -1326,31 +1326,31 @@
 
         /* // Q.1456. Maximum Number of Vowels in a Substring of Given Length // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxVowels(string s, int k) {
-        int count=0,maxvowel=0,currtvowel=0;
-        for(int i=0;i<s.size();i++){
-                count++;
-                if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u'){
-                    currtvowel+=1;
-                }
-                if(count==k){
-                    maxvowel=max(maxvowel,currtvowel);
-                    if(s[i+1-k]=='a' || s[i+1-k]=='e' || s[i+1-k]=='i' || s[i+1-k]=='o' || s[i+1-k]=='u'){
-                        currtvowel-=1;
-                    }
-                    count--;
-                }
-        }
-        return maxvowel;
-    }
-int main(){
-        string s = "abciiidef";
-        // string s = "leetcode";
-        int k = 3;
-        cout<<maxVowels(s,k);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxVowels(string s, int k) {
+//         int count=0,maxvowel=0,currtvowel=0;
+//         for(int i=0;i<s.size();i++){
+//                 count++;
+//                 if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u'){
+//                     currtvowel+=1;
+//                 }
+//                 if(count==k){
+//                     maxvowel=max(maxvowel,currtvowel);
+//                     if(s[i+1-k]=='a' || s[i+1-k]=='e' || s[i+1-k]=='i' || s[i+1-k]=='o' || s[i+1-k]=='u'){
+//                         currtvowel-=1;
+//                     }
+//                     count--;
+//                 }
+//         }
+//         return maxvowel;
+//     }
+// int main(){
+//         string s = "abciiidef";
+//         // string s = "leetcode";
+//         int k = 3;
+//         cout<<maxVowels(s,k);
 
-return 0 ;
-}
+// return 0 ;
+// }
