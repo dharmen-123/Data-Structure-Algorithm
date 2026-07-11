@@ -1357,35 +1357,50 @@
 
         /* // Q.2215. Find the Difference of Two Arrays // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
+//         vector<vector<int> >ans(2);
+//         unordered_set<int>s1(nums1.begin(),nums1.end());
+//         unordered_set<int>s2(nums2.begin(),nums2.end());
+//         for(auto x:s1){
+//               if(!s2.count(x)){
+//                   ans[0].push_back(x);
+//               }  
+//         }
+//         for(auto x:s2){
+//               if(!s1.count(x)){
+//                   ans[1].push_back(x);
+//               }  
+//         }
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums1 = {1,2,3},nums2 = {2,4,6};
+//         // vector<int>nums1 = {1,2,3,3}, nums2 = {1,1,2,2};
+//         vector<vector<int>>result=findDifference(nums1,nums2);
+//         for(auto k:result){
+//                 for(auto a:k){
+//                         cout<<a<<" ";
+//                 }
+//                 cout<<" , ";
+//         }
+
+// return 0 ;
+// }
+
+        /* // Q.1493. Longest Subarray of 1's After Deleting One Element // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
-        vector<vector<int> >ans(2);
-        unordered_set<int>s1(nums1.begin(),nums1.end());
-        unordered_set<int>s2(nums2.begin(),nums2.end());
-        for(auto x:s1){
-              if(!s2.count(x)){
-                  ans[0].push_back(x);
-              }  
-        }
-        for(auto x:s2){
-              if(!s1.count(x)){
-                  ans[1].push_back(x);
-              }  
-        }
-        return ans;
+int longestSubarray(vector<int>& nums) {
+        
     }
 int main(){
-        vector<int>nums1 = {1,2,3},nums2 = {2,4,6};
-        // vector<int>nums1 = {1,2,3,3}, nums2 = {1,1,2,2};
-        vector<vector<int>>result=findDifference(nums1,nums2);
-        for(auto k:result){
-                for(auto a:k){
-                        cout<<a<<" ";
-                }
-                cout<<" , ";
-        }
-
+        vector<int>nums = {1,1,0,1};
+        cout<<longestSubarray(nums);
+        
 return 0 ;
 }

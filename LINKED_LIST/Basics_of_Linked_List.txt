@@ -1,0 +1,76 @@
+
+            /* LINKED LIST */
+
+A linked list is a dynamic linear data structure where elements (nodes) are stored in non-contiguous memory locations and connected using pointers. 
+Each node typically contains data and a reference (link) to the next (and sometimes previous) node. 
+Linked lists are flexible, efficient for insertion/deletion, but slower for random access compared to arrays.
+
+** Structure of a Linked List **
+
+~ Node: Contains data and pointer(s).
+~ Head: Pointer to the first node.
+~ Tail: Last node, often pointing to NULL (or back to head in circular lists).
+
+
+🔹 Types of Linked Lists
+
+* Singly Linked List
+
+Each node has data + next pointer.
+Traversal only in one direction.
+Example: 1 → 2 → 3 → NULL.
+Operations: Insert at head O(1), insert at tail O(n), delete O(1) at head.
+
+* Doubly Linked List
+
+Each node has data + next pointer + previous pointer.
+Traversal possible in both directions.
+Example: NULL ← 1 ⇄ 2 ⇄ 3 → NULL.
+More memory overhead but faster deletion/insertion at both ends.
+
+* Circular Linked List
+
+Last node points back to the head.
+Can be singly or doubly circular.
+Useful for applications like round-robin scheduling.
+Example: 1 → 2 → 3 → (back to 1).
+
+🔹 Key Characteristics
+
+* Dynamic size: Can grow/shrink at runtime.
+* Efficient insertion/deletion: Only pointers need adjustment.
+* Sequential access: Must traverse from head to reach a node.
+* Pointer overhead: Each node requires extra memory for pointers.
+* No random access: Unlike arrays, accessing the k-th element takes O(k).
+
+.
+
+🔹 Complexity of Operations
+Operation	    Singly Linked List	Doubly Linked List
+Insert at Head	        O(1)	        O(1)
+Insert at Tail	        O(n)	        O(1) (if tail ptr)
+Delete at Head	        O(1)	        O(1)
+Delete at Tail	        O(n)	        O(1)
+Search (unsorted list)	O(n)	        O(n)
+
+
+🔹 Applications
+
+Stacks & Queues: Implemented using linked lists for dynamic memory.
+Dynamic memory allocation: Used in OS memory management.
+Hash tables: Collision handling via chaining.
+Playlists & navigation: Music/video players, browser history.
+Round-robin scheduling: Circular linked lists in operating systems.
+
+🔹 Advantages
+
+Dynamic size (no need to predefine capacity).
+Efficient insertions/deletions compared to arrays.
+Flexible structures (singly, doubly, circular).
+
+🔹 Drawbacks
+
+Extra memory for pointers.
+Sequential access only (no direct indexing).
+Cache-unfriendly compared to arrays.
+
