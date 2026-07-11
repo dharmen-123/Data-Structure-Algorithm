@@ -1392,15 +1392,30 @@
 
         /* // Q.1493. Longest Subarray of 1's After Deleting One Element // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int longestSubarray(vector<int>& nums) {
-        
-    }
-int main(){
-        vector<int>nums = {1,1,0,1};
-        cout<<longestSubarray(nums);
-        
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int longestSubarray(vector<int>& nums) {
+//         int left = 0;
+//         int zero = 0;
+//         int ans = 0;
+//         for (int right = 0; right < nums.size(); right++) {
+//             if (nums[right] == 0)
+//                 zero++;
+//             while (zero > 1) {
+//                 if (nums[left] == 0)
+//                     zero--;
+//                 left++;
+//             }
+//             ans = max(ans, right - left);
+//         }
+//         return ans;
+//     }
+// int main(){
+//         vector<int>nums = {1,1,0,1};
+//         // vector<int>nums = {1,1,1};
+//         // vector<int>nums = {0,1,1,1,0,1,1,0,1};
+//         cout<<longestSubarray(nums);
+
+// return 0 ;
+// }
