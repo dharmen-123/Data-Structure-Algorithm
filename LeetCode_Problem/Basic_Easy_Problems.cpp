@@ -1647,7 +1647,7 @@
 // return 0 ;
 // }
 
-        /* // Q.Q1. Number of Elapsed Seconds Between Two Times // */
+        /* // Q..3986 Number of Elapsed Seconds Between Two Times // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1675,3 +1675,34 @@
 
 // return 0 ;
 // }
+
+        /* // Q.1331. Rank Transform of an Array  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> arrayRankTransform(vector<int>& arr) {
+        vector<int> temp = arr;
+        sort(temp.begin(), temp.end());
+        unordered_map<int, int>rank;
+        int r = 1;
+        for (int x : temp){
+            if (rank.find(x) == rank.end()){
+                rank[x] = r++;
+            }
+        }
+        for (int i = 0; i < arr.size(); i++) {
+            arr[i] = rank[arr[i]];
+        }
+        return arr;
+}
+int main(){
+        vector<int>arr = {40,10,20,30};
+        // vector<int>arr = {100,100,100};
+        vector<int>result=arrayRankTransform(arr);
+        for(auto k:result){
+                cout<<k<<" ";
+        }
+
+return 0 ;
+}
