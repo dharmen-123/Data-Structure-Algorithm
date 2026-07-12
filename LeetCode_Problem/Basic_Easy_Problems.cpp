@@ -1634,15 +1634,44 @@
 
         /* // Q.394. Decode String // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-string decodeString(string s) {
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string decodeString(string s) {
         
-    }
-int main(){
-        string s="3[a]2[bc]";
-        cout<<decodeString(s);
+//     }
+// int main(){
+//         string s="3[a]2[bc]";
+//         cout<<decodeString(s);
         
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.Q1. Number of Elapsed Seconds Between Two Times // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int secondsBetweenTimes(string startTime, string endTime) {
+//         int hr=0,minu=0,sec=0, startsum=0 , endsum=0;
+
+//         hr=(startTime[0]-'0')*10+(startTime[1]-'0');
+//         minu=(startTime[3]-'0')*10+(startTime[4]-'0');
+//         sec=(startTime[6]-'0')*10+(startTime[7]-'0');
+//         startsum=(hr*3600)+(minu*60)+sec;
+        
+//         hr=0,minu=0,sec=0;
+//         hr=(endTime[0]-'0')*10+(endTime[1]-'0');
+//         minu=(endTime[3]-'0')*10+(endTime[4]-'0');
+//         sec=(endTime[6]-'0')*10+(endTime[7]-'0');
+//         endsum=(hr*3600)+(minu*60)+sec;
+        
+//         return endsum-startsum;
+//     }
+// int main(){
+//         // string startTime = "01:00:00", endTime = "01:00:25";
+//         string  startTime = "12:34:56", endTime = "13:00:00";
+//         cout<<secondsBetweenTimes(startTime,endTime);
+
+// return 0 ;
+// }
