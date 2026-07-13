@@ -1706,3 +1706,61 @@
 
 // return 0 ;
 // }
+
+
+/* ********************************************************* */
+        /*      LINKED LIST      */
+/* ********************************************************* */
+
+        /* // Q.876. Middle of the Linked List // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+
+// ListNode* middleNode(ListNode* Head) {
+//          int length=0;
+//          ListNode *temp=Head;
+//          while(temp!=NULL){
+//                 length++;
+//                 temp=temp->next;
+//          }
+//          int midindex=length/2;
+//          temp=Head;
+//          for(int i=0;i<midindex;i++){
+//              temp=temp->next;
+//          }
+
+//         return temp;
+//     }
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(3);
+//         ListNode *n4=new ListNode(4);
+//         ListNode *n5=new ListNode(5);
+//         ListNode *n6=new ListNode(6);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
+//         n5->next=n6;
+
+//         ListNode *mid=middleNode(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp=mid;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
