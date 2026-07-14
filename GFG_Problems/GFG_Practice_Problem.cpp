@@ -627,3 +627,67 @@
 
 //     return 0;
 // }
+
+        /* // Q.Remove Every k'th in Linked List  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class Node{
+    public:
+     int data;
+     Node *next;
+        Node(int val){
+            data=val;
+            next=NULL;
+        }
+};
+Node* CreateLL(vector<int>& arr, int index){
+        if(index==arr.size()){          /* Base condition */    
+            return NULL;
+        }
+        Node *temp;
+        temp=new Node(arr[index]);
+        temp->next=CreateLL(arr,index+1);  
+        return temp;
+}
+Node* deleteK(Node* head, int K) {
+        int count=1;
+        if(K==1){
+           return NULL;
+        }
+        Node *curr=head;
+        Node *prev=NULL;
+        while(curr!=NULL){
+             if(count==K){
+                prev->next=curr->next;
+                delete curr; 
+                curr=prev->next;
+                count=1;
+             } 
+             else{
+                count++;
+                prev=curr;
+                curr=curr->next;
+             } 
+        }
+        return head;
+    }
+
+int main(){
+        Node *Head=NULL;
+        vector<int>arr={1,2,3,4,5,6,7,8,9,10};
+        Head=CreateLL(arr,0);
+        
+        int k=3;
+        Head=deleteK(Head,k);
+
+        /* Print the linked List */
+        Node *temp=Head;
+        while(temp!=NULL){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+
+    return 0;
+}

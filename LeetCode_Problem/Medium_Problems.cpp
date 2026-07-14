@@ -1420,3 +1420,69 @@
 // return 0 ;
 // }
 
+/* ********************************************************* */
+        /*      LINKED LIST      */
+/* ********************************************************* */
+
+
+        /* // Q.19. Remove Nth Node From End of List  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class ListNode{
+     public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+        int count=0;  
+        ListNode *temp=head;
+        while(temp!=NULL){
+            count++;
+            temp=temp->next;
+        }
+        temp=head;
+        count-=n;
+        if(count==0){
+             head=head->next;
+             delete temp;
+             return head;   
+        }
+        ListNode *prev=NULL;
+        while(count--){
+           prev=temp;
+           temp=temp->next;   
+        }
+        prev->next=temp->next;
+        delete temp;
+
+    return head;     
+}
+
+int main(){
+        ListNode *Head=new ListNode(1);
+        ListNode *n2=new ListNode(2);
+        ListNode *n3=new ListNode(3);
+        ListNode *n4=new ListNode(4);
+        ListNode *n5=new ListNode(5);
+        Head->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
+        
+        int n=2;
+        Head=removeNthFromEnd(Head,n);
+
+        /* Print the linked List */
+        ListNode *temp=Head;
+        while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
+        }
+return 0 ;
+}
+
