@@ -587,3 +587,43 @@
 
 // return 0 ;
 // }
+
+        /* // Q.Delete without head Pointer // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Node{
+//     public:
+//      int data;
+//      Node *next;
+//         Node(int val){
+//             data=val;
+//             next=NULL;
+//         }
+// };
+// void deleteNode(Node* del_node) {
+//         Node *temp=del_node->next;
+//         del_node->data=temp->data;
+//         del_node->next=temp->next;
+//         delete temp;
+//     }
+// int main(){
+//         Node *Head=new Node(10);
+//         Node *n2=new Node(20);
+//         Node *n3=new Node(4);
+//         Node *n4=new Node(30);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         deleteNode(n2);
+
+//          /* Print the linked List */
+//         Node *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+
+//     return 0;
+// }
