@@ -1830,6 +1830,9 @@ class ListNode{
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 bool isPalindrome(ListNode* head) {
+        if(head->next==NULL){
+             return true;
+        }
         int count=0;
         ListNode *temp=head;
         // count the length of list
@@ -1858,23 +1861,26 @@ bool isPalindrome(ListNode* head) {
         }
        curr->next=prev;
        // check the both list is equal or not
-        
-
+       while(head!=NULL){
+           if(head->val!=curr->val){
+                return false;
+           }
+           head=head->next;
+           curr=curr->next;
+       } 
     return true;
     }
 
 int main(){
         ListNode *Head=new ListNode(1);
         ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(3);
-        ListNode *n4=new ListNode(4);
-        ListNode *n5=new ListNode(5);
+        ListNode *n3=new ListNode(2);
+        ListNode *n4=new ListNode(1);
         Head->next=n2;
         n2->next=n3;
         n3->next=n4;
-        n4->next=n5;
 
-        cout<<endl<<isPalindrome(Head)<<endl;
+        cout<<"It is Pallindrome - "<<isPalindrome(Head)<<endl;
 
         /* Print the linked List */
         ListNode *temp=Head;
