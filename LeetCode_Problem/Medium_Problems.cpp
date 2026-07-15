@@ -1552,3 +1552,60 @@
 // return 0 ;
 // }
 
+                /* // Q.328. Odd Even Linked List  // */
+        
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class ListNode{
+     public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ListNode* oddEvenList(ListNode* head) {
+      if(head == NULL || head->next == NULL)
+        return head;
+
+      ListNode *odd = head;
+      ListNode *even = head->next;
+      ListNode *evenHead = even;
+      
+      while(even != NULL && even->next != NULL){
+          odd->next = even->next;
+          odd = odd->next;
+          even->next = odd->next;
+          even = even->next;
+      }
+      odd->next = evenHead;
+    return head;
+}
+
+int main(){
+        ListNode *Head=new ListNode(1);
+        ListNode *n2=new ListNode(2);
+        ListNode *n3=new ListNode(3);
+        ListNode *n4=new ListNode(4);
+        ListNode *n5=new ListNode(5);
+        ListNode *n6=new ListNode(6);
+        ListNode *n7=new ListNode(7);
+        ListNode *n8=new ListNode(8);
+        Head->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
+        n5->next=n6;
+        n6->next=n7;
+        n7->next=n8;
+        Head=oddEvenList(Head);
+
+        /* Print the linked List */
+        ListNode *temp=Head;
+        while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
+        }
+return 0 ;
+}
