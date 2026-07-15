@@ -1485,70 +1485,70 @@
 //         }
 // return 0 ;
 // }
-
+ 
                  /* // Q.61. Rotate List  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-class ListNode{
-     public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-ListNode* rotateRight(ListNode* head, int k) {
-        if(head==NULL || head->next==NULL)
-                return head;
-        int count=0;
-        ListNode *temp=head;
-        while(temp){
-           count++;
-           temp=temp->next;
-        }
-        temp=head;
-        k=k%count;
-        if(k==0){
-            return head;    
-        }
-        count-=k;
-        ListNode *curr=head;
-        ListNode *prev=NULL;
-        while(count--){
-             prev=curr;
-             curr=curr->next;   
-        }
-        ListNode *Tail=curr;
-        prev->next=NULL;
-        while(Tail->next!=NULL){
-             Tail=Tail->next;   
-        }
-        Tail->next=head;
-        return curr;
-    }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* rotateRight(ListNode* head, int k) {
+//         if(head==NULL || head->next==NULL)
+//                 return head;
+//         int count=0;
+//         ListNode *temp=head;
+//         while(temp){
+//            count++;
+//            temp=temp->next;
+//         }
+//         temp=head;
+//         k=k%count;
+//         if(k==0){
+//             return head;    
+//         }
+//         count-=k;
+//         ListNode *curr=head;
+//         ListNode *prev=NULL;
+//         while(count--){
+//              prev=curr;
+//              curr=curr->next;   
+//         }
+//         ListNode *Tail=curr;
+//         prev->next=NULL;
+//         while(Tail->next!=NULL){
+//              Tail=Tail->next;   
+//         }
+//         Tail->next=head;
+//         return curr;
+//     }
 
-int main(){
-        ListNode *Head=new ListNode(1);
-        ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(3);
-        ListNode *n4=new ListNode(4);
-        ListNode *n5=new ListNode(5);
-        Head->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n5;
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(3);
+//         ListNode *n4=new ListNode(4);
+//         ListNode *n5=new ListNode(5);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
 
-        int k=2;
-        Head=rotateRight(Head,k);
+//         int k=2;
+//         Head=rotateRight(Head,k);
 
-        /* Print the linked List */
-        ListNode *temp=Head;
-        while(temp!=NULL){
-            cout<<temp->val<<" ";
-            temp=temp->next;
-        }
-return 0 ;
-}
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
 

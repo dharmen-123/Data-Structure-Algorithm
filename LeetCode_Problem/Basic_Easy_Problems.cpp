@@ -1767,6 +1767,57 @@
 
         /* // Q.206. Reverse Linked List  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* reverseList(ListNode* Head) {
+//         if(Head==NULL){
+//            return NULL;
+//         }
+//         ListNode *temp=Head;
+//         ListNode *prev=NULL;
+//         while(temp->next!=NULL){
+//              temp=Head->next;
+//              Head->next=prev;
+//              prev=Head;
+//              Head=temp;   
+//         }
+//        Head->next=prev;
+//        return Head; 
+// }
+
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(3);
+//         ListNode *n4=new ListNode(4);
+//         ListNode *n5=new ListNode(5);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
+
+//         ListNode *start=reverseList(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp=start;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                /* // Q.234. Palindrome Linked List // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -1778,21 +1829,39 @@ class ListNode{
      ListNode(int x) : val(x), next(nullptr) {}
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* reverseList(ListNode* Head) {
-        if(Head==NULL){
-           return NULL;
+bool isPalindrome(ListNode* head) {
+        int count=0;
+        ListNode *temp=head;
+        // count the length of list
+        while(temp!=NULL){
+                count++;
+                temp=temp->next;
         }
-        ListNode *temp=Head;
+        count=count/2;
+        ListNode *curr=head;
         ListNode *prev=NULL;
-        while(temp->next!=NULL){
-             temp=Head->next;
-             Head->next=prev;
-             prev=Head;
-             Head=temp;   
+        // find the mid of list
+        while(count--){
+             prev=curr;
+             curr=curr->next;   
         }
-       Head->next=prev;
-       return Head; 
-}
+        //break the list into two halfs
+        prev->next=NULL;
+        temp=curr;
+        prev=NULL;
+        // Reverse the second half list
+        while(temp->next!=NULL){
+             temp=curr->next;
+             curr->next=prev;
+             prev=curr;
+             curr=temp;   
+        }
+       curr->next=prev;
+       // check the both list is equal or not
+        
+
+    return true;
+    }
 
 int main(){
         ListNode *Head=new ListNode(1);
@@ -1805,13 +1874,14 @@ int main(){
         n3->next=n4;
         n4->next=n5;
 
-        ListNode *start=reverseList(Head);
+        cout<<endl<<isPalindrome(Head)<<endl;
 
         /* Print the linked List */
-        ListNode *temp=start;
+        ListNode *temp=Head;
         while(temp!=NULL){
             cout<<temp->val<<" ";
             temp=temp->next;
         }
 return 0 ;
 }
+
