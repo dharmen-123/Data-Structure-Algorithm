@@ -1818,6 +1818,81 @@
 
                 /* // Q.234. Palindrome Linked List // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// bool isPalindrome(ListNode* head) {
+//         if(head->next==NULL){
+//              return true;
+//         }
+//         int count=0;
+//         ListNode *temp=head;
+//         // count the length of list
+//         while(temp!=NULL){
+//                 count++;
+//                 temp=temp->next;
+//         }
+//         count=count/2;
+//         ListNode *curr=head;
+//         ListNode *prev=NULL;
+//         // find the mid of list
+//         while(count--){
+//              prev=curr;
+//              curr=curr->next;   
+//         }
+//         //break the list into two halfs
+//         prev->next=NULL;
+//         temp=curr;
+//         prev=NULL;
+//         // Reverse the second half list
+//         while(temp->next!=NULL){
+//              temp=curr->next;
+//              curr->next=prev;
+//              prev=curr;
+//              curr=temp;   
+//         }
+//        curr->next=prev;
+//        // check the both list is equal or not
+//        while(head!=NULL){
+//            if(head->val!=curr->val){
+//                 return false;
+//            }
+//            head=head->next;
+//            curr=curr->next;
+//        } 
+//     return true;
+//     }
+
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(2);
+//         ListNode *n4=new ListNode(1);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+
+//         cout<<"It is Pallindrome - "<<isPalindrome(Head)<<endl;
+
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                /* // Q.21. Merge Two Sorted Lists // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -1829,61 +1904,49 @@ class ListNode{
      ListNode(int x) : val(x), next(nullptr) {}
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-bool isPalindrome(ListNode* head) {
-        if(head->next==NULL){
-             return true;
+ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(list1==NULL && list2==NULL)
+                return NULL;
+        if(list1!=NULL && list2==NULL)
+              return list1;
+        else if(list1==NULL && list2!=NULL)
+              return list2;
+        ListNode dummy(0);
+        ListNode* Tail=&dummy; 
+        while(list1 != nullptr && list2 != nullptr) {
+             if(list1->val <= list2->val) {
+                 Tail->next = list1;
+                 list1 = list1->next;
+             } else {
+                 Tail->next = list2;
+                 list2 = list2->next;
+             }
+           Tail = Tail->next;
         }
-        int count=0;
-        ListNode *temp=head;
-        // count the length of list
-        while(temp!=NULL){
-                count++;
-                temp=temp->next;
-        }
-        count=count/2;
-        ListNode *curr=head;
-        ListNode *prev=NULL;
-        // find the mid of list
-        while(count--){
-             prev=curr;
-             curr=curr->next;   
-        }
-        //break the list into two halfs
-        prev->next=NULL;
-        temp=curr;
-        prev=NULL;
-        // Reverse the second half list
-        while(temp->next!=NULL){
-             temp=curr->next;
-             curr->next=prev;
-             prev=curr;
-             curr=temp;   
-        }
-       curr->next=prev;
-       // check the both list is equal or not
-       while(head!=NULL){
-           if(head->val!=curr->val){
-                return false;
-           }
-           head=head->next;
-           curr=curr->next;
-       } 
-    return true;
+        if(list1 != nullptr) 
+                Tail->next = list1;
+        else 
+                Tail->next = list2;
+
+      return dummy.next;
     }
-
 int main(){
-        ListNode *Head=new ListNode(1);
+        ListNode *Head1=new ListNode(1);
         ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(2);
-        ListNode *n4=new ListNode(1);
-        Head->next=n2;
+        ListNode *n3=new ListNode(4);
+        Head1->next=n2;
         n2->next=n3;
-        n3->next=n4;
+        
+        ListNode *Head2=new ListNode(1);
+        ListNode *h2=new ListNode(3);
+        ListNode *h3=new ListNode(4);
+        Head2->next=h2;
+        h2->next=h3;
 
-        cout<<"It is Pallindrome - "<<isPalindrome(Head)<<endl;
+        Head1=mergeTwoLists(Head1,Head2);
 
         /* Print the linked List */
-        ListNode *temp=Head;
+        ListNode *temp=Head1;
         while(temp!=NULL){
             cout<<temp->val<<" ";
             temp=temp->next;
