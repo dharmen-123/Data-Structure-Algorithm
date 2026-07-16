@@ -1612,6 +1612,66 @@
 
         /* // Q.2095. Delete the Middle Node of a Linked List // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* deleteMiddle(ListNode* head) {
+//         int count=0;
+//         ListNode *temp=head;
+//         if(head->next==NULL){ 
+//               return NULL;  
+//         }
+//         while(temp){
+//            count++;
+//            temp=temp->next;
+//         }
+//         count=count/2;
+//         ListNode *curr=head;
+//         ListNode *prev=NULL;
+//         while(count--){
+//              prev=curr;
+//              curr=curr->next;   
+//         }
+//         prev->next=curr->next;
+       
+//    return head;
+//     }
+
+// int main(){
+//         ListNode *Head=new ListNode(2);
+//         ListNode *n2=new ListNode(1);
+//         ListNode *n3=new ListNode(3);
+//         ListNode *n4=new ListNode(4);
+//         ListNode *n5=new ListNode(1);
+//         ListNode *n6=new ListNode(2);
+//         ListNode *n7=new ListNode(6);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
+//         n5->next=n6;
+//         n6->next=n7;
+
+//         Head=deleteMiddle(Head);
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                /* // Q.24. Swap Nodes in Pairs  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -1623,44 +1683,46 @@ class ListNode{
      ListNode(int x) : val(x), next(nullptr) {}
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* deleteMiddle(ListNode* head) {
-        int count=0;
-        ListNode *temp=head;
-        if(head->next==NULL){ 
-              return NULL;  
+ListNode* swapPairs(ListNode* head) {
+        if(head==NULL || head->next==NULL)
+             return head;
+        ListNode* newHead = head->next;
+    
+        ListNode* prev = head;
+        ListNode* curr = head->next;
+        ListNode* prevPrev = nullptr;
+    
+        while(curr != NULL) {
+            ListNode* nextPair = curr->next;
+            curr->next = prev;
+              if(prevPrev != nullptr) {
+                  prevPrev->next = curr;
+              }
+            prevPrev = prev;
+            prev = nextPair;
+            if(nextPair != NULL) {
+                curr = nextPair->next;
+            } else {
+                curr = NULL;
+            }
         }
-        while(temp){
-           count++;
-           temp=temp->next;
+        if(prevPrev != NULL) {
+            prevPrev->next = prev;
         }
-        count=count/2;
-        ListNode *curr=head;
-        ListNode *prev=NULL;
-        while(count--){
-             prev=curr;
-             curr=curr->next;   
-        }
-        prev->next=curr->next;
-       
-   return head;
+    return newHead;      
     }
 
 int main(){
-        ListNode *Head=new ListNode(2);
-        ListNode *n2=new ListNode(1);
+        ListNode *Head=new ListNode(1);
+        ListNode *n2=new ListNode(2);
         ListNode *n3=new ListNode(3);
         ListNode *n4=new ListNode(4);
-        ListNode *n5=new ListNode(1);
-        ListNode *n6=new ListNode(2);
-        ListNode *n7=new ListNode(6);
         Head->next=n2;
         n2->next=n3;
         n3->next=n4;
-        n4->next=n5;
-        n5->next=n6;
-        n6->next=n7;
 
-        Head=deleteMiddle(Head);
+        Head=swapPairs(Head);
+
         /* Print the linked List */
         ListNode *temp=Head;
         while(temp!=NULL){
