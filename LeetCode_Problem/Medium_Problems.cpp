@@ -1672,6 +1672,68 @@
 
                 /* // Q.24. Swap Nodes in Pairs  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* swapPairs(ListNode* head) {
+//         if(head==NULL || head->next==NULL)
+//              return head;
+//         ListNode* newHead = head->next;
+    
+//         ListNode* prev = head;
+//         ListNode* curr = head->next;
+//         ListNode* prevPrev = nullptr;
+    
+//         while(curr != NULL) {
+//             ListNode* nextPair = curr->next;
+//             curr->next = prev;
+//               if(prevPrev != nullptr) {
+//                   prevPrev->next = curr;
+//               }
+//             prevPrev = prev;
+//             prev = nextPair;
+//             if(nextPair != NULL) {
+//                 curr = nextPair->next;
+//             } else {
+//                 curr = NULL;
+//             }
+//         }
+//         if(prevPrev != NULL) {
+//             prevPrev->next = prev;
+//         }
+//     return newHead;      
+//     }
+
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(3);
+//         ListNode *n4=new ListNode(4);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+
+//         Head=swapPairs(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                /* // Q.82. Remove Duplicates from Sorted List II  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -1683,45 +1745,46 @@ class ListNode{
      ListNode(int x) : val(x), next(nullptr) {}
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* swapPairs(ListNode* head) {
-        if(head==NULL || head->next==NULL)
+ListNode* deleteDuplicates(ListNode* head) {
+        if(head==NULL || head->next==NULL){
              return head;
-        ListNode* newHead = head->next;
-    
-        ListNode* prev = head;
-        ListNode* curr = head->next;
-        ListNode* prevPrev = nullptr;
-    
-        while(curr != NULL) {
-            ListNode* nextPair = curr->next;
-            curr->next = prev;
-              if(prevPrev != nullptr) {
-                  prevPrev->next = curr;
-              }
-            prevPrev = prev;
-            prev = nextPair;
-            if(nextPair != NULL) {
-                curr = nextPair->next;
-            } else {
-                curr = NULL;
-            }
         }
-        if(prevPrev != NULL) {
-            prevPrev->next = prev;
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode* Tail=&dummy;
+        ListNode* curr=head;
+        while(curr){
+                if(curr->next && curr->val == curr->next->val){
+                    int x = curr->val;
+                while(curr && curr->val == x){
+                        ListNode* temp = curr;
+                        curr = curr->next;
+                        delete temp;
+                }
+                Tail->next = curr;
+                }
+                else{
+                    Tail->next = curr;
+                    Tail = curr;
+                    curr = curr->next;
+                    Tail->next = NULL;
+                 }
         }
-    return newHead;      
-    }
+    return dummy.next;
+}
 
 int main(){
         ListNode *Head=new ListNode(1);
-        ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(3);
-        ListNode *n4=new ListNode(4);
+        ListNode *n2=new ListNode(1);
+        ListNode *n3=new ListNode(1);
+        ListNode *n4=new ListNode(2);
+        ListNode *n5=new ListNode(3);
         Head->next=n2;
         n2->next=n3;
         n3->next=n4;
+        n4->next=n5;
 
-        Head=swapPairs(Head);
+        Head=deleteDuplicates(Head);
 
         /* Print the linked List */
         ListNode *temp=Head;
