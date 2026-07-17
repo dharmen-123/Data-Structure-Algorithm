@@ -1707,6 +1707,33 @@
 // return 0 ;
 // }
 
+                /* // Q.349. Intersection of Two Arrays   //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int>ans;
+        unordered_set<int>s1(nums1.begin(),nums1.end());
+        for(auto k:nums2){
+              if(s1.count(k)){
+                ans.push_back(k);
+                s1.erase(k);
+              }  
+        }        
+        return ans;
+}
+int main(){
+        // vector<int>nums1={1,2,2,1},nums2={2,2};
+        vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
+        vector<int>result=intersection(nums1,nums2);
+        for(auto k:result){
+             cout<<k<<" ";   
+        }
+
+return 0 ;
+}
+
 
 /* ********************************************************* */
         /*      LINKED LIST      */
@@ -1957,54 +1984,54 @@
                 /* // Q.83. Remove Duplicates from Sorted List  // */
 
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-class ListNode{
-     public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-ListNode* deleteDuplicates(ListNode* head) {
-        if(head==NULL || head->next==NULL){
-             return head;
-        }
-        ListNode* curr=head;
-        while(curr!=NULL && curr->next!=NULL){
-             if(curr->val==curr->next->val){
-                ListNode *dup=curr->next;
-                curr->next=curr->next->next;
-                delete dup;        
-             }
-             else{
-                 curr=curr->next;
-                }   
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* deleteDuplicates(ListNode* head) {
+//         if(head==NULL || head->next==NULL){
+//              return head;
+//         }
+//         ListNode* curr=head;
+//         while(curr!=NULL && curr->next!=NULL){
+//              if(curr->val==curr->next->val){
+//                 ListNode *dup=curr->next;
+//                 curr->next=curr->next->next;
+//                 delete dup;        
+//              }
+//              else{
+//                  curr=curr->next;
+//                 }   
+//         }
 
-     return head;
-}
+//      return head;
+// }
 
-int main(){
-        ListNode *Head=new ListNode(1);
-        ListNode *n2=new ListNode(1);
-        ListNode *n3=new ListNode(2);
-        ListNode *n4=new ListNode(3);
-        ListNode *n5=new ListNode(3);
-        Head->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n5;
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(1);
+//         ListNode *n3=new ListNode(2);
+//         ListNode *n4=new ListNode(3);
+//         ListNode *n5=new ListNode(3);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
         
-        Head=deleteDuplicates(Head);
+//         Head=deleteDuplicates(Head);
 
-        /* Print the linked List */
-        ListNode *temp=Head;
-        while(temp!=NULL){
-            cout<<temp->val<<" ";
-            temp=temp->next;
-        }
-return 0 ;
-}
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
