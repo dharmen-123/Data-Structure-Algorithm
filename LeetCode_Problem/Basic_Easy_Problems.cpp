@@ -1893,6 +1893,70 @@
 
                 /* // Q.21. Merge Two Sorted Lists // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+//         if(list1==NULL && list2==NULL)
+//                 return NULL;
+//         if(list1!=NULL && list2==NULL)
+//               return list1;
+//         else if(list1==NULL && list2!=NULL)
+//               return list2;
+//         ListNode dummy(0);
+//         ListNode* Tail=&dummy; 
+//         while(list1 != nullptr && list2 != nullptr) {
+//              if(list1->val <= list2->val) {
+//                  Tail->next = list1;
+//                  list1 = list1->next;
+//              } else {
+//                  Tail->next = list2;
+//                  list2 = list2->next;
+//              }
+//            Tail = Tail->next;
+//         }
+//         if(list1 != nullptr) 
+//                 Tail->next = list1;
+//         else 
+//                 Tail->next = list2;
+
+//       return dummy.next;
+//     }
+// int main(){
+//         ListNode *Head1=new ListNode(1);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(4);
+//         Head1->next=n2;
+//         n2->next=n3;
+        
+//         ListNode *Head2=new ListNode(1);
+//         ListNode *h2=new ListNode(3);
+//         ListNode *h3=new ListNode(4);
+//         Head2->next=h2;
+//         h2->next=h3;
+
+//         Head1=mergeTwoLists(Head1,Head2);
+
+//         /* Print the linked List */
+//         ListNode *temp=Head1;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                /* // Q.83. Remove Duplicates from Sorted List  // */
+
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -1904,53 +1968,43 @@ class ListNode{
      ListNode(int x) : val(x), next(nullptr) {}
      ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        if(list1==NULL && list2==NULL)
-                return NULL;
-        if(list1!=NULL && list2==NULL)
-              return list1;
-        else if(list1==NULL && list2!=NULL)
-              return list2;
-        ListNode dummy(0);
-        ListNode* Tail=&dummy; 
-        while(list1 != nullptr && list2 != nullptr) {
-             if(list1->val <= list2->val) {
-                 Tail->next = list1;
-                 list1 = list1->next;
-             } else {
-                 Tail->next = list2;
-                 list2 = list2->next;
-             }
-           Tail = Tail->next;
+ListNode* deleteDuplicates(ListNode* head) {
+        if(head==NULL || head->next==NULL){
+             return head;
         }
-        if(list1 != nullptr) 
-                Tail->next = list1;
-        else 
-                Tail->next = list2;
+        ListNode* curr=head;
+        while(curr!=NULL && curr->next!=NULL){
+             if(curr->val==curr->next->val){
+                ListNode *dup=curr->next;
+                curr->next=curr->next->next;
+                delete dup;        
+             }
+             else{
+                 curr=curr->next;
+                }   
+        }
 
-      return dummy.next;
-    }
+     return head;
+}
+
 int main(){
-        ListNode *Head1=new ListNode(1);
-        ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(4);
-        Head1->next=n2;
+        ListNode *Head=new ListNode(1);
+        ListNode *n2=new ListNode(1);
+        ListNode *n3=new ListNode(2);
+        ListNode *n4=new ListNode(3);
+        ListNode *n5=new ListNode(3);
+        Head->next=n2;
         n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
         
-        ListNode *Head2=new ListNode(1);
-        ListNode *h2=new ListNode(3);
-        ListNode *h3=new ListNode(4);
-        Head2->next=h2;
-        h2->next=h3;
-
-        Head1=mergeTwoLists(Head1,Head2);
+        Head=deleteDuplicates(Head);
 
         /* Print the linked List */
-        ListNode *temp=Head1;
+        ListNode *temp=Head;
         while(temp!=NULL){
             cout<<temp->val<<" ";
             temp=temp->next;
         }
 return 0 ;
 }
-
