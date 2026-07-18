@@ -1,5 +1,8 @@
+/* ****************************************************************** */
+            /* Deletion in Doubly Linked List */
+/* ****************************************************************** */
 
-        /* // Create Doubly Linked List Using Recursion   //  */
+    /* Delete a Node from the Beginning of the Doubly Linked List  */
 
 #include <iostream>
 #include <bits/stdc++.h>
@@ -23,7 +26,7 @@ Node* CreateDLL(Node* prev,vector<int>& arr,int index){
         }
         Node* temp=new Node(arr[index]);
             temp->prev=prev;
-            temp->next=CreateDLL(temp,arr,index+1);
+            temp->next=CreateDLL(prev,arr,index+1);
         return temp;
 }
 
@@ -32,6 +35,15 @@ int main()
     Node* Head = NULL;
     vector<int> arr = {2, 4, 6, 7};
     Head=CreateDLL(Head,arr,0);
+
+    if(Head!=NULL){
+        Node* temp=Head;
+        Head=Head->next;
+        delete temp;
+        if(Head){
+            Head->prev=NULL;
+        }
+    }
 
     Node* temp=Head;
     while (temp != NULL)
@@ -42,3 +54,4 @@ int main()
 
     return 0;
 }
+

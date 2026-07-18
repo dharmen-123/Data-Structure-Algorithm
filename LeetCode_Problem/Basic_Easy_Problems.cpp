@@ -2064,3 +2064,50 @@
 //         }
 // return 0 ;
 // }
+
+                /* // Q.141. Linked List Cycle  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class ListNode{
+     public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+bool hasCycle(ListNode *head) {
+        ListNode* slow=head;        
+        ListNode* fast=head;
+        while(fast!=NULL && fast->next!=NULL){
+              slow=slow->next;
+              fast=fast->next->next;
+              if(slow==fast){
+                return true;
+              }  
+        }        
+        return false;
+}
+
+int main(){
+        ListNode *Head=new ListNode(3);
+        ListNode *n2=new ListNode(2);
+        ListNode *n3=new ListNode(0);
+        ListNode *n4=new ListNode(-4);
+        Head->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n2;  //Cycle from node 4 to 2
+
+        cout<<hasCycle(Head);
+
+        /* Print the linked List */
+        // ListNode *temp=Head;
+        // while(temp!=NULL){
+        //     cout<<temp->val<<" ";
+        //     temp=temp->next;
+        // }
+return 0 ;
+}
