@@ -1709,30 +1709,59 @@
 
                 /* // Q.349. Intersection of Two Arrays   //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        vector<int>ans;
-        unordered_set<int>s1(nums1.begin(),nums1.end());
-        for(auto k:nums2){
-              if(s1.count(k)){
-                ans.push_back(k);
-                s1.erase(k);
-              }  
-        }        
-        return ans;
-}
-int main(){
-        // vector<int>nums1={1,2,2,1},nums2={2,2};
-        vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
-        vector<int>result=intersection(nums1,nums2);
-        for(auto k:result){
-             cout<<k<<" ";   
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+//         vector<int>ans;
+//         unordered_set<int>s1(nums1.begin(),nums1.end());
+//         for(auto k:nums2){
+//               if(s1.count(k)){
+//                 ans.push_back(k);
+//                 s1.erase(k);
+//               }  
+//         }        
+//         return ans;
+// }
+// int main(){
+//         // vector<int>nums1={1,2,2,1},nums2={2,2};
+//         vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
+//         vector<int>result=intersection(nums1,nums2);
+//         for(auto k:result){
+//              cout<<k<<" ";   
+//         }
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.1979. Find Greatest Common Divisor of Array  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int findGCD(vector<int>& nums) {
+//         int minval=INT_MAX,maxval=INT_MIN;
+//         for(int i=0;i<nums.size();i++){
+//               minval=min(minval,nums[i]);  
+//               maxval=max(maxval,nums[i]);  
+//         }
+//         int gcd=0;
+//         for(int i=1;i<=minval;i++){
+//              if(minval%i==0 && maxval%i==0){
+//                  gcd=max(gcd,i);
+//              }   
+//         }
+//         return gcd;
+//     }
+// int main(){
+//         vector<int>nums={2,5,6,9,10};
+//         // vector<int>nums={7,5,6,8,3};
+//         // vector<int>nums={3,3};
+//         cout<<findGCD(nums);
+
+// return 0 ;
+// }
+
 
 
 /* ********************************************************* */
