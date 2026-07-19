@@ -1858,6 +1858,61 @@
 
         /* // Q.147. Insertion Sort List  // */
 
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// class ListNode
+// {
+// public:
+//         int val;
+//         ListNode *next;
+//         ListNode() : val(0), next(nullptr) {}
+//         ListNode(int x) : val(x), next(nullptr) {}
+//         ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* insertionSortList(ListNode* head) {
+//         ListNode dummy(0);
+//         while(head){
+//              ListNode* curr=head;
+//              head=head->next;
+//              ListNode* prev=&dummy;
+//              while(prev->next && prev->next->val<curr->val){
+//                      prev=prev->next;
+//              } 
+//            curr->next=prev->next;
+//            prev->next=curr;
+//         }
+
+//     return dummy.next;
+
+// }
+
+// int main()
+// {
+//         ListNode *Head = new ListNode(-1);
+//         ListNode *n2 = new ListNode(5);
+//         ListNode *n3 = new ListNode(3);
+//         ListNode *n4 = new ListNode(4);
+//         ListNode *n5 = new ListNode(0);
+//         Head->next = n2;
+//         n2->next = n3;
+//         n3->next = n4;
+//         n4->next = n5;
+
+//         Head=insertionSortList(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp = Head;
+//         while (temp != NULL)
+//         {
+//                 cout << temp->val << " ";
+//                 temp = temp->next;
+//         }
+//         return 0;
+// }        
+
+        /* // Q.2487. Remove Nodes From Linked List // */
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -1870,36 +1925,53 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* insertionSortList(ListNode* head) {
-        ListNode dummy(0);
-        while(head){
-             ListNode* curr=head;
-             head=head->next;
-             ListNode* prev=&dummy;
-             while(prev->next && prev->next->val<curr->val){
-                     prev=prev->next;
-             } 
-           curr->next=prev->next;
-           prev->next=curr;
+ListNode* reverselist(ListNode* Head){
+        if(Head==NULL){
+           return NULL;
         }
-
-    return dummy.next;
-
-}
+        ListNode *temp=Head;
+        ListNode *prev=NULL;
+        while(temp->next!=NULL){
+             temp=Head->next;
+             Head->next=prev;
+             prev=Head;
+             Head=temp;   
+        }
+       Head->next=prev;
+       return Head;
+} 
+ListNode* removeNodes(ListNode* head) {  
+        head=reverselist(head);
+        ListNode* curr=head->next;
+        ListNode* prev=head;
+        while(curr!=NULL){
+             if(prev->val>curr->val){
+                prev->next=curr->next;
+                curr=prev->next; 
+             }
+             else{
+                prev=curr;
+                curr=curr->next;
+             }  
+        }
+        return reverselist(head);
+    }
 
 int main()
 {
-        ListNode *Head = new ListNode(-1);
-        ListNode *n2 = new ListNode(5);
-        ListNode *n3 = new ListNode(3);
-        ListNode *n4 = new ListNode(4);
-        ListNode *n5 = new ListNode(0);
+        ListNode *Head = new ListNode(5);
+        ListNode *n2 = new ListNode(2);
+        ListNode *n3 = new ListNode(13);
+        ListNode *n4 = new ListNode(3);
+        ListNode *n5 = new ListNode(8);
         Head->next = n2;
         n2->next = n3;
         n3->next = n4;
         n4->next = n5;
 
-        Head=insertionSortList(Head);
+        Head=reverselist(Head);
+
+        // Head=removeNodes(Head);
 
         /* Print the linked List */
         ListNode *temp = Head;
@@ -1910,3 +1982,4 @@ int main()
         }
         return 0;
 }        
+
