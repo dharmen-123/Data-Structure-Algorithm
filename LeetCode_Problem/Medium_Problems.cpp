@@ -1794,6 +1794,70 @@
 
                         /* // Q.143. Reorder List  // */
 
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// class ListNode
+// {
+// public:
+//         int val;
+//         ListNode *next;
+//         ListNode() : val(0), next(nullptr) {}
+//         ListNode(int x) : val(x), next(nullptr) {}
+//         ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// void reorderList(ListNode *head){
+//       if(head==NULL || head->next==NULL){
+//            return ;
+//       } 
+//       ListNode *curr=head;
+//       while(curr!=NULL && curr->next!=NULL){
+//               ListNode *Tail=curr;
+//               ListNode *prev=NULL;
+//               while(Tail->next!=NULL){
+//                       prev=Tail;
+//                       Tail=Tail->next;
+//               }
+//               // Stop the operation when curr and Tail are same or next 
+//               if(curr==Tail || curr->next==Tail){
+//                       break;
+//               }
+//              // remove last node from list
+//               prev->next=NULL;
+//               //Insert the Tail node after current node
+//               Tail->next=curr->next;
+//               curr->next=Tail;
+//               // Mode Curr node after Inserting Tail node
+//               curr=Tail->next;
+//       }
+// }
+
+// int main()
+// {
+//         ListNode *Head = new ListNode(1);
+//         ListNode *n2 = new ListNode(2);
+//         ListNode *n3 = new ListNode(3);
+//         ListNode *n4 = new ListNode(4);
+//         ListNode *n5 = new ListNode(5);
+//         Head->next = n2;
+//         n2->next = n3;
+//         n3->next = n4;
+//         n4->next = n5;
+
+//         reorderList(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp = Head;
+//         while (temp != NULL)
+//         {
+//                 cout << temp->val << " ";
+//                 temp = temp->next;
+//         }
+//         return 0;
+// }
+
+        /* // Q.147. Insertion Sort List  // */
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -1806,45 +1870,36 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-void reorderList(ListNode *head){
-      if(head==NULL || head->next==NULL){
-           return ;
-      } 
-      ListNode *curr=head;
-      while(curr!=NULL && curr->next!=NULL){
-              ListNode *Tail=curr;
-              ListNode *prev=NULL;
-              while(Tail->next!=NULL){
-                      prev=Tail;
-                      Tail=Tail->next;
-              }
-              // Stop the operation when curr and Tail are same or next 
-              if(curr==Tail || curr->next==Tail){
-                      break;
-              }
-             // remove last node from list
-              prev->next=NULL;
-              //Insert the Tail node after current node
-              Tail->next=curr->next;
-              curr->next=Tail;
-              // Mode Curr node after Inserting Tail node
-              curr=Tail->next;
-      }
+ListNode* insertionSortList(ListNode* head) {
+        ListNode dummy(0);
+        while(head){
+             ListNode* curr=head;
+             head=head->next;
+             ListNode* prev=&dummy;
+             while(prev->next && prev->next->val<curr->val){
+                     prev=prev->next;
+             } 
+           curr->next=prev->next;
+           prev->next=curr;
+        }
+
+    return dummy.next;
+
 }
 
 int main()
 {
-        ListNode *Head = new ListNode(1);
-        ListNode *n2 = new ListNode(2);
+        ListNode *Head = new ListNode(-1);
+        ListNode *n2 = new ListNode(5);
         ListNode *n3 = new ListNode(3);
         ListNode *n4 = new ListNode(4);
-        ListNode *n5 = new ListNode(5);
+        ListNode *n5 = new ListNode(0);
         Head->next = n2;
         n2->next = n3;
         n3->next = n4;
         n4->next = n5;
 
-        reorderList(Head);
+        Head=insertionSortList(Head);
 
         /* Print the linked List */
         ListNode *temp = Head;
@@ -1854,4 +1909,4 @@ int main()
                 temp = temp->next;
         }
         return 0;
-}
+}        
