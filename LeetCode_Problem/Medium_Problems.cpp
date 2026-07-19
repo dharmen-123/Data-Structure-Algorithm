@@ -1,5 +1,5 @@
 
-        // // Q.852 Peak index in a Mountain Array //
+// // Q.852 Peak index in a Mountain Array //
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -17,7 +17,7 @@
 //         else{
 //             end=mid-1;
 //         }
-//     }        
+//     }
 //     return mid;
 //     }
 // int main(){
@@ -27,7 +27,7 @@
 // return 0 ;
 // }
 
-        // // Q.153 Find Minimum in Rotated Sorted Array   //
+// // Q.153 Find Minimum in Rotated Sorted Array   //
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -52,7 +52,7 @@
 // return 0 ;
 // }
 
-        // // Q.33 Search in Rotated Sorted Array //
+// // Q.33 Search in Rotated Sorted Array //
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -91,7 +91,7 @@
 // return 0 ;
 // }
 
-       /* // // Q.875 Koko Eating Bananas  // //  */
+/* // // Q.875 Koko Eating Bananas  // //  */
 
 // #include<iostream>
 // #include<vector>
@@ -134,7 +134,7 @@
 // return 0 ;
 // }
 
-        /*  // // Divide Array into 2 sub array with equal sum //   */
+/*  // // Divide Array into 2 sub array with equal sum //   */
 
 // #include<iostream>
 // #include<vector>
@@ -155,7 +155,7 @@
 //              }
 //              else{
 //                 return 1;
-//              }   
+//              }
 //         }
 //         return 0;
 // }
@@ -166,7 +166,7 @@
 // return 0 ;
 // }
 
-        /*  // Q,54 Sprial Matrix    */
+/*  // Q,54 Sprial Matrix    */
 
 // #include<iostream>
 // #include<vector>
@@ -213,7 +213,7 @@
 // return 0 ;
 // }
 
-        /*  // Q.59 Spiral Matrix II  //  */
+/*  // Q.59 Spiral Matrix II  //  */
 
 // #include<iostream>
 // #include<vector>
@@ -259,7 +259,7 @@
 // return 0 ;
 // }
 
-        /* // Q.867 Transpose Matrix // */
+/* // Q.867 Transpose Matrix // */
 
 // #include<iostream>
 // #include<vector>
@@ -293,8 +293,7 @@
 // return 0 ;
 // }
 
-
-        /*  // Q.48. Rotate Image by 90deg //  */
+/*  // Q.48. Rotate Image by 90deg //  */
 
 // #include<iostream>
 // #include<vector>
@@ -305,7 +304,7 @@
 //         int i=0;
 //         while(i<row){
 //              int j=i+1;
-//              while(j<col){ 
+//              while(j<col){
 //                 swap(matrix[j][i],matrix[i][j]);
 //                 j++;
 //               }
@@ -334,9 +333,9 @@
 // return 0 ;
 // }
 
-        /* // Q.74 Search in 2D Matrix //  */
+/* // Q.74 Search in 2D Matrix //  */
 
-        /* // O(nxlogm) where n=row and m=col  // */
+/* // O(nxlogm) where n=row and m=col  // */
 
 // #include<iostream>
 // #include<vector>
@@ -360,7 +359,7 @@
 //                     }
 //                 }
 //                 return false;
-//              }  
+//              }
 //         }
 //         return false;
 //     }
@@ -373,7 +372,7 @@
 // return 0 ;
 // }
 
-        /* // O(log(n*m) where n=row and m=col  // */
+/* // O(log(n*m) where n=row and m=col  // */
 
 // #include<iostream>
 // #include<vector>
@@ -384,11 +383,11 @@
 //         int start =0 , end=(row*col)-1 , mid;
 //         while(start<=end){
 //              mid=(start+end)/2;
-//              int r_index=mid/col;   
+//              int r_index=mid/col;
 //              int c_index=mid%col;
 //              if(matrix[r_index][c_index]==target){
 //                    return true;
-//              }   
+//              }
 //              else if(matrix[r_index][c_index]<target){
 //                    start=mid+1;
 //              }
@@ -407,7 +406,7 @@
 // return 0 ;
 // }
 
-                /* // Q.229. Majority Element II  //*/
+/* // Q.229. Majority Element II  //*/
 
 // #include<iostream>
 // #include<vector>
@@ -437,10 +436,10 @@
 // }
 
 ////////////////////////////////////////////////////////////////////////////
-                    /*   // STRINGS QUESTIONS //   */
+/*   // STRINGS QUESTIONS //   */
 ///////////////////////////////////////////////////////////////////////////
 
-        /*   // Q.2785. Sort Vowels in a String  //   */
+/*   // Q.2785. Sort Vowels in a String  //   */
 
 // #include<iostream>
 // #include<vector>
@@ -493,14 +492,13 @@
 // return 0 ;
 // }
 
-
-        /* // Q.3. Longest Substring Without Repeating Characters  // */
+/* // Q.3. Longest Substring Without Repeating Characters  // */
 
 // #include<iostream>
 // #include<vector>
 // using namespace std;
 // int lengthOfLongestSubstring(string s) {
-//         vector<bool>count(256,0); 
+//         vector<bool>count(256,0);
 //         int first =0, second =0, len=0;
 //         while(second<s.size()){
 //                 while(count[s[second]]){
@@ -510,7 +508,7 @@
 //                 count[s[second]]=1;
 //                 len=max(len,second-first+1);
 //                 second++;
-//         }   
+//         }
 //         return len;
 //     }
 // int main(){
@@ -520,7 +518,7 @@
 // return 0 ;
 // }
 
-        /* // Q.151. Reverse Words in a String  //  */
+/* // Q.151. Reverse Words in a String  //  */
 
 // #include<iostream>
 // #include<algorithm>
@@ -560,9 +558,9 @@
 
 // return 0 ;
 // }
-    
-        /* // Q.3612. Process String with Special Operations I  // */
-    
+
+/* // Q.3612. Process String with Special Operations I  // */
+
 // #include<iostream>
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -595,7 +593,7 @@
 // return 0 ;
 // }
 
-        /* // Q.1344. Angle Between Hands of a Clock  //  */
+/* // Q.1344. Angle Between Hands of a Clock  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -613,9 +611,9 @@
 //         cout<<angleClock(hour,minutes);
 
 // return 0 ;
-// }       
+// }
 
-        /* // Q.1833. Maximum Ice Cream Bars  //  */
+/* // Q.1833. Maximum Ice Cream Bars  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -629,7 +627,7 @@
 //                 sum+=costs[i];
 //                 count++;
 //             }
-//          } 
+//          }
 //          return count;
 //     }
 // int main(){
@@ -641,7 +639,7 @@
 // return 0 ;
 // }
 
-        /* // Q.70. Climbing Stairs  // */
+/* // Q.70. Climbing Stairs  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -665,7 +663,7 @@
 // return 0 ;
 // }
 
-        /* // Q.912. Sort an Array  //  */
+/* // Q.912. Sort an Array  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -705,12 +703,12 @@
 //     vector<int>nums={5,2,7,6,1,4,8,3,9};
 //     vector<int>ans=sortArray(nums);
 //     cout << "Sorted array: ";
-//     for(int x : ans) 
+//     for(int x : ans)
 //        cout << x << " ";
 // return 0 ;
 // }
 
-        /* // Q.49. Group Anagrams  //  */
+/* // Q.49. Group Anagrams  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -722,7 +720,7 @@
 //            string key=strs[i];
 //            sort(key.begin(),key.end());
 //            mp[key].push_back(strs[i]);
-//         } 
+//         }
 //         for(auto it=mp.begin();it!=mp.end();it++){
 //                 ans.push_back(it->second);
 //         }
@@ -739,7 +737,7 @@
 // return 0 ;
 // }
 
-        /* // Q.78. Subsets  //  */
+/* // Q.78. Subsets  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -774,7 +772,7 @@
 // return 0 ;
 // }
 
-        /* // Q.22. Generate Parentheses  //  */
+/* // Q.22. Generate Parentheses  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -810,7 +808,7 @@
 // return 0 ;
 // }
 
-        /* // Q.90. Subsets II  //  */
+/* // Q.90. Subsets II  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -845,7 +843,7 @@
 // return 0 ;
 // }
 
-        /* // Q.494. Target Sum  //  */
+/* // Q.494. Target Sum  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -853,7 +851,7 @@
 // int Counter(vector<int>& nums, int target, int index,int n,int sum, int &count){
 //         if(index==n){
 //            if(target==sum) count++;
-//           return count;  
+//           return count;
 //         }
 //         //Not Included
 //         Counter(nums,target,index+1,n,sum+nums[index],count);
@@ -874,7 +872,7 @@
 // return 0 ;
 // }
 
-        /* // Q.46. Permutations  //  */
+/* // Q.46. Permutations  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -947,7 +945,7 @@
 // return 0 ;
 // }
 
-                /* // Q.47. Permutations II  // */
+/* // Q.47. Permutations II  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -985,17 +983,17 @@
 // return 0 ;
 // }
 
-                /* // Q.31. Next Permutation  // */
+/* // Q.31. Next Permutation  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
 // using namespace std;
 // void nextPermutation(vector<int>& nums) {
 //         int n = nums.size();
-//         int i = n - 2;        
+//         int i = n - 2;
 //         while (i >= 0 && nums[i] >= nums[i+1]) {
 //             i--;
-//         }        
+//         }
 //         if (i >= 0) {
 //             int j = n - 1;
 //             while (nums[j] <= nums[i]) {
@@ -1014,7 +1012,7 @@
 // return 0 ;
 // }
 
-        /* // Q.3974. Maximum Total Sum of K Selected Elements // */
+/* // Q.3974. Maximum Total Sum of K Selected Elements // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1024,7 +1022,7 @@
 //         long long totalsum=0;
 //         for(int i=nums.size()-1;i>=0 && k>0;i--){
 //             totalsum=totalsum+max((long long)nums[i], (long long)nums[i] * mul);
-//             mul--; 
+//             mul--;
 //             k--;
 //         }
 //         return totalsum;
@@ -1037,7 +1035,7 @@
 // return 0 ;
 // }
 
-        /* // Q.3975. Filter Occupied Intervals  // */
+/* // Q.3975. Filter Occupied Intervals  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1046,7 +1044,7 @@
 //         sort(occupiedIntervals.begin(), occupiedIntervals.end());
 //         vector<vector<int>> merged;
 //         for (auto interval : occupiedIntervals) {
-//             if (merged.empty() || interval[0] > merged.back()[1] + 1)             { 
+//             if (merged.empty() || interval[0] > merged.back()[1] + 1)             {
 //                 merged.push_back(interval);
 //             }
 //             else {
@@ -1084,7 +1082,7 @@
 // return 0 ;
 // }
 
-        /* // Q.1846. Maximum Element After Decreasing and Rearranging // */
+/* // Q.1846. Maximum Element After Decreasing and Rearranging // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1105,7 +1103,7 @@
 // return 0 ;
 // }
 
-        /* // Q.1358. Number of Substrings Containing All Three Characters // */
+/* // Q.1358. Number of Substrings Containing All Three Characters // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1113,13 +1111,13 @@
 // int numberOfSubstrings(string s) {
 //     int n = s.size();
 //     int count = 0;
-//     vector<int> freq(3, 0); 
+//     vector<int> freq(3, 0);
 //     int left = 0;
 
 //     for (int right = 0; right < n; right++) {
 //         freq[s[right] - 'a']++;
 //         while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
-//             count += n - right; 
+//             count += n - right;
 //             freq[s[left] - 'a']--;
 //             left++;
 //         }
@@ -1133,7 +1131,7 @@
 // return 0 ;
 // }
 
-        /* // 238. Product of Array Except Self //  */
+/* // 238. Product of Array Except Self //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1164,7 +1162,7 @@
 // return 0 ;
 // }
 
-        /* // Q.3979. Maximum Valid Pair Sum // */
+/* // Q.3979. Maximum Valid Pair Sum // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1186,7 +1184,7 @@
 // return 0 ;
 // }
 
-                /* // Q. 334. Increasing Triplet Subsequence // */
+/* // Q. 334. Increasing Triplet Subsequence // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1196,14 +1194,14 @@
 //         int f=INT_MAX,s=INT_MAX;
 //         for(int i=0;i<n;i++){
 //                 if(nums[i]<=f){
-//                     f=nums[i];  
+//                     f=nums[i];
 //                 }
 //                 else if(nums[i]<=s){
 //                     s=nums[i];
 //                 }
 //                 else{
 //                         return true;
-//                 }         
+//                 }
 //         }
 //         return false;
 //     }
@@ -1216,7 +1214,7 @@
 // return 0 ;
 // }
 
-                /* // Q.443. String Compression // */
+/* // Q.443. String Compression // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1248,7 +1246,7 @@
 // return 0 ;
 // }
 
-                /* // Q.2390. Removing Stars From a String // */
+/* // Q.2390. Removing Stars From a String // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1262,7 +1260,7 @@
 //              }
 //              else{
 //                 s1.push(s[i]);
-//              }   
+//              }
 //         }
 //         s.clear();
 //         while(!s1.empty()){
@@ -1279,7 +1277,7 @@
 // return 0 ;
 // }
 
-                /* // Q.394 Decode-String // */
+/* // Q.394 Decode-String // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1324,7 +1322,7 @@
 // return 0 ;
 // }
 
-        /* // Q.1456. Maximum Number of Vowels in a Substring of Given Length // */
+/* // Q.1456. Maximum Number of Vowels in a Substring of Given Length // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1355,7 +1353,7 @@
 // return 0 ;
 // }
 
-        /* // Q.2215. Find the Difference of Two Arrays // */
+/* // Q.2215. Find the Difference of Two Arrays // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1367,12 +1365,12 @@
 //         for(auto x:s1){
 //               if(!s2.count(x)){
 //                   ans[0].push_back(x);
-//               }  
+//               }
 //         }
 //         for(auto x:s2){
 //               if(!s1.count(x)){
 //                   ans[1].push_back(x);
-//               }  
+//               }
 //         }
 //         return ans;
 //     }
@@ -1390,7 +1388,7 @@
 // return 0 ;
 // }
 
-        /* // Q.1493. Longest Subarray of 1's After Deleting One Element // */
+/* // Q.1493. Longest Subarray of 1's After Deleting One Element // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1421,11 +1419,10 @@
 // }
 
 /* ********************************************************* */
-        /*      LINKED LIST      */
+/*      LINKED LIST      */
 /* ********************************************************* */
 
-
-        /* // Q.19. Remove Nth Node From End of List  // */
+/* // Q.19. Remove Nth Node From End of List  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1439,7 +1436,7 @@
 //      ListNode(int x, ListNode *next) : val(x), next(next) {}
 // };
 // ListNode* removeNthFromEnd(ListNode* head, int n) {
-//         int count=0;  
+//         int count=0;
 //         ListNode *temp=head;
 //         while(temp!=NULL){
 //             count++;
@@ -1450,17 +1447,17 @@
 //         if(count==0){
 //              head=head->next;
 //              delete temp;
-//              return head;   
+//              return head;
 //         }
 //         ListNode *prev=NULL;
 //         while(count--){
 //            prev=temp;
-//            temp=temp->next;   
+//            temp=temp->next;
 //         }
 //         prev->next=temp->next;
 //         delete temp;
 
-//     return head;     
+//     return head;
 // }
 
 // int main(){
@@ -1473,7 +1470,7 @@
 //         n2->next=n3;
 //         n3->next=n4;
 //         n4->next=n5;
-        
+
 //         int n=2;
 //         Head=removeNthFromEnd(Head,n);
 
@@ -1485,8 +1482,8 @@
 //         }
 // return 0 ;
 // }
- 
-                 /* // Q.61. Rotate List  // */
+
+/* // Q.61. Rotate List  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1511,19 +1508,19 @@
 //         temp=head;
 //         k=k%count;
 //         if(k==0){
-//             return head;    
+//             return head;
 //         }
 //         count-=k;
 //         ListNode *curr=head;
 //         ListNode *prev=NULL;
 //         while(count--){
 //              prev=curr;
-//              curr=curr->next;   
+//              curr=curr->next;
 //         }
 //         ListNode *Tail=curr;
 //         prev->next=NULL;
 //         while(Tail->next!=NULL){
-//              Tail=Tail->next;   
+//              Tail=Tail->next;
 //         }
 //         Tail->next=head;
 //         return curr;
@@ -1552,8 +1549,8 @@
 // return 0 ;
 // }
 
-                /* // Q.328. Odd Even Linked List  // */
-        
+/* // Q.328. Odd Even Linked List  // */
+
 // #include<iostream>
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -1572,7 +1569,7 @@
 //       ListNode *odd = head;
 //       ListNode *even = head->next;
 //       ListNode *evenHead = even;
-      
+
 //       while(even != NULL && even->next != NULL){
 //           odd->next = even->next;
 //           odd = odd->next;
@@ -1610,7 +1607,7 @@
 // return 0 ;
 // }
 
-        /* // Q.2095. Delete the Middle Node of a Linked List // */
+/* // Q.2095. Delete the Middle Node of a Linked List // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1626,8 +1623,8 @@
 // ListNode* deleteMiddle(ListNode* head) {
 //         int count=0;
 //         ListNode *temp=head;
-//         if(head->next==NULL){ 
-//               return NULL;  
+//         if(head->next==NULL){
+//               return NULL;
 //         }
 //         while(temp){
 //            count++;
@@ -1638,10 +1635,10 @@
 //         ListNode *prev=NULL;
 //         while(count--){
 //              prev=curr;
-//              curr=curr->next;   
+//              curr=curr->next;
 //         }
 //         prev->next=curr->next;
-       
+
 //    return head;
 //     }
 
@@ -1670,7 +1667,7 @@
 // return 0 ;
 // }
 
-                /* // Q.24. Swap Nodes in Pairs  //  */
+/* // Q.24. Swap Nodes in Pairs  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -1687,11 +1684,11 @@
 //         if(head==NULL || head->next==NULL)
 //              return head;
 //         ListNode* newHead = head->next;
-    
+
 //         ListNode* prev = head;
 //         ListNode* curr = head->next;
 //         ListNode* prevPrev = nullptr;
-    
+
 //         while(curr != NULL) {
 //             ListNode* nextPair = curr->next;
 //             curr->next = prev;
@@ -1709,7 +1706,7 @@
 //         if(prevPrev != NULL) {
 //             prevPrev->next = prev;
 //         }
-//     return newHead;      
+//     return newHead;
 //     }
 
 // int main(){
@@ -1732,65 +1729,129 @@
 // return 0 ;
 // }
 
-                /* // Q.82. Remove Duplicates from Sorted List II  // */
+/* // Q.82. Remove Duplicates from Sorted List II  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* deleteDuplicates(ListNode* head) {
+//         if(head==NULL || head->next==NULL){
+//              return head;
+//         }
+//         ListNode dummy(0);
+//         dummy.next = head;
+//         ListNode* Tail=&dummy;
+//         ListNode* curr=head;
+//         while(curr){
+//                 if(curr->next && curr->val == curr->next->val){
+//                     int x = curr->val;
+//                 while(curr && curr->val == x){
+//                         ListNode* temp = curr;
+//                         curr = curr->next;
+//                         delete temp;
+//                 }
+//                 Tail->next = curr;
+//                 }
+//                 else{
+//                     Tail->next = curr;
+//                     Tail = curr;
+//                     curr = curr->next;
+//                     Tail->next = NULL;
+//                  }
+//         }
+//     return dummy.next;
+// }
+
+// int main(){
+//         ListNode *Head=new ListNode(1);
+//         ListNode *n2=new ListNode(1);
+//         ListNode *n3=new ListNode(1);
+//         ListNode *n4=new ListNode(2);
+//         ListNode *n5=new ListNode(3);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
+
+//         Head=deleteDuplicates(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
+// return 0 ;
+// }
+
+                        /* // Q.143. Reorder List  // */
+
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-class ListNode{
-     public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
+class ListNode
+{
+public:
+        int val;
+        ListNode *next;
+        ListNode() : val(0), next(nullptr) {}
+        ListNode(int x) : val(x), next(nullptr) {}
+        ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* deleteDuplicates(ListNode* head) {
-        if(head==NULL || head->next==NULL){
-             return head;
-        }
-        ListNode dummy(0);
-        dummy.next = head;
-        ListNode* Tail=&dummy;
-        ListNode* curr=head;
-        while(curr){
-                if(curr->next && curr->val == curr->next->val){
-                    int x = curr->val;
-                while(curr && curr->val == x){
-                        ListNode* temp = curr;
-                        curr = curr->next;
-                        delete temp;
-                }
-                Tail->next = curr;
-                }
-                else{
-                    Tail->next = curr;
-                    Tail = curr;
-                    curr = curr->next;
-                    Tail->next = NULL;
-                 }
-        }
-    return dummy.next;
+void reorderList(ListNode *head){
+      if(head==NULL || head->next==NULL){
+           return ;
+      } 
+      ListNode *curr=head;
+      while(curr!=NULL && curr->next!=NULL){
+              ListNode *Tail=curr;
+              ListNode *prev=NULL;
+              while(Tail->next!=NULL){
+                      prev=Tail;
+                      Tail=Tail->next;
+              }
+              // Stop the operation when curr and Tail are same or next 
+              if(curr==Tail || curr->next==Tail){
+                      break;
+              }
+             // remove last node from list
+              prev->next=NULL;
+              //Insert the Tail node after current node
+              Tail->next=curr->next;
+              curr->next=Tail;
+              // Mode Curr node after Inserting Tail node
+              curr=Tail->next;
+      }
 }
 
-int main(){
-        ListNode *Head=new ListNode(1);
-        ListNode *n2=new ListNode(1);
-        ListNode *n3=new ListNode(1);
-        ListNode *n4=new ListNode(2);
-        ListNode *n5=new ListNode(3);
-        Head->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n5;
+int main()
+{
+        ListNode *Head = new ListNode(1);
+        ListNode *n2 = new ListNode(2);
+        ListNode *n3 = new ListNode(3);
+        ListNode *n4 = new ListNode(4);
+        ListNode *n5 = new ListNode(5);
+        Head->next = n2;
+        n2->next = n3;
+        n3->next = n4;
+        n4->next = n5;
 
-        Head=deleteDuplicates(Head);
+        reorderList(Head);
 
         /* Print the linked List */
-        ListNode *temp=Head;
-        while(temp!=NULL){
-            cout<<temp->val<<" ";
-            temp=temp->next;
+        ListNode *temp = Head;
+        while (temp != NULL)
+        {
+                cout << temp->val << " ";
+                temp = temp->next;
         }
-return 0 ;
+        return 0;
 }
