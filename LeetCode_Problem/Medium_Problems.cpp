@@ -1913,6 +1913,76 @@
 
         /* // Q.2487. Remove Nodes From Linked List // */
 
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// class ListNode
+// {
+// public:
+//         int val;
+//         ListNode *next;
+//         ListNode() : val(0), next(nullptr) {}
+//         ListNode(int x) : val(x), next(nullptr) {}
+//         ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* reverselist(ListNode* Head){
+//         if(Head==NULL){
+//            return NULL;
+//         }
+//         ListNode *temp=Head;
+//         ListNode *prev=NULL;
+//         while(temp->next!=NULL){
+//              temp=Head->next;
+//              Head->next=prev;
+//              prev=Head;
+//              Head=temp;   
+//         }
+//        Head->next=prev;
+//        return Head;
+// } 
+// ListNode* removeNodes(ListNode* head) {  
+//         head=reverselist(head);
+//         ListNode* curr=head->next;
+//         ListNode* prev=head;
+//         while(curr!=NULL){
+//              if(prev->val>curr->val){
+//                 prev->next=curr->next;
+//                 curr=prev->next; 
+//              }
+//              else{
+//                 prev=curr;
+//                 curr=curr->next;
+//              }  
+//         }
+//         return reverselist(head);
+//     }
+
+// int main()
+// {
+//         ListNode *Head = new ListNode(5);
+//         ListNode *n2 = new ListNode(2);
+//         ListNode *n3 = new ListNode(13);
+//         ListNode *n4 = new ListNode(3);
+//         ListNode *n5 = new ListNode(8);
+//         Head->next = n2;
+//         n2->next = n3;
+//         n3->next = n4;
+//         n4->next = n5;
+
+//         Head=removeNodes(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp = Head;
+//         while (temp != NULL)
+//         {
+//                 cout << temp->val << " ";
+//                 temp = temp->next;
+//         }
+//         return 0;
+// }        
+
+        /* // Q.2181. Merge Nodes in Between Zeros  // */
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -1925,53 +1995,49 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* reverselist(ListNode* Head){
-        if(Head==NULL){
-           return NULL;
-        }
-        ListNode *temp=Head;
-        ListNode *prev=NULL;
-        while(temp->next!=NULL){
-             temp=Head->next;
-             Head->next=prev;
-             prev=Head;
-             Head=temp;   
-        }
-       Head->next=prev;
-       return Head;
-} 
-ListNode* removeNodes(ListNode* head) {  
-        head=reverselist(head);
+ListNode* mergeNodes(ListNode* head) {
+        ListNode dummy(0);
+        ListNode* Tail=&dummy;
+        int sum=0;
         ListNode* curr=head->next;
-        ListNode* prev=head;
-        while(curr!=NULL){
-             if(prev->val>curr->val){
-                prev->next=curr->next;
-                curr=prev->next; 
-             }
-             else{
-                prev=curr;
-                curr=curr->next;
-             }  
+        while(curr->next!=NULL){
+              if(curr->val!=0){
+                  sum+=curr->val;  
+              }
+              else{
+                  ListNode* temp=new ListNode(sum);
+                  Tail->next=temp;
+                  Tail=Tail->next;
+                  sum=0;      
+              }  
+
+              curr=curr->next;
         }
-        return reverselist(head);
-    }
+        ListNode* temp=new ListNode(sum);
+        Tail->next=temp;
+        Tail=Tail->next;
+        return dummy.next;
+}
 
 int main()
 {
-        ListNode *Head = new ListNode(5);
-        ListNode *n2 = new ListNode(2);
-        ListNode *n3 = new ListNode(13);
+        ListNode *Head = new ListNode(0);
+        ListNode *n2 = new ListNode(1);
+        ListNode *n3 = new ListNode(0);
         ListNode *n4 = new ListNode(3);
-        ListNode *n5 = new ListNode(8);
+        ListNode *n5 = new ListNode(0);
+        ListNode *n6 = new ListNode(2);
+        ListNode *n7 = new ListNode(2);
+        ListNode *n8 = new ListNode(0);
         Head->next = n2;
         n2->next = n3;
         n3->next = n4;
         n4->next = n5;
+        n5->next = n6;
+        n6->next = n7;
+        n7->next = n8;
 
-        Head=reverselist(Head);
-
-        // Head=removeNodes(Head);
+        Head=mergeNodes(Head);
 
         /* Print the linked List */
         ListNode *temp = Head;
@@ -1982,4 +2048,3 @@ int main()
         }
         return 0;
 }        
-
