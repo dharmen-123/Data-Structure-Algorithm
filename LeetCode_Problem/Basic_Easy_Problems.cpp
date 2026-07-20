@@ -2067,47 +2067,82 @@
 
                 /* // Q.141. Linked List Cycle  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// bool hasCycle(ListNode *head) {
+//         ListNode* slow=head;        
+//         ListNode* fast=head;
+//         while(fast!=NULL && fast->next!=NULL){
+//               slow=slow->next;
+//               fast=fast->next->next;
+//               if(slow==fast){
+//                 return true;
+//               }  
+//         }        
+//         return false;
+// }
+
+// int main(){
+//         ListNode *Head=new ListNode(3);
+//         ListNode *n2=new ListNode(2);
+//         ListNode *n3=new ListNode(0);
+//         ListNode *n4=new ListNode(-4);
+//         Head->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n2;  //Cycle from node 4 to 2
+
+//         cout<<hasCycle(Head);
+
+//         /* Print the linked List */
+//         // ListNode *temp=Head;
+//         // while(temp!=NULL){
+//         //     cout<<temp->val<<" ";
+//         //     temp=temp->next;
+//         // }
+// return 0 ;
+// }
+
+                /* // Q.1260. Shift 2D Grid  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class ListNode{
-     public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-bool hasCycle(ListNode *head) {
-        ListNode* slow=head;        
-        ListNode* fast=head;
-        while(fast!=NULL && fast->next!=NULL){
-              slow=slow->next;
-              fast=fast->next->next;
-              if(slow==fast){
-                return true;
-              }  
-        }        
-        return false;
+vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+        int m=grid[0].size(), n=grid.size();
+        while(k--){
+        int value=grid[0][0];
+        int pre;
+        for(int i=1;i<m*n;i++){
+                int rowi=i/m;   
+                int coli=i%m;
+                pre=grid[rowi][coli];
+                grid[rowi][coli]=value;
+                value=pre;
+        }
+          grid[0][0]=value;
+        }
+        return grid;
 }
-
 int main(){
-        ListNode *Head=new ListNode(3);
-        ListNode *n2=new ListNode(2);
-        ListNode *n3=new ListNode(0);
-        ListNode *n4=new ListNode(-4);
-        Head->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n2;  //Cycle from node 4 to 2
-
-        cout<<hasCycle(Head);
-
-        /* Print the linked List */
-        // ListNode *temp=Head;
-        // while(temp!=NULL){
-        //     cout<<temp->val<<" ";
-        //     temp=temp->next;
-        // }
+        // vector<vector<int>>grid={{1,2,3},{4,5,6},{7,8,9}};
+        // int k=2;
+        vector<vector<int>>grid={{3,8,1,9},{19,7,2,5},{4,6,11,10},{12,0,21,13}};
+        int k=4;
+        vector<vector<int>>ans=shiftGrid(grid,k);
+        for(auto k:ans){
+                for(auto a:k){
+                        cout<<a<<" ";
+                }
+        }
 return 0 ;
 }
