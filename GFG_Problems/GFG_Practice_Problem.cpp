@@ -630,6 +630,70 @@
 
         /* // Q.Remove Every k'th in Linked List  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Node{
+//     public:
+//      int data;
+//      Node *next;
+//         Node(int val){
+//             data=val;
+//             next=NULL;
+//         }
+// };
+// Node* CreateLL(vector<int>& arr, int index){
+//         if(index==arr.size()){          /* Base condition */    
+//             return NULL;
+//         }
+//         Node *temp;
+//         temp=new Node(arr[index]);
+//         temp->next=CreateLL(arr,index+1);  
+//         return temp;
+// }
+// Node* deleteK(Node* head, int K) {
+//         int count=1;
+//         if(K==1){
+//            return NULL;
+//         }
+//         Node *curr=head;
+//         Node *prev=NULL;
+//         while(curr!=NULL){
+//              if(count==K){
+//                 prev->next=curr->next;
+//                 delete curr; 
+//                 curr=prev->next;
+//                 count=1;
+//              } 
+//              else{
+//                 count++;
+//                 prev=curr;
+//                 curr=curr->next;
+//              } 
+//         }
+//         return head;
+//     }
+
+// int main(){
+//         Node *Head=NULL;
+//         vector<int>arr={1,2,3,4,5,6,7,8,9,10};
+//         Head=CreateLL(arr,0);
+        
+//         int k=3;
+//         Head=deleteK(Head,k);
+
+//         /* Print the linked List */
+//         Node *temp=Head;
+//         while(temp!=NULL){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+
+//     return 0;
+// }
+
+        /* Q.Intersection in Y Shaped Lists */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -642,48 +706,57 @@ class Node{
             next=NULL;
         }
 };
-Node* CreateLL(vector<int>& arr, int index){
-        if(index==arr.size()){          /* Base condition */    
-            return NULL;
-        }
-        Node *temp;
-        temp=new Node(arr[index]);
-        temp->next=CreateLL(arr,index+1);  
-        return temp;
-}
-Node* deleteK(Node* head, int K) {
-        int count=1;
-        if(K==1){
-           return NULL;
-        }
-        Node *curr=head;
-        Node *prev=NULL;
-        while(curr!=NULL){
-             if(count==K){
-                prev->next=curr->next;
-                delete curr; 
-                curr=prev->next;
-                count=1;
-             } 
-             else{
-                count++;
-                prev=curr;
+Node* intersectPoint(Node* head1, Node* head2) {
+        int l1=0,  l2=0;
+        Node* curr=head1;
+        while(curr && curr->next){
+                l1+=1;
                 curr=curr->next;
-             } 
         }
-        return head;
+        curr=head2;
+        while(curr && curr->next){
+                l2+=1;
+                curr=curr->next;
+        }
+        Node* curr1=head1;
+        Node* curr2=head2;
+        int count;
+        if(l1>l2){
+            count=l1-l2;
+            while(count--){
+                curr1=curr1->next;
+            }    
+        }
+        else{
+            count=l2-l1;
+            while(count--){
+                curr2=curr2->next;
+            }
+        }
+        while(curr1!=curr2){
+              curr1=curr1->next;  
+              curr2=curr2->next;  
+        }
+        return curr2;
     }
 
 int main(){
-        Node *Head=NULL;
-        vector<int>arr={1,2,3,4,5,6,7,8,9,10};
-        Head=CreateLL(arr,0);
-        
-        int k=3;
-        Head=deleteK(Head,k);
+        Node *Head2=new Node(3);
+        Node *n2=new Node(6);
+        Node *n3=new Node(9);
+        Node *n4=new Node(15);
+        Node *n5=new Node(30);
+        Head2->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
 
+        Node *Head1=new Node(10);
+        Head1->next=n4;
+
+        Head1=intersectPoint(Head1,Head2);
         /* Print the linked List */
-        Node *temp=Head;
+        Node *temp=Head1;
         while(temp!=NULL){
             cout<<temp->data<<" ";
             temp=temp->next;
