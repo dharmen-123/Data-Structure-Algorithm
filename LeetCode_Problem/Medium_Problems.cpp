@@ -1983,6 +1983,74 @@
 
         /* // Q.2181. Merge Nodes in Between Zeros  // */
 
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// class ListNode
+// {
+// public:
+//         int val;
+//         ListNode *next;
+//         ListNode() : val(0), next(nullptr) {}
+//         ListNode(int x) : val(x), next(nullptr) {}
+//         ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* mergeNodes(ListNode* head) {
+//         ListNode dummy(0);
+//         ListNode* Tail=&dummy;
+//         int sum=0;
+//         ListNode* curr=head->next;
+//         while(curr->next!=NULL){
+//               if(curr->val!=0){
+//                   sum+=curr->val;  
+//               }
+//               else{
+//                   ListNode* temp=new ListNode(sum);
+//                   Tail->next=temp;
+//                   Tail=Tail->next;
+//                   sum=0;      
+//               }  
+
+//               curr=curr->next;
+//         }
+//         ListNode* temp=new ListNode(sum);
+//         Tail->next=temp;
+//         Tail=Tail->next;
+//         return dummy.next;
+// }
+
+// int main()
+// {
+//         ListNode *Head = new ListNode(0);
+//         ListNode *n2 = new ListNode(1);
+//         ListNode *n3 = new ListNode(0);
+//         ListNode *n4 = new ListNode(3);
+//         ListNode *n5 = new ListNode(0);
+//         ListNode *n6 = new ListNode(2);
+//         ListNode *n7 = new ListNode(2);
+//         ListNode *n8 = new ListNode(0);
+//         Head->next = n2;
+//         n2->next = n3;
+//         n3->next = n4;
+//         n4->next = n5;
+//         n5->next = n6;
+//         n6->next = n7;
+//         n7->next = n8;
+
+//         Head=mergeNodes(Head);
+
+//         /* Print the linked List */
+//         ListNode *temp = Head;
+//         while (temp != NULL)
+//         {
+//                 cout << temp->val << " ";
+//                 temp = temp->next;
+//         }
+//         return 0;
+// }        
+
+                /* // Q.1721. Swapping Nodes in a Linked List // */
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -1995,40 +2063,44 @@ public:
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* mergeNodes(ListNode* head) {
-        ListNode dummy(0);
-        ListNode* Tail=&dummy;
-        int sum=0;
-        ListNode* curr=head->next;
-        while(curr->next!=NULL){
-              if(curr->val!=0){
-                  sum+=curr->val;  
-              }
-              else{
-                  ListNode* temp=new ListNode(sum);
-                  Tail->next=temp;
-                  Tail=Tail->next;
-                  sum=0;      
-              }  
-
-              curr=curr->next;
+ListNode* swapNodes(ListNode* head, int k) {
+        ListNode* curr=head;
+        int n=0;
+        while(curr!=NULL){
+               n++; 
+              curr=curr->next;  
         }
-        ListNode* temp=new ListNode(sum);
-        Tail->next=temp;
-        Tail=Tail->next;
-        return dummy.next;
-}
+        curr=head;
+        vector<int>arr(n,0);
+        int i=0;
+        while(curr!=NULL){
+              arr[i]=curr->val;
+              curr=curr->next;
+              i++;  
+        }
+        swap(arr[k-1],arr[arr.size()-k]);
+        curr=head;
+        i=0;
+        while(curr!=NULL){
+             curr->val=arr[i];
+             curr=curr->next;  
+             i++; 
+        }
+    return head;
+    }
 
 int main()
 {
-        ListNode *Head = new ListNode(0);
-        ListNode *n2 = new ListNode(1);
-        ListNode *n3 = new ListNode(0);
-        ListNode *n4 = new ListNode(3);
-        ListNode *n5 = new ListNode(0);
-        ListNode *n6 = new ListNode(2);
-        ListNode *n7 = new ListNode(2);
+        ListNode *Head = new ListNode(7);
+        ListNode *n2 = new ListNode(9);
+        ListNode *n3 = new ListNode(6);
+        ListNode *n4 = new ListNode(6);
+        ListNode *n5 = new ListNode(7);
+        ListNode *n6 = new ListNode(8);
+        ListNode *n7 = new ListNode(3);
         ListNode *n8 = new ListNode(0);
+        ListNode *n9 = new ListNode(9);
+        ListNode *n10 = new ListNode(5);
         Head->next = n2;
         n2->next = n3;
         n3->next = n4;
@@ -2036,8 +2108,11 @@ int main()
         n5->next = n6;
         n6->next = n7;
         n7->next = n8;
+        n8->next = n9;
+        n9->next = n10;
 
-        Head=mergeNodes(Head);
+        int k=5;
+        Head=swapNodes(Head,k);
 
         /* Print the linked List */
         ListNode *temp = Head;
@@ -2048,3 +2123,4 @@ int main()
         }
         return 0;
 }        
+
