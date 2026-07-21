@@ -2051,76 +2051,106 @@
 
                 /* // Q.1721. Swapping Nodes in a Linked List // */
 
-#include <iostream>
-#include <bits/stdc++.h>
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// class ListNode
+// {
+// public:
+//         int val;
+//         ListNode *next;
+//         ListNode() : val(0), next(nullptr) {}
+//         ListNode(int x) : val(x), next(nullptr) {}
+//         ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* swapNodes(ListNode* head, int k) {
+//         ListNode* curr=head;
+//         int n=0;
+//         while(curr!=NULL){
+//                n++; 
+//               curr=curr->next;  
+//         }
+//         curr=head;
+//         vector<int>arr(n,0);
+//         int i=0;
+//         while(curr!=NULL){
+//               arr[i]=curr->val;
+//               curr=curr->next;
+//               i++;  
+//         }
+//         swap(arr[k-1],arr[arr.size()-k]);
+//         curr=head;
+//         i=0;
+//         while(curr!=NULL){
+//              curr->val=arr[i];
+//              curr=curr->next;  
+//              i++; 
+//         }
+//     return head;
+//     }
+
+// int main()
+// {
+//         ListNode *Head = new ListNode(7);
+//         ListNode *n2 = new ListNode(9);
+//         ListNode *n3 = new ListNode(6);
+//         ListNode *n4 = new ListNode(6);
+//         ListNode *n5 = new ListNode(7);
+//         ListNode *n6 = new ListNode(8);
+//         ListNode *n7 = new ListNode(3);
+//         ListNode *n8 = new ListNode(0);
+//         ListNode *n9 = new ListNode(9);
+//         ListNode *n10 = new ListNode(5);
+//         Head->next = n2;
+//         n2->next = n3;
+//         n3->next = n4;
+//         n4->next = n5;
+//         n5->next = n6;
+//         n6->next = n7;
+//         n7->next = n8;
+//         n8->next = n9;
+//         n9->next = n10;
+
+//         int k=5;
+//         Head=swapNodes(Head,k);
+
+//         /* Print the linked List */
+//         ListNode *temp = Head;
+//         while (temp != NULL)
+//         {
+//                 cout << temp->val << " ";
+//                 temp = temp->next;
+//         }
+//         return 0;
+// }        
+
+
+        /* // Q.921. Minimum Add to Make Parentheses Valid // */
+
+#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-class ListNode
-{
-public:
-        int val;
-        ListNode *next;
-        ListNode() : val(0), next(nullptr) {}
-        ListNode(int x) : val(x), next(nullptr) {}
-        ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-ListNode* swapNodes(ListNode* head, int k) {
-        ListNode* curr=head;
-        int n=0;
-        while(curr!=NULL){
-               n++; 
-              curr=curr->next;  
+int minAddToMakeValid(string s) {
+        stack<char>st;
+        int count=0;
+        for(int i=0;i<s.size();i++){
+                if(s[i]=='('){
+                        st.push(s[i]);
+                }
+                else{
+                    if(st.empty()){
+                        count++;
+                    }
+                    else{
+                        st.pop();
+                    }
+                }
         }
-        curr=head;
-        vector<int>arr(n,0);
-        int i=0;
-        while(curr!=NULL){
-              arr[i]=curr->val;
-              curr=curr->next;
-              i++;  
-        }
-        swap(arr[k-1],arr[arr.size()-k]);
-        curr=head;
-        i=0;
-        while(curr!=NULL){
-             curr->val=arr[i];
-             curr=curr->next;  
-             i++; 
-        }
-    return head;
-    }
+        return count+st.size();
+}
+int main(){
+        string s = "(((";
+        cout<<minAddToMakeValid(s);
 
-int main()
-{
-        ListNode *Head = new ListNode(7);
-        ListNode *n2 = new ListNode(9);
-        ListNode *n3 = new ListNode(6);
-        ListNode *n4 = new ListNode(6);
-        ListNode *n5 = new ListNode(7);
-        ListNode *n6 = new ListNode(8);
-        ListNode *n7 = new ListNode(3);
-        ListNode *n8 = new ListNode(0);
-        ListNode *n9 = new ListNode(9);
-        ListNode *n10 = new ListNode(5);
-        Head->next = n2;
-        n2->next = n3;
-        n3->next = n4;
-        n4->next = n5;
-        n5->next = n6;
-        n6->next = n7;
-        n7->next = n8;
-        n8->next = n9;
-        n9->next = n10;
-
-        int k=5;
-        Head=swapNodes(Head,k);
-
-        /* Print the linked List */
-        ListNode *temp = Head;
-        while (temp != NULL)
-        {
-                cout << temp->val << " ";
-                temp = temp->next;
-        }
-        return 0;
-}        
-
+return 0 ;
+}
