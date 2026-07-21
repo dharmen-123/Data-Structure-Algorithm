@@ -694,73 +694,166 @@
 
         /* Q.Intersection in Y Shaped Lists */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Node{
+//     public:
+//      int data;
+//      Node *next;
+//         Node(int val){
+//             data=val;
+//             next=NULL;
+//         }
+// };
+// Node* intersectPoint(Node* head1, Node* head2) {
+//         int l1=0,  l2=0;
+//         Node* curr=head1;
+//         while(curr && curr->next){
+//                 l1+=1;
+//                 curr=curr->next;
+//         }
+//         curr=head2;
+//         while(curr && curr->next){
+//                 l2+=1;
+//                 curr=curr->next;
+//         }
+//         Node* curr1=head1;
+//         Node* curr2=head2;
+//         int count;
+//         if(l1>l2){
+//             count=l1-l2;
+//             while(count--){
+//                 curr1=curr1->next;
+//             }    
+//         }
+//         else{
+//             count=l2-l1;
+//             while(count--){
+//                 curr2=curr2->next;
+//             }
+//         }
+//         while(curr1!=curr2){
+//               curr1=curr1->next;  
+//               curr2=curr2->next;  
+//         }
+//         return curr2;
+//     }
+
+// int main(){
+//         Node *Head2=new Node(3);
+//         Node *n2=new Node(6);
+//         Node *n3=new Node(9);
+//         Node *n4=new Node(15);
+//         Node *n5=new Node(30);
+//         Head2->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
+
+//         Node *Head1=new Node(10);
+//         Head1->next=n4;
+
+//         Head1=intersectPoint(Head1,Head2);
+//         /* Print the linked List */
+//         Node *temp=Head1;
+//         while(temp!=NULL){
+//             cout<<temp->data<<" ";
+//             temp=temp->next;
+//         }
+
+//     return 0;
+// }
+
+        /* // Q.Insert an Element at the Bottom of a Stack  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// stack<int> insertAtBottom(stack<int> st, int x) {
+//         stack<int>temp;
+//         while(!st.empty()){
+//               temp.push(st.top());
+//               st.pop();  
+//         }
+//         st.push(x);
+//         while(!temp.empty()){
+//            st.push(temp.top());
+//            temp.pop();
+//         }
+//      return st;
+//     }
+// int main(){
+//         stack<int>st({4,3,2,1,8});
+//         int x=2;
+//         stack<int>ans=insertAtBottom(st,x);
+//         while(!ans.empty()){
+//                 cout<<ans.top()<<" ";
+//                 ans.pop();
+//         }
+// return 0 ;
+// }
+
+        /* // Q.Make the array beautiful // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> makeBeautiful(vector<int> arr) {
+//           stack<int>st;
+//           for(int i=0;i<arr.size();i++){
+//                 if(st.empty()){
+//                     st.push(arr[i]);    
+//                 }        
+//                 else if((arr[i]>=0 && st.top()>=0) || (arr[i]<0 && st.top()<0)){
+//                 st.push(arr[i]);
+//                 }
+//                 else{
+//                 st.pop();
+//              }   
+//           }
+//          arr.clear();
+//          while(!st.empty()){
+//                 arr.push_back(st.top());
+//                 st.pop();
+//          }  
+//          reverse(arr.begin(),arr.end());
+//          return arr;
+//     }
+// int main(){
+//         vector<int>arr={4, 2,-2, 1};
+//         vector<int>ans=makeBeautiful(arr);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+
+// return 0 ;
+// }
+
+        /* // Q.Remove Two Consecutive Same // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class Node{
-    public:
-     int data;
-     Node *next;
-        Node(int val){
-            data=val;
-            next=NULL;
+int removeConsecutiveSame(vector<string>& arr) {
+        stack<string>s;
+        for(int i=0;i<arr.size();i++){
+                if(s.empty()){
+                        s.push(arr[i]);
+                }
+                else if(s.top()==arr[i]){
+                        s.pop();
+                }
+                else{
+                        s.push(arr[i]);
+                }
         }
-};
-Node* intersectPoint(Node* head1, Node* head2) {
-        int l1=0,  l2=0;
-        Node* curr=head1;
-        while(curr && curr->next){
-                l1+=1;
-                curr=curr->next;
-        }
-        curr=head2;
-        while(curr && curr->next){
-                l2+=1;
-                curr=curr->next;
-        }
-        Node* curr1=head1;
-        Node* curr2=head2;
-        int count;
-        if(l1>l2){
-            count=l1-l2;
-            while(count--){
-                curr1=curr1->next;
-            }    
-        }
-        else{
-            count=l2-l1;
-            while(count--){
-                curr2=curr2->next;
-            }
-        }
-        while(curr1!=curr2){
-              curr1=curr1->next;  
-              curr2=curr2->next;  
-        }
-        return curr2;
-    }
-
+        return s.size();
+}
 int main(){
-        Node *Head2=new Node(3);
-        Node *n2=new Node(6);
-        Node *n3=new Node(9);
-        Node *n4=new Node(15);
-        Node *n5=new Node(30);
-        Head2->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n5;
+        vector<string>arr={"ab", "aa", "aa", "bcd", "ab"};
+        // vector<string>arr={"tom", "jerry", "jerry", "tom"};
+        cout<<removeConsecutiveSame(arr);
 
-        Node *Head1=new Node(10);
-        Head1->next=n4;
-
-        Head1=intersectPoint(Head1,Head2);
-        /* Print the linked List */
-        Node *temp=Head1;
-        while(temp!=NULL){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
-
-    return 0;
+return 0 ;
 }
