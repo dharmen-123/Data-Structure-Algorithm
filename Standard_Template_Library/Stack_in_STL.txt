@@ -1,0 +1,29 @@
+
+        // // ****** STACK ****** //  //
+
+std::stack is a container adaptor in STL that provides stack functionality (LIFO order).
+It is built on top of other containers like deque (default), vector, or list.
+Only the top element is accessible.
+
+
+    🔹 Header File  
+    #include <stack>
+
+🔹 Common Functions in std::stack
+______________________________________________________________________________
+| Function	   |    Description	                         |     Example        |
+---------------|-----------------------------------------|---------------------
+| push(x)	   |  Adds element x on top	                 |  st.push(10);      |
+| pop()	       |  Removes top element	                 |  st.pop();         |
+| top()	       |  Returns top element	                 |  cout << st.top(); |
+| empty()	   |  Checks if stack is empty	             |  st.empty();       |
+| size()	   |  Returns number of elements	         |  st.size();        |
+| emplace(x)   |  Constructs and inserts element at top	 |  st.emplace(15);   |
+| swap(st2)	   |  Swaps contents with another stack	     |  st.swap(st2);     |
+-------------------------------------------------------------------------------
+
+
+    # Complexity #
+* Push / Pop / Top / Emplace / Swap → O(1)
+* Size / Empty → O(1)
+
