@@ -1,0 +1,66 @@
+
+        /* *************  STACK ************** */
+
+* A stack is a linear data structure that follows the LIFO (Last In, First Out) principle.
+* The last element inserted is the first one to be removed.
+* Think of a stack of plates: you add plates on top and remove from the top.
+
+    🔹 Key Operations
+
+* Push(x) → Insert an element on top of the stack.
+* Pop() → Remove the top element.
+* Peek()/Top() → View the top element without removing it.
+* isEmpty() → Check if the stack is empty.
+* isFull() (for fixed-size stack) → Check if the stack is full.
+
+    
+    🔹 Characteristics
+
+~ Order: LIFO (Last In, First Out).
+~ Access: Only the top element is accessible directly.
+~ Efficiency: Push and Pop are O(1).
+~ Implementation: Can be done using arrays or linked lists.
+
+
+    🔹 Types of Stack Implementations
+
+    ## ~~~~ Array-based Stack ~~~~  ##
+
+* Fixed size.
+* Easy to implement.
+* Risk of overflow if capacity is exceeded.
+
+    ## ~~~~ Linked List-based Stack ~~~~  ##
+
+* Dynamic size (no overflow unless memory is full).
+* More flexible but requires extra memory for pointers.
+
+    
+    🔹 Applications of Stack
+
+* Expression evaluation (postfix, prefix).
+* Undo/Redo operations in editors.
+* Function call management (recursion uses stack).
+* Backtracking algorithms (DFS in graphs).
+* Parentheses matching in compilers.
+
+
+    🔹 Example (Conceptual)
+Sequence of operations:
+
+* Push(10), Push(20), Push(30)
+Stack: [10, 20, 30]  (30 is on top)
+
+* Pop()
+Stack: [10, 20]      (removed 30)
+
+* Peek()
+Output: 20           (top element)
+
+   # Complexity #
+
+Push: O(1)
+Pop: O(1)
+Peek: O(1)
+Space: O(n)
+
