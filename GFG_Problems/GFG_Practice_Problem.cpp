@@ -832,28 +832,60 @@
 
         /* // Q.Remove Two Consecutive Same // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int removeConsecutiveSame(vector<string>& arr) {
+//         stack<string>s;
+//         for(int i=0;i<arr.size();i++){
+//                 if(s.empty()){
+//                         s.push(arr[i]);
+//                 }
+//                 else if(s.top()==arr[i]){
+//                         s.pop();
+//                 }
+//                 else{
+//                         s.push(arr[i]);
+//                 }
+//         }
+//         return s.size();
+// }
+// int main(){
+//         vector<string>arr={"ab", "aa", "aa", "bcd", "ab"};
+//         // vector<string>arr={"tom", "jerry", "jerry", "tom"};
+//         cout<<removeConsecutiveSame(arr);
+
+// return 0 ;
+// }
+
+                /* // Q.Print Bracket Number // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int removeConsecutiveSame(vector<string>& arr) {
-        stack<string>s;
-        for(int i=0;i<arr.size();i++){
-                if(s.empty()){
-                        s.push(arr[i]);
-                }
-                else if(s.top()==arr[i]){
-                        s.pop();
-                }
-                else{
-                        s.push(arr[i]);
-                }
+vector<int> bracketNumbers(string &s) {
+        int count =0;
+        stack<int>st;
+        vector<int>ans;
+        for(int i=0;i<s.size();i++){
+             if(s[i]=='('){
+                count++;
+                st.push(count);
+                ans.push_back(count);
+             }
+             else if(s[i]==')'){
+                ans.push_back(st.top());
+                st.pop();
+             }
         }
-        return s.size();
-}
+   return ans;
+    }
 int main(){
-        vector<string>arr={"ab", "aa", "aa", "bcd", "ab"};
-        // vector<string>arr={"tom", "jerry", "jerry", "tom"};
-        cout<<removeConsecutiveSame(arr);
-
+        string s = "(aa(bdc))p(dee)";
+        // string s = "(((()(";
+        vector<int>ans=bracketNumbers(s);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
