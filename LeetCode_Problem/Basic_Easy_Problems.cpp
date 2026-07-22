@@ -2114,35 +2114,86 @@
 
                 /* // Q.1260. Shift 2D Grid  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+//         int m=grid[0].size(), n=grid.size();
+//         while(k--){
+//         int value=grid[0][0];
+//         int pre;
+//         for(int i=1;i<m*n;i++){
+//                 int rowi=i/m;   
+//                 int coli=i%m;
+//                 pre=grid[rowi][coli];
+//                 grid[rowi][coli]=value;
+//                 value=pre;
+//         }
+//           grid[0][0]=value;
+//         }
+//         return grid;
+// }
+// int main(){
+//         // vector<vector<int>>grid={{1,2,3},{4,5,6},{7,8,9}};
+//         // int k=2;
+//         vector<vector<int>>grid={{3,8,1,9},{19,7,2,5},{4,6,11,10},{12,0,21,13}};
+//         int k=4;
+//         vector<vector<int>>ans=shiftGrid(grid,k);
+//         for(auto k:ans){
+//                 for(auto a:k){
+//                         cout<<a<<" ";
+//                 }
+//         }
+// return 0 ;
+// }
+
+        /* // Q.844. Backspace String Compare // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
-        int m=grid[0].size(), n=grid.size();
-        while(k--){
-        int value=grid[0][0];
-        int pre;
-        for(int i=1;i<m*n;i++){
-                int rowi=i/m;   
-                int coli=i%m;
-                pre=grid[rowi][coli];
-                grid[rowi][coli]=value;
-                value=pre;
+bool backspaceCompare(string s, string t) {
+        stack<char>st;
+        for(int i=0;i<s.size();i++){
+               if(s[i]=='#'){
+                  if(!st.empty())
+                    st.pop();    
+               }
+               else{
+                   st.push(s[i]);     
+               } 
         }
-          grid[0][0]=value;
+        s.clear();
+        while(!st.empty()){
+             s+=st.top();
+             st.pop();   
         }
-        return grid;
+        for(int i=0;i<t.size();i++){
+               if(t[i]=='#'){
+                  if(!st.empty())
+                     st.pop();    
+               }
+               else{
+                   st.push(t[i]);     
+               } 
+        }
+        t.clear();
+        while(!st.empty()){
+             t+=st.top();
+             st.pop();   
+        }
+        reverse(s.begin(),s.end());
+        reverse(t.begin(),t.end());
+        if(s==t){
+                return true;
+        }
+        return false;
 }
 int main(){
-        // vector<vector<int>>grid={{1,2,3},{4,5,6},{7,8,9}};
-        // int k=2;
-        vector<vector<int>>grid={{3,8,1,9},{19,7,2,5},{4,6,11,10},{12,0,21,13}};
-        int k=4;
-        vector<vector<int>>ans=shiftGrid(grid,k);
-        for(auto k:ans){
-                for(auto a:k){
-                        cout<<a<<" ";
-                }
-        }
+        // string s = "ab#c", t = "ad#c";
+        string s = "y#fo##f",t= "y#f#o##f";
+        
+        cout<<backspaceCompare(s,t);
+
 return 0 ;
 }
