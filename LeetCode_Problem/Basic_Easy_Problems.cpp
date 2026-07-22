@@ -2149,51 +2149,79 @@
 
         /* // Q.844. Backspace String Compare // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool backspaceCompare(string s, string t) {
+//         stack<char>st;
+//         for(int i=0;i<s.size();i++){
+//                if(s[i]=='#'){
+//                   if(!st.empty())
+//                     st.pop();    
+//                }
+//                else{
+//                    st.push(s[i]);     
+//                } 
+//         }
+//         s.clear();
+//         while(!st.empty()){
+//              s+=st.top();
+//              st.pop();   
+//         }
+//         for(int i=0;i<t.size();i++){
+//                if(t[i]=='#'){
+//                   if(!st.empty())
+//                      st.pop();    
+//                }
+//                else{
+//                    st.push(t[i]);     
+//                } 
+//         }
+//         t.clear();
+//         while(!st.empty()){
+//              t+=st.top();
+//              st.pop();   
+//         }
+//         reverse(s.begin(),s.end());
+//         reverse(t.begin(),t.end());
+//         if(s==t){
+//                 return true;
+//         }
+//         return false;
+// }
+// int main(){
+//         // string s = "ab#c", t = "ad#c";
+//         string s = "y#fo##f",t= "y#f#o##f";
+//         cout<<backspaceCompare(s,t);
+
+// return 0 ;
+// }
+
+        /* // Q.350. Intersection of Two Arrays II  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool backspaceCompare(string s, string t) {
-        stack<char>st;
-        for(int i=0;i<s.size();i++){
-               if(s[i]=='#'){
-                  if(!st.empty())
-                    st.pop();    
-               }
-               else{
-                   st.push(s[i]);     
-               } 
+vector<int> intersect(vector<int>& nums1, vector<int>& nums2){
+        unordered_map<int,int>freq;
+        for(auto x:nums2){
+            freq[x]++;
         }
-        s.clear();
-        while(!st.empty()){
-             s+=st.top();
-             st.pop();   
+        vector<int>ans;
+        for(auto k:nums1){
+              if(freq[k]>0){
+                ans.push_back(k);
+                freq[k]--;
+              }
         }
-        for(int i=0;i<t.size();i++){
-               if(t[i]=='#'){
-                  if(!st.empty())
-                     st.pop();    
-               }
-               else{
-                   st.push(t[i]);     
-               } 
-        }
-        t.clear();
-        while(!st.empty()){
-             t+=st.top();
-             st.pop();   
-        }
-        reverse(s.begin(),s.end());
-        reverse(t.begin(),t.end());
-        if(s==t){
-                return true;
-        }
-        return false;
+   return ans; 
 }
 int main(){
-        // string s = "ab#c", t = "ad#c";
-        string s = "y#fo##f",t= "y#f#o##f";
-        
-        cout<<backspaceCompare(s,t);
-
+        vector<int>nums1 = {1,2,2,1}, nums2 = {2,2};
+        // vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
+        vector<int>ans=intersect(nums1,nums2);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
