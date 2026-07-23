@@ -2228,37 +2228,63 @@
 
                 /* // Q.1122. Relative Sort Array // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
+//          unordered_map<int,int>freq;
+//          vector<int>ans(arr1.size(),0);
+//          for(auto a:arr1){
+//                 freq[a]++;
+//          }
+//          int j=0;
+//          for(int i=0;i<arr2.size();i++){
+//                 while(freq[arr2[i]]--){
+//                       ans[j++]=arr2[i];
+//                 }
+//                 freq.erase(arr2[i]);
+//          }
+//          int index=j;
+//          for(auto it=freq.begin();it!=freq.end();it++){
+//                  while(it->second--){
+//                          ans[j++]=it->first;  
+//                         }
+//                 }
+//         sort(ans.begin()+index,ans.end());
+//         return ans;
+//     }
+// int main(){
+//         // vector<int>arr1 = {2,3,1,3,2,4,6,7,9,2,19}, arr2 = {2,1,4,3,9,6};
+//         vector<int>arr1 = {28,6,22,8,44,17}, arr2 = {22,28,8,6};
+//         vector<int>ans=relativeSortArray(arr1,arr2);
+//         for(auto a:ans){
+//                 cout<<a<<" ";
+//         }
+// return 0 ;
+// }
+
+                /* // Q.1394. Find Lucky Integer in an Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
-         unordered_map<int,int>freq;
-         vector<int>ans(arr1.size(),0);
-         for(auto a:arr1){
-                freq[a]++;
-         }
-         int j=0;
-         for(int i=0;i<arr2.size();i++){
-                while(freq[arr2[i]]--){
-                      ans[j++]=arr2[i];
-                }
-                freq.erase(arr2[i]);
-         }
-         int index=j;
-         for(auto it=freq.begin();it!=freq.end();it++){
-                 while(it->second--){
-                         ans[j++]=it->first;  
-                        }
-                }
-        sort(ans.begin()+index,ans.end());
-        return ans;
-    }
+int findLucky(vector<int>& arr) {
+       unordered_map<int,int>freq;
+       for(auto a:arr){
+         freq[a]++;
+       } 
+       int lucky=0;
+       for(auto i=freq.begin();i!=freq.end();i++){
+             if(i->first==i->second){
+                lucky=max(lucky,i->first);
+             }   
+       }
+       return lucky!=0 ? lucky : -1;
+}
 int main(){
-        // vector<int>arr1 = {2,3,1,3,2,4,6,7,9,2,19}, arr2 = {2,1,4,3,9,6};
-        vector<int>arr1 = {28,6,22,8,44,17}, arr2 = {22,28,8,6};
-        vector<int>ans=relativeSortArray(arr1,arr2);
-        for(auto a:ans){
-                cout<<a<<" ";
-        }
+        // vector<int>arr = {2,2,3,4};
+        vector<int>arr = {2,2,2,3,3};
+        cout<<findLucky(arr);
+
 return 0 ;
 }
