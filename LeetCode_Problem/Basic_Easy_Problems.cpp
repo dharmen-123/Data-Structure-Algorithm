@@ -2199,29 +2199,66 @@
 
         /* // Q.350. Intersection of Two Arrays II  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> intersect(vector<int>& nums1, vector<int>& nums2){
+//         unordered_map<int,int>freq;
+//         for(auto x:nums2){
+//             freq[x]++;
+//         }
+//         vector<int>ans;
+//         for(auto k:nums1){
+//               if(freq[k]>0){
+//                 ans.push_back(k);
+//                 freq[k]--;
+//               }
+//         }
+//    return ans; 
+// }
+// int main(){
+//         vector<int>nums1 = {1,2,2,1}, nums2 = {2,2};
+//         // vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
+//         vector<int>ans=intersect(nums1,nums2);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+                /* // Q.1122. Relative Sort Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> intersect(vector<int>& nums1, vector<int>& nums2){
-        unordered_map<int,int>freq;
-        for(auto x:nums2){
-            freq[x]++;
-        }
-        vector<int>ans;
-        for(auto k:nums1){
-              if(freq[k]>0){
-                ans.push_back(k);
-                freq[k]--;
-              }
-        }
-   return ans; 
-}
+vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
+         unordered_map<int,int>freq;
+         vector<int>ans(arr1.size(),0);
+         for(auto a:arr1){
+                freq[a]++;
+         }
+         int j=0;
+         for(int i=0;i<arr2.size();i++){
+                while(freq[arr2[i]]--){
+                      ans[j++]=arr2[i];
+                }
+                freq.erase(arr2[i]);
+         }
+         int index=j;
+         for(auto it=freq.begin();it!=freq.end();it++){
+                 while(it->second--){
+                         ans[j++]=it->first;  
+                        }
+                }
+        sort(ans.begin()+index,ans.end());
+        return ans;
+    }
 int main(){
-        vector<int>nums1 = {1,2,2,1}, nums2 = {2,2};
-        // vector<int>nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
-        vector<int>ans=intersect(nums1,nums2);
-        for(auto k:ans){
-                cout<<k<<" ";
+        // vector<int>arr1 = {2,3,1,3,2,4,6,7,9,2,19}, arr2 = {2,1,4,3,9,6};
+        vector<int>arr1 = {28,6,22,8,44,17}, arr2 = {22,28,8,6};
+        vector<int>ans=relativeSortArray(arr1,arr2);
+        for(auto a:ans){
+                cout<<a<<" ";
         }
 return 0 ;
 }
