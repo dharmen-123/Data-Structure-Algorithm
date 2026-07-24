@@ -2292,32 +2292,65 @@
 
                 /* // Q.228. Summary Ranges // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<string> summaryRanges(vector<int>& nums) {
+//         vector<string>ans;
+//         int n=nums.size();        
+//         for(int i=0;i<n;i++){
+//             int start=nums[i];
+//             while(i+1<n && nums[i]+1==nums[i+1])        
+//                 i++;
+            
+//             if(start==nums[i]){
+//                 ans.push_back(to_string(start));
+//             }
+//             else{
+//                 ans.push_back(to_string(start) + "->" + to_string(nums[i]));
+//             }    
+//         }
+//         return ans;
+//     }
+// int main(){
+//         // vector<int>nums = {0,1,2,4,5,7};
+//         vector<int>nums = {0,2,3,4,6,8,9};
+//         vector<string>ans=summaryRanges(nums);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+                /* // Q.2243. Calculate Digit Sum of a String //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<string> summaryRanges(vector<int>& nums) {
-        vector<string>ans;
-        int n=nums.size();        
-        for(int i=0;i<n;i++){
-            int start=nums[i];
-            while(i+1<n && nums[i]+1==nums[i+1])        
-                i++;
-            
-            if(start==nums[i]){
-                ans.push_back(to_string(start));
+string digitSum(string s, int k) {
+        string s1;
+        int sum=0;
+        while(s.size()>k){
+            int count=0;    
+            for(int i=0;i<s.size();i++){
+                count++;
+                sum+=(s[i]-'0'); 
+                if(count==k || i==s.size()-1){
+                    s1+=to_string(sum);
+                    count=0;
+                    sum=0;    
+                }
             }
-            else{
-                ans.push_back(to_string(start) + "->" + to_string(nums[i]));
-            }    
+            s=s1;        
+            s1.clear();
         }
-        return ans;
-    }
+    return s;
+}
 int main(){
-        // vector<int>nums = {0,1,2,4,5,7};
-        vector<int>nums = {0,2,3,4,6,8,9};
-        vector<string>ans=summaryRanges(nums);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
+        string s = "11111222223";
+        // string s = "00000000";
+        int k = 3;
+        cout<<digitSum(s,k);
+
 return 0 ;
 }
