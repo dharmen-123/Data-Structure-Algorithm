@@ -2265,26 +2265,59 @@
 
                 /* // Q.1394. Find Lucky Integer in an Array // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int findLucky(vector<int>& arr) {
+//        unordered_map<int,int>freq;
+//        for(auto a:arr){
+//          freq[a]++;
+//        } 
+//        int lucky=0;
+//        for(auto i=freq.begin();i!=freq.end();i++){
+//              if(i->first==i->second){
+//                 lucky=max(lucky,i->first);
+//              }   
+//        }
+//        return lucky!=0 ? lucky : -1;
+// }
+// int main(){
+//         // vector<int>arr = {2,2,3,4};
+//         vector<int>arr = {2,2,2,3,3};
+//         cout<<findLucky(arr);
+
+// return 0 ;
+// }
+
+
+                /* // Q.228. Summary Ranges // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int findLucky(vector<int>& arr) {
-       unordered_map<int,int>freq;
-       for(auto a:arr){
-         freq[a]++;
-       } 
-       int lucky=0;
-       for(auto i=freq.begin();i!=freq.end();i++){
-             if(i->first==i->second){
-                lucky=max(lucky,i->first);
-             }   
-       }
-       return lucky!=0 ? lucky : -1;
-}
+vector<string> summaryRanges(vector<int>& nums) {
+        vector<string>ans;
+        int n=nums.size();        
+        for(int i=0;i<n;i++){
+            int start=nums[i];
+            while(i+1<n && nums[i]+1==nums[i+1])        
+                i++;
+            
+            if(start==nums[i]){
+                ans.push_back(to_string(start));
+            }
+            else{
+                ans.push_back(to_string(start) + "->" + to_string(nums[i]));
+            }    
+        }
+        return ans;
+    }
 int main(){
-        // vector<int>arr = {2,2,3,4};
-        vector<int>arr = {2,2,2,3,3};
-        cout<<findLucky(arr);
-
+        // vector<int>nums = {0,1,2,4,5,7};
+        vector<int>nums = {0,2,3,4,6,8,9};
+        vector<string>ans=summaryRanges(nums);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
