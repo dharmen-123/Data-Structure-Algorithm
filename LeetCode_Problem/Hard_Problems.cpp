@@ -1,5 +1,5 @@
 
-    /* // // Q.42 Trapping Rain Water // // */
+/* // // Q.42 Trapping Rain Water // // */
 
 // #include<iostream>
 // #include<vector>
@@ -33,7 +33,7 @@
 //                 }
 //             }
 //         return water;
-//     } 
+//     }
 
 // int main(){
 //         vector<int>height={0,1,0,2,1,0,1,3,2,1,2,1};
@@ -42,7 +42,7 @@
 // return 0 ;
 // }
 
-            /*  // Q.41. First Missing Positive  // */
+/*  // Q.41. First Missing Positive  // */
 
 // #include<iostream>
 // #include<vector>
@@ -52,7 +52,7 @@
 //         int j=0;
 //         while(j<n){
 //             while(nums[j] > 0 && nums[j] <= n &&
-//                   nums[j] != nums[nums[j]-1]) 
+//                   nums[j] != nums[nums[j]-1])
 //             {
 //                 swap(nums[j], nums[nums[j]-1]);
 //             }
@@ -73,47 +73,60 @@
 // return 0 ;
 // }
 
-            /* // Q.3614. Process String with Special Operations II // */
+        /* // Q.84. Largest Rectangle in Histogram  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-char processStr(string s, long long k) {
-        string result;
-        for(int i=0;i<s.size();i++){
-             if(s[i]>='a' && s[i]<='z'){
-                result+=s[i];
-             }
-             else if(s[i]=='*'){
-                if(!result.empty())
-                    result.pop_back();
-             }
-             else if(s[i]=='#'){
-                if(!result.empty()){
-                    result+=result;
-                }
-             }
-             else{
-                int left = 0;
-                int right = result.size() - 1;
-                while (left < right) {
-                    swap(result[left], result[right]);
-                    left++;
-                    right--;
-                }
-             }
+int largestRectangleArea(vector<int> &heights)
+{
+    int n = heights.size();
+    vector<int> left(n);
+    vector<int> right(n);
+    stack<int> st;
+    /* Next Smallest Right */
+    for (int i = 0; i < n; i++)
+    {
+        while (!st.empty() && heights[st.top()] > heights[i])
+        {
+            right[st.top()] = i;
+            st.pop();
         }
-        if(result.size()>k){
-            return result[k];
-        }
-        return '.';
+        st.push(i);
     }
-int main(){
-      string s="a#b%*";
-      int k=1;
-    //   string s="z*#";
-    //   int k=0;
-      cout<<processStr(s,k);
+    while(!st.empty()){
+        right[st.top()]=n;
+        st.pop();
+    }
+    /* Next Smallest Left */
+    for (int i = n - 1; i >= 0; i--)
+    {
+        while (!st.empty() && heights[st.top()] >= heights[i])
+        {
+            left[st.top()] = i;
+            st.pop();
+        }
+        st.push(i);
+    }
+    while (!st.empty())
+    {
+        left[st.top()] = -1;
+        st.pop();
+    }
+    /* Find maximum area */
+    int ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+        ans = max(ans, heights[i] * (right[i] - left[i] - 1));
+    }
 
-return 0 ;
+    return ans;
+}
+int main()
+{
+    vector<int> heights = {2, 1, 5, 6, 2, 3};
+    // vector<int> heights = {1,1};
+    cout << largestRectangleArea(heights);
+
+    return 0;
 }
