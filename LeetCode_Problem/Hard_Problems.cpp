@@ -73,60 +73,184 @@
 // return 0 ;
 // }
 
-        /* // Q.84. Largest Rectangle in Histogram  // */
+/* // Q.84. Largest Rectangle in Histogram  // */
 
-#include <iostream>
-#include <bits/stdc++.h>
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// int largestRectangleArea(vector<int> &heights)
+// {
+//     int n = heights.size();
+//     vector<int> left(n);
+//     vector<int> right(n);
+//     stack<int> st;
+//     /* Next Smallest Right */
+//     for (int i = 0; i < n; i++)
+//     {
+//         while (!st.empty() && heights[st.top()] > heights[i])
+//         {
+//             right[st.top()] = i;
+//             st.pop();
+//         }
+//         st.push(i);
+//     }
+//     while(!st.empty()){
+//         right[st.top()]=n;
+//         st.pop();
+//     }
+//     /* Next Smallest Left */
+//     for (int i = n - 1; i >= 0; i--)
+//     {
+//         while (!st.empty() && heights[st.top()] >= heights[i])
+//         {
+//             left[st.top()] = i;
+//             st.pop();
+//         }
+//         st.push(i);
+//     }
+//     while (!st.empty())
+//     {
+//         left[st.top()] = -1;
+//         st.pop();
+//     }
+//     /* Find maximum area */
+//     int ans = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         ans = max(ans, heights[i] * (right[i] - left[i] - 1));
+//     }
+
+//     return ans;
+// }
+// int main()
+// {
+//     vector<int> heights = {2, 1, 5, 6, 2, 3};
+//     // vector<int> heights = {1,1};
+//     cout << largestRectangleArea(heights);
+
+//     return 0;
+// }
+
+/* //         2nd method
+  Q.84. Largest Rectangle in Histogram   // */
+
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// int largestRectangleArea(vector<int> &heights)
+// {
+//     int n = heights.size();
+//     stack<int> st;
+//     int ans = 0;
+//     int index;
+//     for (int i = 0; i < n; i++)
+//     {
+//         while (!st.empty() && heights[st.top()] > heights[i])
+//         {
+//             index = st.top();
+//             st.pop();
+//             if (!st.empty())
+//             {
+//                 ans = max(ans, heights[index] * (i - st.top() - 1));
+//             }
+//             else
+//             {
+//                 ans = max(ans, heights[index] * i);
+//             }
+//         }
+//         st.push(i);
+//     }
+//     while (!st.empty())
+//     {
+//         index = st.top();
+//         st.pop();
+//         if (!st.empty())
+//         {
+//             ans = max(ans, heights[index] * (n - st.top() - 1));
+//         }
+//         else
+//         {
+//             ans = max(ans, heights[index] * n);
+//         }
+//     }
+//     return ans;
+// }
+// int main()
+// {
+//     vector<int> heights = {2, 1, 5, 6, 2, 3};
+//     // vector<int> heights = {1,1};
+//     cout << largestRectangleArea(heights);
+//     return 0;
+// }
+
+            /* // Q.85. Maximal Rectangle  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int largestRectangleArea(vector<int> &heights)
 {
     int n = heights.size();
-    vector<int> left(n);
-    vector<int> right(n);
     stack<int> st;
-    /* Next Smallest Right */
+    int ans = 0;
+    int index;
     for (int i = 0; i < n; i++)
     {
         while (!st.empty() && heights[st.top()] > heights[i])
         {
-            right[st.top()] = i;
+            index = st.top();
             st.pop();
-        }
-        st.push(i);
-    }
-    while(!st.empty()){
-        right[st.top()]=n;
-        st.pop();
-    }
-    /* Next Smallest Left */
-    for (int i = n - 1; i >= 0; i--)
-    {
-        while (!st.empty() && heights[st.top()] >= heights[i])
-        {
-            left[st.top()] = i;
-            st.pop();
+            if (!st.empty())
+            {
+                ans = max(ans, heights[index] * (i - st.top() - 1));
+            }
+            else
+            {
+                ans = max(ans, heights[index] * i);
+            }
         }
         st.push(i);
     }
     while (!st.empty())
     {
-        left[st.top()] = -1;
+        index = st.top();
         st.pop();
+        if (!st.empty())
+        {
+            ans = max(ans, heights[index] * (n - st.top() - 1));
+        }
+        else
+        {
+            ans = max(ans, heights[index] * n);
+        }
     }
-    /* Find maximum area */
-    int ans = 0;
-    for (int i = 0; i < n; i++)
-    {
-        ans = max(ans, heights[i] * (right[i] - left[i] - 1));
-    }
-
     return ans;
 }
-int main()
-{
-    vector<int> heights = {2, 1, 5, 6, 2, 3};
-    // vector<int> heights = {1,1};
-    cout << largestRectangleArea(heights);
-
-    return 0;
+int maximalRectangle(vector<vector<char>>& matrix) {
+        int row=matrix.size();
+        int col=matrix[0].size();
+        int ans=0;
+        vector<int>heights(col,0);
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(matrix[i][j]=='0'){
+                    heights[j]=0;
+                }
+                else{
+                    heights[j]+=1;
+                }
+            }
+            ans=max(ans,largestRectangleArea(heights));
+        }
+      return ans;
+    }
+int main(){
+        vector<vector<char>>matrix={{'1','0','1','0','0'},
+                                      {'1','0','1','1','1'},
+                                      {'1','1','1','1','1'},
+                                      {'1','0','0','1','0'}};
+        cout<<maximalRectangle(matrix);
+        
+return 0 ;
 }
+
