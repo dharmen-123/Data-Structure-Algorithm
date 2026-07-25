@@ -2324,33 +2324,121 @@
 
                 /* // Q.2243. Calculate Digit Sum of a String //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string digitSum(string s, int k) {
+//         string s1;
+//         int sum=0;
+//         while(s.size()>k){
+//             int count=0;    
+//             for(int i=0;i<s.size();i++){
+//                 count++;
+//                 sum+=(s[i]-'0'); 
+//                 if(count==k || i==s.size()-1){
+//                     s1+=to_string(sum);
+//                     count=0;
+//                     sum=0;    
+//                 }
+//             }
+//             s=s1;        
+//             s1.clear();
+//         }
+//     return s;
+// }
+// int main(){
+//         string s = "11111222223";
+//         // string s = "00000000";
+//         int k = 3;
+//         cout<<digitSum(s,k);
+
+// return 0 ;
+// }
+
+
+        /* // Q.160. Intersection of Two Linked Lists // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string digitSum(string s, int k) {
-        string s1;
-        int sum=0;
-        while(s.size()>k){
-            int count=0;    
-            for(int i=0;i<s.size();i++){
-                count++;
-                sum+=(s[i]-'0'); 
-                if(count==k || i==s.size()-1){
-                    s1+=to_string(sum);
-                    count=0;
-                    sum=0;    
-                }
-            }
-            s=s1;        
-            s1.clear();
+class ListNode{
+     public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ListNode *getIntersectionNode(ListNode *head1, ListNode *head2) {
+        int l1=0,  l2=0;
+        ListNode* curr=head1;
+        while(curr && curr->next){
+                l1+=1;
+                curr=curr->next;
         }
-    return s;
-}
+        curr=head2;
+        while(curr && curr->next){
+                l2+=1;
+                curr=curr->next;
+        }
+        ListNode* curr1=head1;
+        ListNode* curr2=head2;
+        int count;
+        if(l1>l2){
+            count=l1-l2;
+            while(count--){
+                curr1=curr1->next;
+            }    
+        }
+        else{
+            count=l2-l1;
+            while(count--){
+                curr2=curr2->next;
+            }
+        }
+        while(curr1!=curr2){
+              curr1=curr1->next;  
+              curr2=curr2->next;  
+        }
+        return curr2;   
+    }
 int main(){
-        string s = "11111222223";
-        // string s = "00000000";
-        int k = 3;
-        cout<<digitSum(s,k);
+        ListNode *Head1=new ListNode(1);
+        ListNode *n2=new ListNode(9);
+        ListNode *n3=new ListNode(1);
+        ListNode *n4=new ListNode(2);
+        ListNode *n5=new ListNode(4);
+        Head1->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
+
+        ListNode *Head2=new ListNode(3);
+        Head2->next=n4;
+
+        Head1=getIntersectionNode(Head1,Head2);
+        /* Print the linked List */
+        ListNode *temp=Head1;
+        while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
+        }
+
+
+return 0 ;
+}
+
+                /* // Q.3536. Maximum Product of Two Digits // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int maxProduct(int n) {
+     
+        
+    }
+int main(){
+
 
 return 0 ;
 }
