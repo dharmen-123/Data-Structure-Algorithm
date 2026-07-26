@@ -2430,21 +2430,45 @@
 
                 /* // Q.3536. Maximum Product of Two Digits // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxProduct(int n) {
+//         string s=to_string(n);
+//         sort(s.begin(),s.end(),greater<char>());
+//         int ans=(s[0]-'0')*(s[1]-'0');        
+//      return ans;
+//         }
+// int main(){
+//         int n=124;
+//         cout<<maxProduct(n);
+
+// return 0 ;
+// }
+
+
+                /* // Q.2733. Neither Minimum nor Maximum // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int maxProduct(int n) {
-        string s=to_string(n);
-        sort(s.begin(),s.end(),greater<char>());
-        int ans=(s[0]-'0')*(s[1]-'0');        
-     return ans;
+int findNonMinOrMax(vector<int>& nums) {
+        int minval=INT_MAX,maxval=INT_MIN;
+        for(int i=0;i<nums.size();i++){
+            maxval=max(maxval,nums[i]);
+            minval=min(minval,nums[i]);
         }
+        for(int i=0;i<nums.size();i++){
+              if(nums[i]!=maxval && nums[i]!=minval){
+                 return nums[i];
+              }  
+        }
+        return  -1;
+    }
 int main(){
-        int n=124;
-        cout<<maxProduct(n);
+        // vector<int>nums={3,2,1,4};
+        vector<int>nums={2,1,3};
+        cout<<findNonMinOrMax(nums);
 
 return 0 ;
 }
-
-
-        
