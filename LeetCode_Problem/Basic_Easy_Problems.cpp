@@ -2449,26 +2449,43 @@
 
                 /* // Q.2733. Neither Minimum nor Maximum // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int findNonMinOrMax(vector<int>& nums) {
+//         int minval=INT_MAX,maxval=INT_MIN;
+//         for(int i=0;i<nums.size();i++){
+//             maxval=max(maxval,nums[i]);
+//             minval=min(minval,nums[i]);
+//         }
+//         for(int i=0;i<nums.size();i++){
+//               if(nums[i]!=maxval && nums[i]!=minval){
+//                  return nums[i];
+//               }  
+//         }
+//         return  -1;
+//     }
+// int main(){
+//         // vector<int>nums={3,2,1,4};
+//         vector<int>nums={2,1,3};
+//         cout<<findNonMinOrMax(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.628. Maximum Product of Three Numbers // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int findNonMinOrMax(vector<int>& nums) {
-        int minval=INT_MAX,maxval=INT_MIN;
-        for(int i=0;i<nums.size();i++){
-            maxval=max(maxval,nums[i]);
-            minval=min(minval,nums[i]);
-        }
-        for(int i=0;i<nums.size();i++){
-              if(nums[i]!=maxval && nums[i]!=minval){
-                 return nums[i];
-              }  
-        }
-        return  -1;
-    }
+int maximumProduct(vector<int>& nums) {
+        sort(nums.rbegin(),nums.rend());
+        return nums[0]*nums[1]*nums[2];
+}
 int main(){
-        // vector<int>nums={3,2,1,4};
-        vector<int>nums={2,1,3};
-        cout<<findNonMinOrMax(nums);
+        // vector<int>nums={1,2,3};
+        vector<int>nums={1,2,3,4};
+        cout<<maximumProduct(nums);
 
 return 0 ;
 }
