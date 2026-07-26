@@ -2358,75 +2358,75 @@
 
         /* // Q.160. Intersection of Two Linked Lists // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-class ListNode{
-     public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-ListNode *getIntersectionNode(ListNode *head1, ListNode *head2) {
-        int l1=0,  l2=0;
-        ListNode* curr=head1;
-        while(curr && curr->next){
-                l1+=1;
-                curr=curr->next;
-        }
-        curr=head2;
-        while(curr && curr->next){
-                l2+=1;
-                curr=curr->next;
-        }
-        ListNode* curr1=head1;
-        ListNode* curr2=head2;
-        int count;
-        if(l1>l2){
-            count=l1-l2;
-            while(count--){
-                curr1=curr1->next;
-            }    
-        }
-        else{
-            count=l2-l1;
-            while(count--){
-                curr2=curr2->next;
-            }
-        }
-        while(curr1!=curr2){
-              curr1=curr1->next;  
-              curr2=curr2->next;  
-        }
-        return curr2;   
-    }
-int main(){
-        ListNode *Head1=new ListNode(1);
-        ListNode *n2=new ListNode(9);
-        ListNode *n3=new ListNode(1);
-        ListNode *n4=new ListNode(2);
-        ListNode *n5=new ListNode(4);
-        Head1->next=n2;
-        n2->next=n3;
-        n3->next=n4;
-        n4->next=n5;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode{
+//      public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode *getIntersectionNode(ListNode *head1, ListNode *head2) {
+//         int l1=0,  l2=0;
+//         ListNode* curr=head1;
+//         while(curr && curr->next){
+//                 l1+=1;
+//                 curr=curr->next;
+//         }
+//         curr=head2;
+//         while(curr && curr->next){
+//                 l2+=1;
+//                 curr=curr->next;
+//         }
+//         ListNode* curr1=head1;
+//         ListNode* curr2=head2;
+//         int count;
+//         if(l1>l2){
+//             count=l1-l2;
+//             while(count--){
+//                 curr1=curr1->next;
+//             }    
+//         }
+//         else{
+//             count=l2-l1;
+//             while(count--){
+//                 curr2=curr2->next;
+//             }
+//         }
+//         while(curr1!=curr2){
+//               curr1=curr1->next;  
+//               curr2=curr2->next;  
+//         }
+//         return curr2;   
+//     }
+// int main(){
+//         ListNode *Head1=new ListNode(1);
+//         ListNode *n2=new ListNode(9);
+//         ListNode *n3=new ListNode(1);
+//         ListNode *n4=new ListNode(2);
+//         ListNode *n5=new ListNode(4);
+//         Head1->next=n2;
+//         n2->next=n3;
+//         n3->next=n4;
+//         n4->next=n5;
 
-        ListNode *Head2=new ListNode(3);
-        Head2->next=n4;
+//         ListNode *Head2=new ListNode(3);
+//         Head2->next=n4;
 
-        Head1=getIntersectionNode(Head1,Head2);
-        /* Print the linked List */
-        ListNode *temp=Head1;
-        while(temp!=NULL){
-            cout<<temp->val<<" ";
-            temp=temp->next;
-        }
+//         Head1=getIntersectionNode(Head1,Head2);
+//         /* Print the linked List */
+//         ListNode *temp=Head1;
+//         while(temp!=NULL){
+//             cout<<temp->val<<" ";
+//             temp=temp->next;
+//         }
 
 
-return 0 ;
-}
+// return 0 ;
+// }
 
                 /* // Q.3536. Maximum Product of Two Digits // */
 
@@ -2434,11 +2434,17 @@ return 0 ;
 #include<bits/stdc++.h>
 using namespace std;
 int maxProduct(int n) {
-     
-        
-    }
+        string s=to_string(n);
+        sort(s.begin(),s.end(),greater<char>());
+        int ans=(s[0]-'0')*(s[1]-'0');        
+     return ans;
+        }
 int main(){
-
+        int n=124;
+        cout<<maxProduct(n);
 
 return 0 ;
 }
+
+
+        
