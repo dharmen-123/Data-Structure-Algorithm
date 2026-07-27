@@ -2127,30 +2127,62 @@
 
         /* // Q.921. Minimum Add to Make Parentheses Valid // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minAddToMakeValid(string s) {
+//         stack<char>st;
+//         int count=0;
+//         for(int i=0;i<s.size();i++){
+//                 if(s[i]=='('){
+//                         st.push(s[i]);
+//                 }
+//                 else{
+//                     if(st.empty()){
+//                         count++;
+//                     }
+//                     else{
+//                         st.pop();
+//                     }
+//                 }
+//         }
+//         return count+st.size();
+// }
+// int main(){
+//         string s = "(((";
+//         cout<<minAddToMakeValid(s);
+
+// return 0 ;
+// }
+
+        /* // Q.540. Single Element in a Sorted Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minAddToMakeValid(string s) {
-        stack<char>st;
-        int count=0;
-        for(int i=0;i<s.size();i++){
-                if(s[i]=='('){
-                        st.push(s[i]);
-                }
-                else{
-                    if(st.empty()){
-                        count++;
-                    }
-                    else{
-                        st.pop();
-                    }
-                }
+int singleNonDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        if(n==1){
+             return nums[0];   
         }
-        return count+st.size();
+        int count=0;
+        for(int i=0;i<n-1;i++){
+                count++;
+              if(nums[i]!=nums[i+1]){
+                 if(count==1){
+                        return nums[i];
+                 }
+                 count=0;
+              }
+
+        }
+        return nums[n-1];
+
 }
 int main(){
-        string s = "(((";
-        cout<<minAddToMakeValid(s);
+        // vector<int>nums={1,1,2,3,3,4,4,8,8};
+        vector<int>nums={3,3,7,7,10,11,11};
+        cout<<singleNonDuplicate(nums);
 
 return 0 ;
 }
