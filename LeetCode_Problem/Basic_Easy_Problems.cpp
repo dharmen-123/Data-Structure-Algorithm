@@ -2475,17 +2475,37 @@
 
         /* // Q.628. Maximum Product of Three Numbers // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maximumProduct(vector<int>& nums) {
+//         int n=nums.size();
+//         sort(nums.begin(),nums.end());
+//         return max(nums[0]*nums[1]*nums[n-1],nums[n-1]*nums[n-2]*nums[n-3]);
+// }
+// int main(){
+//         // vector<int>nums={1,2,3};
+//         vector<int>nums={1,2,3,4};
+//         // vector<int>nums={-100,-98,-1,2,3,4};
+//         cout<<maximumProduct(nums);
+
+// return 0 ;
+// }
+
+                /* // Q.1464. Maximum Product of Two Elements in an Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int maximumProduct(vector<int>& nums) {
-        sort(nums.rbegin(),nums.rend());
-        return nums[0]*nums[1]*nums[2];
+int maxProduct(vector<int>& nums) {
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+        return (nums[n-1]-1)*(nums[n-2]-1);
 }
 int main(){
-        // vector<int>nums={1,2,3};
-        vector<int>nums={1,2,3,4};
-        cout<<maximumProduct(nums);
+        vector<int>nums={1,5,4,5};
+        // vector<int>nums={3,7};
+        cout<<maxProduct(nums);
 
 return 0 ;
 }
