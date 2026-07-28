@@ -2494,21 +2494,50 @@
 
                 /* // Q.1464. Maximum Product of Two Elements in an Array // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxProduct(vector<int>& nums) {
-        int n=nums.size();
-        sort(nums.begin(),nums.end());
-        return (nums[n-1]-1)*(nums[n-2]-1);
-}
-int main(){
-        vector<int>nums={1,5,4,5};
-        // vector<int>nums={3,7};
-        cout<<maxProduct(nums);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxProduct(vector<int>& nums) {
+//         int n=nums.size();
+//         sort(nums.begin(),nums.end());
+//         return (nums[n-1]-1)*(nums[n-2]-1);
+// }
+// int main(){
+//         vector<int>nums={1,5,4,5};
+//         // vector<int>nums={3,7};
+//         cout<<maxProduct(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
 
                 /* // Q.2108. Find First Palindromic String in the Array // */
 
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string firstPalindrome(vector<string>& words) {
+        for(auto s:words){
+             int left=0;
+             int right=s.size()-1;
+             bool pallindrome=true;
+             while(left<right){
+             if(s[left]!=s[right]){
+                   pallindrome=false;
+                   break;
+                }   
+                left++;
+                right--; 
+             }
+             if(pallindrome){
+                  return s; 
+            }
+        }
+       return "";         
+}
+int main(){
+        vector<string>words = {"abc","car","ada","racecar","cool"};
+        // vector<string>words = {"notapalindrome","racecar"};
+        cout<<firstPalindrome(words);
+
+return 0 ;
+}
