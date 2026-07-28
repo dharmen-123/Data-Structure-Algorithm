@@ -2157,32 +2157,32 @@
 
         /* // Q.540. Single Element in a Sorted Array // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int singleNonDuplicate(vector<int>& nums) {
-        int n=nums.size();
-        if(n==1){
-             return nums[0];   
-        }
-        int count=0;
-        for(int i=0;i<n-1;i++){
-                count++;
-              if(nums[i]!=nums[i+1]){
-                 if(count==1){
-                        return nums[i];
-                 }
-                 count=0;
-              }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int singleNonDuplicate(vector<int>& nums) {
+//         int n=nums.size();
+//         if(n==1){
+//              return nums[0];   
+//         }
+//         int count=0;
+//         for(int i=0;i<n-1;i++){
+//                 count++;
+//               if(nums[i]!=nums[i+1]){
+//                  if(count==1){
+//                         return nums[i];
+//                  }
+//                  count=0;
+//               }
 
-        }
-        return nums[n-1];
+//         }
+//         return nums[n-1];
 
-}
-int main(){
-        // vector<int>nums={1,1,2,3,3,4,4,8,8};
-        vector<int>nums={3,3,7,7,10,11,11};
-        cout<<singleNonDuplicate(nums);
+// }
+// int main(){
+//         // vector<int>nums={1,1,2,3,3,4,4,8,8};
+//         vector<int>nums={3,3,7,7,10,11,11};
+//         cout<<singleNonDuplicate(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
