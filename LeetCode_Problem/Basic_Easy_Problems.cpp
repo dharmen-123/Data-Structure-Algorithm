@@ -2512,32 +2512,59 @@
 
                 /* // Q.2108. Find First Palindromic String in the Array // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string firstPalindrome(vector<string>& words) {
+//         for(auto s:words){
+//              int left=0;
+//              int right=s.size()-1;
+//              bool pallindrome=true;
+//              while(left<right){
+//              if(s[left]!=s[right]){
+//                    pallindrome=false;
+//                    break;
+//                 }   
+//                 left++;
+//                 right--; 
+//              }
+//              if(pallindrome){
+//                   return s; 
+//             }
+//         }
+//        return "";         
+// }
+// int main(){
+//         vector<string>words = {"abc","car","ada","racecar","cool"};
+//         // vector<string>words = {"notapalindrome","racecar"};
+//         cout<<firstPalindrome(words);
+
+// return 0 ;
+// }
+
+
+        /* // Q.263. Ugly Number  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string firstPalindrome(vector<string>& words) {
-        for(auto s:words){
-             int left=0;
-             int right=s.size()-1;
-             bool pallindrome=true;
-             while(left<right){
-             if(s[left]!=s[right]){
-                   pallindrome=false;
-                   break;
-                }   
-                left++;
-                right--; 
-             }
-             if(pallindrome){
-                  return s; 
-            }
-        }
-       return "";         
+bool isUgly(int n) {
+        if(n<=0)
+            return false;
+        while(n%2==0){
+              n/=2;  
+        } 
+        while(n%3==0){
+              n/=3;  
+        } 
+        while(n%5==0){
+              n/=5;  
+        } 
+        return n==1;
 }
 int main(){
-        vector<string>words = {"abc","car","ada","racecar","cool"};
-        // vector<string>words = {"notapalindrome","racecar"};
-        cout<<firstPalindrome(words);
+        int n=14;
+        cout<<isUgly(n);
 
 return 0 ;
 }
