@@ -2568,3 +2568,26 @@
 
 // return 0 ;
 // }
+
+
+                /* // Q.434. Number of Segments in a String  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int countSegments(string s) {
+        int count=0;
+        for(int i=0;i<s.size();i++){
+                if(s[i]!=' ' && (i==0 || s[i-1]==' ')){
+                        count++;
+                }
+        }
+        return count;
+}
+int main(){
+        string s = "Hello, my name is John";
+        // string s = "Hello";
+        cout<<countSegments(s);
+
+return 0 ;
+}
