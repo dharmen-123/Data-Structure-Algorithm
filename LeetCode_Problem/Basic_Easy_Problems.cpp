@@ -2572,22 +2572,46 @@
 
                 /* // Q.434. Number of Segments in a String  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countSegments(string s) {
+//         int count=0;
+//         for(int i=0;i<s.size();i++){
+//                 if(s[i]!=' ' && (i==0 || s[i-1]==' ')){
+//                         count++;
+//                 }
+//         }
+//         return count;
+// }
+// int main(){
+//         string s = "Hello, my name is John";
+//         // string s = "Hello";
+//         cout<<countSegments(s);
+
+// return 0 ;
+// }
+
+                /* // Q.507. Perfect Number // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countSegments(string s) {
-        int count=0;
-        for(int i=0;i<s.size();i++){
-                if(s[i]!=' ' && (i==0 || s[i-1]==' ')){
-                        count++;
-                }
+bool checkPerfectNumber(int num) {
+        if(num<=0){
+                return false;
         }
-        return count;
-}
+        int sum=0;
+        for(int i=1;i<=num/2;i++){
+               if(num%i==0){
+                   sum+=i;     
+               } 
+        }
+        return num==sum;
+    }
 int main(){
-        string s = "Hello, my name is John";
-        // string s = "Hello";
-        cout<<countSegments(s);
+        int num=1;
+        cout<<checkPerfectNumber(num);
 
 return 0 ;
 }
