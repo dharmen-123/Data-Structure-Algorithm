@@ -2635,20 +2635,48 @@
 
         /* // Q.3014. Minimum Number of Pushes to Type Word I // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minimumPushes(string word) {
+//         int ans=0;
+//         for(int i=0;i<word.size();i++){
+//                 ans+=(i/8)+1;
+//         }
+//         return ans;
+//     }
+// int main(){
+//         // string word="abcde";
+//         string word="xycdefghij";
+//         cout<<minimumPushes(word);
+
+// return 0 ;
+// }
+
+                /* // Q.219. Contains Duplicate II // */
+        
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minimumPushes(string word) {
-        int ans=0;
-        for(int i=0;i<word.size();i++){
-                ans+=(i/8)+1;
+bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        int n=nums.size();
+        for(int i=0;i<n-1;i++){
+                for(int j=i+1;j<n;j++){
+                        if(nums[i]==nums[j]){
+                                if(abs(i-j)<=k){
+                                    return true;    
+                                }
+                        }
+                }
         }
-        return ans;
-    }
+        return false;
+}
 int main(){
-        // string word="abcde";
-        string word="xycdefghij";
-        cout<<minimumPushes(word);
+        // vector<int>nums={1,0,1,1};
+        vector<int>nums={1,2,3,1,2,3};
+        int k=2;
+        cout<<containsNearbyDuplicate(nums,k);
+
 
 return 0 ;
 }
