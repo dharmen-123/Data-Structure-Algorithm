@@ -2594,24 +2594,61 @@
 
                 /* // Q.507. Perfect Number // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool checkPerfectNumber(int num) {
+//         if(num<=0){
+//                 return false;
+//         }
+//         int sum=0;
+//         for(int i=1;i<=num/2;i++){
+//                if(num%i==0){
+//                    sum+=i;     
+//                } 
+//         }
+//         return num==sum;
+//     }
+// int main(){
+//         int num=1;
+//         cout<<checkPerfectNumber(num);
+
+// return 0 ;
+// }
+
+                /* // Q.680. Valid Palindrome II // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool validPalindrome(string s) {
+
+        
+// }
+// int main(){
+//         string s = "abca";
+//         cout<<validPalindrome(s);
+
+// return 0 ;
+// }
+        
+
+        /* // Q.3014. Minimum Number of Pushes to Type Word I // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool checkPerfectNumber(int num) {
-        if(num<=0){
-                return false;
+int minimumPushes(string word) {
+        int ans=0;
+        for(int i=0;i<word.size();i++){
+                ans+=(i/8)+1;
         }
-        int sum=0;
-        for(int i=1;i<=num/2;i++){
-               if(num%i==0){
-                   sum+=i;     
-               } 
-        }
-        return num==sum;
+        return ans;
     }
 int main(){
-        int num=1;
-        cout<<checkPerfectNumber(num);
+        // string word="abcde";
+        string word="xycdefghij";
+        cout<<minimumPushes(word);
 
 return 0 ;
 }
