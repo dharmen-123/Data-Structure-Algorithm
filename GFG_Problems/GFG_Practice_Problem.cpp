@@ -860,32 +860,76 @@
 
                 /* // Q.Print Bracket Number // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> bracketNumbers(string &s) {
+//         int count =0;
+//         stack<int>st;
+//         vector<int>ans;
+//         for(int i=0;i<s.size();i++){
+//              if(s[i]=='('){
+//                 count++;
+//                 st.push(count);
+//                 ans.push_back(count);
+//              }
+//              else if(s[i]==')'){
+//                 ans.push_back(st.top());
+//                 st.pop();
+//              }
+//         }
+//    return ans;
+//     }
+// int main(){
+//         string s = "(aa(bdc))p(dee)";
+//         // string s = "(((()(";
+//         vector<int>ans=bracketNumbers(s);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+        /* // Q.The Celebrity Problem  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> bracketNumbers(string &s) {
-        int count =0;
+int celebrity(vector<vector<int>>& mat) {
         stack<int>st;
-        vector<int>ans;
-        for(int i=0;i<s.size();i++){
-             if(s[i]=='('){
-                count++;
-                st.push(count);
-                ans.push_back(count);
-             }
-             else if(s[i]==')'){
-                ans.push_back(st.top());
+        int n=mat.size();
+        for(int i=n-1;i>=0;i--){
+                st.push(i);
+        }
+        while(st.size()>1){
+                int first=st.top();
                 st.pop();
-             }
+                int second=st.top();
+                st.pop();
+                if(mat[first][second] && !mat[second][first]){
+                        st.push(second);
+                }
+                else if(!mat[first][second] && mat[second][first]){
+                        st.push(first); 
+                }
         }
-   return ans;
-    }
+        if(st.empty()){
+              return -1;  
+        }
+        int num=st.top();
+        st.pop();
+        int row=0,col=0;
+        for(int i=0;i<n;i++){
+             row+=mat[num][i];
+             col+=mat[i][num];   
+        }
+        return (row==1 && col==n) ? num : -1;        
+}
 int main(){
-        string s = "(aa(bdc))p(dee)";
-        // string s = "(((()(";
-        vector<int>ans=bracketNumbers(s);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
+        vector<vector<int>>mat={{1, 1, 0},
+                                {0, 1, 0},
+                                {0, 1, 1}};
+        cout<<celebrity(mat);
+
 return 0 ;
 }
