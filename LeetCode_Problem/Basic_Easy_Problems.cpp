@@ -2655,27 +2655,71 @@
 
                 /* // Q.219. Contains Duplicate II // */
         
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool containsNearbyDuplicate(vector<int>& nums, int k) {
+//         unordered_map<int, int> mp;
+//         for (int i = 0; i < nums.size(); i++) {
+//             if (mp.find(nums[i]) != mp.end()) {
+//                 if (i - mp[nums[i]] <= k)
+//                     return true;
+//             }
+//             mp[nums[i]] = i;
+//         }
+
+//         return false;
+// }
+// int main(){
+//         // vector<int>nums={1,0,1,1};
+//         vector<int>nums={1,2,3,1,2,3};
+//         int k=2;
+//         cout<<containsNearbyDuplicate(nums,k);
+
+// return 0 ;
+// }
+
+                /* // Q.682. Baseball Game  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool containsNearbyDuplicate(vector<int>& nums, int k) {
-        unordered_map<int, int> mp;
-        for (int i = 0; i < nums.size(); i++) {
-            if (mp.find(nums[i]) != mp.end()) {
-                if (i - mp[nums[i]] <= k)
-                    return true;
-            }
-            mp[nums[i]] = i;
+int calPoints(vector<string>& operations) {
+        stack<int>st;
+        for(int i=0;i<operations.size();i++){
+              if(operations[i]=="C" && !st.empty()){
+                      st.pop();  
+              }
+              else if(operations[i]=="D" && st.size()>=1){
+                 st.push(st.top()*2);
+              }
+              else if(operations[i]=="+" && st.size()>=2){
+                   int first=st.top();
+                   st.pop();
+                   int second=st.top();
+                   int sum=first+second;
+                   st.push(first);
+                   st.push(sum);                      
+              }  
+              else{
+                int value=stoi(operations[i]);
+                  st.push(value);      
+              }
         }
-
-        return false;
-}
+        if(st.empty()){
+               return 0; 
+        }
+        int ans=0;
+        while(!st.empty()){
+            ans+=st.top();
+            st.pop();    
+        }
+        return ans;
+    }
 int main(){
-        // vector<int>nums={1,0,1,1};
-        vector<int>nums={1,2,3,1,2,3};
-        int k=2;
-        cout<<containsNearbyDuplicate(nums,k);
-
-
+        vector<string>ops = {"5","2","C","D","+"};
+        // vector<string>ops = {"5","-2","4","C","D","9","+","+"};
+        // vector<string>ops = {"1","C"};
+        cout<<calPoints(ops);
 return 0 ;
 }
