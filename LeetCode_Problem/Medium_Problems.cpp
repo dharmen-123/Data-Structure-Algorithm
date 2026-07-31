@@ -2189,56 +2189,86 @@
 
                 /* // Q.155. Min Stack  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class MinStack {
+//     stack<int>s1;
+//     stack<int>s2;
+// public:
+//     MinStack() {
+        
+//     }
+//     void push(int value) {
+//         s1.push(value);
+//         if(s2.empty()){
+//             s2.push(value);
+//         }
+//         else{
+//             s2.push(min(s2.top(),value));
+//         }   
+//     }
+//     void pop() {
+//         if(!s1.empty()){
+//             s1.pop();
+//             s2.pop();
+//         }
+//     }  
+//     int top() {
+//         return s1.top();    
+//     }
+//     int getMin() {
+//         return s2.top();
+//     }
+// };
+// int main(){
+//     MinStack st;
+//     st.push(-2);
+//     st.push(0);
+//     st.push(-3);
+//     cout << "Current Minimum : " << st.getMin() << endl;
+//     st.pop();
+//     cout << "Top Element : " << st.top() << endl;
+//     cout << "Current Minimum : " << st.getMin() << endl;
+//     st.push(-5);
+//     cout << "Top Element : " << st.top() << endl;
+//     cout << "Current Minimum : " << st.getMin() << endl;
+//     st.push(10);
+//     cout << "Top Element : " << st.top() << endl;
+//     cout << "Current Minimum : " <<st.getMin() << endl;
+//     st.pop();
+//     cout << "Top Element : " << st.top() << endl;
+//     cout << "Current Minimum : " << st.getMin() << endl;
+
+// return 0 ;
+// }
+
+
+                /* // Q.3016. Minimum Number of Pushes to Type Word II  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class MinStack {
-    stack<int>s1;
-    stack<int>s2;
-public:
-    MinStack() {
-        
+int minimumPushes(string word) {
+       unordered_map<char,int>freq;
+       for(auto x:word){
+          freq[x]++;
+       }
+       vector<int>v;
+       for(auto x:freq){
+          v.push_back(x.second);
+       }
+       sort(v.begin(), v.end(), greater<int>());
+       int ans=0;
+       for(int i=0;i<v.size();i++){
+          ans+=((i/8)+1)*v[i];
+       }
+       return ans;
     }
-    void push(int value) {
-        s1.push(value);
-        if(s2.empty()){
-            s2.push(value);
-        }
-        else{
-            s2.push(min(s2.top(),value));
-        }   
-    }
-    void pop() {
-        if(!s1.empty()){
-            s1.pop();
-            s2.pop();
-        }
-    }  
-    int top() {
-        return s1.top();    
-    }
-    int getMin() {
-        return s2.top();
-    }
-};
 int main(){
-    MinStack st;
-    st.push(-2);
-    st.push(0);
-    st.push(-3);
-    cout << "Current Minimum : " << st.getMin() << endl;
-    st.pop();
-    cout << "Top Element : " << st.top() << endl;
-    cout << "Current Minimum : " << st.getMin() << endl;
-    st.push(-5);
-    cout << "Top Element : " << st.top() << endl;
-    cout << "Current Minimum : " << st.getMin() << endl;
-    st.push(10);
-    cout << "Top Element : " << st.top() << endl;
-    cout << "Current Minimum : " <<st.getMin() << endl;
-    st.pop();
-    cout << "Top Element : " << st.top() << endl;
-    cout << "Current Minimum : " << st.getMin() << endl;
+        string word="xyzxyzxyzxyz";
+        // string word="aabbccddeeffgghhiiiiii";
+        cout<<minimumPushes(word);
 
 return 0 ;
 }
