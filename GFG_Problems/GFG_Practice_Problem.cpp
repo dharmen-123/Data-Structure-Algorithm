@@ -892,44 +892,116 @@
 
         /* // Q.The Celebrity Problem  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int celebrity(vector<vector<int>>& mat) {
+//         stack<int>st;
+//         int n=mat.size();
+//         for(int i=n-1;i>=0;i--){
+//                 st.push(i);
+//         }
+//         while(st.size()>1){
+//                 int first=st.top();
+//                 st.pop();
+//                 int second=st.top();
+//                 st.pop();
+//                 if(mat[first][second] && !mat[second][first]){
+//                         st.push(second);
+//                 }
+//                 else if(!mat[first][second] && mat[second][first]){
+//                         st.push(first); 
+//                 }
+//         }
+//         if(st.empty()){
+//               return -1;  
+//         }
+//         int num=st.top();
+//         st.pop();
+//         int row=0,col=0;
+//         for(int i=0;i<n;i++){
+//              row+=mat[num][i];
+//              col+=mat[i][num];   
+//         }
+//         return (row==1 && col==n) ? num : -1;        
+// }
+// int main(){
+//         vector<vector<int>>mat={{1, 1, 0},
+//                                 {0, 1, 0},
+//                                 {0, 1, 1}};
+//         cout<<celebrity(mat);
+
+// return 0 ;
+// }
+
+
+                /* // Q.Get Min from Stack // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int celebrity(vector<vector<int>>& mat) {
-        stack<int>st;
-        int n=mat.size();
-        for(int i=n-1;i>=0;i--){
-                st.push(i);
-        }
-        while(st.size()>1){
-                int first=st.top();
-                st.pop();
-                int second=st.top();
-                st.pop();
-                if(mat[first][second] && !mat[second][first]){
-                        st.push(second);
-                }
-                else if(!mat[first][second] && mat[second][first]){
-                        st.push(first); 
-                }
-        }
-        if(st.empty()){
-              return -1;  
-        }
-        int num=st.top();
-        st.pop();
-        int row=0,col=0;
-        for(int i=0;i<n;i++){
-             row+=mat[num][i];
-             col+=mat[i][num];   
-        }
-        return (row==1 && col==n) ? num : -1;        
-}
+class SpecialStack {
+	stack<int>st1;
+	stack<int>st2;
+	public:
+	
+	void push(int x) {
+		// Add an element to the top of Stack
+		st1.push(x);
+		if (st2.empty())
+			st2.push(x);
+		else
+			st2.push(min(st2.top(), x));
+	}
+	
+	void pop() {
+		// Remove the top element from the Stack
+		if (!st1.empty()) {
+			st1.pop();
+			st2.pop();
+		}
+	}
+	
+	int peek() {
+		// Returns top element of the Stack
+		if (!st1.empty()) {
+			return st1.top();
+		}
+	    return -1;
+	}
+	
+	bool isEmpty() {
+		// Check if stack is empty
+			return st1.empty();
+	}
+	
+	int getMin() {
+		// Finds minimum element of Stack
+		if (st2.empty()) {
+			return - 1;
+		}
+		else {
+			return st2.top();
+		}
+	}
+};
 int main(){
-        vector<vector<int>>mat={{1, 1, 0},
-                                {0, 1, 0},
-                                {0, 1, 1}};
-        cout<<celebrity(mat);
+    SpecialStack st;
+    st.push(2);
+    st.push(3);
+    cout << "Top = " << st.peek() << endl;
+    cout << "Min = " << st.getMin() << endl;
+    st.pop();
+    cout << "Top = " << st.peek() << endl;
+    cout << "Min = " << st.getMin() << endl;
+    st.push(1);
+    cout << "Top = " << st.peek() << endl;
+    cout << "Min = " << st.getMin() << endl;
+    st.pop();
+    st.pop();
+    cout << "Is Empty = " << st.isEmpty() << endl;
+    cout << "Top = " << st.peek() << endl;
+    cout << "Min = " << st.getMin() << endl;
 
 return 0 ;
 }
