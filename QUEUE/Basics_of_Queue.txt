@@ -1,0 +1,59 @@
+
+           /* *****************************************  */
+           /* ****************  QUEUE  ****************  */
+           /* *****************************************  */
+
+A queue is a linear data structure that follows the FIFO (First In, First Out) principle.
+The element inserted first is removed first.
+Think of a line at a ticket counter: the first person in line gets served first.
+
+    🔹 Key Operations
+
+* Enqueue(x) → Insert element at the rear (end).
+* Dequeue() → Remove element from the front.
+* Front() → Access the first element.
+* Rear() → Access the last element.
+* isEmpty() → Check if queue is empty.
+* size() → Number of elements in the queue.
+
+    🔹 Characteristics
+
+*> Order: FIFO (First In, First Out).
+*> Access: Only front and rear elements are accessible directly.
+*> Efficiency: Enqueue and Dequeue are O(1).
+*> Implementation: Can be done using arrays, linked lists, or STL queue.
+
+
+    🔹 Types of Queues
+
+<* Simple Queue → Basic FIFO structure.
+<* Circular Queue → Last position connects back to the first, avoiding wasted space.
+<* Double-Ended Queue (Deque) → Insert/delete allowed at both ends.
+<* Priority Queue → Elements are dequeued based on priority, not order.
+
+    🔹 Applications
+
+Scheduling (CPU, disk scheduling).
+Order processing (ticket counters, printers).
+Breadth-First Search (BFS) in graphs.
+Buffer management (IO queues, data streams).
+Resource sharing (round-robin scheduling).
+
+   ****  Example ****
+
+* Enqueue(10), Enqueue(20), Enqueue(30)
+        Queue: [10, 20, 30]  (10 is at front)
+* Dequeue()
+        Queue: [20, 30]      (removed 10)
+* Front()
+        Output: 20           (first element)
+* Rear()
+        Output: 30           (last element)
+
+
+  * Complexity
+
+* Enqueue (push): O(1)
+* Dequeue (pop): O(1)
+* Front/Back: O(1)
+* Size/Empty: O(1)
