@@ -2726,35 +2726,66 @@
 
                 /* // Q.4006  Maximize Pair Strength Using GCD  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// long long gcd(long long a, long long b) {
+//     while (b != 0) {
+//         long long temp = b;
+//         b = a % b;
+//         a = temp;
+//     }
+//     return a;
+// }
+// long long maxPairStrength(vector<int>& nums) {
+//     int n = nums.size();
+//     long long ans = 0;
+//     for (int i = 0; i < n; i++) {
+//         for (int j = i + 1; j < n; j++) {
+//             long long a = nums[i];
+//             long long b = nums[j];
+//             long long g = gcd(a, b);
+//             long long strength = (a * b) / (g * g);
+//             ans = max(ans, strength);
+//         }
+//     }
+//     return ans;
+// }
+
+// int main(){
+//         vector<int>nums={2,3,5};
+//         cout<<maxPairStrength(nums);
+
+// return 0 ;
+// }
+
+                /* // Q.697. Degree of an Array  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-long long gcd(long long a, long long b) {
-    while (b != 0) {
-        long long temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-long long maxPairStrength(vector<int>& nums) {
-    int n = nums.size();
-    long long ans = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-            long long a = nums[i];
-            long long b = nums[j];
-            long long g = gcd(a, b);
-            long long strength = (a * b) / (g * g);
-            ans = max(ans, strength);
+int findShortestSubArray(vector<int>& nums) {
+        int count=0;
+        int ans=0;
+        for(int i=0;i<nums.size();i++){
+                if(count==0){
+                     ans=nums[i];   
+                }
+                if(ans=nums[i])
+                     count++;
+                else
+                     count--;      
         }
-    }
-    return ans;
+        int left=0,right=nums.size()-1;
+        while((nums[left] == ans) && (nums[right] == ans)){
+                left++, right--;
+        }
+        ans=right-left+2;
+        return ans;
 }
-
 int main(){
-        vector<int>nums={2,3,5};
-        cout<<maxPairStrength(nums);
+        vector<int>nums={1,2,2,3,1};
+        cout<<findShortestSubArray(nums);
 
 return 0 ;
 }
