@@ -2246,29 +2246,59 @@
 
                 /* // Q.3016. Minimum Number of Pushes to Type Word II  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minimumPushes(string word) {
+//        unordered_map<char,int>freq;
+//        for(auto x:word){
+//           freq[x]++;
+//        }
+//        vector<int>v;
+//        for(auto x:freq){
+//           v.push_back(x.second);
+//        }
+//        sort(v.begin(), v.end(), greater<int>());
+//        int ans=0;
+//        for(int i=0;i<v.size();i++){
+//           ans+=((i/8)+1)*v[i];
+//        }
+//        return ans;
+//     }
+// int main(){
+//         string word="xyzxyzxyzxyz";
+//         // string word="aabbccddeeffgghhiiiiii";
+//         cout<<minimumPushes(word);
+
+// return 0 ;
+// }
+
+                /* // Q.4007 Count Subarrays With Even Odd Ratio I  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minimumPushes(string word) {
-       unordered_map<char,int>freq;
-       for(auto x:word){
-          freq[x]++;
-       }
-       vector<int>v;
-       for(auto x:freq){
-          v.push_back(x.second);
-       }
-       sort(v.begin(), v.end(), greater<int>());
-       int ans=0;
-       for(int i=0;i<v.size();i++){
-          ans+=((i/8)+1)*v[i];
-       }
-       return ans;
+int countRatioSubarrays(vector<int>& nums, int a, int b) {
+    int n = nums.size();
+     long long ans = 0;
+    for(int i=0;i<n;i++) {
+        int even = 0;
+        int odd = 0;
+        for(int j=i;j<n;j++) {
+            if(nums[j]%2==0)
+                even++;
+            else
+                odd++;
+            if(odd>0 && even*b<=odd*a)
+                ans++;
+        }
     }
+    return ans;
+}
 int main(){
-        string word="xyzxyzxyzxyz";
-        // string word="aabbccddeeffgghhiiiiii";
-        cout<<minimumPushes(word);
-
+        // vector<int>nums = {1,2,1,2};
+        vector<int>nums = {2,2,1};
+        int  a = 2, b = 1;
+        cout<<countRatioSubarrays(nums,a,b);
 return 0 ;
 }
