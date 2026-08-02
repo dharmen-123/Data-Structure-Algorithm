@@ -2681,45 +2681,80 @@
 
                 /* // Q.682. Baseball Game  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int calPoints(vector<string>& operations) {
+//         stack<int>st;
+//         for(int i=0;i<operations.size();i++){
+//               if(operations[i]=="C" && !st.empty()){
+//                       st.pop();  
+//               }
+//               else if(operations[i]=="D" && st.size()>=1){
+//                  st.push(st.top()*2);
+//               }
+//               else if(operations[i]=="+" && st.size()>=2){
+//                    int first=st.top();
+//                    st.pop();
+//                    int second=st.top();
+//                    int sum=first+second;
+//                    st.push(first);
+//                    st.push(sum);                      
+//               }  
+//               else{
+//                 int value=stoi(operations[i]);
+//                   st.push(value);      
+//               }
+//         }
+//         if(st.empty()){
+//                return 0; 
+//         }
+//         int ans=0;
+//         while(!st.empty()){
+//             ans+=st.top();
+//             st.pop();    
+//         }
+//         return ans;
+//     }
+// int main(){
+//         vector<string>ops = {"5","2","C","D","+"};
+//         // vector<string>ops = {"5","-2","4","C","D","9","+","+"};
+//         // vector<string>ops = {"1","C"};
+//         cout<<calPoints(ops);
+// return 0 ;
+// }
+
+                /* // Q.4006  Maximize Pair Strength Using GCD  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int calPoints(vector<string>& operations) {
-        stack<int>st;
-        for(int i=0;i<operations.size();i++){
-              if(operations[i]=="C" && !st.empty()){
-                      st.pop();  
-              }
-              else if(operations[i]=="D" && st.size()>=1){
-                 st.push(st.top()*2);
-              }
-              else if(operations[i]=="+" && st.size()>=2){
-                   int first=st.top();
-                   st.pop();
-                   int second=st.top();
-                   int sum=first+second;
-                   st.push(first);
-                   st.push(sum);                      
-              }  
-              else{
-                int value=stoi(operations[i]);
-                  st.push(value);      
-              }
-        }
-        if(st.empty()){
-               return 0; 
-        }
-        int ans=0;
-        while(!st.empty()){
-            ans+=st.top();
-            st.pop();    
-        }
-        return ans;
+long long gcd(long long a, long long b) {
+    while (b != 0) {
+        long long temp = b;
+        b = a % b;
+        a = temp;
     }
+    return a;
+}
+long long maxPairStrength(vector<int>& nums) {
+    int n = nums.size();
+    long long ans = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            long long a = nums[i];
+            long long b = nums[j];
+            long long g = gcd(a, b);
+            long long strength = (a * b) / (g * g);
+            ans = max(ans, strength);
+        }
+    }
+    return ans;
+}
+
 int main(){
-        vector<string>ops = {"5","2","C","D","+"};
-        // vector<string>ops = {"5","-2","4","C","D","9","+","+"};
-        // vector<string>ops = {"1","C"};
-        cout<<calPoints(ops);
+        vector<int>nums={2,3,5};
+        cout<<maxPairStrength(nums);
+
 return 0 ;
 }
