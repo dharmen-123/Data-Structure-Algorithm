@@ -2765,23 +2765,25 @@
 #include<bits/stdc++.h>
 using namespace std;
 int findShortestSubArray(vector<int>& nums) {
-        int count=0;
-        int ans=0;
-        for(int i=0;i<nums.size();i++){
-                if(count==0){
-                     ans=nums[i];   
-                }
-                if(ans=nums[i])
-                     count++;
-                else
-                     count--;      
+    unordered_map<int,int> freq;
+    unordered_map<int,int> first;
+    unordered_map<int,int> last;
+    int degree = 0;
+    for(int i = 0; i < nums.size(); i++) {
+        freq[nums[i]]++;
+        if(first.find(nums[i]) == first.end()) {
+            first[nums[i]] = i;
         }
-        int left=0,right=nums.size()-1;
-        while((nums[left] == ans) && (nums[right] == ans)){
-                left++, right--;
+        last[nums[i]] = i;
+        degree = max(degree, freq[nums[i]]);
+    }
+    int ans = nums.size();
+    for(auto x : freq) {
+        if(x.second == degree) {
+            ans = min(ans, last[x.first] - first[x.first] + 1);
         }
-        ans=right-left+2;
-        return ans;
+    }
+    return ans;
 }
 int main(){
         vector<int>nums={1,2,2,3,1};
