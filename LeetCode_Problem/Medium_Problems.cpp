@@ -1792,7 +1792,7 @@
 // return 0 ;
 // }
 
-                        /* // Q.143. Reorder List  // */
+/* // Q.143. Reorder List  // */
 
 // #include <iostream>
 // #include <bits/stdc++.h>
@@ -1809,7 +1809,7 @@
 // void reorderList(ListNode *head){
 //       if(head==NULL || head->next==NULL){
 //            return ;
-//       } 
+//       }
 //       ListNode *curr=head;
 //       while(curr!=NULL && curr->next!=NULL){
 //               ListNode *Tail=curr;
@@ -1818,7 +1818,7 @@
 //                       prev=Tail;
 //                       Tail=Tail->next;
 //               }
-//               // Stop the operation when curr and Tail are same or next 
+//               // Stop the operation when curr and Tail are same or next
 //               if(curr==Tail || curr->next==Tail){
 //                       break;
 //               }
@@ -1856,7 +1856,7 @@
 //         return 0;
 // }
 
-        /* // Q.147. Insertion Sort List  // */
+/* // Q.147. Insertion Sort List  // */
 
 // #include <iostream>
 // #include <bits/stdc++.h>
@@ -1878,7 +1878,7 @@
 //              ListNode* prev=&dummy;
 //              while(prev->next && prev->next->val<curr->val){
 //                      prev=prev->next;
-//              } 
+//              }
 //            curr->next=prev->next;
 //            prev->next=curr;
 //         }
@@ -1909,9 +1909,9 @@
 //                 temp = temp->next;
 //         }
 //         return 0;
-// }        
+// }
 
-        /* // Q.2487. Remove Nodes From Linked List // */
+/* // Q.2487. Remove Nodes From Linked List // */
 
 // #include <iostream>
 // #include <bits/stdc++.h>
@@ -1935,24 +1935,24 @@
 //              temp=Head->next;
 //              Head->next=prev;
 //              prev=Head;
-//              Head=temp;   
+//              Head=temp;
 //         }
 //        Head->next=prev;
 //        return Head;
-// } 
-// ListNode* removeNodes(ListNode* head) {  
+// }
+// ListNode* removeNodes(ListNode* head) {
 //         head=reverselist(head);
 //         ListNode* curr=head->next;
 //         ListNode* prev=head;
 //         while(curr!=NULL){
 //              if(prev->val>curr->val){
 //                 prev->next=curr->next;
-//                 curr=prev->next; 
+//                 curr=prev->next;
 //              }
 //              else{
 //                 prev=curr;
 //                 curr=curr->next;
-//              }  
+//              }
 //         }
 //         return reverselist(head);
 //     }
@@ -1979,9 +1979,9 @@
 //                 temp = temp->next;
 //         }
 //         return 0;
-// }        
+// }
 
-        /* // Q.2181. Merge Nodes in Between Zeros  // */
+/* // Q.2181. Merge Nodes in Between Zeros  // */
 
 // #include <iostream>
 // #include <bits/stdc++.h>
@@ -2002,14 +2002,14 @@
 //         ListNode* curr=head->next;
 //         while(curr->next!=NULL){
 //               if(curr->val!=0){
-//                   sum+=curr->val;  
+//                   sum+=curr->val;
 //               }
 //               else{
 //                   ListNode* temp=new ListNode(sum);
 //                   Tail->next=temp;
 //                   Tail=Tail->next;
-//                   sum=0;      
-//               }  
+//                   sum=0;
+//               }
 
 //               curr=curr->next;
 //         }
@@ -2047,9 +2047,9 @@
 //                 temp = temp->next;
 //         }
 //         return 0;
-// }        
+// }
 
-                /* // Q.1721. Swapping Nodes in a Linked List // */
+/* // Q.1721. Swapping Nodes in a Linked List // */
 
 // #include <iostream>
 // #include <bits/stdc++.h>
@@ -2067,8 +2067,8 @@
 //         ListNode* curr=head;
 //         int n=0;
 //         while(curr!=NULL){
-//                n++; 
-//               curr=curr->next;  
+//                n++;
+//               curr=curr->next;
 //         }
 //         curr=head;
 //         vector<int>arr(n,0);
@@ -2076,15 +2076,15 @@
 //         while(curr!=NULL){
 //               arr[i]=curr->val;
 //               curr=curr->next;
-//               i++;  
+//               i++;
 //         }
 //         swap(arr[k-1],arr[arr.size()-k]);
 //         curr=head;
 //         i=0;
 //         while(curr!=NULL){
 //              curr->val=arr[i];
-//              curr=curr->next;  
-//              i++; 
+//              curr=curr->next;
+//              i++;
 //         }
 //     return head;
 //     }
@@ -2122,10 +2122,9 @@
 //                 temp = temp->next;
 //         }
 //         return 0;
-// }        
+// }
 
-
-        /* // Q.921. Minimum Add to Make Parentheses Valid // */
+/* // Q.921. Minimum Add to Make Parentheses Valid // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -2155,7 +2154,7 @@
 // return 0 ;
 // }
 
-        /* // Q.540. Single Element in a Sorted Array // */
+/* // Q.540. Single Element in a Sorted Array // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -2163,7 +2162,7 @@
 // int singleNonDuplicate(vector<int>& nums) {
 //         int n=nums.size();
 //         if(n==1){
-//              return nums[0];   
+//              return nums[0];
 //         }
 //         int count=0;
 //         for(int i=0;i<n-1;i++){
@@ -2187,7 +2186,7 @@
 // return 0 ;
 // }
 
-                /* // Q.155. Min Stack  //  */
+/* // Q.155. Min Stack  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -2197,7 +2196,7 @@
 //     stack<int>s2;
 // public:
 //     MinStack() {
-        
+
 //     }
 //     void push(int value) {
 //         s1.push(value);
@@ -2206,16 +2205,16 @@
 //         }
 //         else{
 //             s2.push(min(s2.top(),value));
-//         }   
+//         }
 //     }
 //     void pop() {
 //         if(!s1.empty()){
 //             s1.pop();
 //             s2.pop();
 //         }
-//     }  
+//     }
 //     int top() {
-//         return s1.top();    
+//         return s1.top();
 //     }
 //     int getMin() {
 //         return s2.top();
@@ -2243,8 +2242,7 @@
 // return 0 ;
 // }
 
-
-                /* // Q.3016. Minimum Number of Pushes to Type Word II  //  */
+/* // Q.3016. Minimum Number of Pushes to Type Word II  //  */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -2273,7 +2271,7 @@
 // return 0 ;
 // }
 
-                /* // Q.4007 Count Subarrays With Even Odd Ratio I  // */
+/* // Q.4007 Count Subarrays With Even Odd Ratio I  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
@@ -2303,42 +2301,47 @@
 // return 0 ;
 // }
 
-                /* // Q.73. Set Matrix Zeroes // */
+/* // Q.73. Set Matrix Zeroes // */
 
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-void setZeroes(vector<vector<int>>& matrix) {
-        int row=matrix.size();
-        int col=matrix[0].size();
-        vector<pair<int,int>> index;
-        for(int i=0;i<row*col;i++){
-            int r=i/col;    
-            int c=i%col;
-            if(matrix[r][c]==0){
-                index.push_back({r,c});
-            }
+void setZeroes(vector<vector<int>> &matrix){
+        int row = matrix.size();
+        int col = matrix[0].size();
+        int col0 = 1;
+        for (int i = 0; i < row; i++){
+                if (matrix[i][0] == 0)
+                        col0 = 0;
+                for (int j = 1; j < col; j++){
+                        if (matrix[i][j] == 0){
+                                matrix[i][0] = 0;
+                                matrix[0][j] = 0;
+                        }
+                }
         }
-        for(auto p : index){
-            int r = p.first;
-            int c = p.second;
-            for(int j = 0; j < col; j++)
-                matrix[r][j] = 0;
-        
-            for(int i = 0; i < row; i++)
-                matrix[i][c] = 0;
+        for (int i = row - 1; i >= 0; i--){
+           for (int j = col - 1; j >= 1; j--){
+                if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                        matrix[i][j] = 0;
+          }
+          if (col0 == 0)
+              matrix[i][0] = 0;
         }
-    }
-int main(){
+}
+int main()
+{
         // vector<vector<int>>matrix = {{1,1,1},{1,0,1},{1,1,1}};
-        vector<vector<int>>matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        vector<vector<int>> matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
         setZeroes(matrix);
-        for(auto k:matrix){
-            for(auto a:k){
-                cout<<a<<" ";
-            }
-            cout<<endl;    
+        for (auto k : matrix)
+        {
+                for (auto a : k)
+                {
+                        cout << a << " ";
+                }
+                cout << endl;
         }
 
-return 0 ;
+        return 0;
 }
