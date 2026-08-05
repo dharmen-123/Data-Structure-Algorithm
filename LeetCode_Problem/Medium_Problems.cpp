@@ -2275,30 +2275,70 @@
 
                 /* // Q.4007 Count Subarrays With Even Odd Ratio I  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countRatioSubarrays(vector<int>& nums, int a, int b) {
+//     int n = nums.size();
+//      long long ans = 0;
+//     for(int i=0;i<n;i++) {
+//         int even = 0;
+//         int odd = 0;
+//         for(int j=i;j<n;j++) {
+//             if(nums[j]%2==0)
+//                 even++;
+//             else
+//                 odd++;
+//             if(odd>0 && even*b<=odd*a)
+//                 ans++;
+//         }
+//     }
+//     return ans;
+// }
+// int main(){
+//         // vector<int>nums = {1,2,1,2};
+//         vector<int>nums = {2,2,1};
+//         int  a = 2, b = 1;
+//         cout<<countRatioSubarrays(nums,a,b);
+// return 0 ;
+// }
+
+                /* // Q.73. Set Matrix Zeroes // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countRatioSubarrays(vector<int>& nums, int a, int b) {
-    int n = nums.size();
-     long long ans = 0;
-    for(int i=0;i<n;i++) {
-        int even = 0;
-        int odd = 0;
-        for(int j=i;j<n;j++) {
-            if(nums[j]%2==0)
-                even++;
-            else
-                odd++;
-            if(odd>0 && even*b<=odd*a)
-                ans++;
+void setZeroes(vector<vector<int>>& matrix) {
+        int row=matrix.size();
+        int col=matrix[0].size();
+        vector<pair<int,int>> index;
+        for(int i=0;i<row*col;i++){
+            int r=i/col;    
+            int c=i%col;
+            if(matrix[r][c]==0){
+                index.push_back({r,c});
+            }
+        }
+        for(auto p : index){
+            int r = p.first;
+            int c = p.second;
+            for(int j = 0; j < col; j++)
+                matrix[r][j] = 0;
+        
+            for(int i = 0; i < row; i++)
+                matrix[i][c] = 0;
         }
     }
-    return ans;
-}
 int main(){
-        // vector<int>nums = {1,2,1,2};
-        vector<int>nums = {2,2,1};
-        int  a = 2, b = 1;
-        cout<<countRatioSubarrays(nums,a,b);
+        // vector<vector<int>>matrix = {{1,1,1},{1,0,1},{1,1,1}};
+        vector<vector<int>>matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        setZeroes(matrix);
+        for(auto k:matrix){
+            for(auto a:k){
+                cout<<a<<" ";
+            }
+            cout<<endl;    
+        }
+
 return 0 ;
 }
