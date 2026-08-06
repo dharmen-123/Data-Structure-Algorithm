@@ -1007,4 +1007,43 @@
 // }
 
 
-                /* // Q.  // */
+                /* // Q.Queue Reversal  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void reverseQueue(queue<int> &q) {
+      stack<int>s;
+    /* Insert the element into stack */
+    while(!q.empty()){
+        s.push(q.front());
+        q.pop();
+    }
+
+    /* Pop elemenet from stack and insert into queue */
+    while(!s.empty()){
+        q.push(s.top());
+        s.pop();
+    }
+     
+}
+int main(){
+     queue<int>q;
+    q.push(5);
+    q.push(10);
+    q.push(15);
+    q.push(20);
+    q.push(25);
+    reverseQueue(q);    
+    int n=q.size();
+    /* print all the element */
+    while(n--){
+        cout<<q.front()<<" ";
+        int val=q.front();
+        q.pop();
+        q.push(val);
+    }
+
+return 0 ;
+}
+
