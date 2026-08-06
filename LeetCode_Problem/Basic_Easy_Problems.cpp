@@ -2823,64 +2823,89 @@
 
         /* // Q.232. Implement Queue using Stacks // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class MyQueue {
+//     stack<int>s1;
+//     stack<int>s2;
+//     public:
+//     MyQueue() {
+         
+//     } 
+//     void push(int x) {
+//         s1.push(x);
+//     }
+//     int pop() {
+//         if(!s2.empty()){
+//               int element=s2.top();
+//               s2.pop();
+//               return element;  
+//         }
+//         else{
+//                while(!s1.empty()){
+//                   s2.push(s1.top());
+//                   s1.pop();
+//                }
+//               int element=s2.top();
+//               s2.pop();
+//               return element;  
+//         }
+//     }
+//     int peek() {
+//         if(empty()){
+//              return 0;   
+//         }
+//         if(!s2.empty()){
+//              return s2.top();
+//         }
+//         else{
+//                while(!s1.empty()){
+//                  s2.push(s1.top());
+//                  s1.pop();
+//                }
+//               return s2.top();
+//         }
+//     }
+//     bool empty() {
+//         return s1.empty() && s2.empty();   
+//     }
+// };
+
+// int main(){
+//         MyQueue q;
+//         q.push(4);
+//         q.push(5);
+//         q.push(7);
+//         cout<<q.pop()<<endl;
+//         q.push(9);
+//         cout<<q.peek()<<endl;
+//         cout<<q.empty()<<endl;
+
+// return 0 ;
+// }
+
+        /* // Q.3345. Smallest Divisible Digit Product I  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class MyQueue {
-    stack<int>s1;
-    stack<int>s2;
-    public:
-    MyQueue() {
-         
-    } 
-    void push(int x) {
-        s1.push(x);
+int smallestNumber(int n, int t) {
+     while (true) {
+        int temp = n;
+        int product = 1;
+        while (temp > 0) {
+            product *= (temp % 10);
+            temp /= 10;
+        }
+        if (product % t == 0)
+            return n;
+        n++;
     }
-    int pop() {
-        if(!s2.empty()){
-              int element=s2.top();
-              s2.pop();
-              return element;  
-        }
-        else{
-               while(!s1.empty()){
-                  s2.push(s1.top());
-                  s1.pop();
-               }
-              int element=s2.top();
-              s2.pop();
-              return element;  
-        }
-    }
-    int top() {
-        if(empty()){
-             return 0;   
-        }
-        if(!s2.empty()){
-             return s2.top();
-        }
-        else{
-               while(!s1.empty()){
-                 s2.push(s1.top());
-                 s1.pop();
-               }
-              return s2.top();
-        }
-    }
-    bool empty() {
-        return s1.empty() && s2.empty();   
-    }
-};
-
+}
 int main(){
-        MyQueue q;
-        q.push(4);
-        q.push(5);
-        q.push(7);
-        cout<<q.pop()<<endl;
-        q.push(9);
-        cout<<q.top()<<endl;
-        cout<<q.empty()<<endl;
+       int n=15,t=3;
+       cout<<smallestNumber(n,t); 
 
 return 0 ;
 }
