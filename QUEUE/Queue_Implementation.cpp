@@ -107,83 +107,153 @@
 // return 0 ;
 // }
 
-        /* Circular Queue Implementation using with Arrzy*/
+        /* Circular Queue Implementation using with Array*/
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class Queue{
+//     int *arr;
+//     int front, rear;
+//     int size;
+//     public:
+//         Queue(int n){
+//             arr=new int[n];
+//             front = -1 , rear = -1;
+//             size=n;
+//         }
+//      void push(int val){
+//         if(Isempty()){
+//             front=rear=0;
+//             arr[rear]=val;
+//         }
+//         else if(Isfull()){
+//             cout<<"Queue is Overflow"<<endl;
+//             return ;
+//         }
+//         else{
+//             rear=(rear+1)%size;
+//             arr[rear]=val;
+//             cout<<val<<" is insert in queue"<<endl;
+//         }
+//      } 
+//      void pop(){
+//         if(Isempty()){
+//             cout<<"Queue Underflow"<<endl;
+//             return ;
+//         }
+//         else{
+//             if(front==rear){
+//                 front=rear=-1;
+//             }
+//             else{
+//             cout<<arr[front]<<" is removed from queue"<<endl;
+//             front=(front+1)%size;
+//             }
+//         }
+//      }
+//      int start(){
+//         if(Isempty()){
+//             cout<<"Queue is Empty"<<endl;
+//             return -1;
+//         }
+//         else{
+//             return arr[front];
+//         }
+//      }
+//      bool Isfull(){
+//         return (rear+1)%size==front;
+//      }
+//      bool Isempty(){
+//         return front==-1;
+//      }
+
+// };
+// int main(){
+//         Queue q(5);
+//         q.push(10);
+//         q.push(8);
+//         q.push(23);
+//         q.pop();
+//         cout<<q.Isfull()<<endl;
+//         cout<<q.start()<<endl;
+//         q.push(65);
+//         q.pop();
+//         q.push(76);
+//         q.push(3);
+//         q.push(5);
+//         cout<<q.Isfull()<<endl;
+
+// return 0 ;
+// }
+
+
+        /* Queue Implementation using with Linked List */
 
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class Queue{
-    int *arr;
-    int front, rear;
-    int size;
+class Node{
     public:
-        Queue(int n){
-            arr=new int[n];
-            front = -1 , rear = -1;
-            size=n;
+        int data;
+        Node *next;
+        Node(int val){
+            data=val;
+            next=NULL;
         }
-     void push(int val){
-        if(Isempty()){
-            front=rear=0;
-            arr[rear]=val;
+};
+class Queue{
+    Node *front;
+    Node *rear;
+    public:
+        Queue(){
+            front=rear=NULL;
         }
-        else if(Isfull()){
-            cout<<"Queue is Overflow"<<endl;
-            return ;
+        bool Isempty(){
+            return front==NULL;
         }
-        else{
-            rear=(rear+1)%size;
-            arr[rear]=val;
-            cout<<val<<" is insert in queue"<<endl;
-        }
-     } 
-     void pop(){
-        if(Isempty()){
-            cout<<"Queue Underflow"<<endl;
-            return ;
-        }
-        else{
-            if(front==rear){
-                front=rear=-1;
+        void push(int x){
+            if(Isempty()){
+                cout<<"Pushed "<<x<<" into queue"<<endl;
+                front=new Node(x);
+                rear=front;
             }
             else{
-            cout<<arr[front]<<" is removed from queue"<<endl;
-            front=(front+1)%size;
+                rear->next=new Node(x);
+                rear=rear->next;
+                cout<<"Pushed "<<x<<" into queue"<<endl;
             }
         }
-     }
-     int start(){
-        if(Isempty()){
-            cout<<"Queue is Empty"<<endl;
-            return -1;
+        void pop(){
+            if(Isempty()){
+                cout<<"Queue is Underflow"<<endl;
+                return ;
+            }
+            else{
+                Node *temp=front;
+                cout<<"Poped "<<front->data<<" from queue"<<endl;
+                front=front->next;
+                delete temp;
+            }
         }
-        else{
-            return arr[front];
+        int start(){
+            if(Isempty()){
+                cout<<"Queue is Underflow"<<endl;
+                return -1;
+            }
+            else{
+                return front->data;
+            }
         }
-     }
-     bool Isfull(){
-        return (rear+1)%size==front;
-     }
-     bool Isempty(){
-        return front==-1;
-     }
-
 };
 int main(){
-        Queue q(5);
-        q.push(10);
-        q.push(8);
-        q.push(23);
-        q.pop();
-        cout<<q.Isfull()<<endl;
-        cout<<q.start()<<endl;
-        q.push(65);
-        q.pop();
-        q.push(76);
-        q.push(3);
+        Queue q;
+        q.push(12);
+        q.push(4);
+        q.push(2);
         q.push(5);
-        cout<<q.Isfull()<<endl;
+        q.pop();
+        cout<<q.Isempty()<<endl;
 
 return 0 ;
 }
-
