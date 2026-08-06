@@ -2761,33 +2761,62 @@
 
                 /* // Q.697. Degree of an Array  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int findShortestSubArray(vector<int>& nums) {
+//     unordered_map<int,int> freq;
+//     unordered_map<int,int> first;
+//     unordered_map<int,int> last;
+//     int degree = 0;
+//     for(int i = 0; i < nums.size(); i++) {
+//         freq[nums[i]]++;
+//         if(first.find(nums[i]) == first.end()) {
+//             first[nums[i]] = i;
+//         }
+//         last[nums[i]] = i;
+//         degree = max(degree, freq[nums[i]]);
+//     }
+//     int ans = nums.size();
+//     for(auto x : freq) {
+//         if(x.second == degree) {
+//             ans = min(ans, last[x.first] - first[x.first] + 1);
+//         }
+//     }
+//     return ans;
+// }
+// int main(){
+//         vector<int>nums={1,2,2,3,1};
+//         cout<<findShortestSubArray(nums);
+
+// return 0 ;
+// }
+
+                /* // Q.2073. Time Needed to Buy Tickets  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int findShortestSubArray(vector<int>& nums) {
-    unordered_map<int,int> freq;
-    unordered_map<int,int> first;
-    unordered_map<int,int> last;
-    int degree = 0;
-    for(int i = 0; i < nums.size(); i++) {
-        freq[nums[i]]++;
-        if(first.find(nums[i]) == first.end()) {
-            first[nums[i]] = i;
+int timeRequiredToBuy(vector<int>& tickets, int k) {
+        queue<int>q;
+        for(int i=0;i<tickets.size();i++){
+                q.push(i);
         }
-        last[nums[i]] = i;
-        degree = max(degree, freq[nums[i]]);
-    }
-    int ans = nums.size();
-    for(auto x : freq) {
-        if(x.second == degree) {
-            ans = min(ans, last[x.first] - first[x.first] + 1);
+        int time=0;
+        while(tickets[k]!=0){
+            tickets[q.front()]--;
+            if(tickets[q.front()]){
+                q.push(q.front());
+            }
+            q.pop();
+            time++;
         }
-    }
-    return ans;
+        return time;
 }
 int main(){
-        vector<int>nums={1,2,2,3,1};
-        cout<<findShortestSubArray(nums);
-
+        vector<int>tickets={2,3,2};
+        int k=2;
+        cout<<timeRequiredToBuy(tickets,k);
+        
 return 0 ;
 }
