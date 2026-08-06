@@ -2794,29 +2794,93 @@
 
                 /* // Q.2073. Time Needed to Buy Tickets  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int timeRequiredToBuy(vector<int>& tickets, int k) {
+//         queue<int>q;
+//         for(int i=0;i<tickets.size();i++){
+//                 q.push(i);
+//         }
+//         int time=0;
+//         while(tickets[k]!=0){
+//             tickets[q.front()]--;
+//             if(tickets[q.front()]){
+//                 q.push(q.front());
+//             }
+//             q.pop();
+//             time++;
+//         }
+//         return time;
+// }
+// int main(){
+//         vector<int>tickets={2,3,2};
+//         int k=2;
+//         cout<<timeRequiredToBuy(tickets,k);
+        
+// return 0 ;
+// }
+
+        /* // Q.232. Implement Queue using Stacks // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int timeRequiredToBuy(vector<int>& tickets, int k) {
-        queue<int>q;
-        for(int i=0;i<tickets.size();i++){
-                q.push(i);
+class MyQueue {
+    stack<int>s1;
+    stack<int>s2;
+    public:
+    MyQueue() {
+         
+    } 
+    void push(int x) {
+        s1.push(x);
+    }
+    int pop() {
+        if(!s2.empty()){
+              int element=s2.top();
+              s2.pop();
+              return element;  
         }
-        int time=0;
-        while(tickets[k]!=0){
-            tickets[q.front()]--;
-            if(tickets[q.front()]){
-                q.push(q.front());
-            }
-            q.pop();
-            time++;
+        else{
+               while(!s1.empty()){
+                  s2.push(s1.top());
+                  s1.pop();
+               }
+              int element=s2.top();
+              s2.pop();
+              return element;  
         }
-        return time;
-}
+    }
+    int top() {
+        if(empty()){
+             return 0;   
+        }
+        if(!s2.empty()){
+             return s2.top();
+        }
+        else{
+               while(!s1.empty()){
+                 s2.push(s1.top());
+                 s1.pop();
+               }
+              return s2.top();
+        }
+    }
+    bool empty() {
+        return s1.empty() && s2.empty();   
+    }
+};
+
 int main(){
-        vector<int>tickets={2,3,2};
-        int k=2;
-        cout<<timeRequiredToBuy(tickets,k);
-        
+        MyQueue q;
+        q.push(4);
+        q.push(5);
+        q.push(7);
+        cout<<q.pop()<<endl;
+        q.push(9);
+        cout<<q.top()<<endl;
+        cout<<q.empty()<<endl;
+
 return 0 ;
 }
