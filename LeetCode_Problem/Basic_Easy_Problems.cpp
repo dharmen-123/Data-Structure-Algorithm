@@ -2887,25 +2887,113 @@
 
         /* // Q.3345. Smallest Divisible Digit Product I  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int smallestNumber(int n, int t) {
+//      while (true) {
+//         int temp = n;
+//         int product = 1;
+//         while (temp > 0) {
+//             product *= (temp % 10);
+//             temp /= 10;
+//         }
+//         if (product % t == 0)
+//             return n;
+//         n++;
+//     }
+// }
+// int main(){
+//        int n=15,t=3;
+//        cout<<smallestNumber(n,t); 
+
+// return 0 ;
+// }
+
+        /* // 225. Implement Stack using Queues  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int smallestNumber(int n, int t) {
-     while (true) {
-        int temp = n;
-        int product = 1;
-        while (temp > 0) {
-            product *= (temp % 10);
-            temp /= 10;
+class MyStack {
+        queue<int>q1;
+        queue<int>q2;
+        public:
+    MyStack() {
+         
+    }    
+    void push(int x) {
+        if(empty()){
+           q1.push(x);
         }
-        if (product % t == 0)
-            return n;
-        n++;
+        else if(q1.empty()){
+           q2.push(x);
+        }
+        else{
+           q1.push(x);    
+        }
     }
-}
+    int pop() {
+         if (empty()){
+            return 0;      
+         }  
+         else if(q1.empty()){
+            while(q2.size()>1){
+                q1.push(q2.front());
+                q2.pop();
+            }
+            int element=q2.front();
+            q2.pop();
+            return element;    
+         }
+         else{
+             while(q1.size()>1){
+                q2.push(q1.front());
+                q1.pop();
+             }
+             int element=q1.front();
+             q1.pop();
+             return element;   
+         }
+    }
+    int top() {
+       if (empty()){
+            return 0;      
+        }
+        else if(q1.empty()){
+            while(q2.size()>1){
+                q1.push(q2.front());
+                q2.pop();
+            }
+            int element=q2.front();
+            q1.push(q2.front());
+            return element;    
+         }
+         else{
+             while(q1.size()>1){
+                q2.push(q1.front());
+                q1.pop();
+            }
+             int element=q1.front();
+             q2.push(q1.front());
+             return element;   
+         }
+
+    }
+    bool empty() {
+        return q1.empty() && q2.empty();
+    }
+};
 int main(){
-       int n=15,t=3;
-       cout<<smallestNumber(n,t); 
+        MyStack s;
+        s.push(3);
+        s.push(5);
+        s.push(2);
+        cout<<endl<<s.top();
+        s.push(7);
+        s.push(9);
+        cout<<endl<<s.pop();
+        cout<<endl<<s.top();
 
 return 0 ;
 }
