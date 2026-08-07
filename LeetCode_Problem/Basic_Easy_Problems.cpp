@@ -2967,6 +2967,7 @@ class MyStack {
             }
             int element=q2.front();
             q1.push(q2.front());
+            q2.pop();
             return element;    
          }
          else{
@@ -2976,6 +2977,7 @@ class MyStack {
             }
              int element=q1.front();
              q2.push(q1.front());
+             q1.pop();
              return element;   
          }
 
