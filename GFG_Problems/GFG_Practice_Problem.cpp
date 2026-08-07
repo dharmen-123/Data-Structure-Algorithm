@@ -1009,41 +1009,84 @@
 
                 /* // Q.Queue Reversal  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void reverseQueue(queue<int> &q) {
+//       stack<int>s;
+//     /* Insert the element into stack */
+//     while(!q.empty()){
+//         s.push(q.front());
+//         q.pop();
+//     }
+
+//     /* Pop elemenet from stack and insert into queue */
+//     while(!s.empty()){
+//         q.push(s.top());
+//         s.pop();
+//     }
+     
+// }
+// int main(){
+//      queue<int>q;
+//     q.push(5);
+//     q.push(10);
+//     q.push(15);
+//     q.push(20);
+//     q.push(25);
+//     reverseQueue(q);    
+//     int n=q.size();
+//     /* print all the element */
+//     while(n--){
+//         cout<<q.front()<<" ";
+//         int val=q.front();
+//         q.pop();
+//         q.push(val);
+//     }
+
+// return 0 ;
+// }
+
+                /* // Q.Reverse first K of a Queue  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void reverseQueue(queue<int> &q) {
-      stack<int>s;
-    /* Insert the element into stack */
-    while(!q.empty()){
-        s.push(q.front());
-        q.pop();
-    }
-
-    /* Pop elemenet from stack and insert into queue */
-    while(!s.empty()){
-        q.push(s.top());
-        s.pop();
-    }
-     
+queue<int> reverseFirstK(queue<int> q, int k) {
+        if(k > q.size())
+           return q;
+        stack<int>s;
+        while(k--){
+           s.push(q.front());
+           q.pop();
+        }    
+        int n=q.size();
+        while(!s.empty()){
+           q.push(s.top());
+           s.pop();
+        }
+        while(n--){
+           q.push(q.front());                    
+           q.pop();
+        }
+       return q; 
 }
 int main(){
-     queue<int>q;
-    q.push(5);
-    q.push(10);
-    q.push(15);
-    q.push(20);
-    q.push(25);
-    reverseQueue(q);    
-    int n=q.size();
-    /* print all the element */
-    while(n--){
-        cout<<q.front()<<" ";
-        int val=q.front();
-        q.pop();
-        q.push(val);
-    }
+        queue<int>q;
+        int k=3;
+        q.push(1);
+        q.push(2);
+        q.push(3);
+        q.push(4);
+        q.push(5);
+        queue<int>ans= reverseFirstK(q,k);
+        int n=q.size();
+        /* print all the element */
+        while(n--){
+                cout<<ans.front()<<" ";
+                ans.push(ans.front());
+                ans.pop();
+        }
 
 return 0 ;
 }
-
