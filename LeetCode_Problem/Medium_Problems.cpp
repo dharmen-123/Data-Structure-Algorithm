@@ -2301,47 +2301,103 @@
 // return 0 ;
 // }
 
-/* // Q.73. Set Matrix Zeroes // */
+                /* // Q.73. Set Matrix Zeroes // */
 
-#include <iostream>
-#include <bits/stdc++.h>
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// void setZeroes(vector<vector<int>> &matrix){
+//         int row = matrix.size();
+//         int col = matrix[0].size();
+//         int col0 = 1;
+//         for (int i = 0; i < row; i++){
+//                 if (matrix[i][0] == 0)
+//                         col0 = 0;
+//                 for (int j = 1; j < col; j++){
+//                         if (matrix[i][j] == 0){
+//                                 matrix[i][0] = 0;
+//                                 matrix[0][j] = 0;
+//                         }
+//                 }
+//         }
+//         for (int i = row - 1; i >= 0; i--){
+//            for (int j = col - 1; j >= 1; j--){
+//                 if (matrix[i][0] == 0 || matrix[0][j] == 0)
+//                         matrix[i][j] = 0;
+//           }
+//           if (col0 == 0)
+//               matrix[i][0] = 0;
+//         }
+// }
+// int main()
+// {
+//         // vector<vector<int>>matrix = {{1,1,1},{1,0,1},{1,1,1}};
+//         vector<vector<int>> matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+//         setZeroes(matrix);
+//         for (auto k : matrix)
+//         {
+//                 for (auto a : k)
+//                 {
+//                         cout << a << " ";
+//                 }
+//                 cout << endl;
+//         }
+
+//         return 0;
+// }
+
+
+        /* // Q.92. Reverse Linked List II // */
+
+#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-void setZeroes(vector<vector<int>> &matrix){
-        int row = matrix.size();
-        int col = matrix[0].size();
-        int col0 = 1;
-        for (int i = 0; i < row; i++){
-                if (matrix[i][0] == 0)
-                        col0 = 0;
-                for (int j = 1; j < col; j++){
-                        if (matrix[i][j] == 0){
-                                matrix[i][0] = 0;
-                                matrix[0][j] = 0;
-                        }
-                }
+class ListNode {
+    public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ListNode* reverseBetween(ListNode* head, int left, int right) {
+        if(head == NULL || left == right)
+        return head;
+        ListNode* dummy = new ListNode(0);
+        dummy->next = head;
+        ListNode* prev = dummy;
+        for(int i = 1; i < left; i++) {
+            prev = prev->next;
         }
-        for (int i = row - 1; i >= 0; i--){
-           for (int j = col - 1; j >= 1; j--){
-                if (matrix[i][0] == 0 || matrix[0][j] == 0)
-                        matrix[i][j] = 0;
-          }
-          if (col0 == 0)
-              matrix[i][0] = 0;
+        ListNode* curr = prev->next;
+        for(int i = 0; i < right - left; i++) {
+            ListNode* temp = curr->next;
+            curr->next = temp->next;
+            temp->next = prev->next;
+            prev->next = temp;
         }
-}
-int main()
-{
-        // vector<vector<int>>matrix = {{1,1,1},{1,0,1},{1,1,1}};
-        vector<vector<int>> matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
-        setZeroes(matrix);
-        for (auto k : matrix)
-        {
-                for (auto a : k)
-                {
-                        cout << a << " ";
-                }
-                cout << endl;
+        return dummy->next;
+
+    }
+int main(){
+        ListNode *head =new ListNode(1);
+        ListNode *n2 =new ListNode(2);
+        ListNode *n3 =new ListNode(3);
+        ListNode *n4 =new ListNode(4);
+        ListNode *n5 =new ListNode(5);
+        head->next=n2;
+        n2->next=n3;
+        n3->next=n4;
+        n4->next=n5;
+        int left=2 ,right=4;
+        head=reverseBetween(head,left,right);
+
+       /* Print the linked List */
+        ListNode *temp=head;
+        while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
         }
 
-        return 0;
+return 0 ;
 }
