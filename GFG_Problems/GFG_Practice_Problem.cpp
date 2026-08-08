@@ -1049,44 +1049,69 @@
 
                 /* // Q.Reverse first K of a Queue  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// queue<int> reverseFirstK(queue<int> q, int k) {
+//         if(k > q.size())
+//            return q;
+//         stack<int>s;
+//         while(k--){
+//            s.push(q.front());
+//            q.pop();
+//         }    
+//         int n=q.size();
+//         while(!s.empty()){
+//            q.push(s.top());
+//            s.pop();
+//         }
+//         while(n--){
+//            q.push(q.front());                    
+//            q.pop();
+//         }
+//        return q; 
+// }
+// int main(){
+//         queue<int>q;
+//         int k=3;
+//         q.push(1);
+//         q.push(2);
+//         q.push(3);
+//         q.push(4);
+//         q.push(5);
+//         queue<int>ans= reverseFirstK(q,k);
+//         int n=q.size();
+//         /* print all the element */
+//         while(n--){
+//                 cout<<ans.front()<<" ";
+//                 ans.push(ans.front());
+//                 ans.pop();
+//         }
+
+// return 0 ;
+// }
+
+                        /* // Q.Array Subset // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-queue<int> reverseFirstK(queue<int> q, int k) {
-        if(k > q.size())
-           return q;
-        stack<int>s;
-        while(k--){
-           s.push(q.front());
-           q.pop();
-        }    
-        int n=q.size();
-        while(!s.empty()){
-           q.push(s.top());
-           s.pop();
+bool isSubset(vector<int> &a, vector<int> &b) {
+        unordered_map<int,int>freq;
+        for(auto x:a){
+           freq[x]++;
         }
-        while(n--){
-           q.push(q.front());                    
-           q.pop();
+        for(auto x:b){
+                if(freq[x]==0){
+                        return false;
+                }
+                freq[x]--;
         }
-       return q; 
+        return true;
+
 }
 int main(){
-        queue<int>q;
-        int k=3;
-        q.push(1);
-        q.push(2);
-        q.push(3);
-        q.push(4);
-        q.push(5);
-        queue<int>ans= reverseFirstK(q,k);
-        int n=q.size();
-        /* print all the element */
-        while(n--){
-                cout<<ans.front()<<" ";
-                ans.push(ans.front());
-                ans.pop();
-        }
-
+        vector<int>a={11, 7, 1, 13, 21, 3, 7, 3},b = {11, 3, 7, 1, };
+        cout<<isSubset(a,b);
 return 0 ;
 }
