@@ -185,72 +185,90 @@
 
             /* // Q.85. Maximal Rectangle  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int largestRectangleArea(vector<int> &heights)
+// {
+//     int n = heights.size();
+//     stack<int> st;
+//     int ans = 0;
+//     int index;
+//     for (int i = 0; i < n; i++)
+//     {
+//         while (!st.empty() && heights[st.top()] > heights[i])
+//         {
+//             index = st.top();
+//             st.pop();
+//             if (!st.empty())
+//             {
+//                 ans = max(ans, heights[index] * (i - st.top() - 1));
+//             }
+//             else
+//             {
+//                 ans = max(ans, heights[index] * i);
+//             }
+//         }
+//         st.push(i);
+//     }
+//     while (!st.empty())
+//     {
+//         index = st.top();
+//         st.pop();
+//         if (!st.empty())
+//         {
+//             ans = max(ans, heights[index] * (n - st.top() - 1));
+//         }
+//         else
+//         {
+//             ans = max(ans, heights[index] * n);
+//         }
+//     }
+//     return ans;
+// }
+// int maximalRectangle(vector<vector<char>>& matrix) {
+//         int row=matrix.size();
+//         int col=matrix[0].size();
+//         int ans=0;
+//         vector<int>heights(col,0);
+//         for(int i=0;i<row;i++){
+//             for(int j=0;j<col;j++){
+//                 if(matrix[i][j]=='0'){
+//                     heights[j]=0;
+//                 }
+//                 else{
+//                     heights[j]+=1;
+//                 }
+//             }
+//             ans=max(ans,largestRectangleArea(heights));
+//         }
+//       return ans;
+//     }
+// int main(){
+//         vector<vector<char>>matrix={{'1','0','1','0','0'},
+//                                       {'1','0','1','1','1'},
+//                                       {'1','1','1','1','1'},
+//                                       {'1','0','0','1','0'}};
+//         cout<<maximalRectangle(matrix);
+        
+// return 0 ;
+// }
+
+
+        /* // 239. Sliding Window Maximum  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int largestRectangleArea(vector<int> &heights)
-{
-    int n = heights.size();
-    stack<int> st;
-    int ans = 0;
-    int index;
-    for (int i = 0; i < n; i++)
-    {
-        while (!st.empty() && heights[st.top()] > heights[i])
-        {
-            index = st.top();
-            st.pop();
-            if (!st.empty())
-            {
-                ans = max(ans, heights[index] * (i - st.top() - 1));
-            }
-            else
-            {
-                ans = max(ans, heights[index] * i);
-            }
-        }
-        st.push(i);
-    }
-    while (!st.empty())
-    {
-        index = st.top();
-        st.pop();
-        if (!st.empty())
-        {
-            ans = max(ans, heights[index] * (n - st.top() - 1));
-        }
-        else
-        {
-            ans = max(ans, heights[index] * n);
-        }
-    }
-    return ans;
-}
-int maximalRectangle(vector<vector<char>>& matrix) {
-        int row=matrix.size();
-        int col=matrix[0].size();
-        int ans=0;
-        vector<int>heights(col,0);
-        for(int i=0;i<row;i++){
-            for(int j=0;j<col;j++){
-                if(matrix[i][j]=='0'){
-                    heights[j]=0;
-                }
-                else{
-                    heights[j]+=1;
-                }
-            }
-            ans=max(ans,largestRectangleArea(heights));
-        }
-      return ans;
-    }
-int main(){
-        vector<vector<char>>matrix={{'1','0','1','0','0'},
-                                      {'1','0','1','1','1'},
-                                      {'1','1','1','1','1'},
-                                      {'1','0','0','1','0'}};
-        cout<<maximalRectangle(matrix);
+vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        deque<int>q;
         
+
+}
+int main(){
+      vector<int>nums={1,3,-1,-3,5,3,6,7};
+      int k=3;
+      vector<int>ans=maxSlidingWindow(nums,k);
+
 return 0 ;
 }
-
