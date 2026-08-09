@@ -1093,25 +1093,66 @@
 
                         /* // Q.Array Subset // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isSubset(vector<int> &a, vector<int> &b) {
+//         unordered_map<int,int>freq;
+//         for(auto x:a){
+//            freq[x]++;
+//         }
+//         for(auto x:b){
+//                 if(freq[x]==0){
+//                         return false;
+//                 }
+//                 freq[x]--;
+//         }
+//         return true;
+
+// }
+// int main(){
+//         vector<int>a={11, 7, 1, 13, 21, 3, 7, 3},b = {11, 3, 7, 1, };
+//         cout<<isSubset(a,b);
+// return 0 ;
+// }
+
+
+        /* // Q.First Negative in Windows of Size K // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool isSubset(vector<int> &a, vector<int> &b) {
-        unordered_map<int,int>freq;
-        for(auto x:a){
-           freq[x]++;
-        }
-        for(auto x:b){
-                if(freq[x]==0){
-                        return false;
+vector<int> firstNegInt(vector<int>& arr, int k) {
+       queue<int>q;
+       vector<int>ans;
+       for(int i=0;i<k-1;i++){
+           if(arr[i]<0)
+              q.push(i);
+       }
+       for(int i=k-1;i<arr.size();i++){
+           if(arr[i]<0)
+              q.push(i);
+           if(q.empty())
+                ans.push_back(0);
+           else{
+                if(q.front()<=i-k){
+                      q.pop();  
                 }
-                freq[x]--;
-        }
-        return true;
-
+                if(q.empty())
+                   ans.push_back(0);
+                else{
+                    ans.push_back(arr[q.front()]);    
+                }
+           }  
+       }
+       return ans;        
 }
 int main(){
-        vector<int>a={11, 7, 1, 13, 21, 3, 7, 3},b = {11, 3, 7, 1, };
-        cout<<isSubset(a,b);
+        vector<int>arr={12, -1, -7, 8, -15, 30, 16, 28};
+        int k=3;
+        vector<int>ans=firstNegInt(arr,k);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
