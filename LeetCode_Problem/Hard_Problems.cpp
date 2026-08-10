@@ -261,14 +261,35 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        if(nums.size()==1)
+             return nums;   
         deque<int>q;
-        
-
+        vector<int>ans;
+        for(int i=0;i<k-1;i++){
+            while(!q.empty() && nums[i]>nums[q.back()]){
+                    q.pop_back();
+            }
+            q.push_back(i);
+        }
+        for(int i=k-1;i<nums.size();i++){
+            while(!q.empty() && nums[i]>nums[q.back()]){
+                    q.pop_back();
+            }    
+            q.push_back(i);
+            if(q.front()<=(i-k))
+            q.pop_front();    
+            ans.push_back(nums[q.front()]);
+        }
+        return ans;
 }
 int main(){
       vector<int>nums={1,3,-1,-3,5,3,6,7};
       int k=3;
+//       vector<int>nums={4,3,7,5,2,3,1,2,8,7};
+//       int k=4;
       vector<int>ans=maxSlidingWindow(nums,k);
+      for(auto k:ans)
+          cout<<k<<" ";
 
 return 0 ;
 }
