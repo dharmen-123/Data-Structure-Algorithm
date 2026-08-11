@@ -3008,7 +3008,7 @@ using namespace std;
 int missingInteger(vector<int>& nums) {
         int sum=nums[0];
         for(int i=1;i<nums.size();i++){
-                if(nums[i]!=nums[i-1]+1){
+                if(nums[i]==nums[i-1]+1){
                         sum+=nums[i];
                 }
                 else
@@ -3018,7 +3018,7 @@ int missingInteger(vector<int>& nums) {
         for(auto x:nums){
                st.insert(x); 
         }
-        while(st.count(sum)){
+        while(st.find(sum) != st.end()){
              sum++;   
         }
 
@@ -3026,6 +3026,7 @@ int missingInteger(vector<int>& nums) {
 }
 int main(){
         vector<int>nums={1,2,3,2,5};
+        // vector<int>nums={3,4,5,1,12,14,13};
         cout<<missingInteger(nums);
 
 return 0 ;
