@@ -3035,36 +3035,29 @@
 
         /* // Q.412. Fizz Buzz  // */
 
+// #
+
+                /* // Q.387. First Unique Character in a String // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<string> fizzBuzz(int n) {
-        vector<string>ans;
-        for(int i=1;i<=n;i++){
-              if(i%3==0 && i%5==0){
-                 ans.push_back("FizzBuzz");
+int firstUniqChar(string s) {
+        unordered_map<char,int>freq;
+        for(auto x:s){
+              freq[x]++;  
+        }
+        for(int i=0;i<s.size();i++){
+              if(freq[s[i]]==1){
+                   return i;              
               }  
-              else if(i%3==0){
-                 ans.push_back("Fizz");
-              }
-              else if(i%5==0){
-                 ans.push_back("Buzz");
-              }
-              else{
-                 ans.push_back(to_string(i));
-              }
         }
-      return ans;
-    }
+       return -1; 
+}
 int main(){
-        int n=15;
-        vector<string>ans=fizzBuzz(n);
-        for(auto x:ans){
-                cout<<x<<" ";
-        }
+        string s="leetcode";
+        // string s="aabb";
+        cout<<firstUniqChar(s);
+
 return 0 ;
 }
-// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
-// answer[i] == "Fizz" if i is divisible by 3.
-// answer[i] == "Buzz" if i is divisible by 5.
-// answer[i] == i (as a string) if none of the above conditions are true.
