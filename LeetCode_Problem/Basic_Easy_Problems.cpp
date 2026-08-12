@@ -3002,32 +3002,69 @@
 
         /* // Q.2996. Smallest Missing Integer Greater Than Sequential Prefix Sum // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int missingInteger(vector<int>& nums) {
+//         int sum=nums[0];
+//         for(int i=1;i<nums.size();i++){
+//                 if(nums[i]==nums[i-1]+1){
+//                         sum+=nums[i];
+//                 }
+//                 else
+//                    break;
+//         }
+//         unordered_set<int>st;
+//         for(auto x:nums){
+//                st.insert(x); 
+//         }
+//         while(st.find(sum) != st.end()){
+//              sum++;   
+//         }
+
+//         return sum;
+// }
+// int main(){
+//         vector<int>nums={1,2,3,2,5};
+//         // vector<int>nums={3,4,5,1,12,14,13};
+//         cout<<missingInteger(nums);
+
+// return 0 ;
+// }
+
+
+        /* // Q.412. Fizz Buzz  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int missingInteger(vector<int>& nums) {
-        int sum=nums[0];
-        for(int i=1;i<nums.size();i++){
-                if(nums[i]==nums[i-1]+1){
-                        sum+=nums[i];
-                }
-                else
-                   break;
+vector<string> fizzBuzz(int n) {
+        vector<string>ans;
+        for(int i=1;i<=n;i++){
+              if(i%3==0 && i%5==0){
+                 ans.push_back("FizzBuzz");
+              }  
+              else if(i%3==0){
+                 ans.push_back("Fizz");
+              }
+              else if(i%5==0){
+                 ans.push_back("Buzz");
+              }
+              else{
+                 ans.push_back(to_string(i));
+              }
         }
-        unordered_set<int>st;
-        for(auto x:nums){
-               st.insert(x); 
-        }
-        while(st.find(sum) != st.end()){
-             sum++;   
-        }
-
-        return sum;
-}
+      return ans;
+    }
 int main(){
-        vector<int>nums={1,2,3,2,5};
-        // vector<int>nums={3,4,5,1,12,14,13};
-        cout<<missingInteger(nums);
-
+        int n=15;
+        vector<string>ans=fizzBuzz(n);
+        for(auto x:ans){
+                cout<<x<<" ";
+        }
 return 0 ;
 }
+// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+// answer[i] == "Fizz" if i is divisible by 3.
+// answer[i] == "Buzz" if i is divisible by 5.
+// answer[i] == i (as a string) if none of the above conditions are true.
