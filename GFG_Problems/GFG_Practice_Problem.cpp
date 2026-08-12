@@ -1119,40 +1119,65 @@
 
         /* // Q.First Negative in Windows of Size K // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> firstNegInt(vector<int>& arr, int k) {
+//        queue<int>q;
+//        vector<int>ans;
+//        for(int i=0;i<k-1;i++){
+//            if(arr[i]<0)
+//               q.push(i);
+//        }
+//        for(int i=k-1;i<arr.size();i++){
+//            if(arr[i]<0)
+//               q.push(i);
+//            if(q.empty())
+//                 ans.push_back(0);
+//            else{
+//                 if(q.front()<=i-k){
+//                       q.pop();  
+//                 }
+//                 if(q.empty())
+//                    ans.push_back(0);
+//                 else{
+//                     ans.push_back(arr[q.front()]);    
+//                 }
+//            }  
+//        }
+//        return ans;        
+// }
+// int main(){
+//         vector<int>arr={12, -1, -7, 8, -15, 30, 16, 28};
+//         int k=3;
+//         vector<int>ans=firstNegInt(arr,k);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+
+        /* // Q.Median of Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> firstNegInt(vector<int>& arr, int k) {
-       queue<int>q;
-       vector<int>ans;
-       for(int i=0;i<k-1;i++){
-           if(arr[i]<0)
-              q.push(i);
-       }
-       for(int i=k-1;i<arr.size();i++){
-           if(arr[i]<0)
-              q.push(i);
-           if(q.empty())
-                ans.push_back(0);
-           else{
-                if(q.front()<=i-k){
-                      q.pop();  
-                }
-                if(q.empty())
-                   ans.push_back(0);
-                else{
-                    ans.push_back(arr[q.front()]);    
-                }
-           }  
-       }
-       return ans;        
-}
+    double findMedian(vector<int> &arr) {
+         sort(arr.begin(),arr.end());
+         int n=arr.size();
+         if(n%2==0){
+             double median;
+             median=(arr[n/2]+arr[(n-1)/2]);
+             return median/2;
+         }
+         else{
+             return arr[n/2];
+         }
+    }
 int main(){
-        vector<int>arr={12, -1, -7, 8, -15, 30, 16, 28};
-        int k=3;
-        vector<int>ans=firstNegInt(arr,k);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
+        // vector<int>arr={56, 67, 30, 79};
+        vector<int>arr={90, 100, 78, 89, 67};
+        cout<<findMedian(arr);
 return 0 ;
 }
