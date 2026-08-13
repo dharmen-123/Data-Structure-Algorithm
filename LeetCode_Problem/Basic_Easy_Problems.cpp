@@ -3064,25 +3064,41 @@
 
                 /* // Q.492. Construct the Rectangle // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> constructRectangle(int area) {
+//          int start=sqrt(area);
+//          for(int w=start;w>=1;w--){
+//              if(area%w==0){
+//                 int l=area/w;
+//                    return {l,w};
+//              } 
+//          }
+//         return {};        
+// }
+// int main(){
+//        int area=37;
+//        vector<int>ans=constructRectangle(area);
+//        for(auto k:ans){
+//            cout<<k<<" ";
+//        } 
+
+// return 0 ;
+// }
+
+                /* // Q.520. Detect Capital  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> constructRectangle(int area) {
-         int start=sqrt(area);
-         for(int w=start;w>=1;w++){
-               if(area%w==0){
-                 int l=area/w;
-                 return {l,w};
-               } 
-         }
-        return {};        
+bool detectCapitalUse(string word) {
+        
+        
 }
 int main(){
-       int area=37;
-       vector<int>ans=constructRectangle(area);
-       for(auto k:ans){
-           cout<<k<<" ";
-       } 
+     string word="USA";
+     cout<<detectCapitalUse(word);
 
 return 0 ;
 }
