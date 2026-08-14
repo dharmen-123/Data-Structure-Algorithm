@@ -3093,11 +3093,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 bool detectCapitalUse(string word) {
-        
+        int count=0;
+        int n=word.size();
+        for(int i=1;i<n;i++){
+            if(word[i]>=97 && word[i]<=122){
+                count++;
+            }
+        }
+        if(isupper(word[0]) && (count==0 || count==n-1)){
+                return true;
+        }
+        else if(islower(word[0]) && count==0){
+                return true;
+        }
+        else{
+             return false;
+        }
         
 }
 int main(){
      string word="USA";
+//      string word="FlaG";
      cout<<detectCapitalUse(word);
 
 return 0 ;
