@@ -3096,24 +3096,23 @@ bool detectCapitalUse(string word) {
         int count=0;
         int n=word.size();
         for(int i=1;i<n;i++){
-            if(word[i]>=97 && word[i]<=122){
+            if(islower(word[i])){
                 count++;
             }
         }
         if(isupper(word[0]) && (count==0 || count==n-1)){
                 return true;
         }
-        else if(islower(word[0]) && count==0){
+        else if(islower(word[0]) && count==n-1){
                 return true;
         }
         else{
              return false;
-        }
-        
+        }        
 }
 int main(){
-     string word="USA";
-//      string word="FlaG";
+//      string word="USA";
+     string word="leetcode";
      cout<<detectCapitalUse(word);
 
 return 0 ;
