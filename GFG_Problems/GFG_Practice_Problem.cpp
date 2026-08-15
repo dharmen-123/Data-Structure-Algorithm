@@ -1188,18 +1188,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int>quadraticRoots(int a, int b, int c) {
-        if(a==0)
-            return {};    
-        long long d=(b*b)-4*a*c;
-        if(d<0){
-              return {-1 ,-1};  
-        }
-        double root1=(-b+sqrt((double)d))/(2*a);   
-        double root2=(-b-sqrt((double)d))/(2*a);
-        int r1=floor(root1);
-        int r2=floor(root2);
-        return {max(r1,r2),min(r1,r2)}; 
-          
+        if (a == 0)
+           return {};
+        int root1, root2;
+        long long d = (b*b)-(4*a*c);
+        if(d<0)
+            return {-1, -1};
+        root1 = floor((-b + sqrt(d)) / (2.0 * a));
+        root2 = floor((-b - sqrt(d)) / (2.0 * a));
+        if (root1 < root2)
+            swap(root1, root2);
+        return {root1, root2};        
 }
 int main(){
         int a = 1, b = -2, c = 1;
