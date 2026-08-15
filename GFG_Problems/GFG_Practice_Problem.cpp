@@ -1160,24 +1160,51 @@
 
         /* // Q.Median of Array // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+//     double findMedian(vector<int> &arr) {
+//          sort(arr.begin(),arr.end());
+//          int n=arr.size();
+//          if(n%2==0){
+//              double median;
+//              median=(arr[n/2]+arr[(n-1)/2]);
+//              return median/2;
+//          }
+//          else{
+//              return arr[n/2];
+//          }
+//     }
+// int main(){
+//         // vector<int>arr={56, 67, 30, 79};
+//         vector<int>arr={90, 100, 78, 89, 67};
+//         cout<<findMedian(arr);
+// return 0 ;
+// }
+
+        /* // Q.Quadratic Equation Roots  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-    double findMedian(vector<int> &arr) {
-         sort(arr.begin(),arr.end());
-         int n=arr.size();
-         if(n%2==0){
-             double median;
-             median=(arr[n/2]+arr[(n-1)/2]);
-             return median/2;
-         }
-         else{
-             return arr[n/2];
-         }
-    }
+vector<int>quadraticRoots(int a, int b, int c) {
+        if(a==0)
+            return {};    
+        long long d=(b*b)-4*a*c;
+        if(d<0){
+              return {-1 ,-1};  
+        }
+        double root1=(-b+sqrt((double)d))/(2*a);   
+        double root2=(-b-sqrt((double)d))/(2*a);
+        int r1=floor(root1);
+        int r2=floor(root2);
+        return {max(r1,r2),min(r1,r2)}; 
+          
+}
 int main(){
-        // vector<int>arr={56, 67, 30, 79};
-        vector<int>arr={90, 100, 78, 89, 67};
-        cout<<findMedian(arr);
+        int a = 1, b = -2, c = 1;
+        // int a = 6, b = 16, c = 3;
+        vector<int>ans=quadraticRoots(a,b,c);
+        cout<<ans[0]<<" "<<ans[1];
 return 0 ;
 }
