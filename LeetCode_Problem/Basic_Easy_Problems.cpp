@@ -3089,31 +3089,51 @@
 
                 /* // Q.520. Detect Capital  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool detectCapitalUse(string word) {
+//         int count=0;
+//         int n=word.size();
+//         for(int i=1;i<n;i++){
+//             if(islower(word[i])){
+//                 count++;
+//             }
+//         }
+//         if(isupper(word[0]) && (count==0 || count==n-1)){
+//                 return true;
+//         }
+//         else if(islower(word[0]) && count==n-1){
+//                 return true;
+//         }
+//         else{
+//              return false;
+//         }        
+// }
+// int main(){
+// //      string word="USA";
+//      string word="leetcode";
+//      cout<<detectCapitalUse(word);
+
+// return 0 ;
+// }
+
+        /* // Q.Q1. Elevator Requests I  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool detectCapitalUse(string word) {
-        int count=0;
-        int n=word.size();
-        for(int i=1;i<n;i++){
-            if(islower(word[i])){
-                count++;
-            }
+int elevatorRequests(int n, vector<int>& requests) {
+        int count=requests[0]-0;
+        for(int i=1;i<requests.size();i++){
+              count+=abs(requests[i]-requests[i-1]);  
         }
-        if(isupper(word[0]) && (count==0 || count==n-1)){
-                return true;
-        }
-        else if(islower(word[0]) && count==n-1){
-                return true;
-        }
-        else{
-             return false;
-        }        
-}
+        return count;
+    }
 int main(){
-//      string word="USA";
-     string word="leetcode";
-     cout<<detectCapitalUse(word);
+        vector<int>requests = {2,1,4,3};
+        int n = 5;
+        cout<<elevatorRequests(n,requests);
 
 return 0 ;
 }
