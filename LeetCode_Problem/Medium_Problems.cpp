@@ -2404,32 +2404,63 @@
 
         /* // Q.4027 Maximum Gap Between Stations // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maximumGap(string skill, string station) {
+//         int n=skill.size();
+//         int m=station.size();
+//         vector<int>r(n);
+//         int j = m - 1;
+//         for (int i = n - 1; i >= 0; i--) {
+//             while (station[j] != skill[i]) 
+//                 j--;
+//             r[i] = j--;
+//         }
+//         int ans = 0, p = 0;
+//         for (int i = 0; i < n - 1; i++) {
+//             while (station[p] != skill[i]) 
+//                 p++;
+//             ans = max(ans, r[i + 1] - p);
+//             p++;
+//         }
+//     return ans;
+// }
+// int main(){
+//         string skill = "aa", station = "aaaa";
+//         // string skill = "xyz", station = "xyzz";
+//         cout<<maximumGap(skill,station);
+
+// return 0 ;
+// }
+
+       /* // Q.4026 Minimize the Maximum Waiting Time at Synchronized Traffic Lights // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int maximumGap(string skill, string station) {
-        int n=skill.size();
-        int m=station.size();
-        vector<int>r(n);
-        int j = m - 1;
-        for (int i = n - 1; i >= 0; i--) {
-            while (station[j] != skill[i]) 
-                j--;
-            r[i] = j--;
+int minPenalty(int period, vector<int>& lights, vector<int>& arrivalTime) {
+        int maxGreen = INT_MIN;
+        for(auto k:lights){
+              maxGreen=max(maxGreen,k);  
         }
-        int ans = 0, p = 0;
-        for (int i = 0; i < n - 1; i++) {
-            while (station[p] != skill[i]) 
-                p++;
-            ans = max(ans, r[i + 1] - p);
-            p++;
+        int ans = 0;
+        for (int t : arrivalTime) {
+            int r = t % period;
+            if (r >= maxGreen)
+               ans = max(ans, period - r);
         }
     return ans;
+        
 }
 int main(){
-        string skill = "aa", station = "aaaa";
-        // string skill = "xyz", station = "xyzz";
-        cout<<maximumGap(skill,station);
+        // int  period = 8; 
+        // vector<int>lights = {2,3};
+        // vector<int>arrivalTime = {2,5,8,11};
+        int  period = 10; 
+        vector<int>lights = {3,6,8};
+        vector<int>arrivalTime = {4,9,15};
+        cout<<minPenalty(period,lights,arrivalTime);
 
 return 0 ;
 }
