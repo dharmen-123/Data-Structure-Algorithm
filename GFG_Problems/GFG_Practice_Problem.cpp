@@ -1184,26 +1184,50 @@
 
         /* // Q.Quadratic Equation Roots  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int>quadraticRoots(int a, int b, int c) {
+//         if (a == 0)
+//            return {};
+//         int root1, root2;
+//         long long d = (b*b)-(4*a*c);
+//         if(d<0)
+//             return {-1, -1};
+//         root1 = floor((-b + sqrt(d)) / (2.0 * a));
+//         root2 = floor((-b - sqrt(d)) / (2.0 * a));
+//         if (root1 < root2)
+//             swap(root1, root2);
+//         return {root1, root2};        
+// }
+// int main(){
+//         int a = 1, b = -2, c = 1;
+//         // int a = 6, b = 16, c = 3;
+//         vector<int>ans=quadraticRoots(a,b,c);
+//         cout<<ans[0]<<" "<<ans[1];
+// return 0 ;
+// }
+
+        /* // Q.Middle of Three // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int>quadraticRoots(int a, int b, int c) {
-        if (a == 0)
-           return {};
-        int root1, root2;
-        long long d = (b*b)-(4*a*c);
-        if(d<0)
-            return {-1, -1};
-        root1 = floor((-b + sqrt(d)) / (2.0 * a));
-        root2 = floor((-b - sqrt(d)) / (2.0 * a));
-        if (root1 < root2)
-            swap(root1, root2);
-        return {root1, root2};        
+int middle(int a, int b, int c) {
+        if(a>b && c<b){
+                return b;
+        }
+        else if(b>a && c<a){
+                return a;
+        }
+        else
+          return c;
+        
 }
 int main(){
-        int a = 1, b = -2, c = 1;
-        // int a = 6, b = 16, c = 3;
-        vector<int>ans=quadraticRoots(a,b,c);
-        cout<<ans[0]<<" "<<ans[1];
+        // int  a = 978, b = 518, c = 300;
+        int  a = 162, b = 934, c = 200;
+        cout<<middle(a,b,c);
+
 return 0 ;
 }
