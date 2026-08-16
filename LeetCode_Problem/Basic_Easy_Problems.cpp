@@ -3118,22 +3118,52 @@
 // return 0 ;
 // }
 
-        /* // Q.Q1. Elevator Requests I  // */
+        /* // Q. Elevator Requests I  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int elevatorRequests(int n, vector<int>& requests) {
+//         int count=requests[0]-0;
+//         for(int i=1;i<requests.size();i++){
+//               count+=abs(requests[i]-requests[i-1]);  
+//         }
+//         return count;
+//     }
+// int main(){
+//         vector<int>requests = {2,1,4,3};
+//         int n = 5;
+//         cout<<elevatorRequests(n,requests);
+
+// return 0 ;
+// }
+
+        /* // Q.4025 Nearest Available Drone // */
 
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int elevatorRequests(int n, vector<int>& requests) {
-        int count=requests[0]-0;
-        for(int i=1;i<requests.size();i++){
-              count+=abs(requests[i]-requests[i-1]);  
-        }
-        return count;
-    }
+int nearestDrone(vector<vector<int>>& drones, vector<int>& target) {
+       int minindex=-1;
+       int mindis=INT_MAX;
+       for(int i=0;i<drones.size();i++){
+           int dis=abs(drones[i][0]-target[0])+
+                   abs(drones[i][1]-target[1]);
+           if(dis<=drones[i][2]){
+                if(dis<mindis){
+                        mindis=dis;
+                        minindex=i;
+                }
+           }
+       }
+       return minindex;
+    
+}
 int main(){
-        vector<int>requests = {2,1,4,3};
-        int n = 5;
-        cout<<elevatorRequests(n,requests);
+        // vector<vector<int>>drones={{0,0,2},{2,2,9}};
+        vector<vector<int>>drones={{2,1,5},{4,4,5},{6,6,8}};
+        vector<int>target={5,5};
+        cout<<nearestDrone(drones,target);
 
 return 0 ;
 }

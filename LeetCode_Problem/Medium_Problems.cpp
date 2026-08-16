@@ -2412,7 +2412,8 @@ int minOperations(string s) {
     
 }
 int main(){
-
+        string s = "abc";
+        
 
 return 0 ;
 }
