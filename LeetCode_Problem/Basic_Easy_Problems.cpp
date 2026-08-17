@@ -3140,30 +3140,32 @@
 
         /* // Q.4025 Nearest Available Drone // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int nearestDrone(vector<vector<int>>& drones, vector<int>& target) {
-       int minindex=-1;
-       int mindis=INT_MAX;
-       for(int i=0;i<drones.size();i++){
-           int dis=abs(drones[i][0]-target[0])+
-                   abs(drones[i][1]-target[1]);
-           if(dis<=drones[i][2]){
-                if(dis<mindis){
-                        mindis=dis;
-                        minindex=i;
-                }
-           }
-       }
-       return minindex;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int nearestDrone(vector<vector<int>>& drones, vector<int>& target) {
+//        int minindex=-1;
+//        int mindis=INT_MAX;
+//        for(int i=0;i<drones.size();i++){
+//            int dis=abs(drones[i][0]-target[0])+
+//                    abs(drones[i][1]-target[1]);
+//            if(dis<=drones[i][2]){
+//                 if(dis<mindis){
+//                         mindis=dis;
+//                         minindex=i;
+//                 }
+//            }
+//        }
+//        return minindex;
     
-}
-int main(){
-        // vector<vector<int>>drones={{0,0,2},{2,2,9}};
-        vector<vector<int>>drones={{2,1,5},{4,4,5},{6,6,8}};
-        vector<int>target={5,5};
-        cout<<nearestDrone(drones,target);
+// }
+// int main(){
+//         // vector<vector<int>>drones={{0,0,2},{2,2,9}};
+//         vector<vector<int>>drones={{2,1,5},{4,4,5},{6,6,8}};
+//         vector<int>target={5,5};
+//         cout<<nearestDrone(drones,target);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        
