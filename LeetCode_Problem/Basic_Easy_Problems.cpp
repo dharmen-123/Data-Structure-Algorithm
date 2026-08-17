@@ -3168,4 +3168,25 @@
 // return 0 ;
 // }
 
+        /* // Q.168. Excel Sheet Column Title // */
         
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string convertToTitle(int columnNumber) {
+        string ans = "";
+        while (columnNumber > 0) {
+            columnNumber--;
+            int rem = columnNumber % 26;
+            ans += char('A' + rem);
+            columnNumber /= 26;
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+}
+int main(){
+        int columnNumber =28;
+        cout<<convertToTitle(columnNumber);
+
+return 0 ;
+}
