@@ -2454,12 +2454,12 @@ int minPenalty(int period, vector<int>& lights, vector<int>& arrivalTime) {
         
 }
 int main(){
-        // int  period = 8; 
-        // vector<int>lights = {2,3};
-        // vector<int>arrivalTime = {2,5,8,11};
-        int  period = 10; 
-        vector<int>lights = {3,6,8};
-        vector<int>arrivalTime = {4,9,15};
+        int  period = 8; 
+        vector<int>lights = {2,3};
+        vector<int>arrivalTime = {2,5,8,11};
+        // int  period = 10; 
+        // vector<int>lights = {3,6,8};
+        // vector<int>arrivalTime = {4,9,15};
         cout<<minPenalty(period,lights,arrivalTime);
 
 return 0 ;
