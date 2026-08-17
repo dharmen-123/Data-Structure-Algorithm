@@ -1210,24 +1210,53 @@
 
         /* // Q.Middle of Three // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int middle(int a, int b, int c) {
+//         if(a>b && c<b){
+//                 return b;
+//         }
+//         else if(b>a && c<a){
+//                 return a;
+//         }
+//         else
+//           return c;
+        
+// }
+// int main(){
+//         // int  a = 978, b = 518, c = 300;
+//         int  a = 162, b = 934, c = 200;
+//         cout<<middle(a,b,c);
+
+// return 0 ;
+// }
+
+
+        /* // Q.Palindrome Digit Sum  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int middle(int a, int b, int c) {
-        if(a>b && c<b){
-                return b;
+bool isDigitSumPalindrome(int n) {
+        int sum=0;
+        while(n>0){
+            sum+=n%10;
+            n=n/10; 
         }
-        else if(b>a && c<a){
-                return a;
+        int rev=0,m=sum;
+        while(sum>0){
+             int last=sum%10;
+             rev=rev*10+last;
+             sum=sum/10;   
         }
-        else
-          return c;
-        
+        if(rev==m)
+             return true;   
+        return false;
 }
 int main(){
-        // int  a = 978, b = 518, c = 300;
-        int  a = 162, b = 934, c = 200;
-        cout<<middle(a,b,c);
+        int n=98;
+        cout<<isDigitSumPalindrome(n);
 
 return 0 ;
 }
