@@ -1235,28 +1235,28 @@
 
         /* // Q.Palindrome Digit Sum  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-bool isDigitSumPalindrome(int n) {
-        int sum=0;
-        while(n>0){
-            sum+=n%10;
-            n=n/10; 
-        }
-        int rev=0,m=sum;
-        while(sum>0){
-             int last=sum%10;
-             rev=rev*10+last;
-             sum=sum/10;   
-        }
-        if(rev==m)
-             return true;   
-        return false;
-}
-int main(){
-        int n=98;
-        cout<<isDigitSumPalindrome(n);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isDigitSumPalindrome(int n) {
+//         int sum=0;
+//         while(n>0){
+//             sum+=n%10;
+//             n=n/10; 
+//         }
+//         int rev=0,m=sum;
+//         while(sum>0){
+//              int last=sum%10;
+//              rev=rev*10+last;
+//              sum=sum/10;   
+//         }
+//         if(rev==m)
+//              return true;   
+//         return false;
+// }
+// int main(){
+//         int n=98;
+//         cout<<isDigitSumPalindrome(n);
 
-return 0 ;
-}
+// return 0 ;
+// }
