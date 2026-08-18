@@ -3203,11 +3203,17 @@ int largestInteger(vector<int>& nums, int k) {
               freq[x]++;  
        } 
        int ans=-1;
+       if(k==1){
+         for (int x : nums) {
+            if (freq[x] == 1) {
+                ans = max(ans, x);
+            }
+         }
+         return ans;
+       }
        if(k==n){
           for(auto x:nums){
-                if(freq[x]==1){
-                     ans=max(ans,x);   
-                }
+                ans=max(ans,x);   
           }
           return ans;
        }
@@ -3222,6 +3228,8 @@ int largestInteger(vector<int>& nums, int k) {
 int main(){
         int k=3;
         vector<int>nums={3,9,2,1,7};
+        // int k=1;
+        // vector<int>nums={3,1,7,10,0};
         cout<<largestInteger(nums,k);
 
 return 0 ;
