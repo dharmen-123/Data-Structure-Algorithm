@@ -1260,3 +1260,30 @@
 
 // return 0 ;
 // }
+
+        /* // Q.LCM And GCD  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> lcmAndGcd(int a, int b) {
+        if(a<b)
+             swap(a,b);
+        int i=a;
+        while((i%a!=0) || (i%b!=0)){
+              i+=a;
+        }
+        while(b!=0){
+             int rem=a%b;
+             a=b;
+             b=rem;   
+        }
+      return {i,a};
+    }
+int main(){
+       int a=14,b=8;
+       vector<int>ans=lcmAndGcd(a,b);
+       cout<<ans[0]<<" "<<ans[1]<<endl; 
+
+return 0 ;
+}
