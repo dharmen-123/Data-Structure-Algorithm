@@ -1263,27 +1263,50 @@
 
         /* // Q.LCM And GCD  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> lcmAndGcd(int a, int b) {
+//         if(a<b)
+//              swap(a,b);
+//         int i=a;
+//         while((i%a!=0) || (i%b!=0)){
+//               i+=a;
+//         }
+//         while(b!=0){
+//              int rem=a%b;
+//              a=b;
+//              b=rem;   
+//         }
+//       return {i,a};
+//     }
+// int main(){
+//        int a=14,b=8;
+//        vector<int>ans=lcmAndGcd(a,b);
+//        cout<<ans[0]<<" "<<ans[1]<<endl; 
+
+// return 0 ;
+// }
+
+                /* // Q.Min and Max in Array // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> lcmAndGcd(int a, int b) {
-        if(a<b)
-             swap(a,b);
-        int i=a;
-        while((i%a!=0) || (i%b!=0)){
-              i+=a;
-        }
-        while(b!=0){
-             int rem=a%b;
-             a=b;
-             b=rem;   
-        }
-      return {i,a};
-    }
+vector<int> getMinMax(vector<int> &arr) {
+        if(arr.size()==1)
+              return {arr[0],arr[0]};   
+        int minimum=INT_MAX, maximum=INT_MIN;
+        for(int i=0;i<arr.size();i++){
+           minimum=min(minimum,arr[i]);
+           maximum=max(maximum,arr[i]);
+        } 
+        return {minimum,maximum};         
+}
 int main(){
-       int a=14,b=8;
-       vector<int>ans=lcmAndGcd(a,b);
-       cout<<ans[0]<<" "<<ans[1]<<endl; 
-
+      vector<int>arr={1, 4, 3, 5, 8, 6};
+      vector<int>ans=getMinMax(arr);
+      cout<<ans[0]<<" "<<ans[1]<<endl; 
+        
 return 0 ;
 }
