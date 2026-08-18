@@ -3170,23 +3170,59 @@
 
         /* // Q.168. Excel Sheet Column Title // */
         
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string convertToTitle(int columnNumber) {
+//         string ans = "";
+//         while (columnNumber > 0) {
+//             columnNumber--;
+//             int rem = columnNumber % 26;
+//             ans += char('A' + rem);
+//             columnNumber /= 26;
+//         }
+//         reverse(ans.begin(), ans.end());
+//         return ans;
+// }
+// int main(){
+//         int columnNumber =28;
+//         cout<<convertToTitle(columnNumber);
+
+// return 0 ;
+// }
+
+        /* // Q.3471. Find the Largest Almost Missing Integer // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string convertToTitle(int columnNumber) {
-        string ans = "";
-        while (columnNumber > 0) {
-            columnNumber--;
-            int rem = columnNumber % 26;
-            ans += char('A' + rem);
-            columnNumber /= 26;
-        }
-        reverse(ans.begin(), ans.end());
-        return ans;
+int largestInteger(vector<int>& nums, int k) {
+       int n=nums.size();
+       vector<int>freq(51,0);
+       for(auto x:nums){
+              freq[x]++;  
+       } 
+       int ans=-1;
+       if(k==n){
+          for(auto x:nums){
+                if(freq[x]==1){
+                     ans=max(ans,x);   
+                }
+          }
+          return ans;
+       }
+       if(freq[nums[0]]==1){
+          ans=max(ans,nums[0]);
+       }
+       if(freq[nums[n-1]]==1){
+           ans=max(ans,nums[n-1]);         
+       }
+    return ans;
 }
 int main(){
-        int columnNumber =28;
-        cout<<convertToTitle(columnNumber);
+        int k=3;
+        vector<int>nums={3,9,2,1,7};
+        cout<<largestInteger(nums,k);
 
 return 0 ;
 }
