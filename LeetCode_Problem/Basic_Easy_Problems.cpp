@@ -3193,44 +3193,46 @@
 
         /* // Q.3471. Find the Largest Almost Missing Integer // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int largestInteger(vector<int>& nums, int k) {
-       int n=nums.size();
-       vector<int>freq(51,0);
-       for(auto x:nums){
-              freq[x]++;  
-       } 
-       int ans=-1;
-       if(k==1){
-         for (int x : nums) {
-            if (freq[x] == 1) {
-                ans = max(ans, x);
-            }
-         }
-         return ans;
-       }
-       if(k==n){
-          for(auto x:nums){
-                ans=max(ans,x);   
-          }
-          return ans;
-       }
-       if(freq[nums[0]]==1){
-          ans=max(ans,nums[0]);
-       }
-       if(freq[nums[n-1]]==1){
-           ans=max(ans,nums[n-1]);         
-       }
-    return ans;
-}
-int main(){
-        int k=3;
-        vector<int>nums={3,9,2,1,7};
-        // int k=1;
-        // vector<int>nums={3,1,7,10,0};
-        cout<<largestInteger(nums,k);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int largestInteger(vector<int>& nums, int k) {
+//        int n=nums.size();
+//        vector<int>freq(51,0);
+//        for(auto x:nums){
+//               freq[x]++;  
+//        } 
+//        int ans=-1;
+//        if(k==1){
+//          for (int x : nums) {
+//             if (freq[x] == 1) {
+//                 ans = max(ans, x);
+//             }
+//          }
+//          return ans;
+//        }
+//        if(k==n){
+//           for(auto x:nums){
+//                 ans=max(ans,x);   
+//           }
+//           return ans;
+//        }
+//        if(freq[nums[0]]==1){
+//           ans=max(ans,nums[0]);
+//        }
+//        if(freq[nums[n-1]]==1){
+//            ans=max(ans,nums[n-1]);         
+//        }
+//     return ans;
+// }
+// int main(){
+//         int k=3;
+//         vector<int>nums={3,9,2,1,7};
+//         // int k=1;
+//         // vector<int>nums={3,1,7,10,0};
+//         cout<<largestInteger(nums,k);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        
