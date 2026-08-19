@@ -3235,4 +3235,21 @@
 // return 0 ;
 // }
 
-        
+                /* // Q.171. Excel Sheet Column Number  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int titleToNumber(string columnTitle) {
+       int ans = 0;
+        for (char ch : columnTitle) {
+            ans = ans * 26 + (ch - 'A' + 1);
+        }
+        return ans; 
+    }
+int main(){
+        string columnTitle = "A";
+        cout<<titleToNumber(columnTitle);
+
+return 0 ;
+}
