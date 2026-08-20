@@ -1336,22 +1336,61 @@
 
                 /* // Q.Count Smaller in an Array  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countOfElements(int x, vector<int> &arr) {
+//         int count=0;
+//         for(int i=0;i<arr.size();i++){
+//               if(arr[i]<=x){
+//                 count++;
+//               }  
+//         }
+//     return count;    
+// }
+// int main(){
+//         int x = 9;
+//         vector<int>arr = {10,1,2,8,4,5};
+//         cout<<countOfElements(x,arr);
+
+// return 0 ;
+// }
+
+        /* // Q.Median of 2 Sorted Arrays of Same Size // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countOfElements(int x, vector<int> &arr) {
-        int count=0;
-        for(int i=0;i<arr.size();i++){
-              if(arr[i]<=x){
-                count++;
-              }  
+double medianOf2(vector<int>& a, vector<int>& b) {
+        vector<int>merge;
+        int i=0,j=0;
+        while(a.size()>i && b.size()>j){
+             if(a[i]>b[j]){
+                merge.push_back(b[j++]);   
+             }
+             else{
+                merge.push_back(a[i++]);   
+             }   
+        }  
+        if(j<b.size()){
+            while(j<b.size())
+               merge.push_back(b[j++]);   
         }
-    return count;    
+        else{
+            while(i<a.size())
+               merge.push_back(a[i++]);   
+        }
+        int n=merge.size();
+        if(n%2==0){
+
+             return (double)(merge[(n-1)/2]+merge[n/2])/2;   
+        }
+        return (double)merge[n/2];
 }
 int main(){
-        int x = 9;
-        vector<int>arr = {10,1,2,8,4,5};
-        cout<<countOfElements(x,arr);
+//        vector<int>a= {-5, 3, 6, 12, 15}, b={-12,-10,-6,-3,4};
+       vector<int>a= {2,3,5,7}, b={10,12,14,16};
+       cout<<medianOf2(a,b); 
 
 return 0 ;
 }
