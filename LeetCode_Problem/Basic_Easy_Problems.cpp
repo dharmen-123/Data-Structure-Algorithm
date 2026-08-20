@@ -3237,19 +3237,50 @@
 
                 /* // Q.171. Excel Sheet Column Number  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int titleToNumber(string columnTitle) {
+//        int ans = 0;
+//         for (char ch : columnTitle) {
+//             ans = ans * 26 + (ch - 'A' + 1);
+//         }
+//         return ans; 
+//     }
+// int main(){
+//         string columnTitle = "A";
+//         cout<<titleToNumber(columnTitle);
+
+// return 0 ;
+// }
+
+                /* // Q.3069. Distribute Elements Into Two Arrays I  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int titleToNumber(string columnTitle) {
-       int ans = 0;
-        for (char ch : columnTitle) {
-            ans = ans * 26 + (ch - 'A' + 1);
+vector<int> resultArray(vector<int>& nums) {
+        vector<int>arr1;
+        vector<int>arr2;
+        arr1.push_back(nums[0]);
+        arr2.push_back(nums[1]);
+        for(int i=2;i<nums.size();i++){
+              if(arr1[arr1.size()-1]>arr2[arr2.size()-1]){
+                 arr1.push_back(nums[i]);
+              }  
+              else{
+                arr2.push_back(nums[i]);
+              }
         }
-        return ans; 
-    }
+        arr1.insert(arr1.end(),arr2.begin(),arr2.end());
+      return arr1;  
+}
 int main(){
-        string columnTitle = "A";
-        cout<<titleToNumber(columnTitle);
-
+        vector<int>nums={2,1,3};
+        // vector<int>nums={5,4,3,8};
+        vector<int>ans=resultArray(nums);
+        for(auto k:ans){
+            cout<<k<<" ";
+        }
 return 0 ;
 }
