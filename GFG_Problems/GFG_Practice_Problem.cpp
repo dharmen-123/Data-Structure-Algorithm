@@ -1313,22 +1313,45 @@
 
                 /* // Q.Alternates in an Array // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> getAlternates(vector<int> &arr) {
+//             vector<int>ans;
+//             for(int i=0;i<arr.size();i+=2){
+//                 ans.push_back(arr[i]);
+//             }
+//     return ans;
+// }
+// int main(){
+//         vector<int>arr={1,2,3,4,5};
+//         vector<int>ans=getAlternates(arr);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+        
+// return 0 ;
+// }
+
+
+                /* // Q.Count Smaller in an Array  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> getAlternates(vector<int> &arr) {
-            vector<int>ans;
-            for(int i=0;i<arr.size();i+=2){
-                ans.push_back(arr[i]);
-            }
-    return ans;
+int countOfElements(int x, vector<int> &arr) {
+        int count=0;
+        for(int i=0;i<arr.size();i++){
+              if(arr[i]<=x){
+                count++;
+              }  
+        }
+    return count;    
 }
 int main(){
-        vector<int>arr={1,2,3,4,5};
-        vector<int>ans=getAlternates(arr);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-        
+        int x = 9;
+        vector<int>arr = {10,1,2,8,4,5};
+        cout<<countOfElements(x,arr);
+
 return 0 ;
 }
