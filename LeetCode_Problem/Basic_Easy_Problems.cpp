@@ -3291,18 +3291,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 int arrangeCoins(int n) {
-        vector<int>steps;
-        int count=0;
-        int i=0;
-        while(n>0){
-            steps.push_back(i+1);
-            i++;
-            n-=i;
+        int row = 1;
+        int count = 0;
+        while (n >= row) {
+            n -= row;
+            count++;
+            row++;
         }
-        for(auto k:steps){
-                cout<<k<<" ";
-        }
-     return count;   
+        return count; 
 }
 int main(){
         int n=5;
