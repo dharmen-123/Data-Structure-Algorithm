@@ -1358,39 +1358,67 @@
 
         /* // Q.Median of 2 Sorted Arrays of Same Size // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// double medianOf2(vector<int>& a, vector<int>& b) {
+//         vector<int>merge;
+//         int i=0,j=0;
+//         while(a.size()>i && b.size()>j){
+//              if(a[i]>b[j]){
+//                 merge.push_back(b[j++]);   
+//              }
+//              else{
+//                 merge.push_back(a[i++]);   
+//              }   
+//         }  
+//         if(j<b.size()){
+//             while(j<b.size())
+//                merge.push_back(b[j++]);   
+//         }
+//         else{
+//             while(i<a.size())
+//                merge.push_back(a[i++]);   
+//         }
+//         int n=merge.size();
+//         if(n%2==0){
+
+//              return (double)(merge[(n-1)/2]+merge[n/2])/2;   
+//         }
+//         return (double)merge[n/2];
+// }
+// int main(){
+// //        vector<int>a= {-5, 3, 6, 12, 15}, b={-12,-10,-6,-3,4};
+//        vector<int>a= {2,3,5,7}, b={10,12,14,16};
+//        cout<<medianOf2(a,b); 
+
+// return 0 ;
+// }
+
+        /* // Q.Move all negative elements to end // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-double medianOf2(vector<int>& a, vector<int>& b) {
-        vector<int>merge;
-        int i=0,j=0;
-        while(a.size()>i && b.size()>j){
-             if(a[i]>b[j]){
-                merge.push_back(b[j++]);   
-             }
-             else{
-                merge.push_back(a[i++]);   
-             }   
-        }  
-        if(j<b.size()){
-            while(j<b.size())
-               merge.push_back(b[j++]);   
+void segregateElements(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> temp;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= 0) temp.push_back(arr[i]);
         }
-        else{
-            while(i<a.size())
-               merge.push_back(a[i++]);   
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) temp.push_back(arr[i]);
         }
-        int n=merge.size();
-        if(n%2==0){
-
-             return (double)(merge[(n-1)/2]+merge[n/2])/2;   
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
         }
-        return (double)merge[n/2];
 }
 int main(){
-//        vector<int>a= {-5, 3, 6, 12, 15}, b={-12,-10,-6,-3,4};
-       vector<int>a= {2,3,5,7}, b={10,12,14,16};
-       cout<<medianOf2(a,b); 
+        vector<int>arr={1, -1, 3, 2, -7, -5, 11, 6};
+        segregateElements(arr);
+        for(auto k:arr){
+                cout<<k<<" ";
+        }
 
 return 0 ;
 }
