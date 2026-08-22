@@ -2436,31 +2436,69 @@
 
        /* // Q.4026 Minimize the Maximum Waiting Time at Synchronized Traffic Lights // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minPenalty(int period, vector<int>& lights, vector<int>& arrivalTime) {
+//         int maxGreen = INT_MIN;
+//         for(auto k:lights){
+//               maxGreen=max(maxGreen,k);  
+//         }
+//         int ans = 0;
+//         for (int t : arrivalTime) {
+//             int r = t % period;
+//             if (r >= maxGreen)
+//                ans = max(ans, period - r);
+//         }
+//     return ans;
+        
+// }
+// int main(){
+//         int  period = 8; 
+//         vector<int>lights = {2,3};
+//         vector<int>arrivalTime = {2,5,8,11};
+//         // int  period = 10; 
+//         // vector<int>lights = {3,6,8};
+//         // vector<int>arrivalTime = {4,9,15};
+//         cout<<minPenalty(period,lights,arrivalTime);
+
+// return 0 ;
+// }
+
+
+        /* // Q.6. Zigzag Conversion // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minPenalty(int period, vector<int>& lights, vector<int>& arrivalTime) {
-        int maxGreen = INT_MIN;
-        for(auto k:lights){
-              maxGreen=max(maxGreen,k);  
+string convert(string s, int numRows) {
+        if (numRows == 1 || numRows >= s.size()) 
+                return s;
+        string result;
+        for (int i = 0; i < numRows; i++) {
+            int j = i;
+            int downStep = 2 * (numRows - 1 - i);
+            int upStep   = 2 * i;
+            bool down = true;
+    
+            while (j < s.size()) {
+                result += s[j];
+                if (i == 0) {
+                    j += 2 * (numRows - 1); 
+                } else if (i == numRows - 1) {
+                    j += 2 * (numRows - 1); 
+                } else {
+                    j += down ? downStep : upStep;
+                    down = !down;
+                }
+            }
         }
-        int ans = 0;
-        for (int t : arrivalTime) {
-            int r = t % period;
-            if (r >= maxGreen)
-               ans = max(ans, period - r);
-        }
-    return ans;
-        
+    return result;
 }
 int main(){
-        int  period = 8; 
-        vector<int>lights = {2,3};
-        vector<int>arrivalTime = {2,5,8,11};
-        // int  period = 10; 
-        // vector<int>lights = {3,6,8};
-        // vector<int>arrivalTime = {4,9,15};
-        cout<<minPenalty(period,lights,arrivalTime);
+        string s="PAYPALISHIRING";
+        int numRows=3;
+        cout<<convert(s,numRows);
 
 return 0 ;
 }
