@@ -3287,22 +3287,48 @@
 
                 /* // Q.441. Arranging Coins  // */
         
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int arrangeCoins(int n) {
+//         int row = 1;
+//         int count = 0;
+//         while (n >= row) {
+//             n -= row;
+//             count++;
+//             row++;
+//         }
+//         return count; 
+// }
+// int main(){
+//         int n=5;
+//         cout<<arrangeCoins(n);
+
+// return 0 ;
+// }
+
+                /* // Q.3622. Check Divisibility by Digit Sum and Product  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int arrangeCoins(int n) {
-        int row = 1;
-        int count = 0;
-        while (n >= row) {
-            n -= row;
-            count++;
-            row++;
+bool checkDivisibility(int n) {
+        int m=n;
+        int sum=0,pd=1;
+        while(n>0){
+           int last=n%10;
+           sum+=last;
+           pd*=last;
+           n/=10;
         }
-        return count; 
+        if(m%(sum+pd)==0){
+              return true;  
+        }
+    return false;        
 }
 int main(){
-        int n=5;
-        cout<<arrangeCoins(n);
+        int n=99;
+        cout<<checkDivisibility(n);
 
 return 0 ;
 }
