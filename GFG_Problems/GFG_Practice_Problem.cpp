@@ -1464,36 +1464,66 @@
 
         /* // Q.All numbers with specific difference // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int digitSum(int x) {
+//     int sum = 0;
+//     while (x > 0) {
+//         sum += x % 10;
+//         x /= 10;
+//     }
+//     return sum;
+// }
+// int getCount(int n, int d) {
+//     int low = 1, high = n, ans = n + 1;
+//     while (low <= high) {
+//         int mid = low + (high - low) / 2;
+//         if (mid - digitSum(mid) >= d) {
+//             ans = mid;
+//             high = mid - 1;
+//         } else {
+//             low = mid + 1;
+//         }
+//     }
+
+//     if (ans == n + 1) 
+//         return 0; 
+//     return n - ans + 1;         
+// }
+// int main(){
+//         int n=14,d=3;
+//         cout<<getCount(n,d);
+        
+// return 0 ;
+// }
+
+        /* // Q.First and last in Sorted  // */
+        
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int digitSum(int x) {
-    int sum = 0;
-    while (x > 0) {
-        sum += x % 10;
-        x /= 10;
-    }
-    return sum;
-}
-int getCount(int n, int d) {
-    int low = 1, high = n, ans = n + 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (mid - digitSum(mid) >= d) {
-            ans = mid;
-            high = mid - 1;
-        } else {
-            low = mid + 1;
+vector<int> find(vector<int>& arr, int x) {
+        int count=0,index=0;
+        for(int i=0;i<arr.size();i++){
+                if(arr[i]==x){
+                   count++;
+                   if(count==1)
+                      index=i;
+                }
         }
-    }
-
-    if (ans == n + 1) 
-        return 0; 
-    return n - ans + 1;         
+        if(count!=0){
+            return {index,index+count-1}; 
+        }
+        return {-1,-1};
 }
 int main(){
-        int n=14,d=3;
-        cout<<getCount(n,d);
-        
+        // vector<int>arr={1, 3, 5, 5, 5, 5, 7, 123, 125};
+        // int x=7;
+        vector<int>arr={1, 3, 5, 5, 5, 5, 67, 123, 125};
+        int x=5;
+        vector<int>ans=find(arr,x);
+        cout<<ans[0]<<" "<<ans[1]<<endl;
+
 return 0 ;
 }
