@@ -3309,26 +3309,59 @@
 
                 /* // Q.3622. Check Divisibility by Digit Sum and Product  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool checkDivisibility(int n) {
+//         int m=n;
+//         int sum=0,pd=1;
+//         while(n>0){
+//            int last=n%10;
+//            sum+=last;
+//            pd*=last;
+//            n/=10;
+//         }
+//         if(m%(sum+pd)==0){
+//               return true;  
+//         }
+//     return false;        
+// }
+// int main(){
+//         int n=99;
+//         cout<<checkDivisibility(n);
+
+// return 0 ;
+// }
+
+
+                /* // Q.4029 Check ASCII Palindromic // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool checkDivisibility(int n) {
-        int m=n;
-        int sum=0,pd=1;
-        while(n>0){
-           int last=n%10;
-           sum+=last;
-           pd*=last;
-           n/=10;
+bool isPalindromic(string s) {
+        string binary = "";
+        for (char ch : s) {
+            int x = ch;
+            for (int i = 7; i >= 0; i--) {
+                binary += ((x >> i) & 1) + '0';
+            }
         }
-        if(m%(sum+pd)==0){
-              return true;  
+        int left = 0, right = binary.size() - 1;
+        while (left < right) {
+            if (binary[left] != binary[right])
+                return false;
+            left++;
+            right--;
         }
-    return false;        
+
+        return true;
+
 }
 int main(){
-        int n=99;
-        cout<<checkDivisibility(n);
+        // string s="ff";
+        string s="leet";
+        cout<<isPalindromic(s);
 
 return 0 ;
 }
