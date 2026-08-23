@@ -1425,38 +1425,75 @@
 
                 /* // Q.Points in Straight Line  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxPoints(vector<int>& x, vector<int>& y) {
+//         int n=x.size();
+//         if(n<=2)
+//           return n;
+//         int result=2;
+//         for(int i=0;i<n;i++){
+//              map<pair<int,int>,int>slopecount;   
+//              for(int j=i+1;j<n;j++){
+//                 int dx=x[j]-x[i];
+//                 int dy=y[j]-y[i];
+//                 int g = __gcd(dx,dy);
+//                 dx/=g;  dy/=g;
+//                 if(dx<0){
+//                      dx=-dx;   
+//                      dy=-dy;   
+//                 }
+//                 else if(dx==0)
+//                       dy=1;  
+//                 else if(dy==0)
+//                       dx=1;  
+//                 slopecount[{dx,dy}]++;
+//                 result=max(result,slopecount[{dx,dy}]+1);
+//              }
+//         }
+//        return result; 
+// }
+// int main(){
+//         vector<int>x={1,2,3},y={1,2,3};
+//         // vector<int>x={1, 3, 5, 4, 2, 1},y={1, 2, 3, 1, 3, 4};
+//         cout<<maxPoints(x,y);
+// return 0 ;
+// }
+
+
+        /* // Q.All numbers with specific difference // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int maxPoints(vector<int>& x, vector<int>& y) {
-        int n=x.size();
-        if(n<=2)
-          return n;
-        int result=2;
-        for(int i=0;i<n;i++){
-             map<pair<int,int>,int>slopecount;   
-             for(int j=i+1;j<n;j++){
-                int dx=x[j]-x[i];
-                int dy=y[j]-y[i];
-                int g = __gcd(dx,dy);
-                dx/=g;  dy/=g;
-                if(dx<0){
-                     dx=-dx;   
-                     dy=-dy;   
-                }
-                else if(dx==0)
-                      dy=1;  
-                else if(dy==0)
-                      dx=1;  
-                slopecount[{dx,dy}]++;
-                result=max(result,slopecount[{dx,dy}]+1);
-             }
+int digitSum(int x) {
+    int sum = 0;
+    while (x > 0) {
+        sum += x % 10;
+        x /= 10;
+    }
+    return sum;
+}
+int getCount(int n, int d) {
+    int low = 1, high = n, ans = n + 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (mid - digitSum(mid) >= d) {
+            ans = mid;
+            high = mid - 1;
+        } else {
+            low = mid + 1;
         }
-       return result; 
+    }
+
+    if (ans == n + 1) 
+        return 0; 
+    return n - ans + 1;         
 }
 int main(){
-        vector<int>x={1,2,3},y={1,2,3};
-        // vector<int>x={1, 3, 5, 4, 2, 1},y={1, 2, 3, 1, 3, 4};
-        cout<<maxPoints(x,y);
+        int n=14,d=3;
+        cout<<getCount(n,d);
+        
 return 0 ;
 }
