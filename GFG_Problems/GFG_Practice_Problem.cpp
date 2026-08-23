@@ -1397,28 +1397,66 @@
 
         /* // Q.Move all negative elements to end // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void segregateElements(vector<int>& arr) {
+//         int n = arr.size();
+//         vector<int> temp;
+//         for (int i = 0; i < n; i++) {
+//             if (arr[i] >= 0) temp.push_back(arr[i]);
+//         }
+//         for (int i = 0; i < n; i++) {
+//             if (arr[i] < 0) temp.push_back(arr[i]);
+//         }
+//         for (int i = 0; i < n; i++) {
+//             arr[i] = temp[i];
+//         }
+// }
+// int main(){
+//         vector<int>arr={1, -1, 3, 2, -7, -5, 11, 6};
+//         segregateElements(arr);
+//         for(auto k:arr){
+//                 cout<<k<<" ";
+//         }
+
+// return 0 ;
+// }
+
+                /* // Q.Points in Straight Line  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-void segregateElements(vector<int>& arr) {
-        int n = arr.size();
-        vector<int> temp;
-        for (int i = 0; i < n; i++) {
-            if (arr[i] >= 0) temp.push_back(arr[i]);
+int maxPoints(vector<int>& x, vector<int>& y) {
+        int n=x.size();
+        if(n<=2)
+          return n;
+        int result=2;
+        for(int i=0;i<n;i++){
+             map<pair<int,int>,int>slopecount;   
+             for(int j=i+1;j<n;j++){
+                int dx=x[j]-x[i];
+                int dy=y[j]-y[i];
+                int g = __gcd(dx,dy);
+                dx/=g;  dy/=g;
+                if(dx<0){
+                     dx=-dx;   
+                     dy=-dy;   
+                }
+                else if(dx==0)
+                      dy=1;  
+                else if(dy==0)
+                      dx=1;  
+                slopecount[{dx,dy}]++;
+                result=max(result,slopecount[{dx,dy}]+1);
+             }
         }
-        for (int i = 0; i < n; i++) {
-            if (arr[i] < 0) temp.push_back(arr[i]);
-        }
-        for (int i = 0; i < n; i++) {
-            arr[i] = temp[i];
-        }
+       return result; 
 }
 int main(){
-        vector<int>arr={1, -1, 3, 2, -7, -5, 11, 6};
-        segregateElements(arr);
-        for(auto k:arr){
-                cout<<k<<" ";
-        }
-
+        vector<int>x={1,2,3},y={1,2,3};
+        // vector<int>x={1, 3, 5, 4, 2, 1},y={1, 2, 3, 1, 3, 4};
+        cout<<maxPoints(x,y);
 return 0 ;
 }
