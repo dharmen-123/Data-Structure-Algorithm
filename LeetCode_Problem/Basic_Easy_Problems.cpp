@@ -3336,32 +3336,72 @@
 
                 /* // Q.4029 Check ASCII Palindromic // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isPalindromic(string s) {
+//         string binary = "";
+//         for (char ch : s) {
+//             int x = ch;
+//             for (int i = 7; i >= 0; i--) {
+//                 binary += ((x >> i) & 1) + '0';
+//             }
+//         }
+//         int left = 0, right = binary.size() - 1;
+//         while (left < right) {
+//             if (binary[left] != binary[right])
+//                 return false;
+//             left++;
+//             right--;
+//         }
+
+//         return true;
+
+// }
+// int main(){
+//         // string s="ff";
+//         string s="leet";
+//         cout<<isPalindromic(s);
+
+// return 0 ;
+// }
+
+                /* // Q.1927. Sum Game // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool isPalindromic(string s) {
-        string binary = "";
-        for (char ch : s) {
-            int x = ch;
-            for (int i = 7; i >= 0; i--) {
-                binary += ((x >> i) & 1) + '0';
-            }
+bool sumGame(string num) {
+        int leftsum=0,rightsum=0;
+        int leftq=0,rightq=0;
+        int n=num.size();
+        for(int i=0;i<n/2;i++){
+              if(num[i]=='?'){
+                leftq++;
+              }  
+              else{
+                 leftsum+=(num[i]-'0');
+              }
         }
-        int left = 0, right = binary.size() - 1;
-        while (left < right) {
-            if (binary[left] != binary[right])
-                return false;
-            left++;
-            right--;
+        for(int i=n/2;i<n;i++){
+              if(num[i]=='?'){
+                rightq++;
+              }  
+              else{
+                 rightsum+=(num[i]-'0');
+              }
         }
-
-        return true;
-
+        int diff=leftsum-rightsum;
+        int qdiff=leftq-rightq;
+        if(qdiff!=0){
+              return abs(diff)!=abs(qdiff)*9/2;   
+        }
+        return diff!=0;
 }
 int main(){
-        // string s="ff";
-        string s="leet";
-        cout<<isPalindromic(s);
+        // string num="5023";
+        string num="25??";
+        cout<<sumGame(num);
 
 return 0 ;
 }
