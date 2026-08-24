@@ -3399,8 +3399,8 @@ bool sumGame(string num) {
         return diff!=0;
 }
 int main(){
-        // string num="5023";
-        string num="25??";
+        string num="5023";
+        // string num="25??";
         cout<<sumGame(num);
 
 return 0 ;
