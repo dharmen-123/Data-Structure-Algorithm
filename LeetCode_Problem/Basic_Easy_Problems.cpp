@@ -3393,14 +3393,12 @@ bool sumGame(string num) {
         }
         int diff=leftsum-rightsum;
         int qdiff=leftq-rightq;
-        if(qdiff!=0){
-              return abs(diff)!=abs(qdiff)*9/2;   
-        }
-        return diff!=0;
+        return 2 * diff + 9 * qdiff != 0;
+
 }
 int main(){
-        string num="5023";
-        // string num="25??";
+        // string num="5023";
+        string num="25??";
         cout<<sumGame(num);
 
 return 0 ;
