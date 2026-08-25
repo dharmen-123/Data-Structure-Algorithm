@@ -2468,37 +2468,67 @@
 
         /* // Q.6. Zigzag Conversion // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string convert(string s, int numRows) {
+//         if (numRows == 1 || numRows >= s.size()) 
+//                 return s;
+//         string result;
+//         for (int i = 0; i < numRows; i++) {
+//             int j = i;
+//             int downStep = 2 * (numRows - 1 - i);
+//             int upStep   = 2 * i;
+//             bool down = true;
+    
+//             while (j < s.size()) {
+//                 result += s[j];
+//                 if (i == 0) {
+//                     j += 2 * (numRows - 1); 
+//                 } else if (i == numRows - 1) {
+//                     j += 2 * (numRows - 1); 
+//                 } else {
+//                     j += down ? downStep : upStep;
+//                     down = !down;
+//                 }
+//             }
+//         }
+//     return result;
+// }
+// int main(){
+//         string s="PAYPALISHIRING";
+//         int numRows=3;
+//         cout<<convert(s,numRows);
+
+// return 0 ;
+// }
+
+
+                /* // Q.56. Merge Intervals // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string convert(string s, int numRows) {
-        if (numRows == 1 || numRows >= s.size()) 
-                return s;
-        string result;
-        for (int i = 0; i < numRows; i++) {
-            int j = i;
-            int downStep = 2 * (numRows - 1 - i);
-            int upStep   = 2 * i;
-            bool down = true;
-    
-            while (j < s.size()) {
-                result += s[j];
-                if (i == 0) {
-                    j += 2 * (numRows - 1); 
-                } else if (i == numRows - 1) {
-                    j += 2 * (numRows - 1); 
-                } else {
-                    j += down ? downStep : upStep;
-                    down = !down;
-                }
-            }
-        }
-    return result;
+vector<vector<int>> merge(vector<vector<int>>& intervals) {
+    int n=intervals.size();
+    sort(intervals.begin(),intervals.end());
+    vector<vector<int>>ans;
+    for(int i=0;i<n;i++){
+        if(ans.empty() || intervals[i][0]>ans.back()[1])
+            ans.push_back(intervals[i]);
+        else
+            ans.back()[1]=max(ans.back()[1],intervals[i][1]);
+    }
+  return ans;
 }
 int main(){
-        string s="PAYPALISHIRING";
-        int numRows=3;
-        cout<<convert(s,numRows);
-
+    vector<vector<int>>intervals={{1,3},{2,6},{8,10},{15,18}};
+    vector<vector<int>>ans=merge(intervals);
+    for(auto k:ans){
+        for(auto a:k){
+            cout<<a<<" ";
+        }
+        cout<<" , ";
+    }
 return 0 ;
 }
