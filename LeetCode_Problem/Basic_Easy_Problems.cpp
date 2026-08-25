@@ -3368,38 +3368,62 @@
 
                 /* // Q.1927. Sum Game // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool sumGame(string num) {
+//         int leftsum=0,rightsum=0;
+//         int leftq=0,rightq=0;
+//         int n=num.size();
+//         for(int i=0;i<n/2;i++){
+//               if(num[i]=='?'){
+//                 leftq++;
+//               }  
+//               else{
+//                  leftsum+=(num[i]-'0');
+//               }
+//         }
+//         for(int i=n/2;i<n;i++){
+//               if(num[i]=='?'){
+//                 rightq++;
+//               }  
+//               else{
+//                  rightsum+=(num[i]-'0');
+//               }
+//         }
+//         int diff=leftsum-rightsum;
+//         int qdiff=leftq-rightq;
+//         return 2 * diff + 9 * qdiff != 0;
+
+// }
+// int main(){
+//         // string num="5023";
+//         string num="25??";
+//         cout<<sumGame(num);
+
+// return 0 ;
+// }
+
+        /* // Q.3718. Smallest Missing Multiple of K  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool sumGame(string num) {
-        int leftsum=0,rightsum=0;
-        int leftq=0,rightq=0;
-        int n=num.size();
-        for(int i=0;i<n/2;i++){
-              if(num[i]=='?'){
-                leftq++;
-              }  
-              else{
-                 leftsum+=(num[i]-'0');
-              }
+int missingMultiple(vector<int>& nums, int k) {
+        unordered_set<int>s1;
+        for(auto x:nums){
+               s1.insert(x); 
         }
-        for(int i=n/2;i<n;i++){
-              if(num[i]=='?'){
-                rightq++;
-              }  
-              else{
-                 rightsum+=(num[i]-'0');
-              }
+        int m=k;
+        while(s1.find(m)!=s1.end()){
+                m+=k;
         }
-        int diff=leftsum-rightsum;
-        int qdiff=leftq-rightq;
-        return 2 * diff + 9 * qdiff != 0;
-
+      return m;  
 }
 int main(){
-        // string num="5023";
-        string num="25??";
-        cout<<sumGame(num);
+        vector<int>nums={8,2,3,4,6};
+        int k=2;
+        cout<<missingMultiple(nums,k);
 
 return 0 ;
 }
