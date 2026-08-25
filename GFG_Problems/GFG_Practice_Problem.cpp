@@ -1500,30 +1500,61 @@
 
         /* // Q.First and last in Sorted  // */
         
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> find(vector<int>& arr, int x) {
+//         int count=0,index=0;
+//         for(int i=0;i<arr.size();i++){
+//                 if(arr[i]==x){
+//                    count++;
+//                    if(count==1)
+//                       index=i;
+//                 }
+//         }
+//         if(count!=0){
+//             return {index,index+count-1}; 
+//         }
+//         return {-1,-1};
+// }
+// int main(){
+//         // vector<int>arr={1, 3, 5, 5, 5, 5, 7, 123, 125};
+//         // int x=7;
+//         vector<int>arr={1, 3, 5, 5, 5, 5, 67, 123, 125};
+//         int x=5;
+//         vector<int>ans=find(arr,x);
+//         cout<<ans[0]<<" "<<ans[1]<<endl;
+
+// return 0 ;
+// }
+
+
+                /* // Q.Minimum distance in an Array //  */
+        
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> find(vector<int>& arr, int x) {
-        int count=0,index=0;
-        for(int i=0;i<arr.size();i++){
-                if(arr[i]==x){
-                   count++;
-                   if(count==1)
-                      index=i;
+int minDist(vector<int>& arr, int x, int y) {
+        int last = -1;
+        int ans = INT_MAX;
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr[i] == x || arr[i] == y) {
+                if (last != -1 && arr[last] != arr[i]) {
+                    ans = min(ans, i - last);
                 }
+                last = i;
+            }
         }
-        if(count!=0){
-            return {index,index+count-1}; 
-        }
-        return {-1,-1};
+
+        if (ans == INT_MAX)
+            return -1;
+
+    return ans;
 }
 int main(){
-        // vector<int>arr={1, 3, 5, 5, 5, 5, 7, 123, 125};
-        // int x=7;
-        vector<int>arr={1, 3, 5, 5, 5, 5, 67, 123, 125};
-        int x=5;
-        vector<int>ans=find(arr,x);
-        cout<<ans[0]<<" "<<ans[1]<<endl;
-
+        vector<int>arr={1, 2, 3, 2};
+        int x=1,y=2;
+        cout<<minDist(arr,x,y);
+        
 return 0 ;
 }
