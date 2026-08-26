@@ -2563,7 +2563,7 @@ vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInter
                 ans.back()[1]=max(ans.back()[1],intervals[i][1]);
             }
         }
-       return ans; 
+       return  ans; 
 }
 int main(){
     vector<vector<int>>intervals={{1,2},{3,5},{6,7},{8,10},{12,16}};
