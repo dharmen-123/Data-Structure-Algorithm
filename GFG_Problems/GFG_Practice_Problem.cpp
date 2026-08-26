@@ -1531,30 +1531,65 @@
 
                 /* // Q.Minimum distance in an Array //  */
         
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minDist(vector<int>& arr, int x, int y) {
+//         int last = -1;
+//         int ans = INT_MAX;
+//         for (int i = 0; i < arr.size(); i++) {
+//             if (arr[i] == x || arr[i] == y) {
+//                 if (last != -1 && arr[last] != arr[i]) {
+//                     ans = min(ans, i - last);
+//                 }
+//                 last = i;
+//             }
+//         }
+
+//         if (ans == INT_MAX)
+//             return -1;
+
+//     return ans;
+// }
+// int main(){
+//         vector<int>arr={1, 2, 3, 2};
+//         int x=1,y=2;
+//         cout<<minDist(arr,x,y);
+        
+// return 0 ;
+// }
+
+
+        /* // Q.Pascal Triangle  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minDist(vector<int>& arr, int x, int y) {
-        int last = -1;
-        int ans = INT_MAX;
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr[i] == x || arr[i] == y) {
-                if (last != -1 && arr[last] != arr[i]) {
-                    ans = min(ans, i - last);
-                }
-                last = i;
-            }
+vector<int> nthRowOfPascalTriangle(int n) {
+        vector<vector<int>>ans;
+        vector<int>temp;
+        temp.push_back(1);
+        int j=0;
+        while(n>0){
+             ans.push_back(temp);
+             temp.clear();
+             int size=ans[j].size();
+             temp.push_back(1);
+             for(int i=0;i<size-1;i++){
+                 int a=ans[j][i]+ans[j][i+1];
+                 temp.push_back(a);
+             }
+             temp.push_back(1);
+             j++;
+             n--;  
         }
-
-        if (ans == INT_MAX)
-            return -1;
-
-    return ans;
+      return ans[ans.size()-1];  
 }
 int main(){
-        vector<int>arr={1, 2, 3, 2};
-        int x=1,y=2;
-        cout<<minDist(arr,x,y);
-        
+        int n=4;
+        vector<int>ans=nthRowOfPascalTriangle(n);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
