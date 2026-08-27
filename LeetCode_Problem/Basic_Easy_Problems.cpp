@@ -3406,24 +3406,64 @@
 
         /* // Q.3718. Smallest Missing Multiple of K  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int missingMultiple(vector<int>& nums, int k) {
+//         unordered_set<int>s1;
+//         for(auto x:nums){
+//                s1.insert(x); 
+//         }
+//         int m=k;
+//         while(s1.find(m)!=s1.end()){
+//                 m+=k;
+//         }
+//       return m;  
+// }
+// int main(){
+//         vector<int>nums={8,2,3,4,6};
+//         int k=2;
+//         cout<<missingMultiple(nums,k);
+
+// return 0 ;
+// }
+
+        /* // Q.1002. Find Common Characters  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int missingMultiple(vector<int>& nums, int k) {
-        unordered_set<int>s1;
-        for(auto x:nums){
-               s1.insert(x); 
+vector<string> commonChars(vector<string>& words) {
+        vector<int>min_counts(26,0);
+        for(auto ch:words[0]){
+             min_counts[ch-'a']++;   
         }
-        int m=k;
-        while(s1.find(m)!=s1.end()){
-                m+=k;
+        for(int i=1;i<words.size();i++){
+             vector<int>curr_count(26,0);
+             for(auto ch:words[i]){
+                curr_count[ch-'a']++;
+             }   
+             for(int j=0;j<26;j++){
+                min_counts[j]=min(min_counts[j],curr_count[j]);
+             }
         }
-      return m;  
+        vector<string>ans;
+        for(int i=0;i<26;i++){
+              while(min_counts[i]>0){
+                ans.push_back(string(1,i+'a'));
+                min_counts[i]--;
+              }  
+        }
+     return ans;
+
 }
 int main(){
-        vector<int>nums={8,2,3,4,6};
-        int k=2;
-        cout<<missingMultiple(nums,k);
+        // vector<string>words={"bella","label","roller"};
+        vector<string>words={"cool","lock","cook"};
+        vector<string>ans=commonChars(words);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 
 return 0 ;
 }
