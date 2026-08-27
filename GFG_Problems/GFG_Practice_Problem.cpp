@@ -1611,3 +1611,43 @@
 
 // return 0 ;
 // }
+
+        /* // Q.Sum of Two Large Number // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string findSum(string &s1, string &s2) {
+        int carry=0;
+        string s="";
+        reverse(s1.begin(),s1.end());    
+        reverse(s2.begin(),s2.end());
+        int n1=s1.size() , n2=s2.size();
+        int i=0,j=0;
+        while (i < n1 || j < n2) {
+        int a = carry;
+        if (i < n1) a += (s1[i++] - '0');
+        if (j < n2) a += (s2[j++] - '0');
+
+        s += char((a % 10) + '0');  
+        carry = a / 10;             
+        }
+
+        if (carry) 
+            s += char(carry + '0');  
+        reverse(s.begin(),s.end());   
+        int pos = 0;
+        while (pos < (int)s.size() && s[pos] == '0') 
+                pos++;
+        if (pos == (int)s.size()) 
+                return "0"; 
+        return s.substr(pos);
+
+}
+int main(){
+        // string s1="25",s2="23";
+        string s1="9",s2="9";
+        cout<<findSum(s1,s2);
+
+return 0 ;
+}
