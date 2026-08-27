@@ -1562,34 +1562,52 @@
 
         /* // Q.Pascal Triangle  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> nthRowOfPascalTriangle(int n) {
-        vector<vector<int>>ans;
-        vector<int>temp;
-        temp.push_back(1);
-        int j=0;
-        while(n>0){
-             ans.push_back(temp);
-             temp.clear();
-             int size=ans[j].size();
-             temp.push_back(1);
-             for(int i=0;i<size-1;i++){
-                 int a=ans[j][i]+ans[j][i+1];
-                 temp.push_back(a);
-             }
-             temp.push_back(1);
-             j++;
-             n--;  
-        }
-      return ans[ans.size()-1];  
-}
-int main(){
-        int n=4;
-        vector<int>ans=nthRowOfPascalTriangle(n);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> nthRowOfPascalTriangle(int n) {
+//         vector<vector<int>>ans;
+//         vector<int>temp;
+//         temp.push_back(1);
+//         int j=0;
+//         while(n>0){
+//              ans.push_back(temp);
+//              temp.clear();
+//              int size=ans[j].size();
+//              temp.push_back(1);
+//              for(int i=0;i<size-1;i++){
+//                  int a=ans[j][i]+ans[j][i+1];
+//                  temp.push_back(a);
+//              }
+//              temp.push_back(1);
+//              j++;
+//              n--;  
+//         }
+//       return ans[ans.size()-1];  
+// }
+// int main(){
+//         int n=4;
+//         vector<int>ans=nthRowOfPascalTriangle(n);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
+
+        /* // Q. First Occurrence // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int firstOccurence(string& txt, string& pat) {
+//          int index=0;
+//          index=txt.find(pat);
+//       return index;   
+// }
+// int main(){
+//         string txt="GeeksForGeeks";
+//         string pat="For";
+//         cout<<firstOccurence(txt,pat);        
+
+// return 0 ;
+// }
