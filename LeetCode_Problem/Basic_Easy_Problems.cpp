@@ -3470,28 +3470,68 @@
 
         /* // Q.405. Convert a Number to Hexadecimal // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string toHex(int num) {
+//     if (num == 0) 
+//         return "0";
+//     string hexChars = "0123456789abcdef";
+//     string s;
+//     unsigned int n = num; 
+//     cout<<n<<endl;
+//     while (n > 0) {
+//         int last = n % 16;          
+//         s += hexChars[last];        
+//         n /= 16;
+//     }    
+//     reverse(s.begin(), s.end());
+//     return s;  
+// }
+// int main(){
+//         int num=26;
+//         // int num=-1;
+//         cout<<toHex(num);
+
+// return 0 ;
+// }
+
+
+                /* // Q>506. Relative Ranks  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string toHex(int num) {
-    if (num == 0) 
-        return "0";
-    string hexChars = "0123456789abcdef";
-    string s;
-    unsigned int n = num; 
-    cout<<n<<endl;
-    while (n > 0) {
-        int last = n % 16;          
-        s += hexChars[last];        
-        n /= 16;
-    }    
-    reverse(s.begin(), s.end());
-    return s;  
+vector<string> findRelativeRanks(vector<int>& score) {
+        vector<int>temp=score;
+        sort(temp.rbegin(),temp.rend());
+        unordered_map<int,string>freq;
+        for(int i=0;i<temp.size();i++){
+                if(i==0){
+                        freq[temp[i]]="Gold Medal";   
+                }
+                else if(i==1){
+                        freq[temp[i]]="Silver Medal";   
+                }
+                else if(i==2){
+                        freq[temp[i]]="Bronze Medal";  
+                }
+                else{
+                        freq[temp[i]]=char(i+1+'0');    
+                }
+        }  
+        vector<string>ans;
+        for(auto k:score){
+              ans.push_back(freq[k]);  
+        }
+    return ans;
 }
 int main(){
-        int num=26;
-        // int num=-1;
-        cout<<toHex(num);
-
+       vector<int>score={5,4,3,2,1};
+//        vector<int>score={10,3,8,9,4};
+       vector<string>ans=findRelativeRanks(score);   
+       for(auto k:ans){
+              cout<<k<<" ";  
+        }
 return 0 ;
 }
