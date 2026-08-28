@@ -3430,40 +3430,68 @@
 
         /* // Q.1002. Find Common Characters  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<string> commonChars(vector<string>& words) {
+//         vector<int>min_counts(26,0);
+//         for(auto ch:words[0]){
+//              min_counts[ch-'a']++;   
+//         }
+//         for(int i=1;i<words.size();i++){
+//              vector<int>curr_count(26,0);
+//              for(auto ch:words[i]){
+//                 curr_count[ch-'a']++;
+//              }   
+//              for(int j=0;j<26;j++){
+//                 min_counts[j]=min(min_counts[j],curr_count[j]);
+//              }
+//         }
+//         vector<string>ans;
+//         for(int i=0;i<26;i++){
+//               while(min_counts[i]>0){
+//                 ans.push_back(string(1,i+'a'));
+//                 min_counts[i]--;
+//               }  
+//         }
+//      return ans;
+
+// }
+// int main(){
+//         // vector<string>words={"bella","label","roller"};
+//         vector<string>words={"cool","lock","cook"};
+//         vector<string>ans=commonChars(words);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+
+// return 0 ;
+// }
+
+        /* // Q.405. Convert a Number to Hexadecimal // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<string> commonChars(vector<string>& words) {
-        vector<int>min_counts(26,0);
-        for(auto ch:words[0]){
-             min_counts[ch-'a']++;   
-        }
-        for(int i=1;i<words.size();i++){
-             vector<int>curr_count(26,0);
-             for(auto ch:words[i]){
-                curr_count[ch-'a']++;
-             }   
-             for(int j=0;j<26;j++){
-                min_counts[j]=min(min_counts[j],curr_count[j]);
-             }
-        }
-        vector<string>ans;
-        for(int i=0;i<26;i++){
-              while(min_counts[i]>0){
-                ans.push_back(string(1,i+'a'));
-                min_counts[i]--;
-              }  
-        }
-     return ans;
-
+string toHex(int num) {
+    if (num == 0) 
+        return "0";
+    string hexChars = "0123456789abcdef";
+    string s;
+    unsigned int n = num; 
+    cout<<n<<endl;
+    while (n > 0) {
+        int last = n % 16;          
+        s += hexChars[last];        
+        n /= 16;
+    }    
+    reverse(s.begin(), s.end());
+    return s;  
 }
 int main(){
-        // vector<string>words={"bella","label","roller"};
-        vector<string>words={"cool","lock","cook"};
-        vector<string>ans=commonChars(words);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
+        int num=26;
+        // int num=-1;
+        cout<<toHex(num);
 
 return 0 ;
 }
