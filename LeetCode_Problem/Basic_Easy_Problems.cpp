@@ -3517,7 +3517,7 @@ vector<string> findRelativeRanks(vector<int>& score) {
                         freq[temp[i]]="Bronze Medal";  
                 }
                 else{
-                        freq[temp[i]]=char(i+1+'0');    
+                        freq[temp[i]]=to_string(i+1);    
                 }
         }  
         vector<string>ans;
