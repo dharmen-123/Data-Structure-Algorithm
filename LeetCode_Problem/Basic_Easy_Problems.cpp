@@ -3539,31 +3539,47 @@
 
                 /* // Q.1185. Day of the Week  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string dayOfTheWeek(int day, int month, int year) {
+//         vector<string> week = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+//         int daysInMonth[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+//         auto isLeap = [&](int y){
+//             return (y % 400 == 0) || (y % 4 == 0 && y % 100 != 0);
+//         };
+//         long long days = 0;
+
+//         for(int y=1971; y<year; y++){
+//             days += isLeap(y) ? 366 : 365;
+//         }
+//         for(int m=1; m<month; m++){
+//             if(m == 2 && isLeap(year)) days += 29;
+//             else days += daysInMonth[m-1];
+//         }
+//         days += day - 1;
+//         return week[(days + 5) % 7];
+        
+// }
+// int main(){
+//         // int day = 31, month = 8, year = 2019;
+//         int day = 18, month = 7, year = 1999;
+//         cout<<dayOfTheWeek(day,month,year);
+// return 0 ;
+// }
+
+                /* // Q.1380. Lucky Numbers in a Matrix // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string dayOfTheWeek(int day, int month, int year) {
-        vector<string> week = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-        int daysInMonth[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-        auto isLeap = [&](int y){
-            return (y % 400 == 0) || (y % 4 == 0 && y % 100 != 0);
-        };
-        long long days = 0;
-
-        for(int y=1971; y<year; y++){
-            days += isLeap(y) ? 366 : 365;
-        }
-        for(int m=1; m<month; m++){
-            if(m == 2 && isLeap(year)) days += 29;
-            else days += daysInMonth[m-1];
-        }
-        days += day - 1;
-        return week[(days + 5) % 7];
+vector<int> luckyNumbers(vector<vector<int>>& matrix) {
+        
         
 }
 int main(){
-        // int day = 31, month = 8, year = 2019;
-        int day = 18, month = 7, year = 1999;
-        cout<<dayOfTheWeek(day,month,year);
+        vector<vector<int>>matrix = {{3,7,8},{9,11,13},{15,16,17}};
+        vector<int>ans=luckyNumbers(matrix);
+
 return 0 ;
 }
