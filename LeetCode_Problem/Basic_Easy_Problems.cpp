@@ -3499,39 +3499,39 @@
 
                 /* // Q>506. Relative Ranks  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<string> findRelativeRanks(vector<int>& score) {
-        vector<int>temp=score;
-        sort(temp.rbegin(),temp.rend());
-        unordered_map<int,string>freq;
-        for(int i=0;i<temp.size();i++){
-                if(i==0){
-                        freq[temp[i]]="Gold Medal";   
-                }
-                else if(i==1){
-                        freq[temp[i]]="Silver Medal";   
-                }
-                else if(i==2){
-                        freq[temp[i]]="Bronze Medal";  
-                }
-                else{
-                        freq[temp[i]]=to_string(i+1);    
-                }
-        }  
-        vector<string>ans;
-        for(auto k:score){
-              ans.push_back(freq[k]);  
-        }
-    return ans;
-}
-int main(){
-       vector<int>score={5,4,3,2,1};
-//        vector<int>score={10,3,8,9,4};
-       vector<string>ans=findRelativeRanks(score);   
-       for(auto k:ans){
-              cout<<k<<" ";  
-        }
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<string> findRelativeRanks(vector<int>& score) {
+//         vector<int>temp=score;
+//         sort(temp.rbegin(),temp.rend());
+//         unordered_map<int,string>freq;
+//         for(int i=0;i<temp.size();i++){
+//                 if(i==0){
+//                         freq[temp[i]]="Gold Medal";   
+//                 }
+//                 else if(i==1){
+//                         freq[temp[i]]="Silver Medal";   
+//                 }
+//                 else if(i==2){
+//                         freq[temp[i]]="Bronze Medal";  
+//                 }
+//                 else{
+//                         freq[temp[i]]=to_string(i+1);    
+//                 }
+//         }  
+//         vector<string>ans;
+//         for(auto k:score){
+//               ans.push_back(freq[k]);  
+//         }
+//     return ans;
+// }
+// int main(){
+//        vector<int>score={5,4,3,2,1};
+// //        vector<int>score={10,3,8,9,4};
+//        vector<string>ans=findRelativeRanks(score);   
+//        for(auto k:ans){
+//               cout<<k<<" ";  
+//         }
+// return 0 ;
+// }
