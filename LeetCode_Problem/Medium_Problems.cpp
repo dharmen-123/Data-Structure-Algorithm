@@ -2581,39 +2581,71 @@
 
             /* // Q.4039 Sum of Decoded Numbers   //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// long long MOD = 1000000007;
+// long long power(long long x, long long y) {
+//         long long ans = 1;
+//         while (y > 0) {
+//             if (y & 1) {
+//                 ans = (ans * x) % MOD;
+//             }
+//             x = (x * x) % MOD;
+//             y >>= 1;
+//         }
+//         return ans;
+//     }
+// int sumDecoded(vector<long long>& nums) {
+//         long long ans = 0;
+//         for (long long num : nums) {
+//             int width = num % 10;
+//             long long d = num / 10;
+//             string s = to_string(d);
+//             long long x = stoll(s.substr(0, width));
+//             long long y = stoll(s.substr(width));
+//             ans = (ans + power(x, y)) % MOD;
+//         }
+
+//      return ans;
+// }
+// int main(){
+//     // vector<long long>nums={2522,2101};
+//     vector<long long>nums={35601441351,223903157794458};
+//     cout<<sumDecoded(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.2091. Removing Minimum and Maximum From Array  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
-long long MOD = 1000000007;
-long long power(long long x, long long y) {
-        long long ans = 1;
-        while (y > 0) {
-            if (y & 1) {
-                ans = (ans * x) % MOD;
+int minimumDeletions(vector<int>& nums) {
+        int n = nums.size();
+        int minn = 0;
+        int maxx = 0;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] < nums[minn]) {
+                minn = i;
             }
-            x = (x * x) % MOD;
-            y >>= 1;
+            if (nums[i] > nums[maxx]) {
+                maxx= i;
+            }
         }
-        return ans;
-    }
-int sumDecoded(vector<long long>& nums) {
-        long long ans = 0;
-        for (long long num : nums) {
-            int width = num % 10;
-            long long d = num / 10;
-            string s = to_string(d);
-            long long x = stoll(s.substr(0, width));
-            long long y = stoll(s.substr(width));
-            ans = (ans + power(x, y)) % MOD;
-        }
+        int left = min(minn, maxx);
+        int right = max(minn, maxx);
 
-     return ans;
+        int i = right + 1;
+        int j = n - left;
+        int k = (left + 1) + (n - right);
+        return min(i, min(j, k));
 }
 int main(){
-    // vector<long long>nums={2522,2101};
-    vector<long long>nums={35601441351,223903157794458};
-    cout<<sumDecoded(nums);
+        vector<int>nums={2,10,7,5,4,1,8,6};
+        cout<<minimumDeletions(nums);
 
 return 0 ;
 }
