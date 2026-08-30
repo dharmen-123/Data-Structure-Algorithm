@@ -2536,44 +2536,84 @@
 
         /* // Q.57. Insert Interval  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+//         int n=intervals.size();
+//         vector<vector<int>>ans=intervals;
+//         intervals.clear();
+//         bool inserted=false;
+//         for(int i=0;i<n;i++){
+//             if(!inserted && ans[i][0]>newInterval[0]){
+//                 intervals.push_back(newInterval);
+//                 inserted=true;
+//             }
+//             intervals.push_back(ans[i]);
+//         }
+//         if(!inserted)
+//             intervals.push_back(newInterval);
+
+//         ans.clear();
+//         for(int i=0;i<intervals.size();i++){
+//             if(ans.empty() || intervals[i][0]>ans.back()[1]){
+//                 ans.push_back(intervals[i]);
+//             }
+//             else{
+//                 ans.back()[1]=max(ans.back()[1],intervals[i][1]);
+//             }
+//         }
+//        return  ans; 
+// }
+// int main(){
+//     vector<vector<int>>intervals={{1,2},{3,5},{6,7},{8,10},{12,16}};
+//     vector<int>newInterval={4,8};
+//     vector<vector<int>>ans=insert(intervals,newInterval);
+//     for(auto k:ans){
+//         for(auto a:k){
+//             cout<<a<<" ";
+//         }
+//         cout<<" , ";
+//     }
+// return 0 ;
+// }
+
+
+            /* // Q.4039 Sum of Decoded Numbers   //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        int n=intervals.size();
-        vector<vector<int>>ans=intervals;
-        intervals.clear();
-        bool inserted=false;
-        for(int i=0;i<n;i++){
-            if(!inserted && ans[i][0]>newInterval[0]){
-                intervals.push_back(newInterval);
-                inserted=true;
-            }
-            intervals.push_back(ans[i]);
-        }
-        if(!inserted)
-            intervals.push_back(newInterval);
 
-        ans.clear();
-        for(int i=0;i<intervals.size();i++){
-            if(ans.empty() || intervals[i][0]>ans.back()[1]){
-                ans.push_back(intervals[i]);
+long long MOD = 1000000007;
+long long power(long long x, long long y) {
+        long long ans = 1;
+        while (y > 0) {
+            if (y & 1) {
+                ans = (ans * x) % MOD;
             }
-            else{
-                ans.back()[1]=max(ans.back()[1],intervals[i][1]);
-            }
+            x = (x * x) % MOD;
+            y >>= 1;
         }
-       return  ans; 
+        return ans;
+    }
+int sumDecoded(vector<long long>& nums) {
+        long long ans = 0;
+        for (long long num : nums) {
+            int width = num % 10;
+            long long d = num / 10;
+            string s = to_string(d);
+            long long x = stoll(s.substr(0, width));
+            long long y = stoll(s.substr(width));
+            ans = (ans + power(x, y)) % MOD;
+        }
+
+     return ans;
 }
 int main(){
-    vector<vector<int>>intervals={{1,2},{3,5},{6,7},{8,10},{12,16}};
-    vector<int>newInterval={4,8};
-    vector<vector<int>>ans=insert(intervals,newInterval);
-    for(auto k:ans){
-        for(auto a:k){
-            cout<<a<<" ";
-        }
-        cout<<" , ";
-    }
+    // vector<long long>nums={2522,2101};
+    vector<long long>nums={35601441351,223903157794458};
+    cout<<sumDecoded(nums);
+
 return 0 ;
 }
