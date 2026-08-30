@@ -3568,18 +3568,45 @@
 // return 0 ;
 // }
 
-                /* // Q.1380. Lucky Numbers in a Matrix // */
+        /* // Q.4038 Count Integers Appearing in a Single Block  // */
 
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> luckyNumbers(vector<vector<int>>& matrix) {
-        
-        
+int countSpecialIntegers(vector<int>& nums) {
+      set<int> seen;
+      set<int> notSpecial;
+      for (int i = 0; i < nums.size(); i++) {
+         if (seen.count(nums[i]) && nums[i] != nums[i - 1]) {
+             notSpecial.insert(nums[i]);
+         }
+   
+         seen.insert(nums[i]);
+      }
+      
+    return seen.size() - notSpecial.size();
 }
 int main(){
-        vector<vector<int>>matrix = {{3,7,8},{9,11,13},{15,16,17}};
-        vector<int>ans=luckyNumbers(matrix);
+        // vector<int>nums={1,2,2,1};
+        vector<int>nums={3,3,1,2,2,1};
+        cout<<countSpecialIntegers(nums);
 
 return 0 ;
 }
+
+
+                /* // Q.1380. Lucky Numbers in a Matrix // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> luckyNumbers(vector<vector<int>>& matrix) {
+        
+        
+// }
+// int main(){
+//         vector<vector<int>>matrix = {{3,7,8},{9,11,13},{15,16,17}};
+//         vector<int>ans=luckyNumbers(matrix);
+
+// return 0 ;
+// }
