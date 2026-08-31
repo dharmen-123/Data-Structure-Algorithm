@@ -2620,32 +2620,79 @@
 
         /* // Q.2091. Removing Minimum and Maximum From Array  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minimumDeletions(vector<int>& nums) {
+//         int n = nums.size();
+//         int minn = 0;
+//         int maxx = 0;
+//         for (int i = 1; i < n; i++) {
+//             if (nums[i] < nums[minn]) {
+//                 minn = i;
+//             }
+//             if (nums[i] > nums[maxx]) {
+//                 maxx= i;
+//             }
+//         }
+//         int left = min(minn, maxx);
+//         int right = max(minn, maxx);
+
+//         int i = right + 1;
+//         int j = n - left;
+//         int k = (left + 1) + (n - right);
+//         return min(i, min(j, k));
+// }
+// int main(){
+//         vector<int>nums={2,10,7,5,4,1,8,6};
+//         cout<<minimumDeletions(nums);
+
+// return 0 ;
+// }
+
+    
+    /* // Q.2058. Find the Minimum and Maximum Number of Nodes Between Critical Points  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minimumDeletions(vector<int>& nums) {
-        int n = nums.size();
-        int minn = 0;
-        int maxx = 0;
-        for (int i = 1; i < n; i++) {
-            if (nums[i] < nums[minn]) {
-                minn = i;
-            }
-            if (nums[i] > nums[maxx]) {
-                maxx= i;
-            }
+class ListNode {
+    public:
+     int val;
+     ListNode *next;
+     ListNode() : val(0), next(nullptr) {}
+     ListNode(int x) : val(x), next(nullptr) {}
+     ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+vector<int> nodesBetweenCriticalPoints(ListNode* head) {
+        ListNode* temp=head->next;
+        ListNode* prev=head;
+        vector<int>index;
+        int j=2;
+        while(temp->next!=NULL){
+                if((temp->val>prev->val && temp->val>temp->next->val) ||
+                   (temp->val<prev->val && temp->val<temp->next->val)){
+                        index.push_back(j);
+                   }
+                prev=temp;
+                temp=temp->next;
+                j++;   
         }
-        int left = min(minn, maxx);
-        int right = max(minn, maxx);
-
-        int i = right + 1;
-        int j = n - left;
-        int k = (left + 1) + (n - right);
-        return min(i, min(j, k));
+        if(index.size()<2){
+                return {-1,-1};
+        }
+        int mind=index[1]-index[0];
+        for(int i=1;i<index.size();i++){
+             int dist=index[i]-index[i-1];
+             if(dist<mind){
+                mind=dist;
+             }   
+        }
+        int maxd=index[index.size()-1]-index[0];
+        return {mind,maxd};
 }
 int main(){
-        vector<int>nums={2,10,7,5,4,1,8,6};
-        cout<<minimumDeletions(nums);
+        
 
 return 0 ;
 }
