@@ -2653,46 +2653,63 @@
     
     /* // Q.2058. Find the Minimum and Maximum Number of Nodes Between Critical Points  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode {
+//     public:
+//      int val;
+//      ListNode *next;
+//      ListNode() : val(0), next(nullptr) {}
+//      ListNode(int x) : val(x), next(nullptr) {}
+//      ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// vector<int> nodesBetweenCriticalPoints(ListNode* head) {
+//         ListNode* temp=head->next;
+//         ListNode* prev=head;
+//         vector<int>index;
+//         int j=2;
+//         while(temp->next!=NULL){
+//                 if((temp->val>prev->val && temp->val>temp->next->val) ||
+//                    (temp->val<prev->val && temp->val<temp->next->val)){
+//                         index.push_back(j);
+//                    }
+//                 prev=temp;
+//                 temp=temp->next;
+//                 j++;   
+//         }
+//         if(index.size()<2){
+//                 return {-1,-1};
+//         }
+//         int mind=index[1]-index[0];
+//         for(int i=1;i<index.size();i++){
+//              int dist=index[i]-index[i-1];
+//              if(dist<mind){
+//                 mind=dist;
+//              }   
+//         }
+//         int maxd=index[index.size()-1]-index[0];
+//         return {mind,maxd};
+// }
+// int main(){
+        
+
+// return 0 ;
+// }
+
+                /* // Q.3568. Minimum Moves to Clean the Classroom  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class ListNode {
-    public:
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-vector<int> nodesBetweenCriticalPoints(ListNode* head) {
-        ListNode* temp=head->next;
-        ListNode* prev=head;
-        vector<int>index;
-        int j=2;
-        while(temp->next!=NULL){
-                if((temp->val>prev->val && temp->val>temp->next->val) ||
-                   (temp->val<prev->val && temp->val<temp->next->val)){
-                        index.push_back(j);
-                   }
-                prev=temp;
-                temp=temp->next;
-                j++;   
-        }
-        if(index.size()<2){
-                return {-1,-1};
-        }
-        int mind=index[1]-index[0];
-        for(int i=1;i<index.size();i++){
-             int dist=index[i]-index[i-1];
-             if(dist<mind){
-                mind=dist;
-             }   
-        }
-        int maxd=index[index.size()-1]-index[0];
-        return {mind,maxd};
+int minMoves(vector<string>& classroom, int energy) {
+         
+        
 }
 int main(){
-        
+        vector<string>classroom = {"S.", "XL"};
+        int energy = 2; 
+        cout<<minMoves(classroom,energy);
 
 return 0 ;
 }

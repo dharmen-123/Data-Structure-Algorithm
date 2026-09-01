@@ -3600,25 +3600,40 @@
 #include<bits/stdc++.h>
 using namespace std;
 bool checkRecord(string s) {
-        int cntA=0,cntL=0;
-        for(auto k:s){
-               if(k=='A')
-                  cntA++;
-               else if(k=='L')
-                  cntL++;         
+        // int cntP=0,cntA=0,cntL=0;
+        // for(auto k:s){
+        //        if(k=='A')
+        //           cntA++;
+        //        else if(k=='L')
+        //           cntL++;   
+        //        else
+        //           cntP++;            
+        // }
+        // if(cntA<2 && cntL<3 && cntP>1){
+        //         return true;
+        // }
+        // for(int i=0;i+2<s.size();i++){
+        //         if(s[i]=='L' && s[i+1]=='L',s[i+2]=='L'){
+        //              return false;   
+        //         }
+        // }
+        // return false;
+        int cntA = 0;
+    for (char c : s) {
+        if (c == 'A') cntA++;
+    }
+    if (cntA >= 2) return false;
+
+    // check for 3 consecutive L
+    for (int i = 0; i + 2 < s.size(); i++) {
+        if (s[i] == 'L' && s[i+1] == 'L' && s[i+2] == 'L') {
+            return false;
         }
-        if(cntA<2 && cntL<3){
-                return true;
-        }
-        for(int i=0;i+2<s.size();i++){
-                if(s[i]=='L' && s[i+1]=='L',s[i+2]=='L'){
-                     return false;   
-                }
-        }
-        return false;
+    }
+    return true;
 }
 int main(){
-        string s="PPALLP";
+        string s="LALL";
         cout<<checkRecord(s);
 
 return 0 ;
