@@ -3570,30 +3570,59 @@
 
         /* // Q.4038 Count Integers Appearing in a Single Block  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countSpecialIntegers(vector<int>& nums) {
+//       set<int> seen;
+//       set<int> notSpecial;
+//       for (int i = 0; i < nums.size(); i++) {
+//          if (seen.count(nums[i]) && nums[i] != nums[i - 1]) {
+//              notSpecial.insert(nums[i]);
+//          }
+   
+//          seen.insert(nums[i]);
+//       }
+      
+//     return seen.size() - notSpecial.size();
+// }
+// int main(){
+//         // vector<int>nums={1,2,2,1};
+//         vector<int>nums={3,3,1,2,2,1};
+//         cout<<countSpecialIntegers(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.551. Student Attendance Record I // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countSpecialIntegers(vector<int>& nums) {
-      set<int> seen;
-      set<int> notSpecial;
-      for (int i = 0; i < nums.size(); i++) {
-         if (seen.count(nums[i]) && nums[i] != nums[i - 1]) {
-             notSpecial.insert(nums[i]);
-         }
-   
-         seen.insert(nums[i]);
-      }
-      
-    return seen.size() - notSpecial.size();
+bool checkRecord(string s) {
+        int cntA=0,cntL=0;
+        for(auto k:s){
+               if(k=='A')
+                  cntA++;
+               else if(k=='L')
+                  cntL++;         
+        }
+        if(cntA<2 && cntL<3){
+                return true;
+        }
+        for(int i=0;i+2<s.size();i++){
+                if(s[i]=='L' && s[i+1]=='L',s[i+2]=='L'){
+                     return false;   
+                }
+        }
+        return false;
 }
 int main(){
-        // vector<int>nums={1,2,2,1};
-        vector<int>nums={3,3,1,2,2,1};
-        cout<<countSpecialIntegers(nums);
+        string s="PPALLP";
+        cout<<checkRecord(s);
 
 return 0 ;
 }
-
 
                 /* // Q.1380. Lucky Numbers in a Matrix // */
 
