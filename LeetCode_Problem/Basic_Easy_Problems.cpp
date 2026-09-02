@@ -3596,28 +3596,54 @@
 
         /* // Q.551. Student Attendance Record I // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool checkRecord(string s) {
+//         int cntA = 0;
+//         for (char c : s) {
+//             if (c == 'A') 
+//                 cntA++;
+//         }
+//         if (cntA >= 2) 
+//                 return false;
+    
+//         for (int i = 0; i + 2 < s.size(); i++) {
+//             if (s[i] == 'L' && s[i+1] == 'L' && s[i+2] == 'L') {
+//                 return false;
+//             }
+//         }
+//     return true;
+// }
+// int main(){
+//         string s="LALL";
+//         cout<<checkRecord(s);
+
+// return 0 ;
+// }
+
+
+        /* // Q.3875. Construct Uniform Parity Array I  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool checkRecord(string s) {
-        int cntA = 0;
-        for (char c : s) {
-            if (c == 'A') 
-                cntA++;
+bool uniformArray(vector<int>& nums1) {
+        int n=nums1.size();
+        int count=0;
+        for(auto k:nums1){
+              if(k%2!=0)
+                   count++;      
         }
-        if (cntA >= 2) 
-                return false;
-    
-        for (int i = 0; i + 2 < s.size(); i++) {
-            if (s[i] == 'L' && s[i+1] == 'L' && s[i+2] == 'L') {
-                return false;
-            }
+        if(count==0 || count==n || count<n){
+                return true;
         }
-    return true;
+        return false;
 }
 int main(){
-        string s="LALL";
-        cout<<checkRecord(s);
+        vector<int>nums1={2,3};
+        // vector<int>nums1={4,6};
+        cout<<uniformArray(nums1);
 
 return 0 ;
 }
