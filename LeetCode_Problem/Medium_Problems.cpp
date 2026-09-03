@@ -2697,6 +2697,46 @@
 // return 0 ;
 // }
 
+
+        /* // Q.3876. Construct Uniform Parity Array II  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool uniformArray(vector<int>& nums1) {
+        int n=nums1.size();
+        int count=0;
+        if(n==1)
+            return true; 
+        for(auto k:nums1){
+               if(k%2!=0){
+                  count++;
+               } 
+        }       
+        if(count==0 || count==n)
+             return true;       
+        if (n == 2) {
+            int a = nums1[0], b = nums1[1];
+            if ((a % 2 == b % 2)) 
+                return true;
+            if ((a - b) >= 1 && ((a - b) % 2 == a % 2)) 
+                return true;
+            if ((b - a) >= 1 && ((b - a) % 2 == b % 2)) 
+                return true;
+          return false;
+        }
+
+        return true;
+}
+int main(){
+        // vector<int>nums1={1,4,7};
+        vector<int>nums1={5,3,2,1,6};
+        cout<<uniformArray(nums1);
+
+return 0 ;
+}
+
+
                 /* // Q.3568. Minimum Moves to Clean the Classroom  // */
 
 // #include<iostream>
