@@ -3650,43 +3650,43 @@
 
                 /* // Q.1380. Lucky Numbers in a Matrix // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> luckyNumbers(vector<vector<int>>& matrix) {
-        vector<int>row;
-        vector<int>col;
-        int minv=INT_MAX,maxv=INT_MIN;
-        for(int r=0;r<matrix.size();r++){
-             for(int c=0;c<matrix[r].size();c++){
-                 minv=min(minv,matrix[r][c]);
-             }   
-             row.push_back(minv);
-             minv=INT_MAX;
-        }
-        for(int c=0;c<matrix[0].size();c++){
-             for(int r=0;r<matrix.size();r++){
-                 maxv=max(maxv,matrix[r][c]);
-             }   
-             col.push_back(maxv);
-             maxv=INT_MIN;
-        }
-        vector<int> ans;
-        for (int i = 0; i <matrix.size(); i++) {
-            for (int j = 0; j < matrix[i].size(); j++) {
-                if (matrix[i][j] == row[i] && matrix[i][j] == col[j]) {
-                    ans.push_back(matrix[i][j]);
-                }
-            }
-        }
-         return ans;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> luckyNumbers(vector<vector<int>>& matrix) {
+//         vector<int>row;
+//         vector<int>col;
+//         int minv=INT_MAX,maxv=INT_MIN;
+//         for(int r=0;r<matrix.size();r++){
+//              for(int c=0;c<matrix[r].size();c++){
+//                  minv=min(minv,matrix[r][c]);
+//              }   
+//              row.push_back(minv);
+//              minv=INT_MAX;
+//         }
+//         for(int c=0;c<matrix[0].size();c++){
+//              for(int r=0;r<matrix.size();r++){
+//                  maxv=max(maxv,matrix[r][c]);
+//              }   
+//              col.push_back(maxv);
+//              maxv=INT_MIN;
+//         }
+//         vector<int> ans;
+//         for (int i = 0; i <matrix.size(); i++) {
+//             for (int j = 0; j < matrix[i].size(); j++) {
+//                 if (matrix[i][j] == row[i] && matrix[i][j] == col[j]) {
+//                     ans.push_back(matrix[i][j]);
+//                 }
+//             }
+//         }
+//          return ans;
         
-}
-int main(){
-        vector<vector<int>>matrix = {{3,7,8},{9,11,13},{15,16,17}};
-        // vector<vector<int>>matrix = {{1,10,4,2},{9,3,8,7},{15,16,17,12}};
-        vector<int>ans=luckyNumbers(matrix);
-        cout<<ans[0];
+// }
+// int main(){
+//         vector<vector<int>>matrix = {{3,7,8},{9,11,13},{15,16,17}};
+//         // vector<vector<int>>matrix = {{1,10,4,2},{9,3,8,7},{15,16,17,12}};
+//         vector<int>ans=luckyNumbers(matrix);
+//         cout<<ans[0];
 
-return 0 ;
-}
+// return 0 ;
+// }
