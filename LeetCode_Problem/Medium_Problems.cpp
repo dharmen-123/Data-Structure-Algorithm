@@ -2700,30 +2700,68 @@
 
         /* // Q.3876. Construct Uniform Parity Array II  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool uniformArray(vector<int>& nums1) {
+//         int mn = nums1[0];
+//     bool allEven = true;
+
+//     for (int x : nums1) {
+//         if (x < mn)
+//             mn = x;
+
+//         if (x % 2 != 0)
+//             allEven = false;
+//     }
+
+//     if (mn % 2 != 0)
+//         return true;
+
+//     return allEven;
+// }
+// int main(){
+//         // vector<int>nums1={1,4,7};
+//         vector<int>nums1={11,16};
+//         cout<<uniformArray(nums1);
+
+// return 0 ;
+// }
+
+                /* // Q.3904. Smallest Stable Index II  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool uniformArray(vector<int>& nums1) {
-        int mn = nums1[0];
-    bool allEven = true;
-
-    for (int x : nums1) {
-        if (x < mn)
-            mn = x;
-
-        if (x % 2 != 0)
-            allEven = false;
+int firstStableIndex(vector<int>& nums, int k) {
+        int n = nums.size();
+        vector<int> largest;
+        vector<int> smallest;
+        int minv = INT_MAX;
+        int maxv = INT_MIN;
+        for (auto k : nums) {
+            maxv = max(k, maxv);
+            largest.push_back(maxv);
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            minv = min(nums[i], minv);
+            smallest.push_back(minv);
+        }
+        reverse(smallest.begin(), smallest.end());
+        for (int i = 0; i < n; i++) {
+            if ((largest[i] - smallest[i]) <= k) {
+                return i;
+            }
+        }
+        return -1;
     }
-
-    if (mn % 2 != 0)
-        return true;
-
-    return allEven;
-}
 int main(){
-        // vector<int>nums1={1,4,7};
-        vector<int>nums1={11,16};
-        cout<<uniformArray(nums1);
+        vector<int>nums={5,0,1,4};
+        int k=3;
+        // vector<int>nums={3,2,1};
+        // int k=1;
+        cout<<firstStableIndex(nums,k);
+
 
 return 0 ;
 }
