@@ -2854,19 +2854,4 @@ return 0 ;
 }
 
 
-        /* // Q.3568. Minimum Moves to Clean the Classroom  // */
-
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// int minMoves(vector<string>& classroom, int energy) {
-         
         
-// }
-// int main(){
-//         vector<string>classroom = {"S.", "XL"};
-//         int energy = 2; 
-//         cout<<minMoves(classroom,energy);
-
-// return 0 ;
-// }
