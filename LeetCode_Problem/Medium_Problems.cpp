@@ -2769,37 +2769,92 @@
 
         /* // Q.4044. Count Good Cyclic Rotations  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countGoodRotations(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<long long> nums2(2*n);
+//         for(int i=0;i<2*n;i++) 
+//               nums2[i] = nums[i % n];
+        
+//         vector<long long> prefix(2*n+1,0);
+//         for(int i=0;i<2*n;i++) 
+//                 prefix[i+1] = prefix[i] + nums2[i];
+
+//         int count = 0;
+//         for(int i=0;i<n;i++) {
+//             long long firstHalf = prefix[i + n/2] - prefix[i];
+//             long long secondHalf = prefix[i + n] - prefix[i + n/2];
+//             if(firstHalf > secondHalf) 
+//                 count++;
+//         }
+//     return count;   
+// }
+// int main(){
+//         vector<int>nums={1,2,3,4,5,6};
+//         // vector<int>nums={1,2,1,2};
+//         cout<<countGoodRotations(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.86. Partition List  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countGoodRotations(vector<int>& nums) {
-        int n = nums.size();
-        vector<long long> nums2(2*n);
-        for(int i=0;i<2*n;i++) 
-              nums2[i] = nums[i % n];
-        
-        vector<long long> prefix(2*n+1,0);
-        for(int i=0;i<2*n;i++) 
-                prefix[i+1] = prefix[i] + nums2[i];
+class ListNode {
+   public:
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+ListNode* partition(ListNode* head, int x) {
+        ListNode* beforehead=new ListNode(0);
+        ListNode* afterhead=new ListNode(0);
 
-        int count = 0;
-        for(int i=0;i<n;i++) {
-            long long firstHalf = prefix[i + n/2] - prefix[i];
-            long long secondHalf = prefix[i + n] - prefix[i + n/2];
-            if(firstHalf > secondHalf) 
-                count++;
+        ListNode* before=beforehead;
+        ListNode* after=afterhead;
+        while(head){
+                if(head->val<x){
+                        before->next=head;
+                        before=before->next;  
+                }
+                else{
+                        after->next=head;
+                        after=after->next;
+                }
+                head=head->next;
         }
-    return count;   
-}
+        after->next=NULL;
+        before->next=afterhead->next;
+        return beforehead->next;
+    }
 int main(){
-        vector<int>nums={1,2,3,4,5,6};
-        // vector<int>nums={1,2,1,2};
-        cout<<countGoodRotations(nums);
+    ListNode* head = new ListNode(1);
+    head->next = new ListNode(4);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(2);
+    head->next->next->next->next = new ListNode(5);
+    head->next->next->next->next->next = new ListNode(2);
+
+    int x = 3;
+    ListNode* result = partition(head, x);
+
+    // Print result
+    while (result) {
+        cout << result->val << " ";
+        result = result->next;
+    }
 
 return 0 ;
 }
 
-                /* // Q.3568. Minimum Moves to Clean the Classroom  // */
+
+        /* // Q.3568. Minimum Moves to Clean the Classroom  // */
 
 // #include<iostream>
 // #include<bits/stdc++.h>
