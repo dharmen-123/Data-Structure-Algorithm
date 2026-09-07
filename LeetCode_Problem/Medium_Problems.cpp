@@ -2801,57 +2801,80 @@
 
         /* // Q.86. Partition List  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ListNode {
+//    public:
+//     int val;
+//     ListNode *next;
+//     ListNode() : val(0), next(nullptr) {}
+//     ListNode(int x) : val(x), next(nullptr) {}
+//     ListNode(int x, ListNode *next) : val(x), next(next) {}
+// };
+// ListNode* partition(ListNode* head, int x) {
+//         ListNode* beforehead=new ListNode(0);
+//         ListNode* afterhead=new ListNode(0);
+
+//         ListNode* before=beforehead;
+//         ListNode* after=afterhead;
+//         while(head){
+//                 if(head->val<x){
+//                         before->next=head;
+//                         before=before->next;  
+//                 }
+//                 else{
+//                         after->next=head;
+//                         after=after->next;
+//                 }
+//                 head=head->next;
+//         }
+//         after->next=NULL;
+//         before->next=afterhead->next;
+//         return beforehead->next;
+//     }
+// int main(){
+//     ListNode* head = new ListNode(1);
+//     head->next = new ListNode(4);
+//     head->next->next = new ListNode(3);
+//     head->next->next->next = new ListNode(2);
+//     head->next->next->next->next = new ListNode(5);
+//     head->next->next->next->next->next = new ListNode(2);
+
+//     int x = 3;
+//     ListNode* result = partition(head, x);
+
+//     // Print result
+//     while (result) {
+//         cout << result->val << " ";
+//         result = result->next;
+//     }
+
+// return 0 ;
+// }
+
+
+        /* //  Q.120. Triangle  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class ListNode {
-   public:
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-ListNode* partition(ListNode* head, int x) {
-        ListNode* beforehead=new ListNode(0);
-        ListNode* afterhead=new ListNode(0);
-
-        ListNode* before=beforehead;
-        ListNode* after=afterhead;
-        while(head){
-                if(head->val<x){
-                        before->next=head;
-                        before=before->next;  
-                }
-                else{
-                        after->next=head;
-                        after=after->next;
-                }
-                head=head->next;
+int minimumTotal(vector<vector<int>>& triangle) {
+        int n=triangle.size();
+        int sum=0;
+        for(int i=0;i<n;i++){
+              int minv=INT_MAX;
+              for(int j=0;j<triangle[i].size();j++){
+                  minv = min(minv,triangle[i][j]);
+              }  
+              sum+=minv;
         }
-        after->next=NULL;
-        before->next=afterhead->next;
-        return beforehead->next;
-    }
+return sum;
+}
 int main(){
-    ListNode* head = new ListNode(1);
-    head->next = new ListNode(4);
-    head->next->next = new ListNode(3);
-    head->next->next->next = new ListNode(2);
-    head->next->next->next->next = new ListNode(5);
-    head->next->next->next->next->next = new ListNode(2);
-
-    int x = 3;
-    ListNode* result = partition(head, x);
-
-    // Print result
-    while (result) {
-        cout << result->val << " ";
-        result = result->next;
-    }
+        // vector<vector<int>>triangle = {{2},{3,4},{6,5,7},{4,1,8,3}};
+        vector<vector<int>>triangle = {{-10}};
+        cout<<minimumTotal(triangle);
 
 return 0 ;
 }
-
-
-        
