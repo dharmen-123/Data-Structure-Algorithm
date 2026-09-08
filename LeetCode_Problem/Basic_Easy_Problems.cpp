@@ -3729,28 +3729,49 @@
 
          /* // Q.4043. Count Rotations With Exactly K Equal Adjacent Pairs // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countRotations(string s, int k) {
+//     int n = s.size();
+//     int ans = 0;
+//     string doubled = s + s;
+
+//     for (int start = 0; start < n; start++) {
+//         int count = 0;
+//         for (int j = start; j < start + n - 1; j++) {
+//             if (doubled[j] == doubled[j+1]) count++;
+//         }
+//         if (count == k) ans++;
+//     }
+//     return ans;
+// }
+// int main(){
+//         string s = "aab";
+//         // string s = "abca";
+//         int k = 1;
+//         cout<<countRotations(s,k);
+
+// return 0 ;
+// }
+
+
+        /* // Q.3870. Count Commas in Range  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countRotations(string s, int k) {
-    int n = s.size();
-    int ans = 0;
-    string doubled = s + s;
-
-    for (int start = 0; start < n; start++) {
-        int count = 0;
-        for (int j = start; j < start + n - 1; j++) {
-            if (doubled[j] == doubled[j+1]) count++;
+int countCommas(int n) {
+        if(n<1000){
+             return 0;
         }
-        if (count == k) ans++;
-    }
-    return ans;
+        int count=n-999;
+        return count;
 }
 int main(){
-        string s = "aab";
-        // string s = "abca";
-        int k = 1;
-        cout<<countRotations(s,k);
+        // int n=1002;
+        int n=998;
+        cout<<countCommas(n);
 
 return 0 ;
 }
