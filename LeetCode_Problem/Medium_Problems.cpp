@@ -2861,19 +2861,16 @@
 using namespace std;
 int minimumTotal(vector<vector<int>>& triangle) {
         int n=triangle.size();
-        int sum=0;
-        for(int i=0;i<n;i++){
-              int minv=INT_MAX;
-              for(int j=0;j<triangle[i].size();j++){
-                  minv = min(minv,triangle[i][j]);
-              }  
-              sum+=minv;
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j < triangle[i].size(); j++) {
+                triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1]);
+            }
         }
-return sum;
+        return triangle[0][0];
 }
 int main(){
         // vector<vector<int>>triangle = {{2},{3,4},{6,5,7},{4,1,8,3}};
-        vector<vector<int>>triangle = {{-10}};
+        vector<vector<int>>triangle = {{-1},{2,3},{1,-1,-3}};
         cout<<minimumTotal(triangle);
 
 return 0 ;
