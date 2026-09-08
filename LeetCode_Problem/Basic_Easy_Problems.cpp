@@ -3758,20 +3758,43 @@
 
         /* // Q.3870. Count Commas in Range  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countCommas(int n) {
+//         if(n<1000){
+//              return 0;
+//         }
+//         int count=n-999;
+//         return count;
+// }
+// int main(){
+//         // int n=1002;
+//         int n=998;
+//         cout<<countCommas(n);
+
+// return 0 ;
+// }
+
+
+                /* // Q.561. Array Partition  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countCommas(int n) {
-        if(n<1000){
-             return 0;
+int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int sum=0;
+        for(int i=0;i<nums.size();i+=2){
+            sum+=nums[i];
         }
-        int count=n-999;
-        return count;
+        return sum;
+
 }
 int main(){
-        // int n=1002;
-        int n=998;
-        cout<<countCommas(n);
+        // vector<int>nums={1,4,3,2};
+        vector<int>nums={6,2,6,5,1,2};
+        cout<<arrayPairSum(nums);
 
 return 0 ;
 }
