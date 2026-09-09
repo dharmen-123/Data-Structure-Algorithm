@@ -2856,22 +2856,42 @@
 
         /* //  Q.120. Triangle  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minimumTotal(vector<vector<int>>& triangle) {
+//         int n=triangle.size();
+//         for (int i = n - 2; i >= 0; i--) {
+//             for (int j = 0; j < triangle[i].size(); j++) {
+//                 triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1]);
+//             }
+//         }
+//         return triangle[0][0];
+// }
+// int main(){
+//         // vector<vector<int>>triangle = {{2},{3,4},{6,5,7},{4,1,8,3}};
+//         vector<vector<int>>triangle = {{-1},{2,3},{1,-1,-3}};
+//         cout<<minimumTotal(triangle);
+
+// return 0 ;
+// }
+
+
+        /* // Q.3871. Count Commas in Range II  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minimumTotal(vector<vector<int>>& triangle) {
-        int n=triangle.size();
-        for (int i = n - 2; i >= 0; i--) {
-            for (int j = 0; j < triangle[i].size(); j++) {
-                triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1]);
-            }
+long long countCommas(long long n) {
+        long long ans = 0;
+        for(long long x = 1000; x <= n; x *= 1000) {
+            ans += n - x + 1;
         }
-        return triangle[0][0];
+        return ans;
 }
 int main(){
-        // vector<vector<int>>triangle = {{2},{3,4},{6,5,7},{4,1,8,3}};
-        vector<vector<int>>triangle = {{-1},{2,3},{1,-1,-3}};
-        cout<<minimumTotal(triangle);
+        long long n=1004590;
+        cout<<countCommas(n);
 
 return 0 ;
 }
