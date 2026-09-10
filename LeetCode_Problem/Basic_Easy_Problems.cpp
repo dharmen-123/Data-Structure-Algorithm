@@ -3826,3 +3826,38 @@
 
 // return 0 ;
 // }
+
+
+        /* // Q.496. Next Greater Element I // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        unordered_map<int,int>freq;
+        stack<int>s;
+        for(auto k:nums2){
+               while(!s.empty() && k>s.top()){
+                  freq[s.top()]=k;
+                  s.pop();
+               }
+               s.push(k);
+        }
+        while(!s.empty()){
+             freq[s.top()]=-1;
+             s.pop();   
+        }
+        vector<int>num;
+        for(auto k:nums1){
+            num.push_back(freq[k]);
+        }
+return num;
+
+}
+int main(){
+        vector<int>nums1 = {4,1,2}, nums2 = {1,3,4,2};
+        vector<int>ans=nextGreaterElement(nums1,nums2);
+        for(auto k:ans)
+                cout<<k<<" ";
+return 0 ;
+}
