@@ -3801,28 +3801,28 @@
 
         /* // Q.448. Find All Numbers Disappeared in an Array  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> findDisappearedNumbers(vector<int>& nums) {  
-        vector<int>store(nums.size(),0);
-        for(int i=0;i<nums.size();i++){
-               store[nums[i]-1]=nums[i]; 
-        }
-        nums.clear();
-        for(int i=0;i<store.size();i++){
-                if(store[i]==0)
-                   nums.push_back(i+1);
-        }
-        return nums;
-    }
-int main(){
-        // vector<int>nums={4,3,2,7,8,2,3,1};
-        vector<int>nums={1,1};
-        vector<int>ans=findDisappearedNumbers(nums);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> findDisappearedNumbers(vector<int>& nums) {  
+//         vector<int>store(nums.size(),0);
+//         for(int i=0;i<nums.size();i++){
+//                store[nums[i]-1]=nums[i]; 
+//         }
+//         nums.clear();
+//         for(int i=0;i<store.size();i++){
+//                 if(store[i]==0)
+//                    nums.push_back(i+1);
+//         }
+//         return nums;
+//     }
+// int main(){
+//         // vector<int>nums={4,3,2,7,8,2,3,1};
+//         vector<int>nums={1,1};
+//         vector<int>ans=findDisappearedNumbers(nums);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
 
-return 0 ;
-}
+// return 0 ;
+// }
