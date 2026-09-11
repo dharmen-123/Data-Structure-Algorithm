@@ -3864,30 +3864,30 @@
 
         /* // Q.3483. Unique 3-Digit Even Numbers  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int totalNumbers(vector<int>& digits) {
-        unordered_set<int>st;
-        int n=digits.size();
-        int num=0;   
-        for(int h=0;h<n;h++){
-              for(int t=0;t<n;t++){
-                 for(int u=0;u<n;u++){
-                      if(h==t || t==u || u==h)
-                         continue;  
-                      num=digits[h]*100+digits[t]*10+digits[u];
-                      if(num>99 && num%2==0){
-                         st.insert(num);
-                      }  
-                 }
-              }  
-        }
-        return st.size();
-}
-int main(){
-        vector<int>digits={1,2,3,4};
-        cout<<totalNumbers(digits);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int totalNumbers(vector<int>& digits) {
+//         unordered_set<int>st;
+//         int n=digits.size();
+//         int num=0;   
+//         for(int h=0;h<n;h++){
+//               for(int t=0;t<n;t++){
+//                  for(int u=0;u<n;u++){
+//                       if(h==t || t==u || u==h)
+//                          continue;  
+//                       num=digits[h]*100+digits[t]*10+digits[u];
+//                       if(num>99 && num%2==0){
+//                          st.insert(num);
+//                       }  
+//                  }
+//               }  
+//         }
+//         return st.size();
+// }
+// int main(){
+//         vector<int>digits={1,2,3,4};
+//         cout<<totalNumbers(digits);
 
-return 0 ;
-}
+// return 0 ;
+// }
