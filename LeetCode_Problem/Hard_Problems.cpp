@@ -296,30 +296,44 @@
 
           /* // Q.995. Minimum Number of K Consecutive Bit Flips  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minKBitFlips(vector<int>& nums, int k) {
+//         queue<int>q;
+//         int flip=0;
+//         int n=nums.size();
+//         for(int i=0;i<n;i++){
+//                if(!q.empty() && q.front()<i){
+//                  q.pop();
+//                }
+//                if(q.size()%2==nums[i]){
+//                   if(i+k-1>=n)
+//                      return -1;
+//                   q.push(i+k-1);
+//                   flip++;
+//                } 
+//         }
+//      return flip;   
+// }
+// int main(){
+//         vector<int>nums={0,0,0,1,0,1,1,0};
+//         int k=3;
+//         cout<<minKBitFlips(nums,k);
+
+// return 0 ;
+// }
+
+        /* // Q.3414. Maximum Score of Non-overlapping Intervals  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minKBitFlips(vector<int>& nums, int k) {
-        queue<int>q;
-        int flip=0;
-        int n=nums.size();
-        for(int i=0;i<n;i++){
-               if(!q.empty() && q.front()<i){
-                 q.pop();
-               }
-               if(q.size()%2==nums[i]){
-                  if(i+k-1>=n)
-                     return -1;
-                  q.push(i+k-1);
-                  flip++;
-               } 
-        }
-     return flip;   
+vector<int> maximumWeight(vector<vector<int>>& intervals) {
+        
 }
 int main(){
-        vector<int>nums={0,0,0,1,0,1,1,0};
-        int k=3;
-        cout<<minKBitFlips(nums,k);
-
+        vector<vector<int>>intervals={{1,3,2},{4,5,2},{1,5,5},{6,9,3},{6,7,1},{8,9,1}};
+        vector<int>ans=maximumWeight(intervals);
 return 0 ;
 }

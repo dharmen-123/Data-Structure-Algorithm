@@ -2898,38 +2898,72 @@
 
         /* // Q.4049 Count Values With Equally Spaced Occurrences II // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int countSpecialIntegers(vector<int>& nums) {
+//         int n=nums.size();
+//         unordered_map<int,vector<int>>freq;
+//         for(int i=0;i<n;i++){
+//                 freq[nums[i]].push_back(i);
+//         }
+//         int ans=0;
+//         for(auto x:freq){
+//              if(x.second.size()>=3){
+//                 bool check=true;
+//                 int gap=x.second[1]-x.second[0];
+//                 for(int i=1;i<x.second.size();i++){
+//                        if(!(x.second[i]-x.second[i-1]==gap)){
+//                                check=false;                   
+//                        } 
+//                  }
+//                  if(check){
+//                         ans++;
+//                  }
+//              }  
+//         }
+//     return ans;
+
+// }
+// int main(){
+//         vector<int>nums={1,8,1,5,1,5,8,5};
+//         // vector<int>nums={8,8,8,8};
+//         cout<<countSpecialIntegers(nums);
+
+
+// return 0 ;
+// }
+
+
+        /* // Q.4050 Minimum Days to Score Exactly N Points  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int countSpecialIntegers(vector<int>& nums) {
-        int n=nums.size();
-        unordered_map<int,vector<int>>freq;
-        for(int i=0;i<n;i++){
-                freq[nums[i]].push_back(i);
-        }
-        int ans=0;
-        for(auto x:freq){
-             if(x.second.size()>=3){
-                bool check=true;
-                int gap=x.second[1]-x.second[0];
-                for(int i=1;i<x.second.size();i++){
-                       if(!(x.second[i]-x.second[i-1]==gap)){
-                               check=false;                   
-                       } 
-                 }
-                 if(check){
-                        ans++;
-                 }
-             }  
-        }
-    return ans;
+int minDays(int n) {
+         const int INF = 1e9;
+         vector<int> dp(n + 1, INF);
+         dp[0] = -1;
 
+        for (int k = 1; k * (k + 1) / 2 <= n; k++) {
+            int points = k * (k + 1) / 2;
+
+            for (int score = 0; score + points <= n; score++) {
+                if (dp[score] == INF)
+                    continue;
+
+                dp[score + points] = min(
+                    dp[score + points],
+                    dp[score] + k + 1
+                );
+            }
+        }
+
+        return dp[n];   
 }
 int main(){
-        vector<int>nums={1,8,1,5,1,5,8,5};
-        // vector<int>nums={8,8,8,8};
-        cout<<countSpecialIntegers(nums);
-
+        int n=2;
+        cout<<minDays(n);
 
 return 0 ;
 }
