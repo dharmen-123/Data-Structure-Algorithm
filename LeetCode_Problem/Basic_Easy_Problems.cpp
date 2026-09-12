@@ -3891,3 +3891,33 @@
 
 // return 0 ;
 // }
+
+
+           /* // Q.4048 Count Values With Equally Spaced Occurrences I   // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int countSpecialIntegers(vector<int>& nums) {
+        int n=nums.size();
+        unordered_map<int,vector<int>>freq;
+        for(int i=0;i<n;i++){
+                freq[nums[i]].push_back(i);
+        }
+        int ans=0;
+        for(auto x:freq){
+                if(x.second.size()==3){
+                       if((x.second[1]-x.second[0]) == (x.second[2]-x.second[1])){
+                         ans++;
+                       } 
+                }
+        }
+    return ans;
+}
+int main(){
+        vector<int>nums={1,8,1,5,1,5,8,5};
+        // vector<int>nums={8,8,8,8};
+        cout<<countSpecialIntegers(nums);
+
+return 0 ;
+}
