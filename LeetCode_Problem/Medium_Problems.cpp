@@ -2970,37 +2970,37 @@
 
         /* // Q.835. Image Overlap  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int largestOverlap(vector<vector<int>>& img1, vector<vector<int>>& img2){
-        vector<pair<int,int>> A, B;
-        int n = img1.size();
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int largestOverlap(vector<vector<int>>& img1, vector<vector<int>>& img2){
+//         vector<pair<int,int>> A, B;
+//         int n = img1.size();
 
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(img1[i][j]) A.push_back({i,j});
-                if(img2[i][j]) B.push_back({i,j});
-            }
-        }
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<n;j++){
+//                 if(img1[i][j]) A.push_back({i,j});
+//                 if(img2[i][j]) B.push_back({i,j});
+//             }
+//         }
 
-        map<pair<int,int>, int> mp;
+//         map<pair<int,int>, int> mp;
 
-        int ans = 0;
+//         int ans = 0;
 
-        for(auto &a : A){
-            for(auto &b : B){
-                int dx = b.first - a.first;
-                int dy = b.second - a.second;
-                ans = max(ans, ++mp[{dx,dy}]);
-            }
-        }
+//         for(auto &a : A){
+//             for(auto &b : B){
+//                 int dx = b.first - a.first;
+//                 int dy = b.second - a.second;
+//                 ans = max(ans, ++mp[{dx,dy}]);
+//             }
+//         }
 
-        return ans;
-}
-int main(){
-        vector<vector<int>>img1={{1,1,0},{0,1,0},{0,1,0}},img2 = {{0,0,0},{0,1,1},{0,0,1}};
-        cout<<largestOverlap(img1,img2);
+//         return ans;
+// }
+// int main(){
+//         vector<vector<int>>img1={{1,1,0},{0,1,0},{0,1,0}},img2 = {{0,0,0},{0,1,1},{0,0,1}};
+//         cout<<largestOverlap(img1,img2);
         
-return 0 ;
-}
+// return 0 ;
+// }
