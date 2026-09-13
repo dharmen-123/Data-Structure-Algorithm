@@ -2937,33 +2937,33 @@
 
         /* // Q.4050 Minimum Days to Score Exactly N Points  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int minDays(int n) {
-         const int INF = 1e9;
-         vector<int> dp(n + 1, INF);
-         dp[0] = -1;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minDays(int n) {
+//          const int INF = 1e9;
+//          vector<int> dp(n + 1, INF);
+//          dp[0] = -1;
 
-        for (int k = 1; k * (k + 1) / 2 <= n; k++) {
-            int points = k * (k + 1) / 2;
+//         for (int k = 1; k * (k + 1) / 2 <= n; k++) {
+//             int points = k * (k + 1) / 2;
 
-            for (int score = 0; score + points <= n; score++) {
-                if (dp[score] == INF)
-                    continue;
+//             for (int score = 0; score + points <= n; score++) {
+//                 if (dp[score] == INF)
+//                     continue;
 
-                dp[score + points] = min(
-                    dp[score + points],
-                    dp[score] + k + 1
-                );
-            }
-        }
+//                 dp[score + points] = min(
+//                     dp[score + points],
+//                     dp[score] + k + 1
+//                 );
+//             }
+//         }
 
-        return dp[n];   
-}
-int main(){
-        int n=2;
-        cout<<minDays(n);
+//         return dp[n];   
+// }
+// int main(){
+//         int n=2;
+//         cout<<minDays(n);
 
-return 0 ;
-}
+// return 0 ;
+// }
