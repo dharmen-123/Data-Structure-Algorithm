@@ -3924,21 +3924,21 @@
 
         /* // Q.836. Rectangle Overlap  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-bool isRectangleOverlap(vector<int>& rec1, vector<int>& rec2) {
-        if (rec1[2] <= rec2[0]) return false;
-        if (rec2[2] <= rec1[0]) return false;
-        if (rec1[3] <= rec2[1]) return false;
-        if (rec2[3] <= rec1[1]) return false;
-return true;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool isRectangleOverlap(vector<int>& rec1, vector<int>& rec2) {
+//         if (rec1[2] <= rec2[0]) return false;
+//         if (rec2[2] <= rec1[0]) return false;
+//         if (rec1[3] <= rec2[1]) return false;
+//         if (rec2[3] <= rec1[1]) return false;
+// return true;
 
-}
-int main(){
-        // vector<int>rec1 = {0,0,2,2}, rec2 = {1,1,3,3};
-        vector<int>rec1 = {0,0,1,1}, rec2 = {1,0,2,1};
-        cout<<isRectangleOverlap(rec1,rec2);
+// }
+// int main(){
+//         // vector<int>rec1 = {0,0,2,2}, rec2 = {1,1,3,3};
+//         vector<int>rec1 = {0,0,1,1}, rec2 = {1,0,2,1};
+//         cout<<isRectangleOverlap(rec1,rec2);
 
-return 0 ;
-}
+// return 0 ;
+// }
