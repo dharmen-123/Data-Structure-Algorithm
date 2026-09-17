@@ -3976,3 +3976,29 @@
 
 // return 0 ;
 // }
+
+        /* // Q.796. Rotate String  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool rotateString(string s, string goal) {
+        if(s.size()!=goal.size())
+                return false;
+        for(int i=0;i<goal.size();i++){
+               char f=goal[0];
+               goal.erase(0,1);
+               goal+=f;
+                if(goal==s)
+                        return true;
+        }
+
+        return false;
+}
+int main(){
+        // string s = "abcde", goal = "cdeab";
+        string s = "abcde", goal = "abced";
+        cout<<rotateString(s,goal);
+
+return 0 ;
+}
