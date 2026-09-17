@@ -3942,3 +3942,37 @@
 
 // return 0 ;
 // }
+
+        /* // Q. 645. Set Mismatch  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> findErrorNums(vector<int>& nums){
+        int n = nums.size();
+        int i = 0;
+        while (i < n) {
+            int correct = nums[i] - 1;
+            if (nums[i] != nums[correct]) {
+                swap(nums[i], nums[correct]);
+            } else {
+                i++;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != i + 1) {
+                return {nums[i], i + 1};
+            }
+        }
+    return {};
+    }
+int main(){
+        vector<int>nums={1,2,2,4};
+        vector<int>ans=findErrorNums(nums);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
+
+return 0 ;
+}
