@@ -3004,3 +3004,26 @@
         
 // return 0 ;
 // }
+
+
+        /* // Q.1401. Circle and Rectangle Overlapping  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2){
+        int closestX = max(x1, min(xCenter, x2));
+        int closestY = max(y1, min(yCenter, y2));
+        long long dx = xCenter - closestX;
+        long long dy = yCenter - closestY;
+
+     return dx * dx + dy * dy <= 1LL * radius * radius;
+
+}
+int main(){
+        int radius = 1, xCenter = 0, yCenter = 0, x1 = 1, y1 = -1, x2 = 3, y2 = 1;
+        // int radius = 1, xCenter = 1, yCenter = 1, x1 = 1, y1 = -3, x2 = 2, y2 = -1;
+        cout<<checkOverlap(radius,xCenter,yCenter,x1,y1,x2,y2);
+
+return 0 ;
+}
