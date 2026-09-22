@@ -3030,35 +3030,35 @@
 
         /* // Q.3524. Find X Value of Array I // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<long long> resultArray(vector<int>& nums, int k) {
-       vector<long long> ans(k, 0);
-       vector<long long> dp(k, 0);
-       for (int num : nums) {
-           vector<long long> ndp(k, 0);
-           int rem = num % k;
-           ndp[rem]++;
-           for (int r = 0; r < k; r++) {
-               int newRem = (r * rem) % k;
-               ndp[newRem] += dp[r];
-           }
-           for (int r = 0; r < k; r++) {
-               ans[r] += ndp[r];
-           }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<long long> resultArray(vector<int>& nums, int k) {
+//        vector<long long> ans(k, 0);
+//        vector<long long> dp(k, 0);
+//        for (int num : nums) {
+//            vector<long long> ndp(k, 0);
+//            int rem = num % k;
+//            ndp[rem]++;
+//            for (int r = 0; r < k; r++) {
+//                int newRem = (r * rem) % k;
+//                ndp[newRem] += dp[r];
+//            }
+//            for (int r = 0; r < k; r++) {
+//                ans[r] += ndp[r];
+//            }
    
-           dp = ndp;
-       }
+//            dp = ndp;
+//        }
 
-    return ans;
-}
-int main(){
-        vector<int>nums = {1,2,3,4,5};
-        int k = 3;
-        vector<long long>ans=resultArray(nums,k);
-        for(auto k:ans){
-               cout<<k<<" "; 
-        }
-return 0 ;
-}
+//     return ans;
+// }
+// int main(){
+//         vector<int>nums = {1,2,3,4,5};
+//         int k = 3;
+//         vector<long long>ans=resultArray(nums,k);
+//         for(auto k:ans){
+//                cout<<k<<" "; 
+//         }
+// return 0 ;
+// }
