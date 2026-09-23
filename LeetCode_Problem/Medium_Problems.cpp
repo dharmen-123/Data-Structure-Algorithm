@@ -3062,3 +3062,18 @@
 //         }
 // return 0 ;
 // }
+
+        /* // Q.1658. Minimum Operations to Reduce X to Zero // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minOperations(vector<int>& nums, int x) {
+                
+}
+int main(){
+        vector<int>nums = {1,1,4,2,3};
+        int x = 5;
+        cout<<minOperations(nums,x);
+return 0 ;
+}
