@@ -4026,31 +4026,31 @@
 
         /* // Q.3550. Smallest Index With Digit Sum Equal to Index  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int smallestIndex(vector<int>& nums) {
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int smallestIndex(vector<int>& nums) {
      
-        for (int i = 0; i < nums.size(); i++) {
+//         for (int i = 0; i < nums.size(); i++) {
 
-            int x = nums[i];
-            int sum = 0;
+//             int x = nums[i];
+//             int sum = 0;
 
-            while (x > 0) {
-                sum += x % 10;
-                x /= 10;
-            }
+//             while (x > 0) {
+//                 sum += x % 10;
+//                 x /= 10;
+//             }
 
-            if (sum == i)
-                return i;
-        }
+//             if (sum == i)
+//                 return i;
+//         }
 
-        return -1;
-}
-int main(){
-        // vector<int>nums = {1,3,2};
-        vector<int>nums = {1,10,11};
-        cout<<smallestIndex(nums);
+//         return -1;
+// }
+// int main(){
+//         // vector<int>nums = {1,3,2};
+//         vector<int>nums = {1,10,11};
+//         cout<<smallestIndex(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
