@@ -4005,21 +4005,21 @@
 
         /* // Q.3498. Reverse Degree of a String  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int reverseDegree(string s) {
-     int sum=0;
-     for(int i=1;i<=s.size();i++){
-         int deg='z'-s[i-1]+1;
-         sum+=(deg*i);
-     }
-   return sum;
-}
-int main(){
-        // string s = "abc";
-        string s = "zaza";
-        cout<<reverseDegree(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int reverseDegree(string s) {
+//      int sum=0;
+//      for(int i=1;i<=s.size();i++){
+//          int deg='z'-s[i-1]+1;
+//          sum+=(deg*i);
+//      }
+//    return sum;
+// }
+// int main(){
+//         // string s = "abc";
+//         string s = "zaza";
+//         cout<<reverseDegree(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
