@@ -3065,39 +3065,39 @@
 
         /* // Q.1658. Minimum Operations to Reduce X to Zero // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int minOperations(vector<int>& nums, int x) {
-         int start=0;
-         int end=nums.size()-1;
-         int sum=0,count=0;
-         while(start<=end){
-             if((sum+=nums[end])<=x){
-                count++;
-                end--;
-             }
-             else{
-                sum-=nums[end];
-                if((sum+nums[start++])<=x){
-                       count++;
-                       start++; 
-                }
-                else{
-                       sum-=nums[start]; 
-                }
-             }
-             if(sum==x){
-                return count;
-             }
-         }
-        return -1;       
-}
-int main(){
-        vector<int>nums = {1,1,4,2,3};
-        // vector<int>nums = {3,2,20,1,1,3};
-        int x = 5;
-        cout<<minOperations(nums,x);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minOperations(vector<int>& nums, int x) {
+//          int start=0;
+//          int end=nums.size()-1;
+//          int sum=0,count=0;
+//          while(start<=end){
+//              if((sum+=nums[end])<=x){
+//                 count++;
+//                 end--;
+//              }
+//              else{
+//                 sum-=nums[end];
+//                 if((sum+nums[start++])<=x){
+//                        count++;
+//                        start++; 
+//                 }
+//                 else{
+//                        sum-=nums[start]; 
+//                 }
+//              }
+//              if(sum==x){
+//                 return count;
+//              }
+//          }
+//         return -1;       
+// }
+// int main(){
+//         vector<int>nums = {1,1,4,2,3};
+//         // vector<int>nums = {3,2,20,1,1,3};
+//         int x = 5;
+//         cout<<minOperations(nums,x);
         
-return 0 ;
-}
+// return 0 ;
+// }
