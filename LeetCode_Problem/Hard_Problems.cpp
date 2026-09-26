@@ -326,14 +326,14 @@
 
         /* // Q.3414. Maximum Score of Non-overlapping Intervals  // */
 
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// vector<int> maximumWeight(vector<vector<int>>& intervals) {
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> maximumWeight(vector<vector<int>>& intervals) {
         
-// }
-// int main(){
-//         vector<vector<int>>intervals={{1,3,2},{4,5,2},{1,5,5},{6,9,3},{6,7,1},{8,9,1}};
-//         vector<int>ans=maximumWeight(intervals);
-// return 0 ;
-// }
+}
+int main(){
+        vector<vector<int>>intervals={{1,3,2},{4,5,2},{1,5,5},{6,9,3},{6,7,1},{8,9,1}};
+        vector<int>ans=maximumWeight(intervals);
+return 0 ;
+}
