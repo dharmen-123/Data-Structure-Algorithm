@@ -3101,3 +3101,19 @@
         
 // return 0 ;
 // }
+
+        /* // Q. 1807. Evaluate the Bracket Pairs of a String  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string evaluate(string s, vector<vector<string>>& knowledge) {
+        
+}
+int main(){
+        string s = "(name)is(age)yearsold";
+        vector<vector<string>>knowledge = {{"name","bob"},{"age","two"}};
+        cout<<evaluate(s,knowledge);
+        
+return 0 ;
+}
