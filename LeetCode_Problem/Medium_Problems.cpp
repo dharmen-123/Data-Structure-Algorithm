@@ -3131,7 +3131,6 @@ string reverseParentheses(string s) {
         }
 
         return curr;
-    }
 }
 int main(){
         string s = "(abcd)";
