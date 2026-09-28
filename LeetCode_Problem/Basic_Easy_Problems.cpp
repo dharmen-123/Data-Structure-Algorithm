@@ -4026,31 +4026,53 @@
 
         /* // Q.3550. Smallest Index With Digit Sum Equal to Index  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int smallestIndex(vector<int>& nums) {
+//         for (int i = 0; i < nums.size(); i++) {
+//             int x = nums[i];
+//             int sum = 0;
+//             while (x > 0) {
+//                 sum += x % 10;
+//                 x /= 10;
+//             }
+//             if (sum == i)
+//                 return i;
+//         }
+//         return -1;
+// }
+// int main(){
+//         // vector<int>nums = {1,3,2};
+//         vector<int>nums = {1,10,11};
+//         cout<<smallestIndex(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.1614. Maximum Nesting Depth of the Parentheses // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int smallestIndex(vector<int>& nums) {
-     
-        for (int i = 0; i < nums.size(); i++) {
-
-            int x = nums[i];
-            int sum = 0;
-
-            while (x > 0) {
-                sum += x % 10;
-                x /= 10;
-            }
-
-            if (sum == i)
-                return i;
+int maxDepth(string s) {
+        int depth=0;
+        int maxdep=0;
+        for(int i=0;i<s.size();i++){
+              if(s[i]=='('){
+                  depth++;                
+              }
+              else if(s[i]==')'){
+                 depth--;
+              }  
+              maxdep=max(maxdep,depth);
         }
-
-        return -1;
+        return maxdep;
 }
 int main(){
-        // vector<int>nums = {1,3,2};
-        vector<int>nums = {1,10,11};
-        cout<<smallestIndex(nums);
+        // string s = "(1+(2*3)+((8)/4))+1";
+        string s = "()(())((()()))";
+        cout<<maxDepth(s);
 
 return 0 ;
 }
