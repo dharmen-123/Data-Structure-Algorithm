@@ -324,16 +324,70 @@
 // return 0 ;
 // }
 
-        /* // Q.3414. Maximum Score of Non-overlapping Intervals  // */
+        /* // Q.2267. Check if There Is a Valid Parentheses String Path // */
 
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> maximumWeight(vector<vector<int>>& intervals) {
-        
+int m, n;
+    bool dfs(int i, int j, int balance,
+             vector<vector<char>>& grid,
+             vector<vector<vector<int>>>& dp) {
+        if (grid[i][j] == '(')
+            balance++;
+        else
+            balance--;
+
+        if (balance < 0)
+            return false;
+        int remain = (m - 1 - i) + (n - 1 - j);
+        if (balance > remain + 1)
+            return false;
+        if (i == m - 1 && j == n - 1)
+            return balance == 0;
+        if (dp[i][j][balance] != -1)
+            return dp[i][j][balance];
+        bool ans = false;
+        if (i + 1 < m)
+            ans |= dfs(i + 1, j, balance, grid, dp);
+        if (j + 1 < n)
+            ans |= dfs(i, j + 1, balance, grid, dp);
+
+        return dp[i][j][balance] = ans;
+    }
+
+    bool hasValidPath(vector<vector<char>>& grid) {
+        m = grid.size();
+        n = grid[0].size();
+        if (grid[0][0] == ')')
+            return false;
+        if (grid[m - 1][n - 1] == '(')
+            return false;
+        int len = m + n - 1;
+        if (len % 2 == 1)
+            return false;
+        vector<vector<vector<int>>> dp(m,vector<vector<int>>(n,vector<int>(205, -1))
+        );
+
+        return dfs(0, 0, 0, grid, dp);
 }
 int main(){
-        vector<vector<int>>intervals={{1,3,2},{4,5,2},{1,5,5},{6,9,3},{6,7,1},{8,9,1}};
-        vector<int>ans=maximumWeight(intervals);
+        vector<vector<char>>grid ={{'(','(','('},{')','(',')'},{'(','(',')'},{'(','(',')'}};
+        cout<<hasValidPath(grid);
+
 return 0 ;
 }
+
+        /* // Q.3414. Maximum Score of Non-overlapping Intervals  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> maximumWeight(vector<vector<int>>& intervals) {
+        
+// }
+// int main(){
+//         vector<vector<int>>intervals={{1,3,2},{4,5,2},{1,5,5},{6,9,3},{6,7,1},{8,9,1}};
+//         vector<int>ans=maximumWeight(intervals);
+// return 0 ;
+// }
