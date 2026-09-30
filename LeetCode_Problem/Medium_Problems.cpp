@@ -3136,59 +3136,88 @@
 
         /* // Q.18. 4Sum // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<int>> fourSum(vector<int>& nums, int target) {
+//         vector<vector<int>>v;
+//         sort(nums.begin(),nums.end());
+//         int n=nums.size(),start,end;
+//         for(int i=0;i<n-3;i++){
+//              if(i > 0 && nums[i] == nums[i-1])
+//                 continue;
+//              for(int j=i+1;j<n-2;j++){
+//                 if(j > i+1 && nums[j] == nums[j-1])
+//                     continue;
+//                  start=j+1,end=n-1;
+//                 long long X=(long long)target-nums[i]-nums[j];
+//                  while(start<end){
+//                       long long sum=nums[start]+nums[end];  
+//                       if(sum==X){
+//                            v.push_back({nums[i],nums[j],nums[start],nums[end]});   
+//                            while(start < end && nums[start] == nums[start+1])
+//                                 start++;
+//                            while(start < end && nums[end] == nums[end-1])
+//                                 end--;
+//                            start++;
+//                            end--;  
+//                       }
+//                       else if(nums[start]+nums[end]>X){
+//                               end--;
+//                       }
+//                       else{
+//                               start++;
+//                       }  
+//                  }
+//              }   
+//         }
+//         return v;
+// }
+// int main(){
+//         vector<int>nums = {1,0,-1,0,-2,2};
+//         int target = 0;
+//         // vector<int>nums = {2,2,2,2,2};
+//         // int target = 8;
+//         vector<vector<int>>ans=fourSum(nums,target);
+//         for(auto k:ans){
+//              for(auto a:k){
+//                 cout<<a<<", ";
+//              }
+//              cout<<" | ";   
+//         }
+
+// return 0 ;
+// }
+ 
+        /* // Q.111. Maximum Nesting Depth of Two Valid Parentheses Strings  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-vector<vector<int>> fourSum(vector<int>& nums, int target) {
-        vector<vector<int>>v;
-        sort(nums.begin(),nums.end());
-        int n=nums.size(),start,end;
-        for(int i=0;i<n-3;i++){
-             if(i > 0 && nums[i] == nums[i-1])
-                continue;
-             for(int j=i+1;j<n-2;j++){
-                if(j > i+1 && nums[j] == nums[j-1])
-                    continue;
-                 start=j+1,end=n-1;
-                long long X=(long long)target-nums[i]-nums[j];
-                 while(start<end){
-                      long long sum=nums[start]+nums[end];  
-                      if(sum==X){
-                           v.push_back({nums[i],nums[j],nums[start],nums[end]});   
-                           while(start < end && nums[start] == nums[start+1])
-                                start++;
-                           while(start < end && nums[end] == nums[end-1])
-                                end--;
-                           start++;
-                           end--;  
-                      }
-                      else if(nums[start]+nums[end]>X){
-                              end--;
-                      }
-                      else{
-                              start++;
-                      }  
-                 }
-             }   
+vector<int> maxDepthAfterSplit(string seq) {
+        vector<int> ans;
+        int depth = 0;
+        for(char ch : seq) {
+            if(ch == '(') {
+                depth++;
+                ans.push_back(depth % 2);
+            }
+            else {
+                ans.push_back(depth % 2);
+                depth--;
+            }
         }
-        return v;
+        return ans;
 }
 int main(){
-        vector<int>nums = {1,0,-1,0,-2,2};
-        int target = 0;
-        // vector<int>nums = {2,2,2,2,2};
-        // int target = 8;
-        vector<vector<int>>ans=fourSum(nums,target);
+        string seq = "(()())";
+        vector<int>ans=maxDepthAfterSplit(seq);
         for(auto k:ans){
-             for(auto a:k){
-                cout<<a<<", ";
-             }
-             cout<<" | ";   
+                cout<<k<<" ";
         }
 
 return 0 ;
 }
- 
 
         /* // Q. 1807. Evaluate the Bracket Pairs of a String  // */
 
