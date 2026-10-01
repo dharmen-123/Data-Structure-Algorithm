@@ -4052,27 +4052,27 @@
 
         /* // Q.1614. Maximum Nesting Depth of the Parentheses // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxDepth(string s) {
-        int depth=0;
-        int maxdep=0;
-        for(int i=0;i<s.size();i++){
-              if(s[i]=='('){
-                  depth++;                
-              }
-              else if(s[i]==')'){
-                 depth--;
-              }  
-              maxdep=max(maxdep,depth);
-        }
-        return maxdep;
-}
-int main(){
-        // string s = "(1+(2*3)+((8)/4))+1";
-        string s = "()(())((()()))";
-        cout<<maxDepth(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxDepth(string s) {
+//         int depth=0;
+//         int maxdep=0;
+//         for(int i=0;i<s.size();i++){
+//               if(s[i]=='('){
+//                   depth++;                
+//               }
+//               else if(s[i]==')'){
+//                  depth--;
+//               }  
+//               maxdep=max(maxdep,depth);
+//         }
+//         return maxdep;
+// }
+// int main(){
+//         // string s = "(1+(2*3)+((8)/4))+1";
+//         string s = "()(())((()()))";
+//         cout<<maxDepth(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
