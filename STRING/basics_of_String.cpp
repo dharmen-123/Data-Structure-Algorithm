@@ -103,23 +103,23 @@
 
         /*  // Reverse String  //  */
 
-// #include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// int main(){
-//     string s="Structure";
-//     int start=0, end=s.size()-1;
-//     while(start<end){
-//         swap(s[start],s[end]);
-//         start++ , end--;
-//     }
-//     cout<<s<<endl;        //output- erutcurtS
+int main(){
+    string s="Structure";
+    int start=0, end=s.size()-1;
+    while(start<end){
+        swap(s[start],s[end]);
+        start++ , end--;
+    }
+    cout<<s<<endl;        //output- erutcurtS
 
-//     /* Calculate the size of string using Null charater */
-//     int size=0;
-//     while(s[size]!='\0'){
-//         size++;
-//     }
-//     cout<<"Size of String "<<size;
-// return 0 ;
-// }
+    /* Calculate the size of string using Null charater */
+    int size=0;
+    while(s[size]!='\0'){
+        size++;
+    }
+    cout<<"Size of String "<<size;
+return 0 ;
+}
