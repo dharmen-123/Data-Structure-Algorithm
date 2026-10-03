@@ -386,27 +386,28 @@
 using namespace std;
 int longestValidParentheses(string s) {
         stack<int>st;
-        if(s.size()<=1){
-             return 0;   
-        }
+        st.push(-1);
+        int ans=0;
         for(int i=0;i<s.size();i++){
-             if(s[i]=='('){
-                st.push(s[i]);
-             }
-             else if(s[i]==')' && i!=0 && st.top()=='(' ){
-                 st.pop();
-             }   
-             else{
-                st.push(s[i]);
-             }
+                if(s[i]=='('){
+                    st.push(i);
+                }
+                else{
+                        st.pop();
+                        if(st.empty()){
+                                st.push(i);
+                        }
+                        else{
+                                ans=max(ans,i-st.top());
+                        }
+                }
         }
-        return s.size()-st.size();
-        
+      return ans;  
 }
 int main(){
         // string s="(()";
-        // string s=")()())";
-        string s="";
+        string s=")()())";
+        // string s="";
         cout<<longestValidParentheses(s);
 
 return 0 ;
