@@ -377,3 +377,37 @@
 
 // return 0 ;
 // }
+
+
+        /* // Q.32. Longest Valid Parentheses //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int longestValidParentheses(string s) {
+        stack<int>st;
+        if(s.size()<=1){
+             return 0;   
+        }
+        for(int i=0;i<s.size();i++){
+             if(s[i]=='('){
+                st.push(s[i]);
+             }
+             else if(s[i]==')' && i!=0 && st.top()=='(' ){
+                 st.pop();
+             }   
+             else{
+                st.push(s[i]);
+             }
+        }
+        return s.size()-st.size();
+        
+}
+int main(){
+        // string s="(()";
+        // string s=")()())";
+        string s="";
+        cout<<longestValidParentheses(s);
+
+return 0 ;
+}
