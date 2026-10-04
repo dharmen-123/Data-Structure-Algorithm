@@ -3191,46 +3191,31 @@
  
         /* // Q.111. Maximum Nesting Depth of Two Valid Parentheses Strings  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> maxDepthAfterSplit(string seq) {
-        vector<int> ans;
-        int depth = 0;
-        for(char ch : seq) {
-            if(ch == '(') {
-                depth++;
-                ans.push_back(depth % 2);
-            }
-            else {
-                ans.push_back(depth % 2);
-                depth--;
-            }
-        }
-        return ans;
-}
-int main(){
-        string seq = "(()())";
-        vector<int>ans=maxDepthAfterSplit(seq);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-
-return 0 ;
-}
-
-        /* // Q. 1807. Evaluate the Bracket Pairs of a String  // */
-
 // #include<iostream>
 // #include<bits/stdc++.h>
 // using namespace std;
-// string evaluate(string s, vector<vector<string>>& knowledge) {
-        
+// vector<int> maxDepthAfterSplit(string seq) {
+//         vector<int> ans;
+//         int depth = 0;
+//         for(char ch : seq) {
+//             if(ch == '(') {
+//                 depth++;
+//                 ans.push_back(depth % 2);
+//             }
+//             else {
+//                 ans.push_back(depth % 2);
+//                 depth--;
+//             }
+//         }
+//         return ans;
 // }
 // int main(){
-//         string s = "(name)is(age)yearsold";
-//         vector<vector<string>>knowledge = {{"name","bob"},{"age","two"}};
-//         cout<<evaluate(s,knowledge);
-        
+//         string seq = "(()())";
+//         vector<int>ans=maxDepthAfterSplit(seq);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+
 // return 0 ;
 // }
+
