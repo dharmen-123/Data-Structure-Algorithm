@@ -3221,35 +3221,71 @@
 
         /* // Q,678. Valid Parenthesis String //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool checkValidString(string s) {
+//         int low = 0;
+//         int high = 0;
+//        for(char ch : s) {
+//           if(ch == '(') {
+//                 low++;
+//                 high++;
+//             }
+//             else if(ch == ')') {
+//                 low--;
+//                 high--;
+//             }
+//             else { 
+//                 low--;
+//                 high++;
+//             }
+//             if(high < 0)
+//                 return false;
+//             low = max(low, 0);
+//         }
+//         return low == 0;
+//     }
+// int main(){
+//         // string s="()";
+//         string s="(*))";
+//         cout<<checkValidString(s);
+
+// return 0 ;
+// }
+
+        /* // Q.856. Score of Parentheses  //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool checkValidString(string s) {
-        int low = 0;
-        int high = 0;
-       for(char ch : s) {
-          if(ch == '(') {
-                low++;
-                high++;
-            }
-            else if(ch == ')') {
-                low--;
-                high--;
-            }
-            else { 
-                low--;
-                high++;
-            }
-            if(high < 0)
-                return false;
-            low = max(low, 0);
+int scoreOfParentheses(string s) {
+       int curr=0,score;
+       stack<int>st;
+        for(char ch:s){
+           if(ch=='('){
+              st.push(curr);
+              curr=0;
+           }
+           else{
+                if(curr!=0){
+                    score=2*curr;    
+                }
+                else{
+                    score=1;    
+                }
+               curr=st.top()+score;
+               st.pop();
+           }  
         }
-        return low == 0;
-    }
+        return curr;
+}
 int main(){
-        // string s="()";
-        string s="(*))";
-        cout<<checkValidString(s);
+        // string s = "(())";
+        // string s = "(()(()))";
+        string s = "(((()(()()))))";
+        // string s = "((()())(()()))";
+        cout<<scoreOfParentheses(s);
 
 return 0 ;
 }
