@@ -3256,36 +3256,36 @@
 
         /* // Q.856. Score of Parentheses  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int scoreOfParentheses(string s) {
-       int curr=0,score;
-       stack<int>st;
-        for(char ch:s){
-           if(ch=='('){
-              st.push(curr);
-              curr=0;
-           }
-           else{
-                if(curr!=0){
-                    score=2*curr;    
-                }
-                else{
-                    score=1;    
-                }
-               curr=st.top()+score;
-               st.pop();
-           }  
-        }
-        return curr;
-}
-int main(){
-        // string s = "(())";
-        // string s = "(()(()))";
-        string s = "(((()(()()))))";
-        // string s = "((()())(()()))";
-        cout<<scoreOfParentheses(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int scoreOfParentheses(string s) {
+//        int curr=0,score;
+//        stack<int>st;
+//         for(char ch:s){
+//            if(ch=='('){
+//               st.push(curr);
+//               curr=0;
+//            }
+//            else{
+//                 if(curr!=0){
+//                     score=2*curr;    
+//                 }
+//                 else{
+//                     score=1;    
+//                 }
+//                curr=st.top()+score;
+//                st.pop();
+//            }  
+//         }
+//         return curr;
+// }
+// int main(){
+//         // string s = "(())";
+//         // string s = "(()(()))";
+//         string s = "(((()(()()))))";
+//         // string s = "((()())(()()))";
+//         cout<<scoreOfParentheses(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
