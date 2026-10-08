@@ -381,34 +381,53 @@
 
         /* // Q.32. Longest Valid Parentheses //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int longestValidParentheses(string s) {
-        stack<int>st;
-        st.push(-1);
-        int ans=0;
-        for(int i=0;i<s.size();i++){
-                if(s[i]=='('){
-                    st.push(i);
-                }
-                else{
-                        st.pop();
-                        if(st.empty()){
-                                st.push(i);
-                        }
-                        else{
-                                ans=max(ans,i-st.top());
-                        }
-                }
-        }
-      return ans;  
-}
-int main(){
-        // string s="(()";
-        string s=")()())";
-        // string s="";
-        cout<<longestValidParentheses(s);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int longestValidParentheses(string s) {
+//         stack<int>st;
+//         st.push(-1);
+//         int ans=0;
+//         for(int i=0;i<s.size();i++){
+//                 if(s[i]=='('){
+//                     st.push(i);
+//                 }
+//                 else{
+//                         st.pop();
+//                         if(st.empty()){
+//                                 st.push(i);
+//                         }
+//                         else{
+//                                 ans=max(ans,i-st.top());
+//                         }
+//                 }
+//         }
+//       return ans;  
+// }
+// int main(){
+//         // string s="(()";
+//         string s=")()())";
+//         // string s="";
+//         cout<<longestValidParentheses(s);
 
-return 0 ;
-}
+// return 0 ;
+// }
+
+        /* // Q.301. Remove Invalid Parentheses  // */
+
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<string> removeInvalidParentheses(string s) {
+        
+        
+// }
+// int main(){
+//         string s = "()())()";
+//         vector<string>ans=removeInvalidParentheses(s);
+//         for(auto a:ans){
+//                 cout<<a<<" ";
+//         }
+
+// return 0 ;
+// }
