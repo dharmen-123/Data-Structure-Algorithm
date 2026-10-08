@@ -4076,3 +4076,19 @@
 
 // return 0 ;
 // }
+
+        /* //  Q.1021. Remove Outermost Parentheses // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string removeOuterParentheses(string s) {
+        
+
+}
+int main(){
+        string s = "(()())(())";
+        cout<<removeOuterParentheses(s);
+
+return 0 ;
+}
