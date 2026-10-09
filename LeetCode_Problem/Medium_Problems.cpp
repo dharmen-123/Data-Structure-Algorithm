@@ -3315,12 +3315,11 @@ int minInsertions(string s) {
                 }
             }
         }
-
         return ans + 2 * open;
 }
 int main(){
-        string s="(()))";
-        // string s="))())(";
+        // string s="(()))";
+        string s="))())(";
         cout<<minInsertions(s);
 
 return 0 ;
