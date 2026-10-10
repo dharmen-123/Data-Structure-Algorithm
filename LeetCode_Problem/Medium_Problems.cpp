@@ -3327,69 +3327,69 @@
 
         /* // Q.2333. Minimum Sum of Squared Difference  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
-        int n=nums1.size();
-        vector<int>diff;
-        long long sum=0;
-        for(int i=0;i<n;i++){
-              diff.push_back(abs(nums1[i]-nums2[i]));
-              sum+=abs(nums1[i]-nums2[i]);
-        }
-        long long k=k1+k2;
-        if(k>=sum){
-                return 0;
-        }
-        int low = 0, high = 0;
-        for (int x : diff) {
-            high = max(high, x);
-        }
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            long long operations = 0;
-            for (int x : diff) {
-                if (x > mid) {
-                    operations += x - mid;
-                }
-            }
-            if (operations <= k) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-        int limit = low;
-        long long used = 0;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
+//         int n=nums1.size();
+//         vector<int>diff;
+//         long long sum=0;
+//         for(int i=0;i<n;i++){
+//               diff.push_back(abs(nums1[i]-nums2[i]));
+//               sum+=abs(nums1[i]-nums2[i]);
+//         }
+//         long long k=k1+k2;
+//         if(k>=sum){
+//                 return 0;
+//         }
+//         int low = 0, high = 0;
+//         for (int x : diff) {
+//             high = max(high, x);
+//         }
+//         while (low < high) {
+//             int mid = low + (high - low) / 2;
+//             long long operations = 0;
+//             for (int x : diff) {
+//                 if (x > mid) {
+//                     operations += x - mid;
+//                 }
+//             }
+//             if (operations <= k) {
+//                 high = mid;
+//             } else {
+//                 low = mid + 1;
+//             }
+//         }
+//         int limit = low;
+//         long long used = 0;
 
-        for (int &x : diff) {
-            if (x > limit) {
-                used += x - limit;
-                x = limit;
-            }
-        }
-        long long remaining = k - used;
-        for (int &x : diff) {
-            if (remaining > 0 && x == limit) {
-                x--;
-                remaining--;
-            }
-        }
-        long long ans = 0;
-        for (int x : diff) {
-            ans += 1LL * x * x;
-        }
+//         for (int &x : diff) {
+//             if (x > limit) {
+//                 used += x - limit;
+//                 x = limit;
+//             }
+//         }
+//         long long remaining = k - used;
+//         for (int &x : diff) {
+//             if (remaining > 0 && x == limit) {
+//                 x--;
+//                 remaining--;
+//             }
+//         }
+//         long long ans = 0;
+//         for (int x : diff) {
+//             ans += 1LL * x * x;
+//         }
 
-        return ans;
-}
-int main(){
-        vector<int>nums1 = {1,2,3,4}, nums2 = {2,10,20,19}; 
-        int k1 = 0, k2 = 0;
-        cout<<minSumSquareDiff(nums1,nums2,k1,k2);
+//         return ans;
+// }
+// int main(){
+//         vector<int>nums1 = {1,2,3,4}, nums2 = {2,10,20,19}; 
+//         int k1 = 0, k2 = 0;
+//         cout<<minSumSquareDiff(nums1,nums2,k1,k2);
 
-return 0 ;
-}
+// return 0 ;
+// }
 
         /* // Q.4075 Longest Resilient Subarray I  // */
 
@@ -3426,3 +3426,4 @@ return 0 ;
 //         cout<<resilientSubarray(nums,k);
 // return 0 ;
 // }
+
