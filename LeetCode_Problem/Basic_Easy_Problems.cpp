@@ -4079,36 +4079,65 @@
 
         /* //  Q.1021. Remove Outermost Parentheses // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// string removeOuterParentheses(string s) {
+//         string ans;
+//         int depth = 0;
+
+//         for(char ch : s) {
+
+//             if(ch == '(') {
+
+//                 if(depth > 0)
+//                     ans += ch;
+
+//                 depth++;
+//             }
+//             else {
+
+//                 depth--;
+
+//                 if(depth > 0)
+//                     ans += ch;
+//             }
+//         }
+
+//         return ans; 
+// }
+// int main(){
+//         string s = "(()())(())";
+//         cout<<removeOuterParentheses(s);
+
+// return 0 ;
+// }
+
+        /* // Q.4074 Maximum Product Pair With Target Sum   //  */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-string removeOuterParentheses(string s) {
-        string ans;
-        int depth = 0;
-
-        for(char ch : s) {
-
-            if(ch == '(') {
-
-                if(depth > 0)
-                    ans += ch;
-
-                depth++;
-            }
-            else {
-
-                depth--;
-
-                if(depth > 0)
-                    ans += ch;
+vector<int> maxProductPair(vector<int>& nums, int target) {
+        int n=nums.size();
+        int maxp=INT_MIN;
+        vector<int>ans={-1, -1};
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i!=j && nums[i]+nums[j]==target && nums[i]>nums[j]){
+                   int product=nums[i]*nums[j];
+                    if(product>maxp){
+                        maxp=product;
+                        ans={i,j};
+                    }
+                }
             }
         }
-
-        return ans; 
+        return ans;
 }
 int main(){
-        string s = "(()())(())";
-        cout<<removeOuterParentheses(s);
-
+        vector<int>nums = {1,2,3,4};
+        int  target = 5;
+        
 return 0 ;
 }
