@@ -3293,34 +3293,51 @@
 
         /* // 1541. Minimum Insertions to Balance a Parentheses String // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minInsertions(string s) {
+//         int open = 0, ans = 0;
+//         for (int i = 0; i < s.size(); i++) {
+//             if (s[i] == '(') {
+//                 open++;
+//             } else {
+//                 if (i + 1 < s.size() && s[i + 1] == ')') {
+//                     i++;
+//                 } else {
+//                     ans++;
+//                 }
+
+//                 if (open > 0) {
+//                     open--;
+//                 } else {
+//                     ans++;
+//                 }
+//             }
+//         }
+//         return ans + 2 * open;
+// }
+// int main(){
+//         // string s="(()))";
+//         string s="))())(";
+//         cout<<minInsertions(s);
+
+// return 0 ;
+// }
+
+        /* // Q.2333. Minimum Sum of Squared Difference  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minInsertions(string s) {
-        int open = 0, ans = 0;
-        for (int i = 0; i < s.size(); i++) {
-            if (s[i] == '(') {
-                open++;
-            } else {
-                if (i + 1 < s.size() && s[i + 1] == ')') {
-                    i++;
-                } else {
-                    ans++;
-                }
-
-                if (open > 0) {
-                    open--;
-                } else {
-                    ans++;
-                }
-            }
-        }
-        return ans + 2 * open;
+long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
+        int n=nums1.size();
+        
+        
 }
 int main(){
-        // string s="(()))";
-        string s="))())(";
-        cout<<minInsertions(s);
+        vector<int>nums1 = {1,2,3,4}, nums2 = {2,10,20,19}; 
+        int k1 = 0, k2 = 0;
 
 return 0 ;
 }
