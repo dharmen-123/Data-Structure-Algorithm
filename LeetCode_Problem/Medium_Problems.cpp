@@ -3327,17 +3327,53 @@
 
         /* // Q.2333. Minimum Sum of Squared Difference  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
+//         int n=nums1.size();
+        
+        
+// }
+// int main(){
+//         vector<int>nums1 = {1,2,3,4}, nums2 = {2,10,20,19}; 
+//         int k1 = 0, k2 = 0;
+
+// return 0 ;
+// }
+
+        /* // Q.4075 Longest Resilient Subarray I  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
-        int n=nums1.size();
-        
-        
+int resilientSubarray(vector<int>& nums, int k) {
+        int n=nums.size();
+        int ans = 1;
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += nums[j];
+                bool valid = true;
+                int remainder = sum % k;
+                for (int p = i; p <= j; p++) {
+                    if (nums[p] % k != remainder) {
+                        valid = false;
+                        break;
+                    }
+                }
+
+                if (valid) {
+                    ans = max(ans, j - i + 1);
+                }
+            }
+        }
+        return ans;
 }
 int main(){
-        vector<int>nums1 = {1,2,3,4}, nums2 = {2,10,20,19}; 
-        int k1 = 0, k2 = 0;
-
+        // vector<int>nums = {2,4,6,3};
+        vector<int>nums = {5,5};
+        int  k = 8;
+        cout<<resilientSubarray(nums,k);
 return 0 ;
 }
