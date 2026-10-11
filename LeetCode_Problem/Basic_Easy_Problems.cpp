@@ -4158,8 +4158,8 @@ int sumOfSquares(vector<int>& nums) {
        return sum; 
 }
 int main(){
-        // vector<int>nums={1,2,3,4};
-        vector<int>nums={2,7,1,19,18,3};
+        vector<int>nums={1,2,3,4};
+        // vector<int>nums={2,7,1,19,18,3};
         cout<<sumOfSquares(nums);
 
 return 0 ;
