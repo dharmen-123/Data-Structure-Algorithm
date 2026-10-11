@@ -4115,29 +4115,29 @@
 
         /* // Q.4074 Maximum Product Pair With Target Sum   //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> maxProductPair(vector<int>& nums, int target) {
-        int n=nums.size();
-        int maxp=INT_MIN;
-        vector<int>ans={-1, -1};
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(i!=j && nums[i]+nums[j]==target && nums[i]>nums[j]){
-                   int product=nums[i]*nums[j];
-                    if(product>maxp){
-                        maxp=product;
-                        ans={i,j};
-                    }
-                }
-            }
-        }
-        return ans;
-}
-int main(){
-        vector<int>nums = {1,2,3,4};
-        int  target = 5;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> maxProductPair(vector<int>& nums, int target) {
+//         int n=nums.size();
+//         int maxp=INT_MIN;
+//         vector<int>ans={-1, -1};
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<n;j++){
+//                 if(i!=j && nums[i]+nums[j]==target && nums[i]>nums[j]){
+//                    int product=nums[i]*nums[j];
+//                     if(product>maxp){
+//                         maxp=product;
+//                         ans={i,j};
+//                     }
+//                 }
+//             }
+//         }
+//         return ans;
+// }
+// int main(){
+//         vector<int>nums = {1,2,3,4};
+//         int  target = 5;
         
-return 0 ;
-}
+// return 0 ;
+// }
