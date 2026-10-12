@@ -4164,3 +4164,37 @@
 
 // return 0 ;
 // }
+
+        /* // Q.680. Valid Palindrome II // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool check(string s,int st,int e){
+        while(st<e){
+             if(s[st]!=s[e]){
+                 return false;
+             }   
+             st++;
+             e--;
+        }
+        return true;
+}
+bool validPalindrome(string s) {
+        int st=0,e=s.size()-1;
+        while(st<=e){
+             if(s[st]!=s[e]){
+                return check(s,st+1,e) || check(s,st,e+1);
+             }
+             st++;
+             e--;   
+        }
+        return true;
+}
+int main(){
+        // string s = "aba";
+        string s = "abca";
+        cout<<validPalindrome(s);
+
+return 0 ;
+}
