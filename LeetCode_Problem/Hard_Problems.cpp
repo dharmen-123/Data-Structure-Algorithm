@@ -413,6 +413,44 @@
 // return 0 ;
 // }
 
+        /* // Q.2897. Apply Operations on Array to Maximize Sum of Squares //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int maxSum(vector<int>& nums, int k) {
+        long long mod = 1000000007;
+        vector<int> bits(31, 0);
+
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = 0; j < 31; j++) {
+                if (nums[i] & (1 << j)) {
+                    bits[j]++;
+                }
+            }
+        }
+        long long ans = 0;
+        for (int i = 0; i < k; i++) {
+            long long num = 0;
+            for (int j = 0; j < 31; j++) {
+                if (bits[j] > 0) {
+                    num |= (1LL << j);
+                    bits[j]--;
+                }
+            }
+
+            ans = (ans + num * num) % mod;
+        }
+        return ans;
+}
+int main(){
+        vector<int>nums = {2,6,5,8};
+        int k = 2;
+        cout<<maxSum(nums,k);
+        
+return 0 ;
+}
+
         /* // Q.301. Remove Invalid Parentheses  // */
 
 // #include<iostream>
