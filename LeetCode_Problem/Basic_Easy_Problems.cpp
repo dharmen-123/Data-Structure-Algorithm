@@ -4178,13 +4178,14 @@ bool check(string s,int st,int e){
              st++;
              e--;
         }
-        return true;
+    return true;
 }
 bool validPalindrome(string s) {
-        int st=0,e=s.size()-1;
-        while(st<=e){
+        int st=0;
+        int e=s.size()-1;
+        while(st<e){
              if(s[st]!=s[e]){
-                return check(s,st+1,e) || check(s,st,e+1);
+                return check(s,st+1,e) || check(s,st,e-1);
              }
              st++;
              e--;   
@@ -4193,7 +4194,7 @@ bool validPalindrome(string s) {
 }
 int main(){
         // string s = "aba";
-        string s = "abca";
+        string s = "cbbcc";
         cout<<validPalindrome(s);
 
 return 0 ;
