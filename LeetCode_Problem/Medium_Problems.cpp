@@ -3427,3 +3427,33 @@
 // return 0 ;
 // }
 
+
+        /* // Q.3727. Maximum Alternating Sum of Squares // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long maxAlternatingSum(vector<int>& nums) {
+        vector<long long>square;
+        for(auto x:nums){
+              square.push_back(x*x);  
+        }
+        sort(square.begin(),square.end());
+        long long sum=0;
+        int n=square.size();
+        for(int i=0;i<n;i++){
+              if(i<n/2){
+                 sum-=square[i];
+              }
+              else{
+                sum+=square[i];
+              }  
+        }
+    return sum;    
+}
+int main(){
+        vector<int>nums = {1,2,3};
+        cout<<maxAlternatingSum(nums);
+
+return 0 ;
+}
