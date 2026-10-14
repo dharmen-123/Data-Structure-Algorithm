@@ -3458,3 +3458,28 @@
 
 // return 0 ;
 // }
+
+        /* // Q3723. Maximize Sum of Squares of Digits // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+string maxSumOfSquares(int num, int sum) {
+        if(sum>9*num){
+               return ""; 
+        }
+        string ans="";
+        for(int i=0;i<num;i++){
+              int digit=min(9,sum);
+              ans+=(digit+'0');  
+              sum-=digit;
+        }
+      return ans;  
+}
+int main(){
+        // int num = 2, sum = 3;
+        int num = 2, sum = 17;
+        cout<<maxSumOfSquares(num,sum);
+
+return 0 ;
+}
