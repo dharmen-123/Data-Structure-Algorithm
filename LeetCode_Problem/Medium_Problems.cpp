@@ -3483,3 +3483,18 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3551. Minimum Swaps to Sort by Digit Sum  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minSwaps(vector<int>& nums) {
+         
+}
+int main(){
+        vector<int>nums={22,14,33,7};
+        cout<<minSwaps(nums);
+
+return 0 ;
+}
