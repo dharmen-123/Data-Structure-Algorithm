@@ -454,89 +454,89 @@
 
         /* // Q.2916. Subarrays Distinct Element Sum of Squares II  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-static constexpr long long MOD = 1e9 + 7;
-    struct SegTree {
-        vector<long long> sum, sq, lazy;
-        SegTree(int n) {
-            sum.resize(4 * n);
-            sq.resize(4 * n);
-            lazy.resize(4 * n);
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// static constexpr long long MOD = 1e9 + 7;
+//     struct SegTree {
+//         vector<long long> sum, sq, lazy;
+//         SegTree(int n) {
+//             sum.resize(4 * n);
+//             sq.resize(4 * n);
+//             lazy.resize(4 * n);
+//         }
 
-        void apply(int p, int l, int r, long long val) {
-            sq[p] = (sq[p]
-                    + 2LL * val % MOD * sum[p] % MOD
-                    + (r - l + 1) * val % MOD * val % MOD) % MOD;
+//         void apply(int p, int l, int r, long long val) {
+//             sq[p] = (sq[p]
+//                     + 2LL * val % MOD * sum[p] % MOD
+//                     + (r - l + 1) * val % MOD * val % MOD) % MOD;
 
-            sum[p] = (sum[p]
-                    + (r - l + 1) * val) % MOD;
+//             sum[p] = (sum[p]
+//                     + (r - l + 1) * val) % MOD;
 
-            lazy[p] = (lazy[p] + val) % MOD;
-        }
+//             lazy[p] = (lazy[p] + val) % MOD;
+//         }
 
-        void push(int p, int l, int r) {
-            if (!lazy[p]) return;
+//         void push(int p, int l, int r) {
+//             if (!lazy[p]) return;
 
-            int m = (l + r) >> 1;
+//             int m = (l + r) >> 1;
 
-            apply(p << 1, l, m, lazy[p]);
-            apply(p << 1 | 1, m + 1, r, lazy[p]);
+//             apply(p << 1, l, m, lazy[p]);
+//             apply(p << 1 | 1, m + 1, r, lazy[p]);
 
-            lazy[p] = 0;
-        }
-        void update(int p, int l, int r,
-                    int ql, int qr) {
+//             lazy[p] = 0;
+//         }
+//         void update(int p, int l, int r,
+//                     int ql, int qr) {
 
-            if (qr < l || r < ql)
-                return;
+//             if (qr < l || r < ql)
+//                 return;
 
-            if (ql <= l && r <= qr) {
-                apply(p, l, r, 1);
-                return;
-            }
+//             if (ql <= l && r <= qr) {
+//                 apply(p, l, r, 1);
+//                 return;
+//             }
 
-            push(p, l, r);
+//             push(p, l, r);
 
-            int m = (l + r) >> 1;
-            update(p << 1, l, m, ql, qr);
-            update(p << 1 | 1, m + 1, r, ql, qr);
+//             int m = (l + r) >> 1;
+//             update(p << 1, l, m, ql, qr);
+//             update(p << 1 | 1, m + 1, r, ql, qr);
 
-            sum[p] =(sum[p << 1] + sum[p << 1 | 1]) % MOD;
-            sq[p] =(sq[p << 1] + sq[p << 1 | 1]) % MOD;
-        }
+//             sum[p] =(sum[p << 1] + sum[p << 1 | 1]) % MOD;
+//             sq[p] =(sq[p << 1] + sq[p << 1 | 1]) % MOD;
+//         }
 
-        long long query() {
-            return sq[1];
-        }
-    };
+//         long long query() {
+//             return sq[1];
+//         }
+//     };
 
-    int sumCounts(vector<int>& nums) {
-        int n = nums.size();
-        SegTree seg(n);
-        unordered_map<int, int> last;
-        long long ans = 0;
+//     int sumCounts(vector<int>& nums) {
+//         int n = nums.size();
+//         SegTree seg(n);
+//         unordered_map<int, int> last;
+//         long long ans = 0;
 
-        for (int i = 0; i < n; i++) {
-            int prev = -1;
+//         for (int i = 0; i < n; i++) {
+//             int prev = -1;
 
-            if (last.count(nums[i]))
-                prev = last[nums[i]];
-            seg.update(1,0,n - 1,prev + 1,  i);
-            ans = (ans + seg.query()) % MOD;
-            last[nums[i]] = i;
-        }
-        return (int)ans;
-}
-int main(){
-        // vector<int>nums={1,2,1};
-        vector<int>nums={2,2};
-        cout<<sumCounts(nums);
+//             if (last.count(nums[i]))
+//                 prev = last[nums[i]];
+//             seg.update(1,0,n - 1,prev + 1,  i);
+//             ans = (ans + seg.query()) % MOD;
+//             last[nums[i]] = i;
+//         }
+//         return (int)ans;
+// }
+// int main(){
+//         // vector<int>nums={1,2,1};
+//         vector<int>nums={2,2};
+//         cout<<sumCounts(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
 
 
         /* // Q.301. Remove Invalid Parentheses  // */
