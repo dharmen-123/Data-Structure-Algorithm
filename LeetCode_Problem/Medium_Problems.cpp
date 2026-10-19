@@ -3486,56 +3486,56 @@
 
         /* // Q.3551. Minimum Swaps to Sort by Digit Sum  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-    int digitSum(int x) {
-        int sum = 0;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+//     int digitSum(int x) {
+//         int sum = 0;
 
-        while(x) {
-            sum += x % 10;
-            x /= 10;
-        }
+//         while(x) {
+//             sum += x % 10;
+//             x /= 10;
+//         }
 
-        return sum;
-    }
+//         return sum;
+//     }
 
-    int minSwaps(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> sorted = nums;
-        sort(sorted.begin(), sorted.end(),
-             [&](int a, int b) {
-                 int sa = digitSum(a);
-                 int sb = digitSum(b);
-                 if(sa == sb)
-                     return a < b;
-                 return sa < sb;
-             });
+//     int minSwaps(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<int> sorted = nums;
+//         sort(sorted.begin(), sorted.end(),
+//              [&](int a, int b) {
+//                  int sa = digitSum(a);
+//                  int sb = digitSum(b);
+//                  if(sa == sb)
+//                      return a < b;
+//                  return sa < sb;
+//              });
 
-        unordered_map<int,int> targetPos;
-        for(int i = 0; i < n; i++)
-            targetPos[sorted[i]] = i;
+//         unordered_map<int,int> targetPos;
+//         for(int i = 0; i < n; i++)
+//             targetPos[sorted[i]] = i;
 
-        vector<bool> vis(n, false);
-        int swaps = 0;
-        for(int i = 0; i < n; i++) {
-            if(vis[i])
-                continue;
+//         vector<bool> vis(n, false);
+//         int swaps = 0;
+//         for(int i = 0; i < n; i++) {
+//             if(vis[i])
+//                 continue;
 
-            int cycle = 0;
-            int j = i;
-            while(!vis[j]) {
-                vis[j] = true;
-                j = targetPos[nums[j]];
-                cycle++;
-            }
-            swaps += max(0, cycle - 1);
-        }
-        return swaps;
-    }
-int main(){
-        vector<int>nums={22,14,33,7};
-        cout<<minSwaps(nums);
+//             int cycle = 0;
+//             int j = i;
+//             while(!vis[j]) {
+//                 vis[j] = true;
+//                 j = targetPos[nums[j]];
+//                 cycle++;
+//             }
+//             swaps += max(0, cycle - 1);
+//         }
+//         return swaps;
+//     }
+// int main(){
+//         vector<int>nums={22,14,33,7};
+//         cout<<minSwaps(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
