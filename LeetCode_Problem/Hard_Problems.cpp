@@ -539,21 +539,18 @@
 // }
 
 
-        /* // Q.301. Remove Invalid Parentheses  // */
+    /* // Q.3886. Sum of Sortable Integers  // */
 
-// #include<iostream>
-// #include<bits/stdc++.h>
-// using namespace std;
-// vector<string> removeInvalidParentheses(string s) {
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int sortableIntegers(vector<int>& nums) {
         
+}
+int main(){
+        vector<int>nums={3,1,2};
+        cout<<sortableIntegers(nums);
         
-// }
-// int main(){
-//         string s = "()())()";
-//         vector<string>ans=removeInvalidParentheses(s);
-//         for(auto a:ans){
-//                 cout<<a<<" ";
-//         }
 
-// return 0 ;
-// }
+return 0 ;
+}
