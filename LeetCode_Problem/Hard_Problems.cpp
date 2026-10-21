@@ -545,12 +545,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 int sortableIntegers(vector<int>& nums) {
-        
+         
 }
 int main(){
         vector<int>nums={3,1,2};
         cout<<sortableIntegers(nums);
-        
+
 
 return 0 ;
 }
