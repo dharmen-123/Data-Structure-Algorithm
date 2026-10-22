@@ -3546,21 +3546,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 int minOperations(string s) {
-  int n = s.size();
-
+        int n = s.size();
         bool sorted = true;
-
         for (int i = 1; i < n; i++) {
             if (s[i] < s[i - 1]) {
                 sorted = false;
                 break;
             }
         }
-
         if (sorted) return 0;
-
         if (n == 2) return -1;
-
         char mn = *min_element(s.begin(), s.end());
         char mx = *max_element(s.begin(), s.end());
 
