@@ -3574,3 +3574,59 @@
         
 // return 0 ;
 // }
+
+        /* // Q.3942. Minimum Operations to Sort a Permutation  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minOperations(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> target(n);
+        for (int i = 0; i < n; i++) {
+            target[i] = i;
+        }
+        if (nums == target) {
+            return 0;
+        }
+        vector<int> rev = nums;
+        reverse(rev.begin(), rev.end());
+        int shift = -1;
+        bool found = false;
+        for (int i = 0; i < n; i++) {
+            bool ok = true;
+            for (int j = 0; j < n; j++) {
+                if (nums[(i + j) % n] != j) {
+                    ok = false;
+                    break;
+                }
+            }
+            if (ok) {
+                shift = i;
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            return min(shift, n - shift + 2);
+        }
+        for (int i = 0; i < n; i++) {
+            bool ok = true;
+            for (int j = 0; j < n; j++) {
+                if (rev[(i + j) % n] != j) {
+                    ok = false;
+                    break;
+                }
+            }
+            if (ok) {
+                return min(i + 1, n - i + 1);
+            }
+        }
+        return -1;
+}
+int main(){
+        vector<int>nums={0,2,1};
+        cout<<minOperations(nums);
+
+return 0 ;
+}
