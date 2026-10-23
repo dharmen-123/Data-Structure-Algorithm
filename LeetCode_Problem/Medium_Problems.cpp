@@ -3630,3 +3630,34 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3644. Maximum K to Sort a Permutation  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int sortPermutation(vector<int>& nums) {
+        int ans = -1;
+        bool found = false;
+        for (int i = 0; i < nums.size(); i++) {
+
+            if (nums[i] != i) {
+
+                if (!found) {
+                    ans = nums[i];
+                    found = true;
+                }
+                else {
+                    ans &= nums[i];
+                }
+            }
+        }
+        return found ? ans : 0;
+
+}
+int main(){
+        vector<int>nums={0,3,2,1};
+        cout<<sortPermutation(nums);
+
+return 0 ;
+}
