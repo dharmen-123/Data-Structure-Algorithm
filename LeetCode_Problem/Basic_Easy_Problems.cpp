@@ -4288,25 +4288,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 int getDay(string date) {
-
     vector<int> days = {
         31,28,31,30,31,30,
         31,31,30,31,30,31
     };
-
     int month =
         (date[0]-'0')*10 +
         (date[1]-'0');
-
     int day =
         (date[3]-'0')*10 +
         (date[4]-'0');
-
     int total = day;
-
     for(int i = 0; i < month-1; i++)
         total += days[i];
-
     return total;
 }
 int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
