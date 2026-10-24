@@ -4316,7 +4316,8 @@ int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, s
       return answer;  
 }
 int main(){
-        string arriveAlice = "08-15", leaveAlice = "08-18", arriveBob = "08-16", leaveBob = "08-19";
+        // string arriveAlice = "08-15", leaveAlice = "08-18", arriveBob = "08-16", leaveBob = "08-19";
+        string arriveAlice = "10-01", leaveAlice = "10-31", arriveBob = "11-01", leaveBob = "12-31";
         cout<<countDaysTogether(arriveAlice,leaveAlice,arriveBob,leaveBob);
 
 return 0 ;
