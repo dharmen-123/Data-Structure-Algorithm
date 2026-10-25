@@ -3689,7 +3689,6 @@ int closedIsland(vector<vector<int>>& grid) {
             if (grid[m - 1][j] == 0)
                 dfs(grid, m - 1, j);
         }
-
         for (int i = 0; i < m; i++) {
             if (grid[i][0] == 0)
                 dfs(grid, i, 0);
@@ -3697,7 +3696,6 @@ int closedIsland(vector<vector<int>>& grid) {
             if (grid[i][n - 1] == 0)
                 dfs(grid, i, n - 1);
         }
-
         int count = 0;
         for (int i = 1; i < m - 1; i++) {
             for (int j = 1; j < n - 1; j++) {
@@ -3708,7 +3706,6 @@ int closedIsland(vector<vector<int>>& grid) {
                 }
             }
         }
-
      return count;
 }
 int main(){
