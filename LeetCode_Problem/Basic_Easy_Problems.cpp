@@ -4284,41 +4284,41 @@
 
         /* // Q.2409. Count Days Spent Together  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int getDay(string date) {
-    vector<int> days = {
-        31,28,31,30,31,30,
-        31,31,30,31,30,31
-    };
-    int month =
-        (date[0]-'0')*10 +
-        (date[1]-'0');
-    int day =
-        (date[3]-'0')*10 +
-        (date[4]-'0');
-    int total = day;
-    for(int i = 0; i < month-1; i++)
-        total += days[i];
-    return total;
-}
-int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
-        int start=max(getDay(arriveAlice),getDay(arriveBob));
-        int end=min(getDay(leaveAlice),getDay(leaveBob));
-        int answer;
-        if(start>end){
-                return 0;
-        }
-        else{
-                answer=end-start+1;
-        }
-      return answer;  
-}
-int main(){
-        // string arriveAlice = "08-15", leaveAlice = "08-18", arriveBob = "08-16", leaveBob = "08-19";
-        string arriveAlice = "10-01", leaveAlice = "10-31", arriveBob = "11-01", leaveBob = "12-31";
-        cout<<countDaysTogether(arriveAlice,leaveAlice,arriveBob,leaveBob);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int getDay(string date) {
+//     vector<int> days = {
+//         31,28,31,30,31,30,
+//         31,31,30,31,30,31
+//     };
+//     int month =
+//         (date[0]-'0')*10 +
+//         (date[1]-'0');
+//     int day =
+//         (date[3]-'0')*10 +
+//         (date[4]-'0');
+//     int total = day;
+//     for(int i = 0; i < month-1; i++)
+//         total += days[i];
+//     return total;
+// }
+// int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+//         int start=max(getDay(arriveAlice),getDay(arriveBob));
+//         int end=min(getDay(leaveAlice),getDay(leaveBob));
+//         int answer;
+//         if(start>end){
+//                 return 0;
+//         }
+//         else{
+//                 answer=end-start+1;
+//         }
+//       return answer;  
+// }
+// int main(){
+//         // string arriveAlice = "08-15", leaveAlice = "08-18", arriveBob = "08-16", leaveBob = "08-19";
+//         string arriveAlice = "10-01", leaveAlice = "10-31", arriveBob = "11-01", leaveBob = "12-31";
+//         cout<<countDaysTogether(arriveAlice,leaveAlice,arriveBob,leaveBob);
 
-return 0 ;
-}
+// return 0 ;
+// }
