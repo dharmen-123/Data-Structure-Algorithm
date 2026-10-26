@@ -3714,3 +3714,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3619. Count Islands With Total Value Divisible by K  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int countIslands(vector<vector<int>>& grid, int k) {
+
+        
+}
+int main(){
+        vector<vector<int>>grid = {{0,2,1,0,},{0,5,0,0,5},{0,0,1,0,0},{0,1,4,7,0},{0,2,0,0,8}};
+        int k = 5;
+
+return 0 ;
+}
