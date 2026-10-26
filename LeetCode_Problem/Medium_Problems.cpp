@@ -3731,7 +3731,7 @@ using namespace std;
         sum += dfs(r - 1, c, grid);
         sum += dfs(r, c + 1, grid);
         sum += dfs(r, c - 1, grid);
-
+       
         return sum;
     }
 int countIslands(vector<vector<int>>& grid, int k) {
@@ -3742,13 +3742,12 @@ int countIslands(vector<vector<int>>& grid, int k) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] > 0) {
                     long long sum = dfs(i, j, grid);
-
                     if (sum % k == 0)
                         ans++;
                 }
             }
         }
-        return ans;
+    return ans;
 }
 int main(){
         vector<vector<int>>grid = {{0,2,1,0,},{0,5,0,0,5},{0,0,1,0,0},{0,1,4,7,0},{0,2,0,0,8}};
