@@ -4333,7 +4333,9 @@ vector<string> createGrid(int m, int n) {
 }
 int main(){
        int m = 2, n = 3;
-       
-       
+       vector<string>ans=createGrid(m,n);
+       for(auto k:ans){
+         cout<<k<<" ";
+       }
 return 0 ;
 }
