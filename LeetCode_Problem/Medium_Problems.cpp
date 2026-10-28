@@ -3755,3 +3755,19 @@
 
 // return 0 ;
 // }
+
+
+        /* // Q.3882. Minimum XOR Path in a Grid  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minCost(vector<vector<int>>& grid) {
+        
+}
+int main(){
+        vector<vector<int>>grid = {{1,2},{3,4}};       
+        cout<<minCost(grid);
+        
+return 0 ;
+}
