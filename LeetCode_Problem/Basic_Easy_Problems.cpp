@@ -4325,22 +4325,22 @@
 
         /* // Q.3963. Create Grid With Exactly One Path  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<string>createGrid(int m, int n) {
-    vector<string> grid(m, string(n, '#'));
-        for (int j = 0; j < n; j++)
-            grid[0][j] = '.';
-        for (int i = 0; i < m; i++)
-            grid[i][n - 1] = '.';
-      return grid;    
-}
-int main(){
-       int m = 2, n = 3;
-       vector<string>ans=createGrid(m,n);
-       for(auto k:ans){
-         cout<<k<<" ";
-       }
-return 0 ;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<string>createGrid(int m, int n) {
+//     vector<string> grid(m, string(n, '#'));
+//         for (int j = 0; j < n; j++)
+//             grid[0][j] = '.';
+//         for (int i = 0; i < m; i++)
+//             grid[i][n - 1] = '.';
+//       return grid;    
+// }
+// int main(){
+//        int m = 2, n = 3;
+//        vector<string>ans=createGrid(m,n);
+//        for(auto k:ans){
+//          cout<<k<<" ";
+//        }
+// return 0 ;
+// }
