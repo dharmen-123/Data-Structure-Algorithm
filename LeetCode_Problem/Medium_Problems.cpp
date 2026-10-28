@@ -3763,11 +3763,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 int minCost(vector<vector<int>>& grid) {
-        
+                int m = grid.size();
+        int n = grid[0].size();
+        vector<vector<bitset<1024>>> dp( m,vector<bitset<1024>>(n));
+        dp[0][0][grid[0][0]] = 1;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                for(int x = 0; x < 1024; x++) {
+                    if(!dp[i][j][x])
+                        continue;
+                    if(i + 1 < m)
+                        dp[i + 1][j]
+                          .set(x ^ grid[i + 1][j]);
+                    if(j + 1 < n)
+                        dp[i][j + 1].set(x ^ grid[i][j + 1]);
+                }
+            }
+        }
+        for(int x = 0; x < 1024; x++) {
+            if(dp[m - 1][n - 1][x])
+                return x;
+        }
+        return 0; 
 }
 int main(){
         vector<vector<int>>grid = {{1,2},{3,4}};       
         cout<<minCost(grid);
-        
+
 return 0 ;
 }
