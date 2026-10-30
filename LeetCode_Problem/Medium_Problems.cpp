@@ -3792,3 +3792,22 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3970. Shortest Path With At Most K Consecutive Identical Characters  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int shortestPath(int n, vector<vector<int>>& edges, string labels, int k) {
+
+        
+}
+int main(){
+        int n = 3; 
+        vector<vector<int>>edges = {{0,1,1},{1,2,1},{0,2,3}};
+        string labels = "aab";
+        int k = 1;
+
+return 0 ;
+}
+
