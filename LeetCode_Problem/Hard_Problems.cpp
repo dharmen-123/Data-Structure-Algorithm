@@ -605,20 +605,3 @@
 // return 0 ;
 // }
 
-        /* // Q.3841. Palindromic Path Queries in a Tree  // */
-
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<bool> palindromePath(int n, vector<vector<int>>& edges, string s, vector<string>& queries) {
-        
-        
-}
-int main(){
-        int n = 3;
-        vector<vector<int>>edges = {{0,1},{1,2}};
-        string s = "aac"; 
-        vector<string>queries = {"query 0 2","update 1 b","query 0 2"};
-
-return 0 ;
-}
