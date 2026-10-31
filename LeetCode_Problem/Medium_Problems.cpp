@@ -3798,10 +3798,9 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-typedef tuple<long long, int, int> T;
 
-long long shortestPath(int n, vector<vector<int>>& edges,
-                       string labels, int k) {
+typedef tuple<long long, int, int> T;
+long long shortestPath(int n, vector<vector<int>>& edges,string labels, int k) {
     vector<vector<pair<int,int>>> adj(n);
     for (auto &e : edges) {
         int u = e[0];
@@ -3810,17 +3809,16 @@ long long shortestPath(int n, vector<vector<int>>& edges,
         adj[u].push_back({v, wt});
     }
     const long long INF = 1e18;
-    vector<vector<long long>> dist(
-        n, vector<long long>(k + 1, INF)
-    );
+    
+    vector<vector<long long>> dist(n, vector<long long>(k + 1, INF));
     priority_queue<T, vector<T>, greater<T>> pq;
+    
     dist[0][1] = 0;
     pq.push({0, 0, 1}); 
 
     while (!pq.empty()) {
         T cur = pq.top();
         pq.pop();
-
         long long d = get<0>(cur);
         int node = get<1>(cur);
         int cnt = get<2>(cur);
