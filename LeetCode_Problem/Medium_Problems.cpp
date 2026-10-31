@@ -3873,11 +3873,61 @@
 #include<bits/stdc++.h>
 using namespace std;
 int uniquePaths(vector<vector<int>>& grid) {
-        
+        int m = grid.size();
+        int n = grid[0].size();
+        int MOD = 1e9 + 7;
+        vector<vector<long long>> dp(m, vector<long long>(n, 0));
+
+        auto getNext = [&](int r, int c, int dir) {
+            if (dir == 0) c++;
+            else r++;
+
+            while (r < m && c < n && grid[r][c] == 1) {
+                if (dir == 0) {
+                    dir = 1;
+                    r++;
+                } else {
+                    dir = 0;
+                    c++;
+                }
+            }
+            if (r >= m || c >= n)
+                return pair<int,int>{-1,-1};
+
+            return pair<int,int>{r,c};
+        };
+        vector<vector<pair<int,int>>> goR(m, vector<pair<int,int>>(n));
+        vector<vector<pair<int,int>>> goD(m, vector<pair<int,int>>(n));
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                goR[i][j] = getNext(i, j, 0);
+                goD[i][j] = getNext(i, j, 1);
+            }
+        }
+        dp[0][0] = 1;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (dp[i][j] == 0)
+                    continue;
+                auto p = goR[i][j];
+
+                if (p.first != -1) {
+                    dp[p.first][p.second] =(dp[p.first][p.second] + dp[i][j]) % MOD;
+                }
+                p = goD[i][j];
+                if (p.first != -1) {
+                    dp[p.first][p.second] =
+                        (dp[p.first][p.second] + dp[i][j]) % MOD;
+                }
+            }
+        }
+        return dp[m - 1][n - 1];
 }
 int main(){
         vector<vector<int>>grid = {{0,1,0},{0,0,1},{1,0,0}};
         cout<<uniquePaths(grid);
-        
+
 return 0 ;
 }
