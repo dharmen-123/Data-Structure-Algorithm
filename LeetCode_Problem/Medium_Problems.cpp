@@ -3795,75 +3795,75 @@
 
         /* // Q.3970. Shortest Path With At Most K Consecutive Identical Characters  //  */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
 
-typedef tuple<long long, int, int> T;
-long long shortestPath(int n, vector<vector<int>>& edges,string labels, int k) {
-    vector<vector<pair<int,int>>> adj(n);
-    for (auto &e : edges) {
-        int u = e[0];
-        int v = e[1];
-        int wt = e[2];
-        adj[u].push_back({v, wt});
-    }
-    const long long INF = 1e18;
+// typedef tuple<long long, int, int> T;
+// long long shortestPath(int n, vector<vector<int>>& edges,string labels, int k) {
+//     vector<vector<pair<int,int>>> adj(n);
+//     for (auto &e : edges) {
+//         int u = e[0];
+//         int v = e[1];
+//         int wt = e[2];
+//         adj[u].push_back({v, wt});
+//     }
+//     const long long INF = 1e18;
     
-    vector<vector<long long>> dist(n, vector<long long>(k + 1, INF));
-    priority_queue<T, vector<T>, greater<T>> pq;
+//     vector<vector<long long>> dist(n, vector<long long>(k + 1, INF));
+//     priority_queue<T, vector<T>, greater<T>> pq;
     
-    dist[0][1] = 0;
-    pq.push({0, 0, 1}); 
+//     dist[0][1] = 0;
+//     pq.push({0, 0, 1}); 
 
-    while (!pq.empty()) {
-        T cur = pq.top();
-        pq.pop();
-        long long d = get<0>(cur);
-        int node = get<1>(cur);
-        int cnt = get<2>(cur);
+//     while (!pq.empty()) {
+//         T cur = pq.top();
+//         pq.pop();
+//         long long d = get<0>(cur);
+//         int node = get<1>(cur);
+//         int cnt = get<2>(cur);
 
-        if (d > dist[node][cnt])
-            continue;
+//         if (d > dist[node][cnt])
+//             continue;
 
-        for (auto &p : adj[node]) {
+//         for (auto &p : adj[node]) {
 
-            int adjNode = p.first;
-            int wt = p.second;
-            int newCnt;
+//             int adjNode = p.first;
+//             int wt = p.second;
+//             int newCnt;
 
-            if (labels[node] == labels[adjNode])
-                newCnt = cnt + 1;
-            else
-                newCnt = 1;
+//             if (labels[node] == labels[adjNode])
+//                 newCnt = cnt + 1;
+//             else
+//                 newCnt = 1;
 
-            if (newCnt > k)
-                continue;
+//             if (newCnt > k)
+//                 continue;
 
-            long long newDist = d + wt;
-            if (newDist < dist[adjNode][newCnt]) {
-                dist[adjNode][newCnt] = newDist;
-                pq.push({newDist, adjNode, newCnt});
-            }
-        }
-    }
-    long long ans = INF;
+//             long long newDist = d + wt;
+//             if (newDist < dist[adjNode][newCnt]) {
+//                 dist[adjNode][newCnt] = newDist;
+//                 pq.push({newDist, adjNode, newCnt});
+//             }
+//         }
+//     }
+//     long long ans = INF;
 
-    for (int cnt = 1; cnt <= k; cnt++)
-        ans = min(ans, dist[n - 1][cnt]);
+//     for (int cnt = 1; cnt <= k; cnt++)
+//         ans = min(ans, dist[n - 1][cnt]);
 
-     return (ans == INF ? -1 : ans);
-}
-int main() {
-    int n = 3;
-    vector<vector<int>> edges = {
-        {0,1,1},
-        {1,2,1},
-        {0,2,3}
-    };
-    string labels = "aab";
-    int k = 1;
-    cout << shortestPath(n, edges, labels, k);
-    return 0;
-}
+//      return (ans == INF ? -1 : ans);
+// }
+// int main() {
+//     int n = 3;
+//     vector<vector<int>> edges = {
+//         {0,1,1},
+//         {1,2,1},
+//         {0,2,3}
+//     };
+//     string labels = "aab";
+//     int k = 1;
+//     cout << shortestPath(n, edges, labels, k);
+//     return 0;
+// }
 
