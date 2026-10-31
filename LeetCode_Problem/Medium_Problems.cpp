@@ -3867,3 +3867,17 @@
 //     return 0;
 // }
 
+        /* // Q.3665. Twisted Mirror Path Count  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int uniquePaths(vector<vector<int>>& grid) {
+        
+}
+int main(){
+        vector<vector<int>>grid = {{0,1,0},{0,0,1},{1,0,0}};
+        cout<<uniquePaths(grid);
+        
+return 0 ;
+}
