@@ -3938,7 +3938,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 int minMoves(vector<int>& nums) {
+        int n=nums.size();
+        int count=0,mn=INT_MAX;
+        mn=*min_element(nums.begin(),nums.end());
+        for(int i=0;i<n;i++){
+             count+=nums[i]-mn;   
+        }
         
+      return count;
 }
 int main(){
         vector<int>nums={1,2,3};
