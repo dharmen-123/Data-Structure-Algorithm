@@ -3931,3 +3931,18 @@
 
 // return 0 ;
 // }
+
+        /* // Q.453. Minimum Moves to Equal Array Elements  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minMoves(vector<int>& nums) {
+        
+}
+int main(){
+        vector<int>nums={1,2,3};
+        cout<<minMoves(nums);
+
+return 0 ;
+}
