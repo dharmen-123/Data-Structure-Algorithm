@@ -3934,23 +3934,46 @@
 
         /* // Q.453. Minimum Moves to Equal Array Elements  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minMoves(vector<int>& nums) {
+//         int n=nums.size();
+//         int count=0,mn=INT_MAX;
+//         mn=*min_element(nums.begin(),nums.end());
+//         for(int i=0;i<n;i++){
+//              count+=nums[i]-mn;   
+//         }
+        
+//       return count;
+// }
+// int main(){
+//         // vector<int>nums={1,2,3};
+//         vector<int>nums={1,5,7};
+//         cout<<minMoves(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.462. Minimum Moves to Equal Array Elements II  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minMoves(vector<int>& nums) {
+int minMoves2(vector<int>& nums) {
         int n=nums.size();
         int count=0,mn=INT_MAX;
-        mn=*min_element(nums.begin(),nums.end());
+        sort(nums.begin(),nums.end());
+        mn=nums[n/2];
         for(int i=0;i<n;i++){
-             count+=nums[i]-mn;   
+             count+=abs(nums[i]-mn);   
         }
         
       return count;
 }
 int main(){
-        // vector<int>nums={1,2,3};
-        vector<int>nums={1,5,7};
-        cout<<minMoves(nums);
+        vector<int>nums={1,2,3};
+        cout<<minMoves2(nums);
 
 return 0 ;
 }
