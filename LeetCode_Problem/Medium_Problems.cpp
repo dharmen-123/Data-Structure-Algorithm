@@ -3948,7 +3948,8 @@ int minMoves(vector<int>& nums) {
       return count;
 }
 int main(){
-        vector<int>nums={1,2,3};
+        // vector<int>nums={1,2,3};
+        vector<int>nums={1,5,7};
         cout<<minMoves(nums);
 
 return 0 ;
