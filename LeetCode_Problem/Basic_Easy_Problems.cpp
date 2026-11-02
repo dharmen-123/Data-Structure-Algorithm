@@ -4344,3 +4344,18 @@
 //        }
 // return 0 ;
 // }
+
+        /* // Q,3190. Find Minimum Operations to Make All Elements Divisible by Three // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minimumOperations(vector<int>& nums) {
+        
+}
+int main(){
+        vector<int>nums={1,2,3,4};
+        cout<<minimumOperations(nums);
+
+return 0 ;
+}
