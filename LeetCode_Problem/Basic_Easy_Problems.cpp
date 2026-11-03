@@ -4366,4 +4366,23 @@
 // return 0 ;
 // }
 
-        
+        /* // Q.3736. Minimum Moves to Equal Array Elements III  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minMoves(vector<int>& nums) {
+        int n=nums.size();
+        int count=0,mx=INT_MIN;
+        mx=*max_element(nums.begin(),nums.end());
+        for(int i=0;i<n;i++){
+            count+=abs(nums[i]-mx);
+        }   
+        return count;
+}
+int main(){
+        vector<int>nums={2,1,3};
+        cout<<minMoves(nums);
+
+return 0 ;
+}
