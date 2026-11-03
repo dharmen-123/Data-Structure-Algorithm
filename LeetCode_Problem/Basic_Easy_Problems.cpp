@@ -4368,21 +4368,47 @@
 
         /* // Q.3736. Minimum Moves to Equal Array Elements III  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minMoves(vector<int>& nums) {
+//         int n=nums.size();
+//         int count=0,mx=INT_MIN;
+//         mx=*max_element(nums.begin(),nums.end());
+//         for(int i=0;i<n;i++){
+//             count+=abs(nums[i]-mx);
+//         }   
+//         return count;
+// }
+// int main(){
+//         vector<int>nums={2,1,3};
+//         cout<<minMoves(nums);
+
+// return 0 ;
+// }
+
+        /* // Q.475. Final Prices With a Special Discount in a Shop // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minMoves(vector<int>& nums) {
-        int n=nums.size();
-        int count=0,mx=INT_MIN;
-        mx=*max_element(nums.begin(),nums.end());
-        for(int i=0;i<n;i++){
-            count+=abs(nums[i]-mx);
-        }   
-        return count;
+vector<int> finalPrices(vector<int>& prices) {
+        stack<int>st;
+        vector<int>ans=prices;
+        for(int i=0;i<prices.size();i++){
+                while(!st.empty() && prices[st.top()]>=prices[i]){
+                        ans[st.top()]=prices[st.top()]-prices[i];
+                        st.pop();
+                }
+           st.push(i);
+        }
+    return ans;
 }
 int main(){
-        vector<int>nums={2,1,3};
-        cout<<minMoves(nums);
-
+        vector<int>prices={8,4,6,2,3};
+        vector<int>ans=finalPrices(prices);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
 return 0 ;
 }
