@@ -3977,3 +3977,30 @@
 
 // return 0 ;
 // }
+
+        /* // Q.946. Validate Stack Sequences // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
+        stack<int> st;
+        int j = 0;
+        for(int i=0; i<pushed.size(); i++){
+            st.push(pushed[i]);
+            while(!st.empty() && st.top() == popped[j]){
+                st.pop();
+                j++;
+            }
+        }
+        if(st.empty() && j == popped.size()){
+            return true;
+        }
+        return false;
+}
+int main(){
+        vector<int>pushed = {1,2,3,4,5}, popped = {4,5,3,2,1};
+        cout<<validateStackSequences(pushed,popped);
+        
+return 0 ;
+}
