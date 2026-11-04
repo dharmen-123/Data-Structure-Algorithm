@@ -610,12 +610,89 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-long long minOperations(vector<int>& nums, int x, int k) {
-           
-}
+ multiset<int> leftPart, rightPart;
+    long long leftSum = 0, rightSum = 0;
+
+    void balance() {
+        while (leftPart.size() > rightPart.size() + 1) {
+            int val = *leftPart.rbegin();
+            leftPart.erase(prev(leftPart.end()));
+            leftSum -= val;
+            rightPart.insert(val);
+            rightSum += val;
+        }
+        while (leftPart.size() < rightPart.size()) {
+            int val = *rightPart.begin();
+            rightPart.erase(rightPart.begin());
+            rightSum -= val;
+            leftPart.insert(val);
+            leftSum += val;
+        }
+    }
+
+    void add(int val) {
+        if (leftPart.empty() || val <= *leftPart.rbegin()) {
+            leftPart.insert(val);
+            leftSum += val;
+        } else {
+            rightPart.insert(val);
+            rightSum += val;
+        }
+        balance();
+    }
+
+    void removeNum(int val) {
+        auto it = leftPart.find(val);
+        if (it != leftPart.end()) {
+            leftSum -= val;
+            leftPart.erase(it);
+        } else {
+            it = rightPart.find(val);
+            rightSum -= val;
+            rightPart.erase(it);
+        }
+        balance();
+    }
+
+    long long getCost() {
+        long long median = *leftPart.rbegin();
+        return median * (long long)leftPart.size() - leftSum
+             + rightSum - median * (long long)rightPart.size();
+    }
+
+    long long minOperations(vector<int>& nums, int x, int k) {
+        int n = nums.size();
+        vector<long long> cost(n - x + 1);
+
+        for (int i = 0; i < x; i++)
+            add(nums[i]);
+        cost[0] = getCost();
+
+        for (int i = x; i < n; i++) {
+            removeNum(nums[i - x]);
+            add(nums[i]);
+            cost[i - x + 1] = getCost();
+        }
+
+        long long INF = 4e18;
+        vector<long long> prev(n + x + 1, 0);
+        vector<long long> curr(n + x + 1, INF);
+        for (int cnt = 1; cnt <= k; cnt++) {
+            fill(curr.begin(), curr.end(), INF);
+
+            for (int i = n - x; i >= 0; i--) {
+                long long skip = curr[i + 1];
+                long long take = cost[i] + prev[i + x];
+                curr[i] = min(skip, take);
+            }
+            prev.swap(curr);
+        }
+        return prev[0];
+} 
 int main(){
         vector<int>nums = {5,-2,1,3,7,3,6,4,-1};
         int x = 3, k = 2;
+        cout<<minOperations(nums,x,k);
 
 return 0 ;
 }
