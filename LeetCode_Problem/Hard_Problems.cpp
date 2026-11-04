@@ -605,3 +605,17 @@
 // return 0 ;
 // }
 
+        /* // Q.3505. Minimum Operations to Make Elements Within K Subarrays Equal  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long minOperations(vector<int>& nums, int x, int k) {
+           
+}
+int main(){
+        vector<int>nums = {5,-2,1,3,7,3,6,4,-1};
+        int x = 3, k = 2;
+
+return 0 ;
+}
