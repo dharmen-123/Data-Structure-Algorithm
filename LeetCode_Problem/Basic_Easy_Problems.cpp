@@ -4412,3 +4412,19 @@
 //         }
 // return 0 ;
 // }
+
+        /* // Q.1385. Find the Distance Value Between Two Arrays // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int findTheDistanceValue(vector<int>& arr1, vector<int>& arr2, int d) {
+        
+        
+}
+int main(){
+        vector<int>arr1 = {4,5,8}, arr2 = {10,9,1,8};
+        int d = 2;
+
+return 0 ;
+}
