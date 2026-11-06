@@ -4004,3 +4004,25 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2747. Count Zero Request Servers  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> countServers(int n, vector<vector<int>>& logs, int x, vector<int>& queries) {
+        
+
+}
+int main(){
+        int n = 3;
+        vector<vector<int>>logs = {{1,3},{2,6},{1,5}};
+        int x = 5;
+        vector<int>queries = {10,11};
+        vector<int>ans=countServers(n,logs,x,queries);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
+        
+return 0 ;
+}
