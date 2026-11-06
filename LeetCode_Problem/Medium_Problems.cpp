@@ -4011,34 +4011,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> countServers(int n, vector<vector<int>>& logs, int x, vector<int>& queries){
-            sort(logs.begin(), logs.end(), [](auto &a, auto &b) {
-                return a[1] < b[1];
+        sort(logs.begin(), logs.end(),[](vector<int>& a, vector<int>& b) {
+                 return a[1] < b[1];
              });
-
         int q = queries.size();
         vector<pair<int,int>> qs;
-
         for(int i = 0; i < q; i++) {
             qs.push_back({queries[i], i});
         }
-
         sort(qs.begin(), qs.end());
         vector<int> ans(q);
         vector<int> freq(n + 1, 0);
         int active = 0;
         int left = 0;
         int right = 0;
-        for(auto &[time, idx] : qs) {
 
+        for(auto &p : qs) {
+            int time = p.first;
+            int idx = p.second;
             while(right < logs.size() && logs[right][1] <= time) {
+
                 int server = logs[right][0];
                 if(freq[server] == 0)
                     active++;
                 freq[server]++;
                 right++;
             }
-
             while(left < right && logs[left][1] < time - x) {
+
                 int server = logs[left][0];
                 freq[server]--;
                 if(freq[server] == 0)
