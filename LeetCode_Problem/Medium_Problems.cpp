@@ -4061,3 +4061,20 @@
         
 // return 0 ;
 // }
+
+        /* // Q.1882. Process Tasks Using Servers  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> assignTasks(vector<int>& servers, vector<int>& tasks) {
+        
+}
+int main(){
+        vector<int>servers = {3,3,2}, tasks = {1,2,3,2,1,2};
+        vector<int>ans=assignTasks(servers,tasks);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
+return 0 ;
+}
