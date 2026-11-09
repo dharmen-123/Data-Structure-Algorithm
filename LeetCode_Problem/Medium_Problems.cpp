@@ -4064,71 +4064,71 @@
 
         /* // Q.1882. Process Tasks Using Servers  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-vector<int> assignTasks(vector<int>& servers, vector<int>& tasks) {
-                priority_queue<
-            pair<int,int>,
-            vector<pair<int,int>>,
-            greater<pair<int,int>>
-        > freeServer;
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<int> assignTasks(vector<int>& servers, vector<int>& tasks) {
+//                 priority_queue<
+//             pair<int,int>,
+//             vector<pair<int,int>>,
+//             greater<pair<int,int>>
+//         > freeServer;
 
-        priority_queue<
-            tuple<long long,int,int>,
-            vector<tuple<long long,int,int>>,
-            greater<tuple<long long,int,int>>
-        > busyServer;
+//         priority_queue<
+//             tuple<long long,int,int>,
+//             vector<tuple<long long,int,int>>,
+//             greater<tuple<long long,int,int>>
+//         > busyServer;
 
-        for(int i = 0; i < servers.size(); i++) {
-            freeServer.push({servers[i], i});
-        }
-        vector<int> ans;
-        long long time = 0;
-        for(int i = 0; i < tasks.size(); i++) {
-            time = max(time, (long long)i);
-            while(!busyServer.empty() &&
-                  get<0>(busyServer.top()) <= time) {
+//         for(int i = 0; i < servers.size(); i++) {
+//             freeServer.push({servers[i], i});
+//         }
+//         vector<int> ans;
+//         long long time = 0;
+//         for(int i = 0; i < tasks.size(); i++) {
+//             time = max(time, (long long)i);
+//             while(!busyServer.empty() &&
+//                   get<0>(busyServer.top()) <= time) {
 
-                auto [freeTime, weight, idx] = busyServer.top();
-                busyServer.pop();
+//                 auto [freeTime, weight, idx] = busyServer.top();
+//                 busyServer.pop();
 
-                freeServer.push({weight, idx});
-            }
+//                 freeServer.push({weight, idx});
+//             }
 
-            if(freeServer.empty()) {
+//             if(freeServer.empty()) {
 
-                time = get<0>(busyServer.top());
+//                 time = get<0>(busyServer.top());
 
-                while(!busyServer.empty() &&
-                      get<0>(busyServer.top()) <= time) {
+//                 while(!busyServer.empty() &&
+//                       get<0>(busyServer.top()) <= time) {
 
-                    auto [freeTime, weight, idx] = busyServer.top();
-                    busyServer.pop();
+//                     auto [freeTime, weight, idx] = busyServer.top();
+//                     busyServer.pop();
 
-                    freeServer.push({weight, idx});
-                }
-            }
+//                     freeServer.push({weight, idx});
+//                 }
+//             }
 
-            auto [weight, idx] = freeServer.top();
-            freeServer.pop();
+//             auto [weight, idx] = freeServer.top();
+//             freeServer.pop();
 
-            ans.push_back(idx);
+//             ans.push_back(idx);
 
-            busyServer.push({
-                time + tasks[i],
-                weight,
-                idx
-            });
-        }
+//             busyServer.push({
+//                 time + tasks[i],
+//                 weight,
+//                 idx
+//             });
+//         }
 
-        return ans;
-}
-int main(){
-        vector<int>servers = {3,3,2}, tasks = {1,2,3,2,1,2};
-        vector<int>ans=assignTasks(servers,tasks);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-return 0 ;
-}
+//         return ans;
+// }
+// int main(){
+//         vector<int>servers = {3,3,2}, tasks = {1,2,3,2,1,2};
+//         vector<int>ans=assignTasks(servers,tasks);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
+// return 0 ;
+// }
