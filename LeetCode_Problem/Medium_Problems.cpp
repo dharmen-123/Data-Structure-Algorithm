@@ -4132,3 +4132,17 @@
 //         }
 // return 0 ;
 // }
+
+        /* // Q.1267. Count Servers that Communicate  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int countServers(vector<vector<int>>& grid) {
+        
+}
+int main(){
+
+
+return 0 ;
+}
