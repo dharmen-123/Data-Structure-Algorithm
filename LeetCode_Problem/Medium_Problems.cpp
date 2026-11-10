@@ -4174,3 +4174,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3693. Climbing Stairs II  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int climbStairs(int n, vector<int>& costs) {
+        
+}
+int main(){
+        int n=4;
+        vector<int>costs={1,2,3,4};
+        cout<<climbStairs(n,costs);
+
+return 0 ;
+}
