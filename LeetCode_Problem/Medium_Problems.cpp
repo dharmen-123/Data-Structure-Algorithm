@@ -4181,7 +4181,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 int climbStairs(int n, vector<int>& costs) {
-        
+        vector<long long> dp(n + 1, LLONG_MAX);
+        dp[0] = 0;
+        for(int j = 1; j <= n; j++) {
+            for(int jump = 1; jump <= 3; jump++) {
+                int prev = j - jump;
+                if(prev < 0)
+                    continue;
+
+                dp[j] = min(dp[j], dp[prev] + costs[j - 1] + 1LL * jump * jump);
+            }
+        }
+        return (int)dp[n];
 }
 int main(){
         int n=4;
