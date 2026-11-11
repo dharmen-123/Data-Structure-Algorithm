@@ -4201,3 +4201,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3789. Minimum Cost to Acquire Required Items  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long minimumCost(int cost1, int cost2, int costBoth, int need1, int need2) {
+                
+}
+int main(){
+        int cost1 = 3, cost2 = 2, costBoth = 1;
+        int need1 = 3, need2 = 2;
+        cout<<minimumCost(cost1,cost2,costBoth,need1,need2);
+
+return 0 ;
+}
