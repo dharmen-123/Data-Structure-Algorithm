@@ -4476,31 +4476,60 @@
 
         /* // Q.1598. Crawler Log Folder  //  */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int minOperations(vector<string>& logs) {
+//         stack<string>st;
+//         cout<<st.size()<<endl;
+//         for(int i=0;i<logs.size();i++){
+//                 if(logs[i]=="./"){
+//                      continue;
+//                 }
+//                 else if(logs[i]=="../"){
+//                      if(!st.empty())
+//                         st.pop(); 
+//                 }
+//                 else{
+//                         st.push(logs[i]);
+//                 }
+//         } 
+//         return st.size();
+// }
+// int main(){
+//         vector<string> logs = {"d1/", "d2/", "../", "d21/", "./"};
+//         // vector<string> logs = {"d1/", "../", "../", "../"};
+//         // vector<string>logs= {"./","../","./"};
+//         cout<<minOperations(logs);
+
+// return 0 ;
+// }
+
+        /* // Q.1047. Remove All Adjacent Duplicates In String  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int minOperations(vector<string>& logs) {
-        stack<string>st;
-        cout<<st.size()<<endl;
-        for(int i=0;i<logs.size();i++){
-                if(logs[i]=="./"){
-                     continue;
-                }
-                else if(logs[i]=="../"){
-                     if(!st.empty())
-                        st.pop(); 
-                }
-                else{
-                        st.push(logs[i]);
-                }
-        } 
-        return st.size();
-}
+ string removeDuplicates(string s) {
+        stack<char>st;
+        for(int i=0;i<s.size();i++){
+            if((!st.empty()) && (s[i]==st.top())){
+                st.pop();
+            }
+            else{
+                st.push(s[i]);
+            }
+        }
+        string n="";
+        while(!st.empty()){
+            n.insert(n.begin(),1,st.top());
+            st.pop();
+        }
+     return n;
+    }
 int main(){
-        vector<string> logs = {"d1/", "d2/", "../", "d21/", "./"};
-        // vector<string> logs = {"d1/", "../", "../", "../"};
-        // vector<string>logs= {"./","../","./"};
-        cout<<minOperations(logs);
+        string s = "abbaca";
+        cout<<removeDuplicates(s);
 
 return 0 ;
 }
