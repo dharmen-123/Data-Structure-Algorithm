@@ -4442,3 +4442,18 @@
         
 // return 0 ;
 // }
+
+        /* // Q.3105. Longest Strictly Increasing or Strictly Decreasing Subarray  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int longestMonotonicSubarray(vector<int>& nums) {
+        
+}
+int main(){
+        vector<int> nums = {1, 4, 3, 3, 2};
+        cout<<longestMonotonicSubarray(nums);
+
+return 0 ;
+}
