@@ -696,3 +696,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3420. Count Non-Decreasing Subarrays After K Operations  //  */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long countNonDecreasingSubarrays(vector<int>& nums, int k) {
+        
+}
+int main(){
+        vector<int> nums = {6, 3, 1, 2, 4, 4};
+        int k = 7;
+        cout<<countNonDecreasingSubarrays(nums,k);
+
+return 0 ;
+}
