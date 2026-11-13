@@ -703,7 +703,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 long long countNonDecreasingSubarrays(vector<int>& nums, int k) {
+        int n = nums.size();
+        deque<pair<int,long long>> dq;
+        long long cost = 0;
+        long long ans = 0;
+        int left = n - 1;
         
+        for (int right = n - 1; right >= 0; right--) {
+            long long cnt = 1;
+
+            while (!dq.empty() && dq.back().first < nums[right]) {
+                int val = dq.back().first;
+                long long freq = dq.back().second;
+                dq.pop_back();
+                cost += (long long)(nums[right] - val) * freq;
+                cnt += freq;
+            }
+            dq.push_back({nums[right], cnt});
+
+            while (cost > k) {
+                cost -= dq.front().first - nums[left];
+                dq.front().second--;
+                if (dq.front().second == 0)
+                    dq.pop_front();
+                left--;
+            }
+            ans += left - right + 1;
+        }
+        return ans;    
 }
 int main(){
         vector<int> nums = {6, 3, 1, 2, 4, 4};
