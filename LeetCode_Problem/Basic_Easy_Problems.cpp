@@ -4507,29 +4507,21 @@
 
         /* // Q.1047. Remove All Adjacent Duplicates In String  // */
 
+// #include<i
+
+        /* // Q.3364. Minimum Positive Sum Subarray  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
- string removeDuplicates(string s) {
-        stack<char>st;
-        for(int i=0;i<s.size();i++){
-            if((!st.empty()) && (s[i]==st.top())){
-                st.pop();
-            }
-            else{
-                st.push(s[i]);
-            }
-        }
-        string n="";
-        while(!st.empty()){
-            n.insert(n.begin(),1,st.top());
-            st.pop();
-        }
-     return n;
-    }
+int minimumSumSubarray(vector<int>& nums, int l, int r) {
+        
+}
 int main(){
-        string s = "abbaca";
-        cout<<removeDuplicates(s);
+        vector<int> nums = {3, -2, 1, 4};
+        int l = 2;
+        int r = 3;
+        cout<<minimumSumSubarray(nums,l,r);
 
 return 0 ;
 }
