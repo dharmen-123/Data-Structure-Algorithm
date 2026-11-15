@@ -4204,32 +4204,27 @@
 
         /* // Q.3789. Minimum Cost to Acquire Required Items  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-long long minimumCost(int cost1, int cost2, int costBoth, int need1, int need2) {
-        long long common = min(need1, need2);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// long long minimumCost(int cost1, int cost2, int costBoth, int need1, int need2) {
+//         long long common = min(need1, need2);
+//         long long ans = 0;
+//         ans += common * 1LL *
+//                min(costBoth, cost1 + cost2);
+//         need1 -= common;
+//         need2 -= common;
+//         ans += 1LL * need1 *
+//                min(cost1, costBoth);
+//         ans += 1LL * need2 *
+//                min(cost2, costBoth);
+//         return ans;
 
-        long long ans = 0;
+// }
+// int main(){
+//         int cost1 = 3, cost2 = 2, costBoth = 1;
+//         int need1 = 3, need2 = 2;
+//         cout<<minimumCost(cost1,cost2,costBoth,need1,need2);
 
-        ans += common * 1LL *
-               min(costBoth, cost1 + cost2);
-
-        need1 -= common;
-        need2 -= common;
-
-        ans += 1LL * need1 *
-               min(cost1, costBoth);
-
-        ans += 1LL * need2 *
-               min(cost2, costBoth);
-
-        return ans;
-}
-int main(){
-        int cost1 = 3, cost2 = 2, costBoth = 1;
-        int need1 = 3, need2 = 2;
-        cout<<minimumCost(cost1,cost2,costBoth,need1,need2);
-
-return 0 ;
-}
+// return 0 ;
+// }
