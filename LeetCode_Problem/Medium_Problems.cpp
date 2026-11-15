@@ -4228,3 +4228,34 @@
 
 // return 0 ;
 // }
+
+        /* // Q.1524. Number of Sub-arrays With Odd Sum  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int numOfSubarrays(vector<int>& arr) {
+        const int MOD = 1e9 + 7;
+        long long even = 1;
+        long long odd = 0;
+        long long prefix = 0;
+        long long ans = 0;
+        for(int num : arr) {
+            prefix += num;
+            if(prefix % 2) {
+                ans = (ans + even) % MOD;
+                odd++;
+            }
+            else {
+                ans = (ans + odd) % MOD;
+                even++;
+            }
+        }
+        return ans;
+}
+int main(){
+        vector<int> arr = {1, 3, 5};
+        cout<<numOfSubarrays(arr);
+
+return 0 ;
+}
