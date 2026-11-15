@@ -4254,7 +4254,8 @@ int numOfSubarrays(vector<int>& arr) {
         return ans;
 }
 int main(){
-        vector<int> arr = {1, 3, 5};
+        // vector<int> arr = {1, 3, 5};
+        vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
         cout<<numOfSubarrays(arr);
 
 return 0 ;
