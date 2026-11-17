@@ -739,3 +739,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2911. Minimum Changes to Make K Semi-palindromes // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minimumChanges(string s, int k) {
+        
+}
+int main(){
+        string s = "abcac";
+        int k = 2;
+        cout<<minimumChanges(s,k);
+        
+return 0 ;
+}
