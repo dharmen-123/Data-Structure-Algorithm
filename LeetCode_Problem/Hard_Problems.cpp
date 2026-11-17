@@ -746,12 +746,52 @@
 #include<bits/stdc++.h>
 using namespace std;
 int minimumChanges(string s, int k) {
-        
+        int n = s.size();
+        vector<vector<int>> cost(n,vector<int>(n, 1e9));
+
+        for (int l = 0; l < n; l++) {
+            for (int r = l + 1; r < n; r++) {
+                int len = r - l + 1;
+                for (int d = 1; d < len; d++) {
+                    if (len % d)
+                        continue;
+
+                    int cur = 0;
+                    for (int rem = 0; rem < d; rem++) {
+                        vector<char> g;
+                        for (int i = l + rem;i <= r;i += d)
+                            g.push_back(s[i]);
+                        int i = 0;
+                        int j = g.size() - 1;
+                        while (i < j) {
+                            if (g[i] != g[j])
+                                cur++;
+                            i++;
+                            j--;
+                        }
+                    }
+                    cost[l][r] = min(cost[l][r], cur);
+                }
+            }
+        }
+        vector<vector<int>> dp(n + 1,vector<int>(k + 1, 1e9));
+
+        dp[n][0] = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            for (int parts = 1;parts <= k;parts++) {
+                for (int j = i + 1;j < n;j++) {
+                    if (dp[j + 1][parts - 1] == 1e9)
+                        continue;
+                    dp[i][parts] = min(dp[i][parts], cost[i][j] +  dp[j + 1][parts - 1]);
+                }
+            }
+        }
+        return dp[0][k];
 }
 int main(){
         string s = "abcac";
         int k = 2;
         cout<<minimumChanges(s,k);
-        
+
 return 0 ;
 }
