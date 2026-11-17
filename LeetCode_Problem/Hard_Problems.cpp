@@ -789,7 +789,8 @@ int minimumChanges(string s, int k) {
         return dp[0][k];
 }
 int main(){
-        string s = "abcac";
+        // string s = "abcac";
+        string s = "abcdef";
         int k = 2;
         cout<<minimumChanges(s,k);
 
