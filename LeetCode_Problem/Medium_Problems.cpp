@@ -4260,3 +4260,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2914. Minimum Number of Changes to Make Binary String Beautiful // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minChanges(string s) {
+        
+        
+}
+int main(){
+        string s = "1001";
+        cout<<minChanges(s);
+
+return 0 ;
+}
