@@ -4280,3 +4280,18 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2567. Minimum Score by Changing Two Elements // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int minimizeSum(vector<int>& nums) {
+        
+}
+int main(){
+        vector<int> nums = {1, 4, 7, 8, 5};
+        cout<<minimizeSum(nums);
+        
+return 0 ;
+}
