@@ -1694,28 +1694,28 @@
 
         /* // Q.Sort in Specific Order // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-void sortIt(vector<int>& arr) {
-        for(int i=0;i<arr.size();i++){
-            if(arr[i]%2!=0){
-                arr[i]=arr[i]*(-1);
-            }
-        }
-        sort(arr.begin(),arr.end());
-        for(int i=0;i<arr.size();i++){
-            if(arr[i]<0){
-                arr[i]=arr[i]*(-1);
-            }
-        }
-        for(auto k:arr){
-                cout<<k<<" ";
-        }
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// void sortIt(vector<int>& arr) {
+//         for(int i=0;i<arr.size();i++){
+//             if(arr[i]%2!=0){
+//                 arr[i]=arr[i]*(-1);
+//             }
+//         }
+//         sort(arr.begin(),arr.end());
+//         for(int i=0;i<arr.size();i++){
+//             if(arr[i]<0){
+//                 arr[i]=arr[i]*(-1);
+//             }
+//         }
+//         for(auto k:arr){
+//                 cout<<k<<" ";
+//         }
         
-}
-int main(){
-        vector<int>arr = {1, 2, 3, 5, 4, 7, 10};
-        sortIt(arr);
-return 0 ;
-}
+// }
+// int main(){
+//         vector<int>arr = {1, 2, 3, 5, 4, 7, 10};
+//         sortIt(arr);
+// return 0 ;
+// }
