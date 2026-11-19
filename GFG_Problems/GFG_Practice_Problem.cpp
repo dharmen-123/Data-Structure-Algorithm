@@ -1653,41 +1653,69 @@
 // }
 
 
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int main(){
+//         int T;
+//         cin>>T;
+//         while(T--){
+//             int n;
+//             cin>>n;
+//             string s;
+//             cin>>s;
+//             string res="";
+//             int mid=0;
+//             if(n%2==0){
+//                 mid=(n/2)-1;
+//             }
+//             else{
+//                 mid=n/2;
+//             }
+//             int index=0;
+//             for(int i=0;i<n;i++){
+//                 if(i!=mid){
+//                     s[index++]=s[i];
+//                 }
+//             }
+//             s.erase(index,s.size()-index);
+//             res+=s[0];
+//             for(int i=1;i<s.size();i++){
+//                 if(s[i]!=s[i-1]){
+//                       res+=s[i];  
+//                 }
+
+//             }
+//             cout<<res.size()<<endl;
+//         }
+        
+// return 0;
+// }
+
+        /* // Q.Sort in Specific Order // */
+
+#include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
-int main(){
-        int T;
-        cin>>T;
-        while(T--){
-            int n;
-            cin>>n;
-            string s;
-            cin>>s;
-            string res="";
-            int mid=0;
-            if(n%2==0){
-                mid=(n/2)-1;
+void sortIt(vector<int>& arr) {
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]%2!=0){
+                arr[i]=arr[i]*(-1);
             }
-            else{
-                mid=n/2;
+        }
+        sort(arr.begin(),arr.end());
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]<0){
+                arr[i]=arr[i]*(-1);
             }
-            int index=0;
-            for(int i=0;i<n;i++){
-                if(i!=mid){
-                    s[index++]=s[i];
-                }
-            }
-            s.erase(index,s.size()-index);
-            res+=s[0];
-            for(int i=1;i<s.size();i++){
-                if(s[i]!=s[i-1]){
-                      res+=s[i];  
-                }
-
-            }
-            cout<<res.size()<<endl;
+        }
+        for(auto k:arr){
+                cout<<k<<" ";
         }
         
-return 0;
+}
+int main(){
+        vector<int>arr = {1, 2, 3, 5, 4, 7, 10};
+        sortIt(arr);
+return 0 ;
 }
