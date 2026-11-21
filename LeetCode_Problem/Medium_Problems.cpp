@@ -4303,3 +4303,22 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3331. Find Subtree Sizes After Changes  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> findSubtreeSizes(vector<int>& parent, string s) {
+        
+}
+int main(){
+        vector<int>parent={-1,0,0,1,1,1};
+        string s="abaabc";
+        vector<int>ans=findSubtreeSizes(parent, s);
+        for(auto k:ans){
+                cout<<k<<" ";
+        }
+
+return 0 ;
+}
