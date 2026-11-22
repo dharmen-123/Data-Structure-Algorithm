@@ -4537,3 +4537,18 @@
 
 // return 0 ;
 // }
+
+        /* // Q.2124. Check if All A's Appears Before All B's  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool checkString(string s) {
+    
+}
+int main(){
+        string s = "aaabbb";
+        cout<<checkString(s);     
+
+return 0 ;
+}
