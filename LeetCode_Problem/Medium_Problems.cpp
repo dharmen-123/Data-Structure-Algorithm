@@ -4306,58 +4306,56 @@
 
         /* // Q.3331. Find Subtree Sizes After Changes  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-    vector<vector<int>> tree;
-    vector<int> newParent;
-    vector<int> ans;
-    string s;
-void dfsFind(int u, vector<int>& last) {
-        int c = s[u] - 'a';
-        int prev = last[c];
-        if (u != 0 && prev != -1)
-            newParent[u] = prev;
-        last[c] = u;
-        for (int v : tree[u])
-            dfsFind(v, last);
-        last[c] = prev;
-}
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+//     vector<vector<int>> tree;
+//     vector<int> newParent;
+//     vector<int> ans;
+//     string s;
+// void dfsFind(int u, vector<int>& last) {
+//         int c = s[u] - 'a';
+//         int prev = last[c];
+//         if (u != 0 && prev != -1)
+//             newParent[u] = prev;
+//         last[c] = u;
+//         for (int v : tree[u])
+//             dfsFind(v, last);
+//         last[c] = prev;
+// }
+// int dfsSize(int u, vector<vector<int>>& newTree) {
+//         int sz = 1;
+//         for (int v : newTree[u]) {
+//             sz += dfsSize(v, newTree);
+//         }
+//         ans[u] = sz;
+//         return sz;
+// }
+// vector<int> findSubtreeSizes(vector<int>& parent, string str) {
+//         int n = parent.size();
+//         s = str;
+//         tree.assign(n, {});
+//         newParent = parent;
+//         ans.assign(n, 0);
+//         for (int i = 1; i < n; i++) {
+//             tree[parent[i]].push_back(i);
+//         }
+//         vector<int> last(26, -1);
+//         dfsFind(0, last);
+//         vector<vector<int>> newTree(n);
+//         for (int i = 1; i < n; i++) {
+//             newTree[newParent[i]].push_back(i);
+//         }
+//         dfsSize(0, newTree);
+//         return ans;
+// }
+// int main(){
+//         vector<int>parent={-1,0,0,1,1,1};
+//         string s="abaabc";
+//         vector<int>ans=findSubtreeSizes(parent, s);
+//         for(auto k:ans){
+//                 cout<<k<<" ";
+//         }
 
-    int dfsSize(int u, vector<vector<int>>& newTree) {
-        int sz = 1;
-        for (int v : newTree[u]) {
-            sz += dfsSize(v, newTree);
-        }
-        ans[u] = sz;
-        return sz;
-}
-
-vector<int> findSubtreeSizes(vector<int>& parent, string str) {
-        int n = parent.size();
-        s = str;
-        tree.assign(n, {});
-        newParent = parent;
-        ans.assign(n, 0);
-        for (int i = 1; i < n; i++) {
-            tree[parent[i]].push_back(i);
-        }
-        vector<int> last(26, -1);
-        dfsFind(0, last);
-        vector<vector<int>> newTree(n);
-        for (int i = 1; i < n; i++) {
-            newTree[newParent[i]].push_back(i);
-        }
-        dfsSize(0, newTree);
-        return ans;
-}
-int main(){
-        vector<int>parent={-1,0,0,1,1,1};
-        string s="abaabc";
-        vector<int>ans=findSubtreeSizes(parent, s);
-        for(auto k:ans){
-                cout<<k<<" ";
-        }
-
-return 0 ;
-}
+// return 0 ;
+// }
