@@ -4544,7 +4544,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 bool checkString(string s) {
-    
+    bool check = false;
+        for(char k:s){
+            if(k=='b'){
+                check=true;
+            }
+            if(check && k=='a'){
+                return false;
+            }
+        }
+    return true;
 }
 int main(){
         string s = "aaabbb";
