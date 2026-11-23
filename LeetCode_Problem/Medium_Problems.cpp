@@ -4411,17 +4411,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 class ProductOfNumbers {
+        vector<int>arr;
 public:
     ProductOfNumbers() {
         
     }
     
     void add(int num) {
-        
+        arr.push_back(num);
     }
     
     int getProduct(int k) {
-        
+        int n=arr.size();
+        int pro=1;
+        for(int i=n-1;i>=(n-k);i--){
+               pro*=arr[i]; 
+        }
+        return pro;
     }
 };
 int main(){
