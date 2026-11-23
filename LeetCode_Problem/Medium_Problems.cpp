@@ -4362,45 +4362,78 @@
 
         /* // Q.155. Min Stack // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class MinStack {
+//     stack<int>s1;
+//     stack<int>s2;
+// public:
+//     MinStack() {
+            
+//         }
+//     void push(int value) {
+//         s1.push(value);
+//         if(s2.empty()){
+//             s2.push(value);
+//         }
+//         else{
+//             s2.push(min(s2.top(),value));
+//         }   
+//     }
+//     void pop() {
+//         if(!s1.empty()){
+//             s1.pop();
+//             s2.pop();
+//         }
+//     }
+//     int top() {
+//         return s1.top();    
+//     }  
+//     int getMin() {
+//         return s2.top();
+//     }
+// };
+// int main(){
+//         MinStack *minstack = new MinStack();
+//         minstack->push(-2);
+//         minstack->push(0);
+//         minstack->push(-3);
+//         cout<<minstack->getMin();
+//         minstack->pop();
+
+// return 0 ;
+// }
+
+        /* // Q.1352. Product of the Last K Numbers  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-class MinStack {
-    stack<int>s1;
-    stack<int>s2;
+class ProductOfNumbers {
 public:
-    MinStack() {
-            
-        }
-    void push(int value) {
-        s1.push(value);
-        if(s2.empty()){
-            s2.push(value);
-        }
-        else{
-            s2.push(min(s2.top(),value));
-        }   
+    ProductOfNumbers() {
+        
     }
-    void pop() {
-        if(!s1.empty()){
-            s1.pop();
-            s2.pop();
-        }
+    
+    void add(int num) {
+        
     }
-    int top() {
-        return s1.top();    
-    }  
-    int getMin() {
-        return s2.top();
+    
+    int getProduct(int k) {
+        
     }
 };
 int main(){
-        MinStack *minstack = new MinStack();
-        minstack->push(-2);
-        minstack->push(0);
-        minstack->push(-3);
-        cout<<minstack->getMin();
-        minstack->pop();
+        ProductOfNumbers *productOfNumbers = new ProductOfNumbers();
+        productOfNumbers->add(3);
+        productOfNumbers->add(0);
+        productOfNumbers->add(2);
+        productOfNumbers->add(5);
+        productOfNumbers->add(4);
+        cout<<productOfNumbers->getProduct(2)<<endl;
+        cout<<productOfNumbers->getProduct(3)<<endl;
+        cout<<productOfNumbers->getProduct(4)<<endl;
 
 return 0 ;
 }
