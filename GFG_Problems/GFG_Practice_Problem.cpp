@@ -1742,8 +1742,10 @@ char posInfinite(string &s, int pos) {
         return s[pos-1];
 }
 int main(){
-        string s = "12345";
-        int pos = 10;
+        // string s = "12345";
+        // int pos = 10;
+        string s = "abc";
+        int pos = 15;
         cout<<posInfinite(s,pos);
 
 return 0 ;
