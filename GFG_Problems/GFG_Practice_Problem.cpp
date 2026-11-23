@@ -1732,10 +1732,14 @@ char posInfinite(string &s, int pos) {
         }
         else{
             string r=s;
+            int i=1;
+            string j="$";
             while(pos>s.size()){
-                reverse(r.begin(),r.end());
-                s=s+'$'+r;
-                r=s;
+            reverse(r.begin(),r.end());
+               s=s+j+r;
+               r=s;
+               j+='$';
+               i++;
             }
         }
         cout<<s<<endl;
