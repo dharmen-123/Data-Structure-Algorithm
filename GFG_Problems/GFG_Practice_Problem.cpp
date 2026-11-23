@@ -1719,3 +1719,32 @@
 //         sortIt(arr);
 // return 0 ;
 // }
+
+        /* // Q.Character at Position in Infinite String  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+char posInfinite(string &s, int pos) {
+        if(pos<=s.size()){
+            cout<<s<<endl;
+            return s[pos-1];
+        }
+        else{
+            string r=s;
+            while(pos>s.size()){
+                reverse(r.begin(),r.end());
+                s=s+'$'+r;
+                r=s;
+            }
+        }
+        cout<<s<<endl;
+        return s[pos-1];
+}
+int main(){
+        string s = "12345";
+        int pos = 10;
+        cout<<posInfinite(s,pos);
+
+return 0 ;
+}
