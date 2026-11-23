@@ -4407,39 +4407,37 @@
 
         /* // Q.1352. Product of the Last K Numbers  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-class ProductOfNumbers {
-        vector<int>arr;
-public:
-    ProductOfNumbers() {
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// class ProductOfNumbers {
+//         vector<int>arr;
+// public:
+//     ProductOfNumbers() {
         
-    }
-    
-    void add(int num) {
-        arr.push_back(num);
-    }
-    
-    int getProduct(int k) {
-        int n=arr.size();
-        int pro=1;
-        for(int i=n-1;i>=(n-k);i--){
-               pro*=arr[i]; 
-        }
-        return pro;
-    }
-};
-int main(){
-        ProductOfNumbers *productOfNumbers = new ProductOfNumbers();
-        productOfNumbers->add(3);
-        productOfNumbers->add(0);
-        productOfNumbers->add(2);
-        productOfNumbers->add(5);
-        productOfNumbers->add(4);
-        cout<<productOfNumbers->getProduct(2)<<endl;
-        cout<<productOfNumbers->getProduct(3)<<endl;
-        cout<<productOfNumbers->getProduct(4)<<endl;
+//     }
+//     void add(int num) {
+//         arr.push_back(num);
+//     }
+//     int getProduct(int k) {
+//         int n=arr.size();
+//         int pro=1;
+//         for(int i=n-1;i>=(n-k);i--){
+//                pro*=arr[i]; 
+//         }
+//         return pro;
+//     }
+// };
+// int main(){
+//         ProductOfNumbers *productOfNumbers = new ProductOfNumbers();
+//         productOfNumbers->add(3);
+//         productOfNumbers->add(0);
+//         productOfNumbers->add(2);
+//         productOfNumbers->add(5);
+//         productOfNumbers->add(4);
+//         cout<<productOfNumbers->getProduct(2)<<endl;
+//         cout<<productOfNumbers->getProduct(3)<<endl;
+//         cout<<productOfNumbers->getProduct(4)<<endl;
 
-return 0 ;
-}
+// return 0 ;
+// }
