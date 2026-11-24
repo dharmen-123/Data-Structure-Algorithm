@@ -4540,24 +4540,39 @@
 
         /* // Q.2124. Check if All A's Appears Before All B's  // */
 
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// bool checkString(string s) {
+//     bool check = false;
+//         for(char k:s){
+//             if(k=='b'){
+//                 check=true;
+//             }
+//             if(check && k=='a'){
+//                 return false;
+//             }
+//         }
+//     return true;
+// }
+// int main(){
+//         string s = "aaabbb";
+//         cout<<checkString(s);     
+
+// return 0 ;
+// }
+
+        /* // Q.3411. Maximum Subarray With Equal Products  // */
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-bool checkString(string s) {
-    bool check = false;
-        for(char k:s){
-            if(k=='b'){
-                check=true;
-            }
-            if(check && k=='a'){
-                return false;
-            }
-        }
-    return true;
+int maxLength(vector<int>& nums) {
+        
 }
 int main(){
-        string s = "aaabbb";
-        cout<<checkString(s);     
+        vector<int> nums = {1, 2, 1, 2, 1, 1, 1};
+        cout<<maxLength(nums);
 
 return 0 ;
 }
