@@ -1722,35 +1722,35 @@
 
         /* // Q.Character at Position in Infinite String  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-char posInfinite(string &s, int pos) {
-        if(pos<=s.size()){
-            cout<<s<<endl;
-            return s[pos-1];
-        }
-        else{
-            string r=s;
-            int i=1;
-            string j="$";
-            while(pos>s.size()){
-            reverse(r.begin(),r.end());
-               s=s+j+r;
-               r=s;
-               j+='$';
-               i++;
-            }
-        }
-        cout<<s<<endl;
-        return s[pos-1];
-}
-int main(){
-        // string s = "12345";
-        // int pos = 10;
-        string s = "abc";
-        int pos = 15;
-        cout<<posInfinite(s,pos);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// char posInfinite(string &s, int pos) {
+//         if(pos<=s.size()){
+//             cout<<s<<endl;
+//             return s[pos-1];
+//         }
+//         else{
+//             string r=s;
+//             int i=1;
+//             string j="$";
+//             while(pos>s.size()){
+//             reverse(r.begin(),r.end());
+//                s=s+j+r;
+//                r=s;
+//                j+='$';
+//                i++;
+//             }
+//         }
+//         cout<<s<<endl;
+//         return s[pos-1];
+// }
+// int main(){
+//         // string s = "12345";
+//         // int pos = 10;
+//         string s = "abc";
+//         int pos = 15;
+//         cout<<posInfinite(s,pos);
 
-return 0 ;
-}
+// return 0 ;
+// }
