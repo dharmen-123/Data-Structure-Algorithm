@@ -799,23 +799,23 @@
 
         /* // Q.3041. Maximize Consecutive Elements in an Array After Modification  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
-int maxSelectedElements(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-        unordered_map<long long,int> dp;
-        int ans = 1;
-        for (int x : nums) {
-            dp[x + 1] = dp[x] + 1;
-            dp[x] = dp[x - 1] + 1;
-            ans = max(ans, max(dp[x], dp[x + 1]));
-        }
-        return ans;
-}
-int main(){
-        vector<int> nums = {2, 1, 5, 1, 1};
-        cout<<maxSelectedElements(nums);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// int maxSelectedElements(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         unordered_map<long long,int> dp;
+//         int ans = 1;
+//         for (int x : nums) {
+//             dp[x + 1] = dp[x] + 1;
+//             dp[x] = dp[x - 1] + 1;
+//             ans = max(ans, max(dp[x], dp[x + 1]));
+//         }
+//         return ans;
+// }
+// int main(){
+//         vector<int> nums = {2, 1, 5, 1, 1};
+//         cout<<maxSelectedElements(nums);
         
-return 0 ;
-}
+// return 0 ;
+// }
