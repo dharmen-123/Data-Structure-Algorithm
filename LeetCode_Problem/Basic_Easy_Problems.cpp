@@ -4564,37 +4564,37 @@
 
         /* // Q.3411. Maximum Subarray With Equal Products  // */
 
-#include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
- long long getLcm(long long a, long long b) {
-        return a / __gcd(a, b) * b;
-    }
-    int maxLength(vector<int>& nums) {
-        int n = nums.size();
-        int ans = 0;
-        for(int i = 0; i < n; i++) {
-            long long prod = 1;
-            long long g = 0;
-            long long l = 1;
-            for(int j = i; j < n; j++) {
-                if(prod > 1e18 / nums[j])
-                    break;
-                prod *= nums[j];
-                if(j == i)
-                    g = nums[j];
-                else
-                    g = __gcd(g, (long long)nums[j]);
-                l = getLcm(l, nums[j]);
-                if(prod == g * l)
-                    ans = max(ans, j - i + 1);
-            }
-        }
-        return ans;
-}
-int main(){
-        vector<int> nums = {1, 2, 1, 2, 1, 1, 1};
-        cout<<maxLength(nums);
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+//  long long getLcm(long long a, long long b) {
+//         return a / __gcd(a, b) * b;
+//     }
+//     int maxLength(vector<int>& nums) {
+//         int n = nums.size();
+//         int ans = 0;
+//         for(int i = 0; i < n; i++) {
+//             long long prod = 1;
+//             long long g = 0;
+//             long long l = 1;
+//             for(int j = i; j < n; j++) {
+//                 if(prod > 1e18 / nums[j])
+//                     break;
+//                 prod *= nums[j];
+//                 if(j == i)
+//                     g = nums[j];
+//                 else
+//                     g = __gcd(g, (long long)nums[j]);
+//                 l = getLcm(l, nums[j]);
+//                 if(prod == g * l)
+//                     ans = max(ans, j - i + 1);
+//             }
+//         }
+//         return ans;
+// }
+// int main(){
+//         vector<int> nums = {1, 2, 1, 2, 1, 1, 1};
+//         cout<<maxLength(nums);
 
-return 0 ;
-}
+// return 0 ;
+// }
