@@ -4598,3 +4598,18 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3360. Stone Removal Game  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool canAliceWin(int n) {
+ 
+}
+int main(){
+    int n = 12;
+    cout<<canAliceWin(n);
+    
+return 0 ;
+}
