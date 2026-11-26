@@ -4605,11 +4605,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 bool canAliceWin(int n) {
- 
+ int take = 10;
+        bool aliceTurn = true;
+        while(take > 0) {
+            if(n < take)
+                return !aliceTurn;
+            n -= take;
+            take--;
+            aliceTurn = !aliceTurn;
+        }
+   return false;
 }
 int main(){
     int n = 12;
     cout<<canAliceWin(n);
-    
+
 return 0 ;
 }
