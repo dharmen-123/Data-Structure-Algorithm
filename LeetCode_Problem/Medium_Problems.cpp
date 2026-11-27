@@ -4475,8 +4475,10 @@ int maximumSaleItems(vector<vector<int>>& items, int budget) {
         return *max_element(dp.begin(), dp.end());
 }
 int main(){
-        vector<vector<int>> items = {{6, 2}, {2, 6}, {3, 4}};
-        int budget = 9;
+        // vector<vector<int>> items = {{6, 2}, {2, 6}, {3, 4}};
+        // int budget = 9;
+        vector<vector<int>> items = {{2, 4}, {3, 2}, {4, 1}, {6, 4}, {12, 4}};
+        int budget = 8;
         cout<<maximumSaleItems(items,budget);
 
 return 0 ;
