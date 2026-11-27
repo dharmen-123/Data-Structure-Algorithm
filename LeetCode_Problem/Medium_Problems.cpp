@@ -4441,3 +4441,19 @@
 
 // return 0 ;
 // }
+
+        /* // Q.3946. Maximum Number of Items From Sale I  // */
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int maximumSaleItems(vector<vector<int>>& items, int budget) {
+        
+}
+int main(){
+        vector<vector<int>> items = {{6, 2}, {2, 6}, {3, 4}};
+        int budget = 9;
+        cout<<maximumSaleItems(items,budget);
+        
+return 0 ;
+}
